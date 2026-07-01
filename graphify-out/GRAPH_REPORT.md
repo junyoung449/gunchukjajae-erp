@@ -1,11 +1,12 @@
-# Graph Report - .  (2026-07-01)
+# Graph Report - ERP-04-quote  (2026-07-01)
 
 ## Corpus Check
-- cluster-only mode — file stats not available
+- 19 files · ~9,600 words
+- Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 208 nodes · 317 edges · 15 communities (10 shown, 5 thin omitted)
-- Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 2 edges (avg confidence: 0.9)
+- 304 nodes · 433 edges · 31 communities (22 shown, 9 thin omitted)
+- Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
@@ -27,101 +28,165 @@
 - [[_COMMUNITY_Architecture Guide|Architecture Guide]]
 - [[_COMMUNITY_ERP Project Overview|ERP Project Overview]]
 - [[_COMMUNITY_App Shell|App Shell]]
-- [[_COMMUNITY_Community 13|Community 13]]
-- [[_COMMUNITY_Community 14|Community 14]]
+- [[_COMMUNITY_TQuoteView|TQuoteView]]
+- [[_COMMUNITY_품목 관리 유지보수 문서|품목 관리 유지보수 문서]]
+- [[_COMMUNITY_거래처 관리 유지보수 문서|거래처 관리 유지보수 문서]]
+- [[_COMMUNITY_Quote Module Maintenance|Quote Module Maintenance]]
+- [[_COMMUNITY_App.Data.Memory|App.Data.Memory]]
+- [[_COMMUNITY_TMemoryDataContext|TMemoryDataContext]]
+- [[_COMMUNITY_TMemoryHistoryRepository|TMemoryHistoryRepository]]
+- [[_COMMUNITY_TMemoryItemRepository|TMemoryItemRepository]]
+- [[_COMMUNITY_TMemoryPartnerRepository|TMemoryPartnerRepository]]
+- [[_COMMUNITY_TMemoryShipmentRepository|TMemoryShipmentRepository]]
+- [[_COMMUNITY_module-task|module-task.md]]
+- [[_COMMUNITY_pull_request_template|pull_request_template.md]]
+- [[_COMMUNITY_src|src]]
+- [[_COMMUNITY_Firebird Provider|Firebird Provider]]
+- [[_COMMUNITY_Memory Provider|Memory Provider]]
+- [[_COMMUNITY_IItemRepository|IItemRepository]]
+- [[_COMMUNITY_IPartnerRepository|IPartnerRepository]]
+- [[_COMMUNITY_Modules Layer|Modules Layer]]
 
 ## God Nodes (most connected - your core abstractions)
-1. `TInventoryView` - 21 edges
+1. `App.Modules.Quote.View` - 39 edges
 2. `App.Modules.Partner.View` - 18 edges
-3. `TItemView` - 14 edges
-4. `TPartnerView` - 14 edges
-5. `App.Data.Memory` - 13 edges
-6. `App.Modules.Item.View` - 13 edges
-7. `IndexOf()` - 12 edges
-8. `TMemoryDataContext` - 12 edges
-9. `TMemoryPartnerRepository` - 10 edges
-10. `TMainForm` - 10 edges
+3. `TPartnerView` - 15 edges
+4. `TQuoteView` - 15 edges
+5. `TItemView` - 14 edges
+6. `App.Data.Memory` - 13 edges
+7. `App.Modules.Item.View` - 13 edges
+8. `IndexOf()` - 12 edges
+9. `TMemoryDataContext` - 12 edges
+10. `TMemoryPartnerRepository` - 10 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `Inventory Maintenance Guide` --cites--> `TInventoryView`  [EXTRACTED]
-  docs/maintenance/inventory.md → src/modules/inventory/App.Modules.Inventory.View.pas
-- `TMainForm` --calls--> `TInventoryView`  [EXTRACTED]
-  src/app/App.Main.pas → src/modules/inventory/App.Modules.Inventory.View.pas
-- `TInventoryView` --references--> `IDataContext`  [EXTRACTED]
-  src/modules/inventory/App.Modules.Inventory.View.pas → src/core/App.Core.Interfaces.pas
-- `TInventoryView` --calls--> `IItemRepository`  [EXTRACTED]
-  src/modules/inventory/App.Modules.Inventory.View.pas → src/core/App.Core.Interfaces.pas
-- `Firebird Provider` --implements--> `IInventoryRepository`  [INFERRED]
-  src/core/App.Data.Firebird.pas → src/core/App.Core.Interfaces.pas
+- `TMemoryItemRepository` --inherits--> `TInterfacedObject`  [EXTRACTED]
+  src/data/App.Data.Memory.pas → src/data/App.Data.Memory.pas  _Bridges community 20 → community 0_
+- `TMemoryDataContext` --inherits--> `TInterfacedObject`  [EXTRACTED]
+  src/data/App.Data.Memory.pas → src/data/App.Data.Memory.pas  _Bridges community 0 → community 18_
+- `TMemoryHistoryRepository` --inherits--> `TInterfacedObject`  [EXTRACTED]
+  src/data/App.Data.Memory.pas → src/data/App.Data.Memory.pas  _Bridges community 0 → community 19_
+- `TMemoryPartnerRepository` --inherits--> `TInterfacedObject`  [EXTRACTED]
+  src/data/App.Data.Memory.pas → src/data/App.Data.Memory.pas  _Bridges community 0 → community 21_
+- `TMemoryQuoteRepository` --inherits--> `TInterfacedObject`  [EXTRACTED]
+  src/data/App.Data.Memory.pas → src/data/App.Data.Memory.pas  _Bridges community 0 → community 2_
 
 ## Import Cycles
 - None detected.
 
 ## Hyperedges (group relationships)
-- **Data Access Abstraction** — src_core_idatacontext, src_core_memory_provider, src_core_firebird_provider [EXTRACTED 1.00]
-- **Inventory Management Flow** — src_app_main, src_modules_inventory_view, src_core_iinventoryrepository [EXTRACTED 1.00]
+- **Repository Pattern & DI** — src_app, src_core, src_modules [EXTRACTED 0.95]
+- **Dual Data Provider Strategy** — memory_provider, firebird_provider, src_core [EXTRACTED 1.00]
 
-## Communities (15 total, 5 thin omitted)
+## Communities (31 total, 9 thin omitted)
 
 ### Community 0 - "App.Data.Memory"
-Cohesion: 0.06
-Nodes (29): IHistoryRepository, IInventoryRepository, IItemRepository, IPartnerRepository, IQuoteRepository, IShipmentRepository, App.Data.Memory, MakeItem() (+21 more)
+Cohesion: 0.40
+Nodes (3): TMemoryInventoryRepository, IInventoryRepository, TInterfacedObject
 
 ### Community 1 - "App.Core.Contracts"
-Cohesion: 0.06
-Nodes (7): App.Core.Contracts, IDataContext, IHistoryRepository, IInventoryRepository, IItemRepository, IPartnerRepository, IShipmentRepository
+Cohesion: 0.10
+Nodes (19): App.Modules.Quote.View, FormatMoney(), FormatQty(), NewQuoteNo(), AddLabel(), AddLineClick(), BuildUI(), CreateWithQuote() (+11 more)
 
 ### Community 2 - "IndexOf"
-Cohesion: 0.14
-Nodes (25): Inventory Maintenance Guide, Firebird Provider, IDataContext, IInventoryRepository, IItemRepository, Memory Provider, App.Modules.Inventory.View, FormatQty() (+17 more)
+Cohesion: 0.22
+Nodes (8): Delete(), Update(), TMemoryQuoteRepository, Delete(), GetById(), Update(), IndexOf(), IQuoteRepository
 
 ### Community 3 - "App.Modules.Item.View"
-Cohesion: 0.17
-Nodes (20): App.Modules.Item.View, FormatPrice(), TForm, AddLabel(), BuildUI(), CreateWithItem(), SaveClick(), TItemView (+12 more)
+Cohesion: 0.06
+Nodes (7): App.Core.Contracts, IHistoryRepository, IInventoryRepository, IItemRepository, IPartnerRepository, IQuoteRepository, IShipmentRepository
 
 ### Community 4 - "TItemView"
-Cohesion: 0.30
-Nodes (15): PartnerKindText(), TForm, TPartnerView, BuildUI(), CodeExists(), CreateWithPartners(), DeleteClick(), EditClick() (+7 more)
+Cohesion: 0.16
+Nodes (20): App.Modules.Item.View, FormatPrice(), AddLabel(), BuildUI(), CreateWithItem(), SaveClick(), TItemView, BuildUI() (+12 more)
 
 ### Community 5 - "TPartnerView"
-Cohesion: 0.16
-Nodes (7): IDataContext, MakePartner(), TMemoryDataContext, Create(), Seed(), Move(), Add()
+Cohesion: 0.30
+Nodes (15): PartnerKindText(), TPartnerView, BuildUI(), CodeExists(), CreateWithPartners(), DeleteClick(), EditClick(), EditPartner() (+7 more)
 
 ### Community 6 - "App.Modules.Partner.View"
-Cohesion: 0.18
-Nodes (4): App.Main, ERP, App.Core.Entities, App.Core.ProviderFactory
+Cohesion: 0.13
+Nodes (5): ERP, IDataContext, ProviderName(), App.Core.ProviderFactory, IndexOf()
 
 ### Community 7 - "TMainForm"
-Cohesion: 0.24
-Nodes (10): App.Modules.Partner.View, DigitsOnly(), FormatBizNo(), IsValidBizNo(), PartnerKindFromIndex(), PartnerKindIndex(), AddLabel(), BuildUI() (+2 more)
+Cohesion: 0.21
+Nodes (11): App.Core.Entities, App.Main, TForm, TMainForm, BuildUI(), CreateWithData(), FillSummary(), ItemClick() (+3 more)
 
 ### Community 8 - "IDataContext"
-Cohesion: 0.39
-Nodes (9): TForm, TMainForm, BuildUI(), CreateWithData(), FillSummary(), InventoryClick(), ItemClick(), ModulePlaceholderClick() (+1 more)
+Cohesion: 0.22
+Nodes (10): App.Modules.Partner.View, DigitsOnly(), FormatBizNo(), IsValidBizNo(), PartnerKindFromIndex(), PartnerKindIndex(), AddLabel(), BuildUI() (+2 more)
 
 ### Community 10 - "Architecture Guide"
-Cohesion: 0.67
-Nodes (3): App Shell, Core Layer, Modules Layer
+Cohesion: 0.11
+Nodes (16): 데이터 접근 방식, 레이어, 모듈 간 의존, 어디를 고칠 것인가 (빠른 안내), 이 구조의 이유, 전체 구조 개요, 구성, 문서 작성 원칙 (+8 more)
+
+### Community 11 - "ERP Project Overview"
+Cohesion: 0.25
+Nodes (7): DB 없이도 구동됩니다, 건축자재상 ERP (온프레미스), 기술 스택, 모듈, 브랜치 전략, 빌드, 저장소 구조
+
+### Community 13 - "TQuoteView"
+Cohesion: 0.32
+Nodes (15): TForm, TQuoteView, BuildUI(), CreateWithData(), DeleteClick(), EditClick(), EditQuote(), Execute() (+7 more)
+
+### Community 14 - "품목 관리 유지보수 문서"
+Cohesion: 0.20
+Nodes (9): 1. 구현한 기능, 2. 생성·수정한 파일, 3. 주요 클래스와 메서드, 4. 코드 실행 흐름, 5. 데이터가 생성·변경되는 위치, 6. 사용한 Delphi/Object Pascal 기술, 7. 이 코드를 이해하기 위한 학습 항목, 8. 수정 또는 확장 시 확인할 위치 (+1 more)
+
+### Community 15 - "거래처 관리 유지보수 문서"
+Cohesion: 0.20
+Nodes (9): 1. 구현한 기능, 2. 생성·수정한 파일, 3. 주요 클래스와 메서드, 4. 코드 실행 흐름, 5. 데이터가 생성·변경되는 위치, 6. 사용한 Delphi/Object Pascal 기술, 7. 이 코드를 이해하기 위한 학습 항목, 8. 수정 또는 확장 시 확인할 위치 (+1 more)
+
+### Community 16 - "Quote Module Maintenance"
+Cohesion: 0.20
+Nodes (9): 1. Implemented Features, 2. Created or Modified Files, 3. Key Classes and Methods, 4. Execution Flow, 5. Data Creation and Mutation Points, 6. Delphi/Object Pascal Techniques Used, 7. Study Notes, 8. Extension Points (+1 more)
+
+### Community 17 - "App.Data.Memory"
+Cohesion: 0.28
+Nodes (7): App.Data.Memory, MakeItem(), MakePartner(), Create(), Seed(), Move(), Add()
+
+### Community 19 - "TMemoryHistoryRepository"
+Cohesion: 0.33
+Nodes (5): TMemoryHistoryRepository, ItemName(), PartnerName(), GetById(), IHistoryRepository
+
+### Community 20 - "TMemoryItemRepository"
+Cohesion: 0.29
+Nodes (5): TMemoryItemRepository, Delete(), GetById(), Update(), IItemRepository
+
+### Community 21 - "TMemoryPartnerRepository"
+Cohesion: 0.29
+Nodes (3): TMemoryPartnerRepository, GetById(), IPartnerRepository
+
+### Community 22 - "TMemoryShipmentRepository"
+Cohesion: 0.40
+Nodes (3): TMemoryShipmentRepository, Delete(), IShipmentRepository
+
+### Community 23 - "module-task.md"
+Cohesion: 0.40
+Nodes (4): 대상 모듈, 브랜치, 완료 기준, 작업 범위
+
+### Community 24 - "pull_request_template.md"
+Cohesion: 0.40
+Nodes (4): 개요, 변경 사항, 체크리스트, 테스트 방법
 
 ## Knowledge Gaps
-- **21 isolated node(s):** `App.Core.Entities`, `IItemRepository`, `IPartnerRepository`, `IInventoryRepository`, `IQuoteRepository` (+16 more)
+- **64 isolated node(s):** `TForm`, `App.Core.Entities`, `IItemRepository`, `IPartnerRepository`, `IInventoryRepository` (+59 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **5 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **9 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `App.Data.Memory` connect `App.Data.Memory` to `TPartnerView`, `App.Modules.Partner.View`?**
-  _High betweenness centrality (0.424) - this node is a cross-community bridge._
-- **Why does `App.Core.Contracts` connect `App.Core.Contracts` to `Core Layer`, `App.Modules.Partner.View`?**
-  _High betweenness centrality (0.317) - this node is a cross-community bridge._
-- **Why does `App.Modules.Partner.View` connect `TMainForm` to `TItemView`, `App.Modules.Partner.View`?**
-  _High betweenness centrality (0.240) - this node is a cross-community bridge._
-- **What connects `App.Core.Entities`, `IItemRepository`, `IPartnerRepository` to the rest of the system?**
-  _21 weakly-connected nodes found - possible documentation gaps or missing edges._
-- **Should `App.Data.Memory` be split into smaller, more focused modules?**
-  _Cohesion score 0.06086956521739131 - nodes in this community are weakly interconnected._
+- **Why does `App.Data.Memory` connect `App.Data.Memory` to `App.Data.Memory`, `IndexOf`, `App.Modules.Partner.View`, `TMainForm`, `TMemoryDataContext`, `TMemoryHistoryRepository`, `TMemoryItemRepository`, `TMemoryPartnerRepository`, `TMemoryShipmentRepository`?**
+  _High betweenness centrality (0.227) - this node is a cross-community bridge._
+- **Why does `App.Modules.Quote.View` connect `App.Core.Contracts` to `TQuoteView`, `App.Modules.Partner.View`, `TMainForm`?**
+  _High betweenness centrality (0.215) - this node is a cross-community bridge._
+- **Why does `ProviderName()` connect `App.Modules.Partner.View` to `App.Core.Contracts`, `TItemView`, `TMainForm`, `IDataContext`, `App.Data.Memory`?**
+  _High betweenness centrality (0.169) - this node is a cross-community bridge._
+- **What connects `TForm`, `App.Core.Entities`, `IItemRepository` to the rest of the system?**
+  _64 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `App.Core.Contracts` be split into smaller, more focused modules?**
-  _Cohesion score 0.06060606060606061 - nodes in this community are weakly interconnected._
-- **Should `IndexOf` be split into smaller, more focused modules?**
-  _Cohesion score 0.13538461538461538 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.09682539682539683 - nodes in this community are weakly interconnected._
+- **Should `App.Modules.Item.View` be split into smaller, more focused modules?**
+  _Cohesion score 0.06451612903225806 - nodes in this community are weakly interconnected._
+- **Should `App.Modules.Partner.View` be split into smaller, more focused modules?**
+  _Cohesion score 0.13333333333333333 - nodes in this community are weakly interconnected._
