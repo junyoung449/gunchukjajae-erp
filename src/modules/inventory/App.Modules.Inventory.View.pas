@@ -96,7 +96,7 @@ procedure TInventoryView.BuildUI;
 var
   TopPanel, EntryPanel, BottomPanel: TPanel;
   Lbl: TLabel;
-  BtnRegister, BtnClose: TButton;
+  BtnApply, BtnClose: TButton;
 begin
   Caption := '재고 관리';
   Width := 980;
@@ -176,14 +176,15 @@ begin
   FRefEdit.Top := 13;
   FRefEdit.Width := 140;
 
-  BtnRegister := TButton.Create(Self);
-  BtnRegister.Parent := EntryPanel;
-  BtnRegister.Left := 878;
-  BtnRegister.Top := 12;
-  BtnRegister.Width := 78;
-  BtnRegister.Caption := '등록';
-  BtnRegister.OnClick := RegisterClick;
-  BtnRegister.Anchors := [akTop, akRight];
+  BtnApply := TButton.Create(Self);
+  BtnApply.Parent := EntryPanel;
+  BtnApply.Left := 878;
+  BtnApply.Top := 12;
+  BtnApply.Width := 78;
+  BtnApply.Caption := '적용';
+  BtnApply.Default := True;
+  BtnApply.OnClick := RegisterClick;
+  BtnApply.Anchors := [akTop, akRight];
 
   FStockGrid := TStringGrid.Create(Self);
   FStockGrid.Parent := Self;
@@ -229,6 +230,15 @@ begin
   BottomPanel.Align := alBottom;
   BottomPanel.Height := 52;
   BottomPanel.BevelOuter := bvNone;
+
+  BtnApply := TButton.Create(Self);
+  BtnApply.Parent := BottomPanel;
+  BtnApply.Left := 782;
+  BtnApply.Top := 12;
+  BtnApply.Width := 86;
+  BtnApply.Caption := '적용';
+  BtnApply.OnClick := RegisterClick;
+  BtnApply.Anchors := [akTop, akRight];
 
   BtnClose := TButton.Create(Self);
   BtnClose.Parent := BottomPanel;

@@ -2,7 +2,8 @@
 
 ## 1. 구현된 기능
 - 품목별 현재고 목록을 표시한다. 품목명, 규격, 단위, 현재수량, 상태를 한 화면에서 확인할 수 있다.
-- 입고, 출고, 조정 이동을 등록한다. 등록 값은 품목 선택, 수량, 참조번호로 구성된다.
+- 입고, 출고, 조정 이동을 적용한다. 입력 값은 품목 선택, 수량, 참조번호로 구성된다.
+- 입력 줄과 화면 하단에 `적용` 버튼을 제공해 수량 입력 후 반영 동선을 명확히 한다.
 - 출고 또는 음수 조정으로 현재고가 0보다 작아질 때 경고 확인창을 표시한다.
 - 목록 상단에는 음수 재고 품목 수를 별도 경고 문구로 표시한다.
 - 최근 재고 이동 내역을 역순으로 표시한다.
@@ -20,16 +21,16 @@
 - `TInventoryView.RefreshAll`: 품목, 현재고, 이동 내역을 다시 읽어 화면을 갱신한다.
 - `TInventoryView.RefreshStockGrid`: `IItemRepository.GetAll`과 `IInventoryRepository.GetStock`으로 품목별 현재고를 구성한다.
 - `TInventoryView.RefreshMoveGrid`: `IInventoryRepository.GetMoves` 결과를 최신순으로 표시한다.
-- `TInventoryView.RegisterClick`: 입력값을 검증하고 음수 재고 경고 후 `IInventoryRepository.Move`를 호출한다.
+- `TInventoryView.RegisterClick`: `적용` 버튼에서 호출되며 입력값을 검증하고 음수 재고 경고 후 `IInventoryRepository.Move`를 호출한다.
 - `TInventoryView.StockDelta`: 이동 구분별 현재고 증감 방향을 계산한다.
 
 ## 4. 코드 실행 흐름
 1. 메인 화면에서 세 번째 버튼을 누르면 `TMainForm.InventoryClick`이 실행된다.
 2. `TInventoryView.Execute(Self, FData)`가 `IDataContext`를 받아 재고 화면을 연다.
 3. 화면 생성 후 `RefreshAll`이 품목 목록과 재고 이동 내역을 읽어 그리드를 채운다.
-4. 사용자가 품목, 구분, 수량, 참조번호를 입력하고 등록을 누르면 `RegisterClick`이 실행된다.
-5. 등록 후 현재고가 음수가 될 경우 확인창을 띄우고, 사용자가 계속을 선택하면 `Move`를 호출한다.
-6. 이동 등록 후 입력값을 비우고 `RefreshAll`로 현재고와 이동 내역을 다시 표시한다.
+4. 사용자가 품목, 구분, 수량, 참조번호를 입력하고 `적용`을 누르면 `RegisterClick`이 실행된다.
+5. 적용 후 현재고가 음수가 될 경우 확인창을 띄우고, 사용자가 계속을 선택하면 `Move`를 호출한다.
+6. 이동 적용 후 입력값을 비우고 `RefreshAll`로 현재고와 이동 내역을 다시 표시한다.
 
 ## 5. 데이터가 생성·변경되는 위치
 - 품목 목록은 `IDataContext.Items`의 `IItemRepository.GetAll`로만 조회한다.
