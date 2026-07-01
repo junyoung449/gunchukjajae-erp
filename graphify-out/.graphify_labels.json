@@ -1,0 +1,16 @@
+{
+  "0": "App.Data.Memory",
+  "1": "IndexOf",
+  "2": "App.Core.Contracts",
+  "3": "[모듈명] 유지보수 문서",
+  "4": "ERP",
+  "5": "건축자재상 ERP (온프레미스)",
+  "6": "IPartnerRepository",
+  "7": "TMainForm",
+  "8": "IItemRepository",
+  "9": "IQuoteRepository",
+  "10": "TMemoryHistoryRepository",
+  "11": "module-task.md",
+  "12": "pull_request_template.md",
+  "13": "src"
+}
