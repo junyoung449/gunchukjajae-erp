@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectOptions>
+    <Version Value="12"/>
+    <General>
+      <Flags>
+        <MainUnitHasCreateFormStatements Value="False"/>
+        <MainUnitHasTitleStatement Value="False"/>
+      </Flags>
+      <SessionStorage Value="InProjectDir"/>
+      <Title Value="건축자재상 ERP"/>
+      <UseAppBundle Value="False"/>
+    </General>
+    <BuildModes Count="1">
+      <Item1 Name="Default" Default="True"/>
+    </BuildModes>
+    <RequiredPackages Count="1">
+      <Item1>
+        <PackageName Value="LCL"/>
+      </Item1>
+    </RequiredPackages>
+    <Units Count="12">
+      <Unit0>
+        <Filename Value="ERP.lpr"/>
+        <IsPartOfProject Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="App.Main.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="App.Main"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="../core/App.Core.Entities.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="App.Core.Entities"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="../core/App.Core.Contracts.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="App.Core.Contracts"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="../core/App.Core.ProviderFactory.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="App.Core.ProviderFactory"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="../data/App.Data.Memory.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="App.Data.Memory"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="../modules/item/App.Modules.Item.View.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="App.Modules.Item.View"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="../modules/partner/App.Modules.Partner.View.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="App.Modules.Partner.View"/>
+      </Unit7>
+      <Unit9>
+        <Filename Value="../modules/quote/App.Modules.Quote.View.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="App.Modules.Quote.View"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="../modules/shipment/App.Modules.Shipment.View.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="App.Modules.Shipment.View"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="../modules/history/App.Modules.History.View.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="App.Modules.History.View"/>
+      </Unit11>
+      <Unit8>
+        <Filename Value="../modules/inventory/App.Modules.Inventory.View.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="App.Modules.Inventory.View"/>
+      </Unit8>
+    </Units>
+  </ProjectOptions>
+  <CompilerOptions>
+    <Version Value="11"/>
+    <Target>
+      <Filename Value="ERP"/>
+    </Target>
+    <SearchPaths>
+      <OtherUnitFiles Value="../core;../data;../modules/item;../modules/partner;../modules/inventory;../modules/quote;../modules/shipment;../modules/history"/>
+      <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
+    </SearchPaths>
+    <Parsing>
+      <SyntaxOptions>
+        <SyntaxMode Value="Delphi"/>
+      </SyntaxOptions>
+    </Parsing>
+  </CompilerOptions>
+</CONFIG>

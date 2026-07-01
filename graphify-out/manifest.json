@@ -1,0 +1,127 @@
+{
+  "src/app/App.Main.pas": {
+    "mtime": 1782908284.535897,
+    "ast_hash": "1874d50e7584405ecdc614aadf68a819",
+    "semantic_hash": "1874d50e7584405ecdc614aadf68a819"
+  },
+  "src/app/ERP.lpr": {
+    "mtime": 1782902863.788289,
+    "ast_hash": "4388178d110c80a79e0d1a843648c259",
+    "semantic_hash": "4388178d110c80a79e0d1a843648c259"
+  },
+  "src/core/App.Core.Contracts.pas": {
+    "mtime": 1782902863.789287,
+    "ast_hash": "9908078185b4623b430e73a5c187c75a",
+    "semantic_hash": "9908078185b4623b430e73a5c187c75a"
+  },
+  "src/core/App.Core.Entities.pas": {
+    "mtime": 1782902863.789287,
+    "ast_hash": "878691fc389654b3392042e998fa98d9",
+    "semantic_hash": "878691fc389654b3392042e998fa98d9"
+  },
+  "src/core/App.Core.ProviderFactory.pas": {
+    "mtime": 1782902863.790288,
+    "ast_hash": "e771269500de719bda6dfbc80ac20e5f",
+    "semantic_hash": "e771269500de719bda6dfbc80ac20e5f"
+  },
+  "src/data/App.Data.Memory.pas": {
+    "mtime": 1782902863.790288,
+    "ast_hash": "b4afaf91e6c21615247548f9fc2a7d90",
+    "semantic_hash": "b4afaf91e6c21615247548f9fc2a7d90"
+  },
+  "src/modules/history/App.Modules.History.View.pas": {
+    "mtime": 1782908271.6335273,
+    "ast_hash": "d514cc3d5712ec66d6fc31e34353a768",
+    "semantic_hash": "d514cc3d5712ec66d6fc31e34353a768"
+  },
+  "src/modules/inventory/App.Modules.Inventory.View.pas": {
+    "mtime": 1782908127.684536,
+    "ast_hash": "727df48cac8ad8ec4bbb5e1ead9063b5",
+    "semantic_hash": "727df48cac8ad8ec4bbb5e1ead9063b5"
+  },
+  "src/modules/item/App.Modules.Item.View.pas": {
+    "mtime": 1782905965.072508,
+    "ast_hash": "d55111519c333f62a364572b821a99ae",
+    "semantic_hash": "d55111519c333f62a364572b821a99ae"
+  },
+  "src/modules/partner/App.Modules.Partner.View.pas": {
+    "mtime": 1782905979.0306804,
+    "ast_hash": "3b3f365bad30f24b7b61bb3d17f3dd10",
+    "semantic_hash": "3b3f365bad30f24b7b61bb3d17f3dd10"
+  },
+  "src/modules/quote/App.Modules.Quote.View.pas": {
+    "mtime": 1782908146.3582125,
+    "ast_hash": "86c685d8d5300134a7492f4dab41f89f",
+    "semantic_hash": "86c685d8d5300134a7492f4dab41f89f"
+  },
+  "src/modules/shipment/App.Modules.Shipment.View.pas": {
+    "mtime": 1782908235.3360069,
+    "ast_hash": "222ca2370b806a9a6bae1a78b972d39f",
+    "semantic_hash": "222ca2370b806a9a6bae1a78b972d39f"
+  },
+  ".github/ISSUE_TEMPLATE/module-task.md": {
+    "mtime": 1782900872.3007467,
+    "ast_hash": "ba2a2e13fc46e9b934b210ea86a395c2",
+    "semantic_hash": "ba2a2e13fc46e9b934b210ea86a395c2"
+  },
+  ".github/pull_request_template.md": {
+    "mtime": 1782900864.4672687,
+    "ast_hash": "5c7ecb1ed1783b5ba59b3c823a47d460",
+    "semantic_hash": "5c7ecb1ed1783b5ba59b3c823a47d460"
+  },
+  "README.md": {
+    "mtime": 1782901899.0847971,
+    "ast_hash": "c3130d46c88357e9a6cbca9eb05bf056",
+    "semantic_hash": "c3130d46c88357e9a6cbca9eb05bf056"
+  },
+  "docs/maintenance/README.md": {
+    "mtime": 1782900825.5616093,
+    "ast_hash": "a65010ec840a22584450808e3d52eaec",
+    "semantic_hash": "a65010ec840a22584450808e3d52eaec"
+  },
+  "docs/maintenance/_template.md": {
+    "mtime": 1782900857.4024627,
+    "ast_hash": "ac62c8fdb1f13b56891f36e230b21ea3",
+    "semantic_hash": "ac62c8fdb1f13b56891f36e230b21ea3"
+  },
+  "docs/maintenance/architecture.md": {
+    "mtime": 1782900846.0171087,
+    "ast_hash": "cea4cc1afb024b97ee0d5a3fd89dd4e9",
+    "semantic_hash": "cea4cc1afb024b97ee0d5a3fd89dd4e9"
+  },
+  "docs/maintenance/history.md": {
+    "mtime": 1782908271.6295297,
+    "ast_hash": "c87ddeb323e2608e8586c459b29d8785",
+    "semantic_hash": "c87ddeb323e2608e8586c459b29d8785"
+  },
+  "docs/maintenance/inventory.md": {
+    "mtime": 1782908127.673536,
+    "ast_hash": "32f3aca96bb4c0607df77f016978b589",
+    "semantic_hash": "32f3aca96bb4c0607df77f016978b589"
+  },
+  "docs/maintenance/item.md": {
+    "mtime": 1782905965.0563917,
+    "ast_hash": "4794d4668c4c631d159136ef378d1071",
+    "semantic_hash": "4794d4668c4c631d159136ef378d1071"
+  },
+  "docs/maintenance/partner.md": {
+    "mtime": 1782905979.0185125,
+    "ast_hash": "bb4988938eff0f702f0ba015241e6828",
+    "semantic_hash": "bb4988938eff0f702f0ba015241e6828"
+  },
+  "docs/maintenance/quote.md": {
+    "mtime": 1782908146.344213,
+    "ast_hash": "e5c3a3d21bb918c3be3fb931b3c961dc",
+    "semantic_hash": "e5c3a3d21bb918c3be3fb931b3c961dc"
+  },
+  "docs/maintenance/shipment.md": {
+    "mtime": 1782908235.3210065,
+    "ast_hash": "f80adbc11ad0e5fac00c2aab0c2e345d",
+    "semantic_hash": "f80adbc11ad0e5fac00c2aab0c2e345d"
+  },
+  "src/README.md": {
+    "mtime": 1782900801.311067,
+    "ast_hash": "85a50c6ef8667b42226aef5e811a4b7e",
+    "semantic_hash": "85a50c6ef8667b42226aef5e811a4b7e"
+  }
+}
