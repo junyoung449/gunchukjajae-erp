@@ -1,0 +1,13 @@
+C:\Users\user\Desktop\ERP\.github\ISSUE_TEMPLATE\module-task.md
+C:\Users\user\Desktop\ERP\.github\pull_request_template.md
+C:\Users\user\Desktop\ERP\README.md
+C:\Users\user\Desktop\ERP\docs\maintenance\README.md
+C:\Users\user\Desktop\ERP\docs\maintenance\_template.md
+C:\Users\user\Desktop\ERP\docs\maintenance\architecture.md
+C:\Users\user\Desktop\ERP\docs\maintenance\history.md
+C:\Users\user\Desktop\ERP\docs\maintenance\inventory.md
+C:\Users\user\Desktop\ERP\docs\maintenance\item.md
+C:\Users\user\Desktop\ERP\docs\maintenance\partner.md
+C:\Users\user\Desktop\ERP\docs\maintenance\quote.md
+C:\Users\user\Desktop\ERP\docs\maintenance\shipment.md
+C:\Users\user\Desktop\ERP\src\README.md

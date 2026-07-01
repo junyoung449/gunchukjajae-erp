@@ -1,0 +1,822 @@
+{
+  "nodes": [
+    {
+      "id": "readme_erpsystem",
+      "label": "ERP System",
+      "file_type": "document",
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "readme_itemmodule",
+      "label": "Item Module",
+      "file_type": "concept",
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "readme_partnermodule",
+      "label": "Partner Module",
+      "file_type": "concept",
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "readme_inventorymodule",
+      "label": "Inventory Module",
+      "file_type": "concept",
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "readme_quotemodule",
+      "label": "Quote Module",
+      "file_type": "concept",
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "readme_shipmentmodule",
+      "label": "Shipment Module",
+      "file_type": "concept",
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "readme_historymodule",
+      "label": "History Module",
+      "file_type": "concept",
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "readme_technicalstack",
+      "label": "Technical Stack",
+      "file_type": "rationale",
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Object Pascal with Free Pascal + Lazarus toolchain for cross-platform compatibility and zero-cost tooling. Firebird database with in-memory fallback for zero-installation deployment."
+    },
+    {
+      "id": "readme_memorymode",
+      "label": "Memory Mode",
+      "file_type": "rationale",
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Database-agnostic data access through provider interfaces. Enables immediate execution without DB setup for evaluation, demo, and early development."
+    },
+    {
+      "id": "architecture_layermodel",
+      "label": "Layered Architecture",
+      "file_type": "rationale",
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\docs\\maintenance\\architecture.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Three-tier separation: app shell, domain modules, and core interfaces/providers. Modules depend only on core interfaces, not implementations."
+    },
+    {
+      "id": "architecture_dataabstraction",
+      "label": "Data Access Abstraction",
+      "file_type": "rationale",
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\docs\\maintenance\\architecture.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Interface-based repository pattern with swappable Memory and Firebird implementations. Enables provider-agnostic module code."
+    },
+    {
+      "id": "architecture_moduledependencies",
+      "label": "Module Dependency Graph",
+      "file_type": "concept",
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\docs\\maintenance\\architecture.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "item_features",
+      "label": "Item Management Features",
+      "file_type": "concept",
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\docs\\maintenance\\item.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "item_crud",
+      "label": "Item CRUD Operations",
+      "file_type": "rationale",
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\docs\\maintenance\\item.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Support full lifecycle: list, search, create, update, delete. Validation enforces required fields and prevents duplicate codes."
+    },
+    {
+      "id": "partner_features",
+      "label": "Partner Management Features",
+      "file_type": "concept",
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\docs\\maintenance\\partner.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "partner_crud",
+      "label": "Partner CRUD Operations",
+      "file_type": "rationale",
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\docs\\maintenance\\partner.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Support lifecycle management with kind-based filtering (customer/supplier). Validation includes business ID format checking and code uniqueness."
+    },
+    {
+      "id": "inventory_features",
+      "label": "Inventory Management Features",
+      "file_type": "concept",
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\docs\\maintenance\\inventory.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "inventory_moves",
+      "label": "Stock Movements",
+      "file_type": "rationale",
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\docs\\maintenance\\inventory.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Support three movement types: inbound (positive), outbound (negative), adjustment. Negative stock warnings allow informed decisions."
+    },
+    {
+      "id": "quote_features",
+      "label": "Quote Management Features",
+      "file_type": "concept",
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\docs\\maintenance\\quote.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "quote_calculation",
+      "label": "Quote Amount Calculation",
+      "file_type": "rationale",
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\docs\\maintenance\\quote.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Automatic line totals from quantity and unit price. Subtotal, 10% VAT, and grand total recalculated on input change."
+    },
+    {
+      "id": "shipment_features",
+      "label": "Shipment Management Features",
+      "file_type": "concept",
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\docs\\maintenance\\shipment.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "shipment_inventory_deduction",
+      "label": "Shipment Inventory Deduction",
+      "file_type": "rationale",
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\docs\\maintenance\\shipment.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Shipment.Add internally calls Inventory.Move to decrement stock. Stock shortage warning allows override for exceptional cases."
+    },
+    {
+      "id": "history_features",
+      "label": "History Inquiry Features",
+      "file_type": "concept",
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\docs\\maintenance\\history.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "history_readonly",
+      "label": "History Read-Only Query",
+      "file_type": "rationale",
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\docs\\maintenance\\history.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Unified view of inventory moves, shipments, and quotes. No mutations; read-only access through IHistoryRepository."
+    },
+    {
+      "id": "maintenance_documentation",
+      "label": "Maintenance Documentation",
+      "file_type": "document",
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\docs\\maintenance\\README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "pr_template_checklist",
+      "label": "PR Template Checklist",
+      "file_type": "document",
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\.github\\pull_request_template.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "module_task_issue_template",
+      "label": "Module Task Issue Template",
+      "file_type": "document",
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\.github\\ISSUE_TEMPLATE\\module-task.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "src_structure",
+      "label": "Source Tree Structure",
+      "file_type": "document",
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\src\\README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "src_corelayer",
+      "label": "Core Layer",
+      "file_type": "concept",
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\src\\README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "src_moduleslayer",
+      "label": "Modules Layer",
+      "file_type": "concept",
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\src\\README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "src_applayer",
+      "label": "App Layer",
+      "file_type": "concept",
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\src\\README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "identifier_rules",
+      "label": "Identifier and Comment Conventions",
+      "file_type": "rationale",
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\src\\README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "English identifiers (classes, variables, methods) for universal readability. Korean comments and UI labels for developer convenience in Korean-speaking team."
+    }
+  ],
+  "edges": [
+    {
+      "source": "readme_erpsystem",
+      "target": "readme_itemmodule",
+      "relation": "contains_module",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_erpsystem",
+      "target": "readme_partnermodule",
+      "relation": "contains_module",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_erpsystem",
+      "target": "readme_inventorymodule",
+      "relation": "contains_module",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_erpsystem",
+      "target": "readme_quotemodule",
+      "relation": "contains_module",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_erpsystem",
+      "target": "readme_shipmentmodule",
+      "relation": "contains_module",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_erpsystem",
+      "target": "readme_historymodule",
+      "relation": "contains_module",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_erpsystem",
+      "target": "readme_technicalstack",
+      "relation": "uses_stack",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_erpsystem",
+      "target": "readme_memorymode",
+      "relation": "enables_feature",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "architecture_layermodel",
+      "target": "src_corelayer",
+      "relation": "describes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\docs\\maintenance\\architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "architecture_layermodel",
+      "target": "src_moduleslayer",
+      "relation": "describes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\docs\\maintenance\\architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "architecture_layermodel",
+      "target": "src_applayer",
+      "relation": "describes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\docs\\maintenance\\architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "architecture_dataabstraction",
+      "target": "architecture_layermodel",
+      "relation": "pattern_of",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\docs\\maintenance\\architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "architecture_moduledependencies",
+      "target": "readme_itemmodule",
+      "relation": "depends_on",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\docs\\maintenance\\architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "architecture_moduledependencies",
+      "target": "readme_partnermodule",
+      "relation": "depends_on",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\docs\\maintenance\\architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_inventorymodule",
+      "target": "readme_itemmodule",
+      "relation": "depends_on",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\docs\\maintenance\\architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_quotemodule",
+      "target": "readme_itemmodule",
+      "relation": "depends_on",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\docs\\maintenance\\architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_quotemodule",
+      "target": "readme_partnermodule",
+      "relation": "depends_on",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\docs\\maintenance\\architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_shipmentmodule",
+      "target": "readme_inventorymodule",
+      "relation": "depends_on",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\docs\\maintenance\\architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_historymodule",
+      "target": "readme_shipmentmodule",
+      "relation": "depends_on",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\docs\\maintenance\\architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_historymodule",
+      "target": "readme_inventorymodule",
+      "relation": "depends_on",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\docs\\maintenance\\architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_historymodule",
+      "target": "readme_quotemodule",
+      "relation": "depends_on",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\docs\\maintenance\\architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "item_crud",
+      "target": "item_features",
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\docs\\maintenance\\item.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "partner_crud",
+      "target": "partner_features",
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\docs\\maintenance\\partner.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "inventory_moves",
+      "target": "inventory_features",
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\docs\\maintenance\\inventory.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "inventory_moves",
+      "target": "shipment_inventory_deduction",
+      "relation": "enables",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\docs\\maintenance\\inventory.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "quote_calculation",
+      "target": "quote_features",
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\docs\\maintenance\\quote.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "shipment_inventory_deduction",
+      "target": "shipment_features",
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\docs\\maintenance\\shipment.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "history_readonly",
+      "target": "history_features",
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\docs\\maintenance\\history.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "maintenance_documentation",
+      "target": "architecture_layermodel",
+      "relation": "cites",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\docs\\maintenance\\README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "pr_template_checklist",
+      "target": "src_corelayer",
+      "relation": "requires_interface_compliance",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\.github\\pull_request_template.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "module_task_issue_template",
+      "target": "maintenance_documentation",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\.github\\ISSUE_TEMPLATE\\module-task.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "src_moduleslayer",
+      "target": "src_corelayer",
+      "relation": "depends_on",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\src\\README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "src_applayer",
+      "target": "src_corelayer",
+      "relation": "depends_on",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\src\\README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "src_applayer",
+      "target": "src_moduleslayer",
+      "relation": "orchestrates",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\src\\README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "identifier_rules",
+      "target": "readme_technicalstack",
+      "relation": "prescribes_style",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\src\\README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_memorymode",
+      "target": "architecture_dataabstraction",
+      "relation": "enabled_by",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "item_features",
+      "target": "readme_itemmodule",
+      "relation": "describes",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\docs\\maintenance\\item.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "partner_features",
+      "target": "readme_partnermodule",
+      "relation": "describes",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\docs\\maintenance\\partner.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "inventory_features",
+      "target": "readme_inventorymodule",
+      "relation": "describes",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\docs\\maintenance\\inventory.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "quote_features",
+      "target": "readme_quotemodule",
+      "relation": "describes",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\docs\\maintenance\\quote.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "shipment_features",
+      "target": "readme_shipmentmodule",
+      "relation": "describes",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\docs\\maintenance\\shipment.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "history_features",
+      "target": "readme_historymodule",
+      "relation": "describes",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\docs\\maintenance\\history.md",
+      "source_location": null,
+      "weight": 1.0
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "hyperedge_layer_dependency_flow",
+      "nodes": [
+        "src_applayer",
+        "src_moduleslayer",
+        "src_corelayer"
+      ],
+      "relation": "layered_architecture",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "description": "Three-tier layered architecture: app orchestrates modules which depend on core interfaces",
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\src\\README.md"
+    },
+    {
+      "id": "hyperedge_module_workflow",
+      "nodes": [
+        "readme_itemmodule",
+        "readme_partnermodule",
+        "readme_inventorymodule",
+        "readme_quotemodule",
+        "readme_shipmentmodule",
+        "readme_historymodule"
+      ],
+      "relation": "workflow_sequence",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "description": "Master data (item, partner) ground quote and shipment. Inventory tracks all movements. History aggregates all changes.",
+      "source_file": "C:\\Users\\user\\Desktop\\ERP\\docs\\maintenance\\architecture.md"
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}
