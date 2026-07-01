@@ -8,9 +8,10 @@
 
 | 항목 | 내용 |
 |------|------|
-| 언어/IDE | Delphi (RAD Studio 최신) / Object Pascal |
-| UI 프레임워크 | VCL (Windows 데스크톱) |
-| 데이터 접근 | FireDAC |
+| 언어 | Object Pascal (Delphi 문법 호환) |
+| 빌드 툴체인 | **Free Pascal + Lazarus** (무료·오픈소스) |
+| UI | 데스크톱 GUI (Lazarus LCL / Delphi VCL 호환) |
+| 데이터 접근 | FireDAC(Delphi) / SQLDB(Lazarus) 계열 |
 | 데이터베이스 | Firebird (임베디드/서버) — **미설치 시 인메모리 모드로 구동** |
 
 ### DB 없이도 구동됩니다
@@ -56,5 +57,11 @@
 
 ## 빌드
 
-RAD Studio에서 `src/app` 의 프로젝트(`.dproj`)를 열어 빌드합니다.
-초기 실행은 별도 설정 없이 Memory 모드로 동작합니다.
+무료 툴체인으로 빌드합니다.
+
+- **Lazarus/FPC(무료)**: `src/app` 의 프로젝트(`.lpi`)를 Lazarus에서 열거나
+  `lazbuild src/app/ERP.lpi` 로 빌드합니다.
+- **Delphi(선택)**: RAD Studio 보유 시 `.dproj` 로도 빌드할 수 있게 유지합니다.
+
+가상환경 없이 로컬에서 바로 빌드하며, 초기 실행은 별도 설정 없이 Memory 모드로
+동작합니다.
