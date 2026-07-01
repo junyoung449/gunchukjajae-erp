@@ -32,6 +32,13 @@ Release/
 *.cfg
 ModelSupport_*/
 
+# ── Lazarus/FPC 빌드 출력 ──────────────────────────────────────
+lib/
+backup/
+*.compiled
+*.lps
+*.res
+
 # ── 로컬 런타임 설정 / 로컬 DB 파일 ────────────────────────────
 *.ini.local
 *.FDB
