@@ -20,29 +20,166 @@
         "id": "erp_module_flow",
         "label": "ERP Business Logic Flow",
         "nodes": [
-          "src_modules_item",
+          "src_modules_item_view",
           "src_modules_inventory",
-          "src_modules_shipment",
-          "src_modules_history"
+          "src_modules_shipment"
         ],
         "relation": "form",
         "confidence": "EXTRACTED",
-        "confidence_score": 0.9,
+        "confidence_score": 0.8,
         "source_file": "docs/maintenance/architecture.md"
+      },
+      {
+        "id": "project_development_workflow",
+        "label": "Development Workflow & Standards",
+        "nodes": [
+          "github_pull_request_template",
+          "github_issue_template_module_task",
+          "docs_maintenance_readme",
+          "concept_memory_mode",
+          "concept_core_interface_rule"
+        ],
+        "relation": "participate_in",
+        "confidence": "EXTRACTED",
+        "confidence_score": 0.9,
+        "source_file": ".github/pull_request_template.md"
+      },
+      {
+        "id": "system_architecture_layers",
+        "label": "System Architecture Layers",
+        "nodes": [
+          "src_core",
+          "src_modules",
+          "src_app"
+        ],
+        "relation": "form",
+        "confidence": "EXTRACTED",
+        "confidence_score": 1.0,
+        "source_file": "src/README.md"
       }
     ]
   },
   "nodes": [
+    {
+      "label": "item.md",
+      "file_type": "document",
+      "source_file": "docs/maintenance/item.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 5,
+      "norm_label": "item.md",
+      "community_name": "\uac74\ucd95\uc790\uc7ac\uc0c1 ERP (\uc628\ud504\ub808\ubbf8\uc2a4)",
+      "id": "docs_maintenance_item"
+    },
+    {
+      "label": "\ud488\ubaa9 \uad00\ub9ac \uc720\uc9c0\ubcf4\uc218 \ubb38\uc11c",
+      "file_type": "document",
+      "source_file": "docs/maintenance/item.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 5,
+      "norm_label": "\u1111\u116e\u11b7\u1106\u1169\u11a8 \u1100\u116a\u11ab\u1105\u1175 \u110b\u1172\u110c\u1175\u1107\u1169\u1109\u116e \u1106\u116e\u11ab\u1109\u1165",
+      "community_name": "\uac74\ucd95\uc790\uc7ac\uc0c1 ERP (\uc628\ud504\ub808\ubbf8\uc2a4)",
+      "id": "docs_maintenance_item_\ud488\ubaa9_\uad00\ub9ac_\uc720\uc9c0\ubcf4\uc218_\ubb38\uc11c"
+    },
+    {
+      "label": "1. \uad6c\ud604\ud55c \uae30\ub2a5",
+      "file_type": "document",
+      "source_file": "docs/maintenance/item.md",
+      "source_location": "L3",
+      "_origin": "ast",
+      "community": 5,
+      "norm_label": "1. \u1100\u116e\u1112\u1167\u11ab\u1112\u1161\u11ab \u1100\u1175\u1102\u1173\u11bc",
+      "community_name": "\uac74\ucd95\uc790\uc7ac\uc0c1 ERP (\uc628\ud504\ub808\ubbf8\uc2a4)",
+      "id": "docs_maintenance_item_1_\uad6c\ud604\ud55c_\uae30\ub2a5"
+    },
+    {
+      "label": "2. \uc0dd\uc131\u00b7\uc218\uc815\ud55c \ud30c\uc77c",
+      "file_type": "document",
+      "source_file": "docs/maintenance/item.md",
+      "source_location": "L7",
+      "_origin": "ast",
+      "community": 5,
+      "norm_label": "2. \u1109\u1162\u11bc\u1109\u1165\u11bc\u00b7\u1109\u116e\u110c\u1165\u11bc\u1112\u1161\u11ab \u1111\u1161\u110b\u1175\u11af",
+      "community_name": "\uac74\ucd95\uc790\uc7ac\uc0c1 ERP (\uc628\ud504\ub808\ubbf8\uc2a4)",
+      "id": "docs_maintenance_item_2_\uc0dd\uc131_\uc218\uc815\ud55c_\ud30c\uc77c"
+    },
+    {
+      "label": "3. \uc8fc\uc694 \ud074\ub798\uc2a4\uc640 \uba54\uc11c\ub4dc",
+      "file_type": "document",
+      "source_file": "docs/maintenance/item.md",
+      "source_location": "L15",
+      "_origin": "ast",
+      "community": 5,
+      "norm_label": "3. \u110c\u116e\u110b\u116d \u110f\u1173\u11af\u1105\u1162\u1109\u1173\u110b\u116a \u1106\u1166\u1109\u1165\u1103\u1173",
+      "community_name": "\uac74\ucd95\uc790\uc7ac\uc0c1 ERP (\uc628\ud504\ub808\ubbf8\uc2a4)",
+      "id": "docs_maintenance_item_3_\uc8fc\uc694_\ud074\ub798\uc2a4\uc640_\uba54\uc11c\ub4dc"
+    },
+    {
+      "label": "4. \ucf54\ub4dc \uc2e4\ud589 \ud750\ub984",
+      "file_type": "document",
+      "source_file": "docs/maintenance/item.md",
+      "source_location": "L21",
+      "_origin": "ast",
+      "community": 5,
+      "norm_label": "4. \u110f\u1169\u1103\u1173 \u1109\u1175\u11af\u1112\u1162\u11bc \u1112\u1173\u1105\u1173\u11b7",
+      "community_name": "\uac74\ucd95\uc790\uc7ac\uc0c1 ERP (\uc628\ud504\ub808\ubbf8\uc2a4)",
+      "id": "docs_maintenance_item_4_\ucf54\ub4dc_\uc2e4\ud589_\ud750\ub984"
+    },
+    {
+      "label": "5. \ub370\uc774\ud130\uac00 \uc0dd\uc131\u00b7\ubcc0\uacbd\ub418\ub294 \uc704\uce58",
+      "file_type": "document",
+      "source_file": "docs/maintenance/item.md",
+      "source_location": "L27",
+      "_origin": "ast",
+      "community": 5,
+      "norm_label": "5. \u1103\u1166\u110b\u1175\u1110\u1165\u1100\u1161 \u1109\u1162\u11bc\u1109\u1165\u11bc\u00b7\u1107\u1167\u11ab\u1100\u1167\u11bc\u1103\u116c\u1102\u1173\u11ab \u110b\u1171\u110e\u1175",
+      "community_name": "\uac74\ucd95\uc790\uc7ac\uc0c1 ERP (\uc628\ud504\ub808\ubbf8\uc2a4)",
+      "id": "docs_maintenance_item_5_\ub370\uc774\ud130\uac00_\uc0dd\uc131_\ubcc0\uacbd\ub418\ub294_\uc704\uce58"
+    },
+    {
+      "label": "6. \uc0ac\uc6a9\ud55c Delphi/Object Pascal \uae30\uc220",
+      "file_type": "document",
+      "source_file": "docs/maintenance/item.md",
+      "source_location": "L33",
+      "_origin": "ast",
+      "community": 5,
+      "norm_label": "6. \u1109\u1161\u110b\u116d\u11bc\u1112\u1161\u11ab delphi/object pascal \u1100\u1175\u1109\u116e\u11af",
+      "community_name": "\uac74\ucd95\uc790\uc7ac\uc0c1 ERP (\uc628\ud504\ub808\ubbf8\uc2a4)",
+      "id": "docs_maintenance_item_6_\uc0ac\uc6a9\ud55c_delphi_object_pascal_\uae30\uc220"
+    },
+    {
+      "label": "7. \uc774 \ucf54\ub4dc\ub97c \uc774\ud574\ud558\uae30 \uc704\ud55c \ud559\uc2b5 \ud56d\ubaa9",
+      "file_type": "document",
+      "source_file": "docs/maintenance/item.md",
+      "source_location": "L38",
+      "_origin": "ast",
+      "community": 5,
+      "norm_label": "7. \u110b\u1175 \u110f\u1169\u1103\u1173\u1105\u1173\u11af \u110b\u1175\u1112\u1162\u1112\u1161\u1100\u1175 \u110b\u1171\u1112\u1161\u11ab \u1112\u1161\u11a8\u1109\u1173\u11b8 \u1112\u1161\u11bc\u1106\u1169\u11a8",
+      "community_name": "\uac74\ucd95\uc790\uc7ac\uc0c1 ERP (\uc628\ud504\ub808\ubbf8\uc2a4)",
+      "id": "docs_maintenance_item_7_\uc774_\ucf54\ub4dc\ub97c_\uc774\ud574\ud558\uae30_\uc704\ud55c_\ud559\uc2b5_\ud56d\ubaa9"
+    },
+    {
+      "label": "8. \uc218\uc815 \ub610\ub294 \ud655\uc7a5 \uc2dc \ud655\uc778\ud560 \uc704\uce58",
+      "file_type": "document",
+      "source_file": "docs/maintenance/item.md",
+      "source_location": "L44",
+      "_origin": "ast",
+      "community": 5,
+      "norm_label": "8. \u1109\u116e\u110c\u1165\u11bc \u1104\u1169\u1102\u1173\u11ab \u1112\u116a\u11a8\u110c\u1161\u11bc \u1109\u1175 \u1112\u116a\u11a8\u110b\u1175\u11ab\u1112\u1161\u11af \u110b\u1171\u110e\u1175",
+      "community_name": "\uac74\ucd95\uc790\uc7ac\uc0c1 ERP (\uc628\ud504\ub808\ubbf8\uc2a4)",
+      "id": "docs_maintenance_item_8_\uc218\uc815_\ub610\ub294_\ud655\uc7a5_\uc2dc_\ud655\uc778\ud560_\uc704\uce58"
+    },
     {
       "label": "App.Main.pas",
       "file_type": "code",
       "source_file": "src/app/App.Main.pas",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "norm_label": "app.main.pas",
-      "id": "src_app_app_main",
-      "community_name": "ERP"
+      "community_name": "[\ubaa8\ub4c8\uba85] \uc720\uc9c0\ubcf4\uc218 \ubb38\uc11c",
+      "id": "src_app_app_main"
     },
     {
       "label": "App.Main",
@@ -50,10 +187,10 @@
       "source_file": "src/app/App.Main.pas",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "norm_label": "app.main",
-      "id": "src_app_app_main_app_main",
-      "community_name": "ERP"
+      "community_name": "[\ubaa8\ub4c8\uba85] \uc720\uc9c0\ubcf4\uc218 \ubb38\uc11c",
+      "id": "src_app_app_main_app_main"
     },
     {
       "label": "TMainForm",
@@ -61,10 +198,10 @@
       "source_file": "src/app/App.Main.pas",
       "source_location": "L17",
       "_origin": "ast",
-      "community": 6,
+      "community": 8,
       "norm_label": "tmainform",
-      "id": "src_app_app_main_tmainform",
-      "community_name": "TMainForm"
+      "community_name": "IItemRepository",
+      "id": "src_app_app_main_tmainform"
     },
     {
       "label": "TForm",
@@ -72,10 +209,10 @@
       "source_file": "src/app/App.Main.pas",
       "source_location": "L17",
       "_origin": "ast",
-      "community": 6,
+      "community": 8,
       "norm_label": "tform",
-      "id": "tform",
-      "community_name": "TMainForm"
+      "community_name": "IItemRepository",
+      "id": "src_app_app_main_pas_tform"
     },
     {
       "label": "BuildUI()",
@@ -83,10 +220,10 @@
       "source_file": "src/app/App.Main.pas",
       "source_location": "L21",
       "_origin": "ast",
-      "community": 6,
+      "community": 8,
       "norm_label": "buildui()",
-      "id": "src_app_app_main_tmainform_buildui",
-      "community_name": "TMainForm"
+      "community_name": "IItemRepository",
+      "id": "src_app_app_main_tmainform_buildui"
     },
     {
       "label": "FillSummary()",
@@ -94,32 +231,43 @@
       "source_file": "src/app/App.Main.pas",
       "source_location": "L22",
       "_origin": "ast",
-      "community": 6,
+      "community": 8,
       "norm_label": "fillsummary()",
-      "id": "src_app_app_main_tmainform_fillsummary",
-      "community_name": "TMainForm"
+      "community_name": "IItemRepository",
+      "id": "src_app_app_main_tmainform_fillsummary"
+    },
+    {
+      "label": "ItemClick()",
+      "file_type": "code",
+      "source_file": "src/app/App.Main.pas",
+      "source_location": "L23",
+      "_origin": "ast",
+      "community": 8,
+      "norm_label": "itemclick()",
+      "community_name": "IItemRepository",
+      "id": "src_app_app_main_tmainform_itemclick"
     },
     {
       "label": "ModulePlaceholderClick()",
       "file_type": "code",
       "source_file": "src/app/App.Main.pas",
-      "source_location": "L23",
+      "source_location": "L24",
       "_origin": "ast",
-      "community": 6,
+      "community": 8,
       "norm_label": "moduleplaceholderclick()",
-      "id": "src_app_app_main_tmainform_moduleplaceholderclick",
-      "community_name": "TMainForm"
+      "community_name": "IItemRepository",
+      "id": "src_app_app_main_tmainform_moduleplaceholderclick"
     },
     {
       "label": "CreateWithData()",
       "file_type": "code",
       "source_file": "src/app/App.Main.pas",
-      "source_location": "L25",
+      "source_location": "L26",
       "_origin": "ast",
-      "community": 6,
+      "community": 8,
       "norm_label": "createwithdata()",
-      "id": "src_app_app_main_tmainform_createwithdata",
-      "community_name": "TMainForm"
+      "community_name": "IItemRepository",
+      "id": "src_app_app_main_tmainform_createwithdata"
     },
     {
       "label": "ERP.lpr",
@@ -127,10 +275,10 @@
       "source_file": "src/app/ERP.lpr",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "norm_label": "erp.lpr",
-      "id": "src_app_erp",
-      "community_name": "ERP"
+      "community_name": "[\ubaa8\ub4c8\uba85] \uc720\uc9c0\ubcf4\uc218 \ubb38\uc11c",
+      "id": "src_app_erp"
     },
     {
       "label": "ERP",
@@ -138,10 +286,10 @@
       "source_file": "src/app/ERP.lpr",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "norm_label": "erp",
-      "id": "src_app_erp_erp",
-      "community_name": "ERP"
+      "community_name": "[\ubaa8\ub4c8\uba85] \uc720\uc9c0\ubcf4\uc218 \ubb38\uc11c",
+      "id": "src_app_erp_erp"
     },
     {
       "label": "App.Core.Contracts.pas",
@@ -149,10 +297,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "norm_label": "app.core.contracts.pas",
-      "id": "src_core_app_core_contracts",
-      "community_name": "ERP"
+      "community_name": "[\ubaa8\ub4c8\uba85] \uc720\uc9c0\ubcf4\uc218 \ubb38\uc11c",
+      "id": "src_core_app_core_contracts"
     },
     {
       "label": "App.Core.Contracts",
@@ -160,10 +308,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 1,
+      "community": 2,
       "norm_label": "app.core.contracts",
-      "id": "src_core_app_core_contracts_app_core_contracts",
-      "community_name": "App.Core.Contracts"
+      "community_name": "App.Core.Contracts",
+      "id": "src_core_app_core_contracts_app_core_contracts"
     },
     {
       "label": "IItemRepository",
@@ -171,10 +319,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L16",
       "_origin": "ast",
-      "community": 7,
+      "community": 2,
       "norm_label": "iitemrepository",
-      "id": "src_core_app_core_contracts_iitemrepository",
-      "community_name": "IItemRepository"
+      "community_name": "App.Core.Contracts",
+      "id": "src_core_app_core_contracts_iitemrepository"
     },
     {
       "label": "GetAll()",
@@ -182,10 +330,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L18",
       "_origin": "ast",
-      "community": 7,
+      "community": 2,
       "norm_label": "getall()",
-      "id": "src_core_app_core_contracts_iitemrepository_getall",
-      "community_name": "IItemRepository"
+      "community_name": "App.Core.Contracts",
+      "id": "src_core_app_core_contracts_iitemrepository_getall"
     },
     {
       "label": "GetById()",
@@ -193,10 +341,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L19",
       "_origin": "ast",
-      "community": 7,
+      "community": 2,
       "norm_label": "getbyid()",
-      "id": "src_core_app_core_contracts_iitemrepository_getbyid",
-      "community_name": "IItemRepository"
+      "community_name": "App.Core.Contracts",
+      "id": "src_core_app_core_contracts_iitemrepository_getbyid"
     },
     {
       "label": "Add()",
@@ -204,10 +352,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L20",
       "_origin": "ast",
-      "community": 7,
+      "community": 2,
       "norm_label": "add()",
-      "id": "src_core_app_core_contracts_iitemrepository_add",
-      "community_name": "IItemRepository"
+      "community_name": "App.Core.Contracts",
+      "id": "src_core_app_core_contracts_iitemrepository_add"
     },
     {
       "label": "Update()",
@@ -215,10 +363,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L21",
       "_origin": "ast",
-      "community": 7,
+      "community": 2,
       "norm_label": "update()",
-      "id": "src_core_app_core_contracts_iitemrepository_update",
-      "community_name": "IItemRepository"
+      "community_name": "App.Core.Contracts",
+      "id": "src_core_app_core_contracts_iitemrepository_update"
     },
     {
       "label": "Delete()",
@@ -226,10 +374,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L22",
       "_origin": "ast",
-      "community": 7,
+      "community": 2,
       "norm_label": "delete()",
-      "id": "src_core_app_core_contracts_iitemrepository_delete",
-      "community_name": "IItemRepository"
+      "community_name": "App.Core.Contracts",
+      "id": "src_core_app_core_contracts_iitemrepository_delete"
     },
     {
       "label": "IPartnerRepository",
@@ -237,10 +385,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L26",
       "_origin": "ast",
-      "community": 5,
+      "community": 2,
       "norm_label": "ipartnerrepository",
-      "id": "src_core_app_core_contracts_ipartnerrepository",
-      "community_name": "IPartnerRepository"
+      "community_name": "App.Core.Contracts",
+      "id": "src_core_app_core_contracts_ipartnerrepository"
     },
     {
       "label": "GetAll()",
@@ -248,10 +396,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L28",
       "_origin": "ast",
-      "community": 5,
+      "community": 2,
       "norm_label": "getall()",
-      "id": "src_core_app_core_contracts_ipartnerrepository_getall",
-      "community_name": "IPartnerRepository"
+      "community_name": "App.Core.Contracts",
+      "id": "src_core_app_core_contracts_ipartnerrepository_getall"
     },
     {
       "label": "GetByKind()",
@@ -259,10 +407,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L29",
       "_origin": "ast",
-      "community": 5,
+      "community": 2,
       "norm_label": "getbykind()",
-      "id": "src_core_app_core_contracts_ipartnerrepository_getbykind",
-      "community_name": "IPartnerRepository"
+      "community_name": "App.Core.Contracts",
+      "id": "src_core_app_core_contracts_ipartnerrepository_getbykind"
     },
     {
       "label": "GetById()",
@@ -270,10 +418,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L30",
       "_origin": "ast",
-      "community": 5,
+      "community": 2,
       "norm_label": "getbyid()",
-      "id": "src_core_app_core_contracts_ipartnerrepository_getbyid",
-      "community_name": "IPartnerRepository"
+      "community_name": "App.Core.Contracts",
+      "id": "src_core_app_core_contracts_ipartnerrepository_getbyid"
     },
     {
       "label": "Add()",
@@ -281,10 +429,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L31",
       "_origin": "ast",
-      "community": 5,
+      "community": 2,
       "norm_label": "add()",
-      "id": "src_core_app_core_contracts_ipartnerrepository_add",
-      "community_name": "IPartnerRepository"
+      "community_name": "App.Core.Contracts",
+      "id": "src_core_app_core_contracts_ipartnerrepository_add"
     },
     {
       "label": "Update()",
@@ -292,10 +440,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L32",
       "_origin": "ast",
-      "community": 5,
+      "community": 2,
       "norm_label": "update()",
-      "id": "src_core_app_core_contracts_ipartnerrepository_update",
-      "community_name": "IPartnerRepository"
+      "community_name": "App.Core.Contracts",
+      "id": "src_core_app_core_contracts_ipartnerrepository_update"
     },
     {
       "label": "Delete()",
@@ -303,10 +451,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L33",
       "_origin": "ast",
-      "community": 5,
+      "community": 2,
       "norm_label": "delete()",
-      "id": "src_core_app_core_contracts_ipartnerrepository_delete",
-      "community_name": "IPartnerRepository"
+      "community_name": "App.Core.Contracts",
+      "id": "src_core_app_core_contracts_ipartnerrepository_delete"
     },
     {
       "label": "IInventoryRepository",
@@ -314,10 +462,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L37",
       "_origin": "ast",
-      "community": 1,
+      "community": 2,
       "norm_label": "iinventoryrepository",
-      "id": "src_core_app_core_contracts_iinventoryrepository",
-      "community_name": "App.Core.Contracts"
+      "community_name": "App.Core.Contracts",
+      "id": "src_core_app_core_contracts_iinventoryrepository"
     },
     {
       "label": "GetStock()",
@@ -325,10 +473,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L39",
       "_origin": "ast",
-      "community": 1,
+      "community": 2,
       "norm_label": "getstock()",
-      "id": "src_core_app_core_contracts_iinventoryrepository_getstock",
-      "community_name": "App.Core.Contracts"
+      "community_name": "App.Core.Contracts",
+      "id": "src_core_app_core_contracts_iinventoryrepository_getstock"
     },
     {
       "label": "Move()",
@@ -336,10 +484,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L40",
       "_origin": "ast",
-      "community": 1,
+      "community": 2,
       "norm_label": "move()",
-      "id": "src_core_app_core_contracts_iinventoryrepository_move",
-      "community_name": "App.Core.Contracts"
+      "community_name": "App.Core.Contracts",
+      "id": "src_core_app_core_contracts_iinventoryrepository_move"
     },
     {
       "label": "GetMoves()",
@@ -347,10 +495,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L42",
       "_origin": "ast",
-      "community": 1,
+      "community": 2,
       "norm_label": "getmoves()",
-      "id": "src_core_app_core_contracts_iinventoryrepository_getmoves",
-      "community_name": "App.Core.Contracts"
+      "community_name": "App.Core.Contracts",
+      "id": "src_core_app_core_contracts_iinventoryrepository_getmoves"
     },
     {
       "label": "IQuoteRepository",
@@ -358,10 +506,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L46",
       "_origin": "ast",
-      "community": 8,
+      "community": 10,
       "norm_label": "iquoterepository",
-      "id": "src_core_app_core_contracts_iquoterepository",
-      "community_name": "IQuoteRepository"
+      "community_name": "TMemoryHistoryRepository",
+      "id": "src_core_app_core_contracts_iquoterepository"
     },
     {
       "label": "GetAll()",
@@ -369,10 +517,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L48",
       "_origin": "ast",
-      "community": 8,
+      "community": 10,
       "norm_label": "getall()",
-      "id": "src_core_app_core_contracts_iquoterepository_getall",
-      "community_name": "IQuoteRepository"
+      "community_name": "TMemoryHistoryRepository",
+      "id": "src_core_app_core_contracts_iquoterepository_getall"
     },
     {
       "label": "GetById()",
@@ -380,10 +528,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L49",
       "_origin": "ast",
-      "community": 8,
+      "community": 10,
       "norm_label": "getbyid()",
-      "id": "src_core_app_core_contracts_iquoterepository_getbyid",
-      "community_name": "IQuoteRepository"
+      "community_name": "TMemoryHistoryRepository",
+      "id": "src_core_app_core_contracts_iquoterepository_getbyid"
     },
     {
       "label": "Add()",
@@ -391,10 +539,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L50",
       "_origin": "ast",
-      "community": 8,
+      "community": 10,
       "norm_label": "add()",
-      "id": "src_core_app_core_contracts_iquoterepository_add",
-      "community_name": "IQuoteRepository"
+      "community_name": "TMemoryHistoryRepository",
+      "id": "src_core_app_core_contracts_iquoterepository_add"
     },
     {
       "label": "Update()",
@@ -402,10 +550,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L51",
       "_origin": "ast",
-      "community": 8,
+      "community": 10,
       "norm_label": "update()",
-      "id": "src_core_app_core_contracts_iquoterepository_update",
-      "community_name": "IQuoteRepository"
+      "community_name": "TMemoryHistoryRepository",
+      "id": "src_core_app_core_contracts_iquoterepository_update"
     },
     {
       "label": "Delete()",
@@ -413,10 +561,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L52",
       "_origin": "ast",
-      "community": 8,
+      "community": 10,
       "norm_label": "delete()",
-      "id": "src_core_app_core_contracts_iquoterepository_delete",
-      "community_name": "IQuoteRepository"
+      "community_name": "TMemoryHistoryRepository",
+      "id": "src_core_app_core_contracts_iquoterepository_delete"
     },
     {
       "label": "IShipmentRepository",
@@ -424,10 +572,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L56",
       "_origin": "ast",
-      "community": 1,
+      "community": 2,
       "norm_label": "ishipmentrepository",
-      "id": "src_core_app_core_contracts_ishipmentrepository",
-      "community_name": "App.Core.Contracts"
+      "community_name": "App.Core.Contracts",
+      "id": "src_core_app_core_contracts_ishipmentrepository"
     },
     {
       "label": "GetAll()",
@@ -435,10 +583,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L58",
       "_origin": "ast",
-      "community": 1,
+      "community": 2,
       "norm_label": "getall()",
-      "id": "src_core_app_core_contracts_ishipmentrepository_getall",
-      "community_name": "App.Core.Contracts"
+      "community_name": "App.Core.Contracts",
+      "id": "src_core_app_core_contracts_ishipmentrepository_getall"
     },
     {
       "label": "GetById()",
@@ -446,10 +594,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L59",
       "_origin": "ast",
-      "community": 1,
+      "community": 2,
       "norm_label": "getbyid()",
-      "id": "src_core_app_core_contracts_ishipmentrepository_getbyid",
-      "community_name": "App.Core.Contracts"
+      "community_name": "App.Core.Contracts",
+      "id": "src_core_app_core_contracts_ishipmentrepository_getbyid"
     },
     {
       "label": "Add()",
@@ -457,10 +605,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L60",
       "_origin": "ast",
-      "community": 1,
+      "community": 2,
       "norm_label": "add()",
-      "id": "src_core_app_core_contracts_ishipmentrepository_add",
-      "community_name": "App.Core.Contracts"
+      "community_name": "App.Core.Contracts",
+      "id": "src_core_app_core_contracts_ishipmentrepository_add"
     },
     {
       "label": "Delete()",
@@ -468,10 +616,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L61",
       "_origin": "ast",
-      "community": 1,
+      "community": 2,
       "norm_label": "delete()",
-      "id": "src_core_app_core_contracts_ishipmentrepository_delete",
-      "community_name": "App.Core.Contracts"
+      "community_name": "App.Core.Contracts",
+      "id": "src_core_app_core_contracts_ishipmentrepository_delete"
     },
     {
       "label": "IHistoryRepository",
@@ -479,10 +627,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L65",
       "_origin": "ast",
-      "community": 1,
+      "community": 2,
       "norm_label": "ihistoryrepository",
-      "id": "src_core_app_core_contracts_ihistoryrepository",
-      "community_name": "App.Core.Contracts"
+      "community_name": "App.Core.Contracts",
+      "id": "src_core_app_core_contracts_ihistoryrepository"
     },
     {
       "label": "Query()",
@@ -490,10 +638,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L67",
       "_origin": "ast",
-      "community": 1,
+      "community": 2,
       "norm_label": "query()",
-      "id": "src_core_app_core_contracts_ihistoryrepository_query",
-      "community_name": "App.Core.Contracts"
+      "community_name": "App.Core.Contracts",
+      "id": "src_core_app_core_contracts_ihistoryrepository_query"
     },
     {
       "label": "IDataContext",
@@ -501,10 +649,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L71",
       "_origin": "ast",
-      "community": 1,
+      "community": 6,
       "norm_label": "idatacontext",
-      "id": "src_core_app_core_contracts_idatacontext",
-      "community_name": "App.Core.Contracts"
+      "community_name": "IPartnerRepository",
+      "id": "src_core_app_core_contracts_idatacontext"
     },
     {
       "label": "Items()",
@@ -512,10 +660,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L73",
       "_origin": "ast",
-      "community": 1,
+      "community": 6,
       "norm_label": "items()",
-      "id": "src_core_app_core_contracts_idatacontext_items",
-      "community_name": "App.Core.Contracts"
+      "community_name": "IPartnerRepository",
+      "id": "src_core_app_core_contracts_idatacontext_items"
     },
     {
       "label": "Partners()",
@@ -523,10 +671,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L74",
       "_origin": "ast",
-      "community": 1,
+      "community": 6,
       "norm_label": "partners()",
-      "id": "src_core_app_core_contracts_idatacontext_partners",
-      "community_name": "App.Core.Contracts"
+      "community_name": "IPartnerRepository",
+      "id": "src_core_app_core_contracts_idatacontext_partners"
     },
     {
       "label": "Inventory()",
@@ -534,10 +682,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L75",
       "_origin": "ast",
-      "community": 1,
+      "community": 6,
       "norm_label": "inventory()",
-      "id": "src_core_app_core_contracts_idatacontext_inventory",
-      "community_name": "App.Core.Contracts"
+      "community_name": "IPartnerRepository",
+      "id": "src_core_app_core_contracts_idatacontext_inventory"
     },
     {
       "label": "Quotes()",
@@ -545,10 +693,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L76",
       "_origin": "ast",
-      "community": 1,
+      "community": 6,
       "norm_label": "quotes()",
-      "id": "src_core_app_core_contracts_idatacontext_quotes",
-      "community_name": "App.Core.Contracts"
+      "community_name": "IPartnerRepository",
+      "id": "src_core_app_core_contracts_idatacontext_quotes"
     },
     {
       "label": "Shipments()",
@@ -556,10 +704,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L77",
       "_origin": "ast",
-      "community": 1,
+      "community": 6,
       "norm_label": "shipments()",
-      "id": "src_core_app_core_contracts_idatacontext_shipments",
-      "community_name": "App.Core.Contracts"
+      "community_name": "IPartnerRepository",
+      "id": "src_core_app_core_contracts_idatacontext_shipments"
     },
     {
       "label": "History()",
@@ -567,10 +715,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L78",
       "_origin": "ast",
-      "community": 1,
+      "community": 6,
       "norm_label": "history()",
-      "id": "src_core_app_core_contracts_idatacontext_history",
-      "community_name": "App.Core.Contracts"
+      "community_name": "IPartnerRepository",
+      "id": "src_core_app_core_contracts_idatacontext_history"
     },
     {
       "label": "ProviderName()",
@@ -578,10 +726,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L79",
       "_origin": "ast",
-      "community": 1,
+      "community": 6,
       "norm_label": "providername()",
-      "id": "src_core_app_core_contracts_idatacontext_providername",
-      "community_name": "App.Core.Contracts"
+      "community_name": "IPartnerRepository",
+      "id": "src_core_app_core_contracts_idatacontext_providername"
     },
     {
       "label": "App.Core.Entities.pas",
@@ -589,10 +737,10 @@
       "source_file": "src/core/App.Core.Entities.pas",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "norm_label": "app.core.entities.pas",
-      "id": "src_core_app_core_entities",
-      "community_name": "ERP"
+      "community_name": "[\ubaa8\ub4c8\uba85] \uc720\uc9c0\ubcf4\uc218 \ubb38\uc11c",
+      "id": "src_core_app_core_entities"
     },
     {
       "label": "App.Core.Entities",
@@ -600,10 +748,10 @@
       "source_file": "src/core/App.Core.Entities.pas",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "norm_label": "app.core.entities",
-      "id": "src_core_app_core_entities_app_core_entities",
-      "community_name": "ERP"
+      "community_name": "[\ubaa8\ub4c8\uba85] \uc720\uc9c0\ubcf4\uc218 \ubb38\uc11c",
+      "id": "src_core_app_core_entities_app_core_entities"
     },
     {
       "label": "App.Core.ProviderFactory.pas",
@@ -611,10 +759,10 @@
       "source_file": "src/core/App.Core.ProviderFactory.pas",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "norm_label": "app.core.providerfactory.pas",
-      "id": "src_core_app_core_providerfactory",
-      "community_name": "ERP"
+      "community_name": "[\ubaa8\ub4c8\uba85] \uc720\uc9c0\ubcf4\uc218 \ubb38\uc11c",
+      "id": "src_core_app_core_providerfactory"
     },
     {
       "label": "App.Core.ProviderFactory",
@@ -622,10 +770,10 @@
       "source_file": "src/core/App.Core.ProviderFactory.pas",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "norm_label": "app.core.providerfactory",
-      "id": "src_core_app_core_providerfactory_app_core_providerfactory",
-      "community_name": "ERP"
+      "community_name": "[\ubaa8\ub4c8\uba85] \uc720\uc9c0\ubcf4\uc218 \ubb38\uc11c",
+      "id": "src_core_app_core_providerfactory_app_core_providerfactory"
     },
     {
       "label": "LoadConfig()",
@@ -633,10 +781,10 @@
       "source_file": "src/core/App.Core.ProviderFactory.pas",
       "source_location": "L31",
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "norm_label": "loadconfig()",
-      "id": "src_core_app_core_providerfactory_loadconfig",
-      "community_name": "ERP"
+      "community_name": "[\ubaa8\ub4c8\uba85] \uc720\uc9c0\ubcf4\uc218 \ubb38\uc11c",
+      "id": "src_core_app_core_providerfactory_loadconfig"
     },
     {
       "label": "CreateDataContext()",
@@ -644,10 +792,10 @@
       "source_file": "src/core/App.Core.ProviderFactory.pas",
       "source_location": "L45",
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "norm_label": "createdatacontext()",
-      "id": "src_core_app_core_providerfactory_createdatacontext",
-      "community_name": "ERP"
+      "community_name": "[\ubaa8\ub4c8\uba85] \uc720\uc9c0\ubcf4\uc218 \ubb38\uc11c",
+      "id": "src_core_app_core_providerfactory_createdatacontext"
     },
     {
       "label": "App.Data.Memory.pas",
@@ -655,10 +803,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 2,
+      "community": 0,
       "norm_label": "app.data.memory.pas",
-      "id": "src_data_app_data_memory",
-      "community_name": "App.Data.Memory"
+      "community_name": "App.Data.Memory",
+      "id": "src_data_app_data_memory"
     },
     {
       "label": "App.Data.Memory",
@@ -666,10 +814,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 2,
+      "community": 0,
       "norm_label": "app.data.memory",
-      "id": "src_data_app_data_memory_app_data_memory",
-      "community_name": "App.Data.Memory"
+      "community_name": "App.Data.Memory",
+      "id": "src_data_app_data_memory_app_data_memory"
     },
     {
       "label": "TMemoryItemRepository",
@@ -677,10 +825,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L15",
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "norm_label": "tmemoryitemrepository",
-      "id": "src_data_app_data_memory_tmemoryitemrepository",
-      "community_name": "IndexOf"
+      "community_name": "IndexOf",
+      "id": "src_data_app_data_memory_tmemoryitemrepository"
     },
     {
       "label": "TInterfacedObject",
@@ -688,10 +836,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L15",
       "_origin": "ast",
-      "community": 3,
+      "community": 0,
       "norm_label": "tinterfacedobject",
-      "id": "tinterfacedobject",
-      "community_name": "TMemoryShipmentRepository"
+      "community_name": "App.Data.Memory",
+      "id": "tinterfacedobject"
     },
     {
       "label": "IItemRepository",
@@ -699,10 +847,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L15",
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "norm_label": "iitemrepository",
-      "id": "iitemrepository",
-      "community_name": "IndexOf"
+      "community_name": "IndexOf",
+      "id": "iitemrepository"
     },
     {
       "label": "IndexOf()",
@@ -710,10 +858,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L19",
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "norm_label": "indexof()",
-      "id": "src_data_app_data_memory_tmemoryitemrepository_indexof",
-      "community_name": "IndexOf"
+      "community_name": "IndexOf",
+      "id": "src_data_app_data_memory_tmemoryitemrepository_indexof"
     },
     {
       "label": "GetAll()",
@@ -721,10 +869,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L21",
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "norm_label": "getall()",
-      "id": "src_data_app_data_memory_tmemoryitemrepository_getall",
-      "community_name": "IndexOf"
+      "community_name": "IndexOf",
+      "id": "src_data_app_data_memory_tmemoryitemrepository_getall"
     },
     {
       "label": "GetById()",
@@ -732,10 +880,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L22",
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "norm_label": "getbyid()",
-      "id": "src_data_app_data_memory_tmemoryitemrepository_getbyid",
-      "community_name": "IndexOf"
+      "community_name": "IndexOf",
+      "id": "src_data_app_data_memory_tmemoryitemrepository_getbyid"
     },
     {
       "label": "Add()",
@@ -743,10 +891,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L23",
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "norm_label": "add()",
-      "id": "src_data_app_data_memory_tmemoryitemrepository_add",
-      "community_name": "IndexOf"
+      "community_name": "IndexOf",
+      "id": "src_data_app_data_memory_tmemoryitemrepository_add"
     },
     {
       "label": "Update()",
@@ -754,10 +902,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L24",
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "norm_label": "update()",
-      "id": "src_data_app_data_memory_tmemoryitemrepository_update",
-      "community_name": "IndexOf"
+      "community_name": "IndexOf",
+      "id": "src_data_app_data_memory_tmemoryitemrepository_update"
     },
     {
       "label": "Delete()",
@@ -765,10 +913,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L25",
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "norm_label": "delete()",
-      "id": "src_data_app_data_memory_tmemoryitemrepository_delete",
-      "community_name": "IndexOf"
+      "community_name": "IndexOf",
+      "id": "src_data_app_data_memory_tmemoryitemrepository_delete"
     },
     {
       "label": "TMemoryPartnerRepository",
@@ -776,10 +924,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L28",
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "norm_label": "tmemorypartnerrepository",
-      "id": "src_data_app_data_memory_tmemorypartnerrepository",
-      "community_name": "IndexOf"
+      "community_name": "IndexOf",
+      "id": "src_data_app_data_memory_tmemorypartnerrepository"
     },
     {
       "label": "IPartnerRepository",
@@ -787,10 +935,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L28",
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "norm_label": "ipartnerrepository",
-      "id": "ipartnerrepository",
-      "community_name": "IndexOf"
+      "community_name": "IndexOf",
+      "id": "ipartnerrepository"
     },
     {
       "label": "IndexOf()",
@@ -798,10 +946,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L32",
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "norm_label": "indexof()",
-      "id": "src_data_app_data_memory_tmemorypartnerrepository_indexof",
-      "community_name": "IndexOf"
+      "community_name": "IndexOf",
+      "id": "src_data_app_data_memory_tmemorypartnerrepository_indexof"
     },
     {
       "label": "GetAll()",
@@ -809,10 +957,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L34",
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "norm_label": "getall()",
-      "id": "src_data_app_data_memory_tmemorypartnerrepository_getall",
-      "community_name": "IndexOf"
+      "community_name": "IndexOf",
+      "id": "src_data_app_data_memory_tmemorypartnerrepository_getall"
     },
     {
       "label": "GetByKind()",
@@ -820,10 +968,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L35",
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "norm_label": "getbykind()",
-      "id": "src_data_app_data_memory_tmemorypartnerrepository_getbykind",
-      "community_name": "IndexOf"
+      "community_name": "IndexOf",
+      "id": "src_data_app_data_memory_tmemorypartnerrepository_getbykind"
     },
     {
       "label": "GetById()",
@@ -831,10 +979,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L36",
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "norm_label": "getbyid()",
-      "id": "src_data_app_data_memory_tmemorypartnerrepository_getbyid",
-      "community_name": "IndexOf"
+      "community_name": "IndexOf",
+      "id": "src_data_app_data_memory_tmemorypartnerrepository_getbyid"
     },
     {
       "label": "Add()",
@@ -842,10 +990,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L37",
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "norm_label": "add()",
-      "id": "src_data_app_data_memory_tmemorypartnerrepository_add",
-      "community_name": "IndexOf"
+      "community_name": "IndexOf",
+      "id": "src_data_app_data_memory_tmemorypartnerrepository_add"
     },
     {
       "label": "Update()",
@@ -853,10 +1001,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L38",
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "norm_label": "update()",
-      "id": "src_data_app_data_memory_tmemorypartnerrepository_update",
-      "community_name": "IndexOf"
+      "community_name": "IndexOf",
+      "id": "src_data_app_data_memory_tmemorypartnerrepository_update"
     },
     {
       "label": "Delete()",
@@ -864,10 +1012,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L39",
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "norm_label": "delete()",
-      "id": "src_data_app_data_memory_tmemorypartnerrepository_delete",
-      "community_name": "IndexOf"
+      "community_name": "IndexOf",
+      "id": "src_data_app_data_memory_tmemorypartnerrepository_delete"
     },
     {
       "label": "TMemoryInventoryRepository",
@@ -875,10 +1023,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L42",
       "_origin": "ast",
-      "community": 3,
+      "community": 0,
       "norm_label": "tmemoryinventoryrepository",
-      "id": "src_data_app_data_memory_tmemoryinventoryrepository",
-      "community_name": "TMemoryShipmentRepository"
+      "community_name": "App.Data.Memory",
+      "id": "src_data_app_data_memory_tmemoryinventoryrepository"
     },
     {
       "label": "IInventoryRepository",
@@ -886,10 +1034,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L42",
       "_origin": "ast",
-      "community": 3,
+      "community": 0,
       "norm_label": "iinventoryrepository",
-      "id": "iinventoryrepository",
-      "community_name": "TMemoryShipmentRepository"
+      "community_name": "App.Data.Memory",
+      "id": "iinventoryrepository"
     },
     {
       "label": "GetStock()",
@@ -897,10 +1045,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L47",
       "_origin": "ast",
-      "community": 3,
+      "community": 0,
       "norm_label": "getstock()",
-      "id": "src_data_app_data_memory_tmemoryinventoryrepository_getstock",
-      "community_name": "TMemoryShipmentRepository"
+      "community_name": "App.Data.Memory",
+      "id": "src_data_app_data_memory_tmemoryinventoryrepository_getstock"
     },
     {
       "label": "Move()",
@@ -908,10 +1056,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L48",
       "_origin": "ast",
-      "community": 2,
+      "community": 0,
       "norm_label": "move()",
-      "id": "src_data_app_data_memory_tmemoryinventoryrepository_move",
-      "community_name": "App.Data.Memory"
+      "community_name": "App.Data.Memory",
+      "id": "src_data_app_data_memory_tmemoryinventoryrepository_move"
     },
     {
       "label": "GetMoves()",
@@ -919,10 +1067,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L50",
       "_origin": "ast",
-      "community": 3,
+      "community": 0,
       "norm_label": "getmoves()",
-      "id": "src_data_app_data_memory_tmemoryinventoryrepository_getmoves",
-      "community_name": "TMemoryShipmentRepository"
+      "community_name": "App.Data.Memory",
+      "id": "src_data_app_data_memory_tmemoryinventoryrepository_getmoves"
     },
     {
       "label": "TMemoryQuoteRepository",
@@ -930,10 +1078,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L53",
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "norm_label": "tmemoryquoterepository",
-      "id": "src_data_app_data_memory_tmemoryquoterepository",
-      "community_name": "IndexOf"
+      "community_name": "IndexOf",
+      "id": "src_data_app_data_memory_tmemoryquoterepository"
     },
     {
       "label": "IQuoteRepository",
@@ -941,10 +1089,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L53",
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "norm_label": "iquoterepository",
-      "id": "iquoterepository",
-      "community_name": "IndexOf"
+      "community_name": "IndexOf",
+      "id": "iquoterepository"
     },
     {
       "label": "IndexOf()",
@@ -952,10 +1100,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L57",
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "norm_label": "indexof()",
-      "id": "src_data_app_data_memory_tmemoryquoterepository_indexof",
-      "community_name": "IndexOf"
+      "community_name": "IndexOf",
+      "id": "src_data_app_data_memory_tmemoryquoterepository_indexof"
     },
     {
       "label": "GetAll()",
@@ -963,10 +1111,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L59",
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "norm_label": "getall()",
-      "id": "src_data_app_data_memory_tmemoryquoterepository_getall",
-      "community_name": "IndexOf"
+      "community_name": "IndexOf",
+      "id": "src_data_app_data_memory_tmemoryquoterepository_getall"
     },
     {
       "label": "GetById()",
@@ -974,10 +1122,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L60",
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "norm_label": "getbyid()",
-      "id": "src_data_app_data_memory_tmemoryquoterepository_getbyid",
-      "community_name": "IndexOf"
+      "community_name": "IndexOf",
+      "id": "src_data_app_data_memory_tmemoryquoterepository_getbyid"
     },
     {
       "label": "Add()",
@@ -985,10 +1133,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L61",
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "norm_label": "add()",
-      "id": "src_data_app_data_memory_tmemoryquoterepository_add",
-      "community_name": "IndexOf"
+      "community_name": "IndexOf",
+      "id": "src_data_app_data_memory_tmemoryquoterepository_add"
     },
     {
       "label": "Update()",
@@ -996,10 +1144,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L62",
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "norm_label": "update()",
-      "id": "src_data_app_data_memory_tmemoryquoterepository_update",
-      "community_name": "IndexOf"
+      "community_name": "IndexOf",
+      "id": "src_data_app_data_memory_tmemoryquoterepository_update"
     },
     {
       "label": "Delete()",
@@ -1007,10 +1155,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L63",
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "norm_label": "delete()",
-      "id": "src_data_app_data_memory_tmemoryquoterepository_delete",
-      "community_name": "IndexOf"
+      "community_name": "IndexOf",
+      "id": "src_data_app_data_memory_tmemoryquoterepository_delete"
     },
     {
       "label": "TMemoryShipmentRepository",
@@ -1018,10 +1166,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L66",
       "_origin": "ast",
-      "community": 3,
+      "community": 0,
       "norm_label": "tmemoryshipmentrepository",
-      "id": "src_data_app_data_memory_tmemoryshipmentrepository",
-      "community_name": "TMemoryShipmentRepository"
+      "community_name": "App.Data.Memory",
+      "id": "src_data_app_data_memory_tmemoryshipmentrepository"
     },
     {
       "label": "IShipmentRepository",
@@ -1029,10 +1177,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L66",
       "_origin": "ast",
-      "community": 4,
+      "community": 0,
       "norm_label": "ishipmentrepository",
-      "id": "ishipmentrepository",
-      "community_name": "ERP"
+      "community_name": "App.Data.Memory",
+      "id": "ishipmentrepository"
     },
     {
       "label": "IndexOf()",
@@ -1040,10 +1188,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L71",
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "norm_label": "indexof()",
-      "id": "src_data_app_data_memory_tmemoryshipmentrepository_indexof",
-      "community_name": "IndexOf"
+      "community_name": "IndexOf",
+      "id": "src_data_app_data_memory_tmemoryshipmentrepository_indexof"
     },
     {
       "label": "Create()",
@@ -1051,10 +1199,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L73",
       "_origin": "ast",
-      "community": 3,
+      "community": 0,
       "norm_label": "create()",
-      "id": "src_data_app_data_memory_tmemoryshipmentrepository_create",
-      "community_name": "TMemoryShipmentRepository"
+      "community_name": "App.Data.Memory",
+      "id": "src_data_app_data_memory_tmemoryshipmentrepository_create"
     },
     {
       "label": "GetAll()",
@@ -1062,10 +1210,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L74",
       "_origin": "ast",
-      "community": 3,
+      "community": 0,
       "norm_label": "getall()",
-      "id": "src_data_app_data_memory_tmemoryshipmentrepository_getall",
-      "community_name": "TMemoryShipmentRepository"
+      "community_name": "App.Data.Memory",
+      "id": "src_data_app_data_memory_tmemoryshipmentrepository_getall"
     },
     {
       "label": "GetById()",
@@ -1073,10 +1221,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L75",
       "_origin": "ast",
-      "community": 3,
+      "community": 7,
       "norm_label": "getbyid()",
-      "id": "src_data_app_data_memory_tmemoryshipmentrepository_getbyid",
-      "community_name": "TMemoryShipmentRepository"
+      "community_name": "TMainForm",
+      "id": "src_data_app_data_memory_tmemoryshipmentrepository_getbyid"
     },
     {
       "label": "Add()",
@@ -1084,10 +1232,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L76",
       "_origin": "ast",
-      "community": 2,
+      "community": 0,
       "norm_label": "add()",
-      "id": "src_data_app_data_memory_tmemoryshipmentrepository_add",
-      "community_name": "App.Data.Memory"
+      "community_name": "App.Data.Memory",
+      "id": "src_data_app_data_memory_tmemoryshipmentrepository_add"
     },
     {
       "label": "Delete()",
@@ -1095,10 +1243,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L77",
       "_origin": "ast",
-      "community": 3,
+      "community": 0,
       "norm_label": "delete()",
-      "id": "src_data_app_data_memory_tmemoryshipmentrepository_delete",
-      "community_name": "TMemoryShipmentRepository"
+      "community_name": "App.Data.Memory",
+      "id": "src_data_app_data_memory_tmemoryshipmentrepository_delete"
     },
     {
       "label": "TMemoryHistoryRepository",
@@ -1106,10 +1254,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L80",
       "_origin": "ast",
-      "community": 3,
+      "community": 7,
       "norm_label": "tmemoryhistoryrepository",
-      "id": "src_data_app_data_memory_tmemoryhistoryrepository",
-      "community_name": "TMemoryShipmentRepository"
+      "community_name": "TMainForm",
+      "id": "src_data_app_data_memory_tmemoryhistoryrepository"
     },
     {
       "label": "IHistoryRepository",
@@ -1117,10 +1265,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L80",
       "_origin": "ast",
-      "community": 3,
+      "community": 7,
       "norm_label": "ihistoryrepository",
-      "id": "ihistoryrepository",
-      "community_name": "TMemoryShipmentRepository"
+      "community_name": "TMainForm",
+      "id": "ihistoryrepository"
     },
     {
       "label": "ItemName()",
@@ -1128,10 +1276,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L86",
       "_origin": "ast",
-      "community": 3,
+      "community": 7,
       "norm_label": "itemname()",
-      "id": "src_data_app_data_memory_tmemoryhistoryrepository_itemname",
-      "community_name": "TMemoryShipmentRepository"
+      "community_name": "TMainForm",
+      "id": "src_data_app_data_memory_tmemoryhistoryrepository_itemname"
     },
     {
       "label": "PartnerName()",
@@ -1139,10 +1287,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L87",
       "_origin": "ast",
-      "community": 3,
+      "community": 7,
       "norm_label": "partnername()",
-      "id": "src_data_app_data_memory_tmemoryhistoryrepository_partnername",
-      "community_name": "TMemoryShipmentRepository"
+      "community_name": "TMainForm",
+      "id": "src_data_app_data_memory_tmemoryhistoryrepository_partnername"
     },
     {
       "label": "Create()",
@@ -1150,10 +1298,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L89",
       "_origin": "ast",
-      "community": 3,
+      "community": 7,
       "norm_label": "create()",
-      "id": "src_data_app_data_memory_tmemoryhistoryrepository_create",
-      "community_name": "TMemoryShipmentRepository"
+      "community_name": "TMainForm",
+      "id": "src_data_app_data_memory_tmemoryhistoryrepository_create"
     },
     {
       "label": "Query()",
@@ -1161,10 +1309,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L92",
       "_origin": "ast",
-      "community": 3,
+      "community": 7,
       "norm_label": "query()",
-      "id": "src_data_app_data_memory_tmemoryhistoryrepository_query",
-      "community_name": "TMemoryShipmentRepository"
+      "community_name": "TMainForm",
+      "id": "src_data_app_data_memory_tmemoryhistoryrepository_query"
     },
     {
       "label": "TMemoryDataContext",
@@ -1172,10 +1320,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L96",
       "_origin": "ast",
-      "community": 2,
+      "community": 0,
       "norm_label": "tmemorydatacontext",
-      "id": "src_data_app_data_memory_tmemorydatacontext",
-      "community_name": "App.Data.Memory"
+      "community_name": "App.Data.Memory",
+      "id": "src_data_app_data_memory_tmemorydatacontext"
     },
     {
       "label": "IDataContext",
@@ -1183,10 +1331,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L96",
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "idatacontext",
-      "id": "idatacontext",
-      "community_name": "App.Data.Memory"
+      "community_name": "[\ubaa8\ub4c8\uba85] \uc720\uc9c0\ubcf4\uc218 \ubb38\uc11c",
+      "id": "idatacontext"
     },
     {
       "label": "Seed()",
@@ -1194,10 +1342,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L104",
       "_origin": "ast",
-      "community": 2,
+      "community": 0,
       "norm_label": "seed()",
-      "id": "src_data_app_data_memory_tmemorydatacontext_seed",
-      "community_name": "App.Data.Memory"
+      "community_name": "App.Data.Memory",
+      "id": "src_data_app_data_memory_tmemorydatacontext_seed"
     },
     {
       "label": "Create()",
@@ -1205,10 +1353,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L106",
       "_origin": "ast",
-      "community": 2,
+      "community": 0,
       "norm_label": "create()",
-      "id": "src_data_app_data_memory_tmemorydatacontext_create",
-      "community_name": "App.Data.Memory"
+      "community_name": "App.Data.Memory",
+      "id": "src_data_app_data_memory_tmemorydatacontext_create"
     },
     {
       "label": "Items()",
@@ -1216,10 +1364,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L107",
       "_origin": "ast",
-      "community": 2,
+      "community": 0,
       "norm_label": "items()",
-      "id": "src_data_app_data_memory_tmemorydatacontext_items",
-      "community_name": "App.Data.Memory"
+      "community_name": "App.Data.Memory",
+      "id": "src_data_app_data_memory_tmemorydatacontext_items"
     },
     {
       "label": "Partners()",
@@ -1227,10 +1375,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L108",
       "_origin": "ast",
-      "community": 2,
+      "community": 0,
       "norm_label": "partners()",
-      "id": "src_data_app_data_memory_tmemorydatacontext_partners",
-      "community_name": "App.Data.Memory"
+      "community_name": "App.Data.Memory",
+      "id": "src_data_app_data_memory_tmemorydatacontext_partners"
     },
     {
       "label": "Inventory()",
@@ -1238,10 +1386,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L109",
       "_origin": "ast",
-      "community": 2,
+      "community": 0,
       "norm_label": "inventory()",
-      "id": "src_data_app_data_memory_tmemorydatacontext_inventory",
-      "community_name": "App.Data.Memory"
+      "community_name": "App.Data.Memory",
+      "id": "src_data_app_data_memory_tmemorydatacontext_inventory"
     },
     {
       "label": "Quotes()",
@@ -1249,10 +1397,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L110",
       "_origin": "ast",
-      "community": 2,
+      "community": 0,
       "norm_label": "quotes()",
-      "id": "src_data_app_data_memory_tmemorydatacontext_quotes",
-      "community_name": "App.Data.Memory"
+      "community_name": "App.Data.Memory",
+      "id": "src_data_app_data_memory_tmemorydatacontext_quotes"
     },
     {
       "label": "Shipments()",
@@ -1260,10 +1408,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L111",
       "_origin": "ast",
-      "community": 2,
+      "community": 0,
       "norm_label": "shipments()",
-      "id": "src_data_app_data_memory_tmemorydatacontext_shipments",
-      "community_name": "App.Data.Memory"
+      "community_name": "App.Data.Memory",
+      "id": "src_data_app_data_memory_tmemorydatacontext_shipments"
     },
     {
       "label": "History()",
@@ -1271,10 +1419,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L112",
       "_origin": "ast",
-      "community": 2,
+      "community": 0,
       "norm_label": "history()",
-      "id": "src_data_app_data_memory_tmemorydatacontext_history",
-      "community_name": "App.Data.Memory"
+      "community_name": "App.Data.Memory",
+      "id": "src_data_app_data_memory_tmemorydatacontext_history"
     },
     {
       "label": "ProviderName()",
@@ -1282,10 +1430,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L113",
       "_origin": "ast",
-      "community": 2,
+      "community": 0,
       "norm_label": "providername()",
-      "id": "src_data_app_data_memory_tmemorydatacontext_providername",
-      "community_name": "App.Data.Memory"
+      "community_name": "App.Data.Memory",
+      "id": "src_data_app_data_memory_tmemorydatacontext_providername"
     },
     {
       "label": "MakeItem()",
@@ -1293,10 +1441,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L120",
       "_origin": "ast",
-      "community": 2,
+      "community": 0,
       "norm_label": "makeitem()",
-      "id": "src_data_app_data_memory_makeitem",
-      "community_name": "App.Data.Memory"
+      "community_name": "App.Data.Memory",
+      "id": "src_data_app_data_memory_makeitem"
     },
     {
       "label": "MakePartner()",
@@ -1304,10 +1452,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L128",
       "_origin": "ast",
-      "community": 2,
+      "community": 0,
       "norm_label": "makepartner()",
-      "id": "src_data_app_data_memory_makepartner",
-      "community_name": "App.Data.Memory"
+      "community_name": "App.Data.Memory",
+      "id": "src_data_app_data_memory_makepartner"
     },
     {
       "label": "DateOk()",
@@ -1315,148 +1463,584 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L408",
       "_origin": "ast",
-      "community": 2,
+      "community": 0,
       "norm_label": "dateok()",
-      "id": "src_data_app_data_memory_dateok",
-      "community_name": "App.Data.Memory"
+      "community_name": "App.Data.Memory",
+      "id": "src_data_app_data_memory_dateok"
     },
     {
-      "label": "\uac74\ucd95\uc790\uc7ac\uc0c1 ERP (\uc628\ud504\ub808\ubbf8\uc2a4)",
-      "file_type": "document",
-      "source_file": "README.md",
-      "community": 13,
-      "norm_label": "\u1100\u1165\u11ab\u110e\u116e\u11a8\u110c\u1161\u110c\u1162\u1109\u1161\u11bc erp (\u110b\u1169\u11ab\u1111\u1173\u1105\u1166\u1106\u1175\u1109\u1173)",
-      "id": "readme",
-      "community_name": "\uac74\ucd95\uc790\uc7ac\uc0c1 ERP (\uc628\ud504\ub808\ubbf8\uc2a4)"
+      "label": "App.Modules.Item.View.pas",
+      "file_type": "code",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "app.modules.item.view.pas",
+      "community_name": "[\ubaa8\ub4c8\uba85] \uc720\uc9c0\ubcf4\uc218 \ubb38\uc11c",
+      "id": "src_modules_item_app_modules_item_view"
+    },
+    {
+      "label": "App.Modules.Item.View",
+      "file_type": "code",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "app.modules.item.view",
+      "community_name": "[\ubaa8\ub4c8\uba85] \uc720\uc9c0\ubcf4\uc218 \ubb38\uc11c",
+      "id": "src_modules_item_app_modules_item_view_app_modules_item_view"
+    },
+    {
+      "label": "TItemView",
+      "file_type": "code",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L14",
+      "_origin": "ast",
+      "community": 4,
+      "norm_label": "titemview",
+      "community_name": "ERP",
+      "id": "src_modules_item_app_modules_item_view_titemview"
+    },
+    {
+      "label": "TForm",
+      "file_type": "code",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L14",
+      "_origin": "ast",
+      "community": 4,
+      "norm_label": "tform",
+      "community_name": "ERP",
+      "id": "src_modules_item_app_modules_item_view_pas_tform"
+    },
+    {
+      "label": "BuildUI()",
+      "file_type": "code",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L20",
+      "_origin": "ast",
+      "community": 4,
+      "norm_label": "buildui()",
+      "community_name": "ERP",
+      "id": "src_modules_item_app_modules_item_view_titemview_buildui"
+    },
+    {
+      "label": "RefreshGrid()",
+      "file_type": "code",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L21",
+      "_origin": "ast",
+      "community": 4,
+      "norm_label": "refreshgrid()",
+      "community_name": "ERP",
+      "id": "src_modules_item_app_modules_item_view_titemview_refreshgrid"
+    },
+    {
+      "label": "SearchChanged()",
+      "file_type": "code",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L22",
+      "_origin": "ast",
+      "community": 4,
+      "norm_label": "searchchanged()",
+      "community_name": "ERP",
+      "id": "src_modules_item_app_modules_item_view_titemview_searchchanged"
+    },
+    {
+      "label": "NewClick()",
+      "file_type": "code",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L23",
+      "_origin": "ast",
+      "community": 4,
+      "norm_label": "newclick()",
+      "community_name": "ERP",
+      "id": "src_modules_item_app_modules_item_view_titemview_newclick"
+    },
+    {
+      "label": "EditClick()",
+      "file_type": "code",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L24",
+      "_origin": "ast",
+      "community": 4,
+      "norm_label": "editclick()",
+      "community_name": "ERP",
+      "id": "src_modules_item_app_modules_item_view_titemview_editclick"
+    },
+    {
+      "label": "DeleteClick()",
+      "file_type": "code",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L25",
+      "_origin": "ast",
+      "community": 4,
+      "norm_label": "deleteclick()",
+      "community_name": "ERP",
+      "id": "src_modules_item_app_modules_item_view_titemview_deleteclick"
+    },
+    {
+      "label": "GridDblClick()",
+      "file_type": "code",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L26",
+      "_origin": "ast",
+      "community": 4,
+      "norm_label": "griddblclick()",
+      "community_name": "ERP",
+      "id": "src_modules_item_app_modules_item_view_titemview_griddblclick"
+    },
+    {
+      "label": "SelectedItem()",
+      "file_type": "code",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L27",
+      "_origin": "ast",
+      "community": 4,
+      "norm_label": "selecteditem()",
+      "community_name": "ERP",
+      "id": "src_modules_item_app_modules_item_view_titemview_selecteditem"
+    },
+    {
+      "label": "CodeExists()",
+      "file_type": "code",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L28",
+      "_origin": "ast",
+      "community": 4,
+      "norm_label": "codeexists()",
+      "community_name": "ERP",
+      "id": "src_modules_item_app_modules_item_view_titemview_codeexists"
+    },
+    {
+      "label": "EditItem()",
+      "file_type": "code",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L29",
+      "_origin": "ast",
+      "community": 4,
+      "norm_label": "edititem()",
+      "community_name": "ERP",
+      "id": "src_modules_item_app_modules_item_view_titemview_edititem"
+    },
+    {
+      "label": "CreateWithItems()",
+      "file_type": "code",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L31",
+      "_origin": "ast",
+      "community": 4,
+      "norm_label": "createwithitems()",
+      "community_name": "ERP",
+      "id": "src_modules_item_app_modules_item_view_titemview_createwithitems"
+    },
+    {
+      "label": "Execute()",
+      "file_type": "code",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L32",
+      "_origin": "ast",
+      "community": 4,
+      "norm_label": "execute()",
+      "community_name": "ERP",
+      "id": "src_modules_item_app_modules_item_view_titemview_execute"
+    },
+    {
+      "label": "BuildUI()",
+      "file_type": "code",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L47",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "buildui()",
+      "community_name": "[\ubaa8\ub4c8\uba85] \uc720\uc9c0\ubcf4\uc218 \ubb38\uc11c",
+      "id": "src_modules_item_app_modules_item_view_buildui"
+    },
+    {
+      "label": "SaveClick()",
+      "file_type": "code",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L48",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "saveclick()",
+      "community_name": "[\ubaa8\ub4c8\uba85] \uc720\uc9c0\ubcf4\uc218 \ubb38\uc11c",
+      "id": "src_modules_item_app_modules_item_view_saveclick"
+    },
+    {
+      "label": "AddLabel()",
+      "file_type": "code",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L49",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "addlabel()",
+      "community_name": "[\ubaa8\ub4c8\uba85] \uc720\uc9c0\ubcf4\uc218 \ubb38\uc11c",
+      "id": "src_modules_item_app_modules_item_view_addlabel"
+    },
+    {
+      "label": "CreateWithItem()",
+      "file_type": "code",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L51",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "createwithitem()",
+      "community_name": "[\ubaa8\ub4c8\uba85] \uc720\uc9c0\ubcf4\uc218 \ubb38\uc11c",
+      "id": "src_modules_item_app_modules_item_view_createwithitem"
+    },
+    {
+      "label": "FormatPrice()",
+      "file_type": "code",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L56",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "formatprice()",
+      "community_name": "[\ubaa8\ub4c8\uba85] \uc720\uc9c0\ubcf4\uc218 \ubb38\uc11c",
+      "id": "src_modules_item_app_modules_item_view_formatprice"
+    },
+    {
+      "label": "CreateWithItem()",
+      "file_type": "code",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L63",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "createwithitem()",
+      "community_name": "[\ubaa8\ub4c8\uba85] \uc720\uc9c0\ubcf4\uc218 \ubb38\uc11c",
+      "id": "src_modules_item_app_modules_item_view_titemeditform_createwithitem"
+    },
+    {
+      "label": "AddLabel()",
+      "file_type": "code",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L71",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "addlabel()",
+      "community_name": "[\ubaa8\ub4c8\uba85] \uc720\uc9c0\ubcf4\uc218 \ubb38\uc11c",
+      "id": "src_modules_item_app_modules_item_view_titemeditform_addlabel"
+    },
+    {
+      "label": "BuildUI()",
+      "file_type": "code",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L83",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "buildui()",
+      "community_name": "[\ubaa8\ub4c8\uba85] \uc720\uc9c0\ubcf4\uc218 \ubb38\uc11c",
+      "id": "src_modules_item_app_modules_item_view_titemeditform_buildui"
+    },
+    {
+      "label": "SaveClick()",
+      "file_type": "code",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L157",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "saveclick()",
+      "community_name": "[\ubaa8\ub4c8\uba85] \uc720\uc9c0\ubcf4\uc218 \ubb38\uc11c",
+      "id": "src_modules_item_app_modules_item_view_titemeditform_saveclick"
     },
     {
       "label": "Core Layer",
       "file_type": "code",
       "source_file": "src/core",
-      "community": 10,
+      "community": 11,
       "norm_label": "core layer",
-      "id": "src_core",
-      "community_name": "App Shell"
+      "community_name": "module-task.md",
+      "id": "src_core"
     },
     {
       "label": "Modules Layer",
       "file_type": "code",
       "source_file": "src/modules",
-      "community": 10,
+      "community": 11,
       "norm_label": "modules layer",
-      "id": "src_modules",
-      "community_name": "App Shell"
+      "community_name": "module-task.md",
+      "id": "src_modules"
     },
     {
-      "label": "App Shell",
+      "label": "App Shell Layer",
       "file_type": "code",
       "source_file": "src/app",
-      "community": 10,
-      "norm_label": "app shell",
-      "id": "src_app",
-      "community_name": "App Shell"
-    },
-    {
-      "label": "Item Module",
-      "file_type": "code",
-      "source_file": "src/modules/item",
-      "community": 9,
-      "norm_label": "item module",
-      "id": "src_modules_item",
-      "community_name": "Inventory Module"
-    },
-    {
-      "label": "Partner Module",
-      "file_type": "code",
-      "source_file": "src/modules/partner",
-      "community": 9,
-      "norm_label": "partner module",
-      "id": "src_modules_partner",
-      "community_name": "Inventory Module"
-    },
-    {
-      "label": "Inventory Module",
-      "file_type": "code",
-      "source_file": "src/modules/inventory",
-      "community": 9,
-      "norm_label": "inventory module",
-      "id": "src_modules_inventory",
-      "community_name": "Inventory Module"
-    },
-    {
-      "label": "Quote Module",
-      "file_type": "code",
-      "source_file": "src/modules/quote",
-      "community": 9,
-      "norm_label": "quote module",
-      "id": "src_modules_quote",
-      "community_name": "Inventory Module"
-    },
-    {
-      "label": "Shipment Module",
-      "file_type": "code",
-      "source_file": "src/modules/shipment",
-      "community": 9,
-      "norm_label": "shipment module",
-      "id": "src_modules_shipment",
-      "community_name": "Inventory Module"
-    },
-    {
-      "label": "History Module",
-      "file_type": "code",
-      "source_file": "src/modules/history",
-      "community": 9,
-      "norm_label": "history module",
-      "id": "src_modules_history",
-      "community_name": "Inventory Module"
+      "community": 11,
+      "norm_label": "app shell layer",
+      "community_name": "module-task.md",
+      "id": "src_app"
     },
     {
       "label": "IItemRepository",
       "file_type": "code",
       "source_file": "src/core",
-      "community": 11,
+      "community": 4,
       "norm_label": "iitemrepository",
-      "id": "src_core_iitemrepository",
-      "community_name": "IItemRepository"
+      "community_name": "ERP",
+      "id": "src_core_iitemrepository"
     },
     {
       "label": "Memory Provider",
       "file_type": "code",
       "source_file": "src/core",
-      "community": 11,
+      "community": 4,
       "norm_label": "memory provider",
-      "id": "src_core_memory_provider",
-      "community_name": "IItemRepository"
+      "community_name": "ERP",
+      "id": "src_core_memory_provider"
     },
     {
       "label": "Firebird Provider",
       "file_type": "code",
       "source_file": "src/core",
-      "community": 11,
+      "community": 4,
       "norm_label": "firebird provider",
-      "id": "src_core_firebird_provider",
-      "community_name": "IItemRepository"
+      "community_name": "ERP",
+      "id": "src_core_firebird_provider"
     },
     {
-      "label": "App Configuration",
+      "label": "Inventory Module",
+      "file_type": "code",
+      "source_file": "src/modules/inventory",
+      "community": 12,
+      "norm_label": "inventory module",
+      "community_name": "pull_request_template.md",
+      "id": "src_modules_inventory"
+    },
+    {
+      "label": "Quote Module",
+      "file_type": "code",
+      "source_file": "src/modules/quote",
+      "community": 13,
+      "norm_label": "quote module",
+      "community_name": "src",
+      "id": "src_modules_quote"
+    },
+    {
+      "label": "Shipment Module",
+      "file_type": "code",
+      "source_file": "src/modules/shipment",
+      "community": 12,
+      "norm_label": "shipment module",
+      "community_name": "pull_request_template.md",
+      "id": "src_modules_shipment"
+    },
+    {
+      "label": "Partner Module",
+      "file_type": "code",
+      "source_file": "src/modules/partner",
+      "community": 13,
+      "norm_label": "partner module",
+      "community_name": "src",
+      "id": "src_modules_partner"
+    },
+    {
+      "label": "ERP Project Overview",
       "file_type": "document",
-      "source_file": "config/app.ini",
-      "community": 10,
-      "norm_label": "app configuration",
-      "id": "config_app_ini",
-      "community_name": "App Shell"
+      "source_file": "README.md",
+      "community": 15,
+      "norm_label": "erp project overview",
+      "id": "readme",
+      "community_name": "Community 15"
     },
     {
       "label": "Architecture Documentation",
       "file_type": "document",
       "source_file": "docs/maintenance/architecture.md",
-      "community": 12,
+      "community": 14,
       "norm_label": "architecture documentation",
       "id": "docs_maintenance_architecture",
-      "community_name": "Architecture Documentation"
+      "community_name": "\ud488\ubaa9 \uad00\ub9ac \uc720\uc9c0\ubcf4\uc218 \ubb38\uc11c"
+    },
+    {
+      "label": "Pull Request Template",
+      "file_type": "document",
+      "source_file": ".github/pull_request_template.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 9,
+      "norm_label": "pull request template",
+      "id": "github_pull_request_template",
+      "community_name": "IQuoteRepository"
+    },
+    {
+      "label": "Module Task Issue Template",
+      "file_type": "document",
+      "source_file": ".github/ISSUE_TEMPLATE/module-task.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 9,
+      "norm_label": "module task issue template",
+      "id": "github_issue_template_module_task",
+      "community_name": "IQuoteRepository"
+    },
+    {
+      "label": "Maintenance Documentation Index",
+      "file_type": "document",
+      "source_file": "docs/maintenance/README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 9,
+      "norm_label": "maintenance documentation index",
+      "id": "docs_maintenance_readme",
+      "community_name": "IQuoteRepository"
+    },
+    {
+      "label": "Module Maintenance Template",
+      "file_type": "document",
+      "source_file": "docs/maintenance/_template.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 9,
+      "norm_label": "module maintenance template",
+      "id": "docs_maintenance_template",
+      "community_name": "IQuoteRepository"
+    },
+    {
+      "label": "Source Tree Overview",
+      "file_type": "document",
+      "source_file": "src/README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 11,
+      "norm_label": "source tree overview",
+      "id": "src_readme",
+      "community_name": "module-task.md"
+    },
+    {
+      "label": "Memory Mode",
+      "file_type": "concept",
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 9,
+      "norm_label": "memory mode",
+      "id": "concept_memory_mode",
+      "community_name": "IQuoteRepository"
+    },
+    {
+      "label": "Core Interface Compliance",
+      "file_type": "concept",
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 9,
+      "norm_label": "core interface compliance",
+      "id": "concept_core_interface_rule",
+      "community_name": "IQuoteRepository"
     }
   ],
   "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/maintenance/item.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_maintenance_item",
+      "target": "docs_maintenance_item_\ud488\ubaa9_\uad00\ub9ac_\uc720\uc9c0\ubcf4\uc218_\ubb38\uc11c"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/maintenance/item.md",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_maintenance_item_\ud488\ubaa9_\uad00\ub9ac_\uc720\uc9c0\ubcf4\uc218_\ubb38\uc11c",
+      "target": "docs_maintenance_item_1_\uad6c\ud604\ud55c_\uae30\ub2a5"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/maintenance/item.md",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_maintenance_item_\ud488\ubaa9_\uad00\ub9ac_\uc720\uc9c0\ubcf4\uc218_\ubb38\uc11c",
+      "target": "docs_maintenance_item_2_\uc0dd\uc131_\uc218\uc815\ud55c_\ud30c\uc77c"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/maintenance/item.md",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_maintenance_item_\ud488\ubaa9_\uad00\ub9ac_\uc720\uc9c0\ubcf4\uc218_\ubb38\uc11c",
+      "target": "docs_maintenance_item_3_\uc8fc\uc694_\ud074\ub798\uc2a4\uc640_\uba54\uc11c\ub4dc"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/maintenance/item.md",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_maintenance_item_\ud488\ubaa9_\uad00\ub9ac_\uc720\uc9c0\ubcf4\uc218_\ubb38\uc11c",
+      "target": "docs_maintenance_item_4_\ucf54\ub4dc_\uc2e4\ud589_\ud750\ub984"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/maintenance/item.md",
+      "source_location": "L27",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_maintenance_item_\ud488\ubaa9_\uad00\ub9ac_\uc720\uc9c0\ubcf4\uc218_\ubb38\uc11c",
+      "target": "docs_maintenance_item_5_\ub370\uc774\ud130\uac00_\uc0dd\uc131_\ubcc0\uacbd\ub418\ub294_\uc704\uce58"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/maintenance/item.md",
+      "source_location": "L33",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_maintenance_item_\ud488\ubaa9_\uad00\ub9ac_\uc720\uc9c0\ubcf4\uc218_\ubb38\uc11c",
+      "target": "docs_maintenance_item_6_\uc0ac\uc6a9\ud55c_delphi_object_pascal_\uae30\uc220"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/maintenance/item.md",
+      "source_location": "L38",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_maintenance_item_\ud488\ubaa9_\uad00\ub9ac_\uc720\uc9c0\ubcf4\uc218_\ubb38\uc11c",
+      "target": "docs_maintenance_item_7_\uc774_\ucf54\ub4dc\ub97c_\uc774\ud574\ud558\uae30_\uc704\ud55c_\ud559\uc2b5_\ud56d\ubaa9"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/maintenance/item.md",
+      "source_location": "L44",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_maintenance_item_\ud488\ubaa9_\uad00\ub9ac_\uc720\uc9c0\ubcf4\uc218_\ubb38\uc11c",
+      "target": "docs_maintenance_item_8_\uc218\uc815_\ub610\ub294_\ud655\uc7a5_\uc2dc_\ud655\uc778\ud560_\uc704\uce58"
+    },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
@@ -1511,44 +2095,15 @@
       "target": "src_core_app_core_entities"
     },
     {
-      "relation": "method",
+      "relation": "imports",
       "confidence": "EXTRACTED",
       "source_file": "src/app/App.Main.pas",
-      "source_location": "L38",
+      "source_location": "L12",
       "weight": 1.0,
+      "context": "import",
       "confidence_score": 1.0,
-      "source": "src_app_app_main_tmainform",
-      "target": "src_app_app_main_tmainform_buildui"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/App.Main.pas",
-      "source_location": "L30",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_app_main_tmainform",
-      "target": "src_app_app_main_tmainform_createwithdata"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/App.Main.pas",
-      "source_location": "L96",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_app_main_tmainform",
-      "target": "src_app_app_main_tmainform_fillsummary"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/App.Main.pas",
-      "source_location": "L129",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_app_main_tmainform",
-      "target": "src_app_app_main_tmainform_moduleplaceholderclick"
+      "source": "src_app_app_main_app_main",
+      "target": "src_modules_item_app_modules_item_view"
     },
     {
       "relation": "inherits",
@@ -1558,13 +2113,71 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "src_app_app_main_tmainform",
-      "target": "tform"
+      "target": "src_app_app_main_pas_tform"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/App.Main.pas",
+      "source_location": "L39",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_main_tmainform",
+      "target": "src_app_app_main_tmainform_buildui"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/App.Main.pas",
+      "source_location": "L31",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_main_tmainform",
+      "target": "src_app_app_main_tmainform_createwithdata"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/App.Main.pas",
+      "source_location": "L99",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_main_tmainform",
+      "target": "src_app_app_main_tmainform_fillsummary"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/App.Main.pas",
+      "source_location": "L132",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_main_tmainform",
+      "target": "src_app_app_main_tmainform_itemclick"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/App.Main.pas",
+      "source_location": "L138",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_main_tmainform",
+      "target": "src_app_app_main_tmainform_moduleplaceholderclick"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/maintenance/item.md",
+      "source": "src_app_app_main_tmainform",
+      "target": "src_modules_item_app_modules_item_view_titemview"
     },
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "src/app/App.Main.pas",
-      "source_location": "L77",
+      "source_location": "L81",
       "weight": 1.0,
       "context": "call",
       "confidence_score": 1.0,
@@ -1575,7 +2188,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "src/app/App.Main.pas",
-      "source_location": "L33",
+      "source_location": "L34",
       "weight": 1.0,
       "context": "call",
       "confidence_score": 1.0,
@@ -1586,11 +2199,22 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "src/app/App.Main.pas",
-      "source_location": "L34",
+      "source_location": "L35",
       "weight": 1.0,
       "context": "call",
       "confidence_score": 1.0,
       "source": "src_app_app_main_tmainform_createwithdata",
+      "target": "src_app_app_main_tmainform_fillsummary"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/App.Main.pas",
+      "source_location": "L134",
+      "weight": 1.0,
+      "context": "call",
+      "confidence_score": 1.0,
+      "source": "src_app_app_main_tmainform_itemclick",
       "target": "src_app_app_main_tmainform_fillsummary"
     },
     {
@@ -1612,7 +2236,7 @@
       "context": "import",
       "confidence_score": 1.0,
       "source": "src_app_erp_erp",
-      "target": "ishipmentrepository"
+      "target": "idatacontext"
     },
     {
       "relation": "imports",
@@ -1666,6 +2290,17 @@
       "context": "import",
       "confidence_score": 1.0,
       "source": "src_data_app_data_memory_app_data_memory",
+      "target": "src_core_app_core_contracts"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import",
+      "confidence_score": 1.0,
+      "source": "src_modules_item_app_modules_item_view_app_modules_item_view",
       "target": "src_core_app_core_contracts"
     },
     {
@@ -2081,6 +2716,17 @@
       "target": "src_core_app_core_entities"
     },
     {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import",
+      "confidence_score": 1.0,
+      "source": "src_modules_item_app_modules_item_view_app_modules_item_view",
+      "target": "src_core_app_core_entities"
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/core/App.Core.ProviderFactory.pas",
@@ -2099,7 +2745,7 @@
       "context": "import",
       "confidence_score": 1.0,
       "source": "src_core_app_core_providerfactory_app_core_providerfactory",
-      "target": "ishipmentrepository"
+      "target": "idatacontext"
     },
     {
       "relation": "contains",
@@ -2991,18 +3637,523 @@
       "target": "src_data_app_data_memory_makepartner"
     },
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_modules_item_app_modules_item_view",
+      "target": "src_modules_item_app_modules_item_view_app_modules_item_view"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L49",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_modules_item_app_modules_item_view_app_modules_item_view",
+      "target": "src_modules_item_app_modules_item_view_addlabel"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L47",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_modules_item_app_modules_item_view_app_modules_item_view",
+      "target": "src_modules_item_app_modules_item_view_buildui"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L51",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_modules_item_app_modules_item_view_app_modules_item_view",
+      "target": "src_modules_item_app_modules_item_view_createwithitem"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L56",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_modules_item_app_modules_item_view_app_modules_item_view",
+      "target": "src_modules_item_app_modules_item_view_formatprice"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L48",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_modules_item_app_modules_item_view_app_modules_item_view",
+      "target": "src_modules_item_app_modules_item_view_saveclick"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L71",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_modules_item_app_modules_item_view_app_modules_item_view",
+      "target": "src_modules_item_app_modules_item_view_titemeditform_addlabel"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L83",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_modules_item_app_modules_item_view_app_modules_item_view",
+      "target": "src_modules_item_app_modules_item_view_titemeditform_buildui"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L63",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_modules_item_app_modules_item_view_app_modules_item_view",
+      "target": "src_modules_item_app_modules_item_view_titemeditform_createwithitem"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L157",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_modules_item_app_modules_item_view_app_modules_item_view",
+      "target": "src_modules_item_app_modules_item_view_titemeditform_saveclick"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_modules_item_app_modules_item_view_app_modules_item_view",
+      "target": "src_modules_item_app_modules_item_view_titemview"
+    },
+    {
       "relation": "calls",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "docs/maintenance/architecture.md",
-      "source": "src_app",
-      "target": "src_core"
+      "source_file": "docs/maintenance/item.md",
+      "source": "src_modules_item_app_modules_item_view_titemview",
+      "target": "src_core_iitemrepository"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_modules_item_app_modules_item_view_titemview",
+      "target": "src_modules_item_app_modules_item_view_pas_tform"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L237",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_modules_item_app_modules_item_view_titemview",
+      "target": "src_modules_item_app_modules_item_view_titemview_buildui"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L394",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_modules_item_app_modules_item_view_titemview",
+      "target": "src_modules_item_app_modules_item_view_titemview_codeexists"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L209",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_modules_item_app_modules_item_view_titemview",
+      "target": "src_modules_item_app_modules_item_view_titemview_createwithitems"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L454",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_modules_item_app_modules_item_view_titemview",
+      "target": "src_modules_item_app_modules_item_view_titemview_deleteclick"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L444",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_modules_item_app_modules_item_view_titemview",
+      "target": "src_modules_item_app_modules_item_view_titemview_editclick"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L407",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_modules_item_app_modules_item_view_titemview",
+      "target": "src_modules_item_app_modules_item_view_titemview_edititem"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L218",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_modules_item_app_modules_item_view_titemview",
+      "target": "src_modules_item_app_modules_item_view_titemview_execute"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L465",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_modules_item_app_modules_item_view_titemview",
+      "target": "src_modules_item_app_modules_item_view_titemview_griddblclick"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L433",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_modules_item_app_modules_item_view_titemview",
+      "target": "src_modules_item_app_modules_item_view_titemview_newclick"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L328",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_modules_item_app_modules_item_view_titemview",
+      "target": "src_modules_item_app_modules_item_view_titemview_refreshgrid"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L372",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_modules_item_app_modules_item_view_titemview",
+      "target": "src_modules_item_app_modules_item_view_titemview_searchchanged"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L377",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_modules_item_app_modules_item_view_titemview",
+      "target": "src_modules_item_app_modules_item_view_titemview_selecteditem"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L290",
+      "weight": 1.0,
+      "context": "call",
+      "confidence_score": 1.0,
+      "source": "src_modules_item_app_modules_item_view_titemview_buildui",
+      "target": "src_modules_item_app_modules_item_view_titemview_deleteclick"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L282",
+      "weight": 1.0,
+      "context": "call",
+      "confidence_score": 1.0,
+      "source": "src_modules_item_app_modules_item_view_titemview_buildui",
+      "target": "src_modules_item_app_modules_item_view_titemview_editclick"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L308",
+      "weight": 1.0,
+      "context": "call",
+      "confidence_score": 1.0,
+      "source": "src_modules_item_app_modules_item_view_titemview_buildui",
+      "target": "src_modules_item_app_modules_item_view_titemview_griddblclick"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L274",
+      "weight": 1.0,
+      "context": "call",
+      "confidence_score": 1.0,
+      "source": "src_modules_item_app_modules_item_view_titemview_buildui",
+      "target": "src_modules_item_app_modules_item_view_titemview_newclick"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L260",
+      "weight": 1.0,
+      "context": "call",
+      "confidence_score": 1.0,
+      "source": "src_modules_item_app_modules_item_view_titemview_buildui",
+      "target": "src_modules_item_app_modules_item_view_titemview_searchchanged"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L213",
+      "weight": 1.0,
+      "context": "call",
+      "confidence_score": 1.0,
+      "source": "src_modules_item_app_modules_item_view_titemview_createwithitems",
+      "target": "src_modules_item_app_modules_item_view_titemview_refreshgrid"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L459",
+      "weight": 1.0,
+      "context": "call",
+      "confidence_score": 1.0,
+      "source": "src_modules_item_app_modules_item_view_titemview_deleteclick",
+      "target": "src_modules_item_app_modules_item_view_titemview_refreshgrid"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L448",
+      "weight": 1.0,
+      "context": "call",
+      "confidence_score": 1.0,
+      "source": "src_modules_item_app_modules_item_view_titemview_editclick",
+      "target": "src_modules_item_app_modules_item_view_titemview_refreshgrid"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L438",
+      "weight": 1.0,
+      "context": "call",
+      "confidence_score": 1.0,
+      "source": "src_modules_item_app_modules_item_view_titemview_newclick",
+      "target": "src_modules_item_app_modules_item_view_titemview_refreshgrid"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L359",
+      "weight": 1.0,
+      "context": "call",
+      "confidence_score": 1.0,
+      "source": "src_modules_item_app_modules_item_view_titemview_refreshgrid",
+      "target": "src_modules_item_app_modules_item_view_formatprice"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L373",
+      "weight": 1.0,
+      "context": "call",
+      "confidence_score": 1.0,
+      "source": "src_modules_item_app_modules_item_view_titemview_searchchanged",
+      "target": "src_modules_item_app_modules_item_view_titemview_refreshgrid"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L436",
+      "weight": 1.0,
+      "context": "call",
+      "confidence_score": 1.0,
+      "source": "src_modules_item_app_modules_item_view_titemview_newclick",
+      "target": "src_modules_item_app_modules_item_view_titemview_edititem"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L446",
+      "weight": 1.0,
+      "context": "call",
+      "confidence_score": 1.0,
+      "source": "src_modules_item_app_modules_item_view_titemview_editclick",
+      "target": "src_modules_item_app_modules_item_view_titemview_edititem"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L445",
+      "weight": 1.0,
+      "context": "call",
+      "confidence_score": 1.0,
+      "source": "src_modules_item_app_modules_item_view_titemview_editclick",
+      "target": "src_modules_item_app_modules_item_view_titemview_selecteditem"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L466",
+      "weight": 1.0,
+      "context": "call",
+      "confidence_score": 1.0,
+      "source": "src_modules_item_app_modules_item_view_titemview_griddblclick",
+      "target": "src_modules_item_app_modules_item_view_titemview_editclick"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L455",
+      "weight": 1.0,
+      "context": "call",
+      "confidence_score": 1.0,
+      "source": "src_modules_item_app_modules_item_view_titemview_deleteclick",
+      "target": "src_modules_item_app_modules_item_view_titemview_selecteditem"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L419",
+      "weight": 1.0,
+      "context": "call",
+      "confidence_score": 1.0,
+      "source": "src_modules_item_app_modules_item_view_titemview_edititem",
+      "target": "src_modules_item_app_modules_item_view_titemview_codeexists"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L410",
+      "weight": 1.0,
+      "context": "call",
+      "confidence_score": 1.0,
+      "source": "src_modules_item_app_modules_item_view_titemview_edititem",
+      "target": "src_modules_item_app_modules_item_view_titemeditform_createwithitem"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L212",
+      "weight": 1.0,
+      "context": "call",
+      "confidence_score": 1.0,
+      "source": "src_modules_item_app_modules_item_view_titemview_createwithitems",
+      "target": "src_modules_item_app_modules_item_view_titemeditform_buildui"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L225",
+      "weight": 1.0,
+      "context": "call",
+      "confidence_score": 1.0,
+      "source": "src_modules_item_app_modules_item_view_titemview_execute",
+      "target": "src_modules_item_app_modules_item_view_titemview_createwithitems"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L66",
+      "weight": 1.0,
+      "context": "call",
+      "confidence_score": 1.0,
+      "source": "src_modules_item_app_modules_item_view_titemeditform_createwithitem",
+      "target": "src_modules_item_app_modules_item_view_titemeditform_buildui"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L90",
+      "weight": 1.0,
+      "context": "call",
+      "confidence_score": 1.0,
+      "source": "src_modules_item_app_modules_item_view_titemeditform_buildui",
+      "target": "src_modules_item_app_modules_item_view_titemeditform_addlabel"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/item/App.Modules.Item.View.pas",
+      "source_location": "L143",
+      "weight": 1.0,
+      "context": "call",
+      "confidence_score": 1.0,
+      "source": "src_modules_item_app_modules_item_view_titemeditform_buildui",
+      "target": "src_modules_item_app_modules_item_view_titemeditform_saveclick"
     },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/maintenance/architecture.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "src_app",
+      "target": "src_core"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "src/README.md",
+      "source_location": null,
+      "weight": 1.0,
       "source": "src_modules",
       "target": "src_core"
     },
@@ -3010,49 +4161,31 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "README.md",
-      "source": "src_app",
-      "target": "config_app_ini"
+      "source_file": "src/README.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "src_readme",
+      "target": "src_core"
     },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "docs/maintenance/architecture.md",
-      "source": "src_modules_inventory",
-      "target": "src_modules_item"
+      "source_file": "src/README.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "src_readme",
+      "target": "src_modules"
     },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "docs/maintenance/architecture.md",
-      "source": "src_modules_quote",
-      "target": "src_modules_item"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/maintenance/architecture.md",
-      "source": "src_modules_quote",
-      "target": "src_modules_partner"
-    },
-    {
-      "relation": "calls",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/maintenance/architecture.md",
-      "source": "src_modules_shipment",
-      "target": "src_modules_inventory"
-    },
-    {
-      "relation": "references",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "docs/maintenance/architecture.md",
-      "source": "src_modules_history",
-      "target": "src_modules_shipment"
+      "source_file": "src/README.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "src_readme",
+      "target": "src_app"
     },
     {
       "relation": "implements",
@@ -3069,6 +4202,82 @@
       "source_file": "docs/maintenance/architecture.md",
       "source": "src_core_memory_provider",
       "target": "src_core_iitemrepository"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/maintenance/architecture.md",
+      "source": "src_modules_shipment",
+      "target": "src_modules_inventory"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/maintenance/architecture.md",
+      "source": "src_modules_quote",
+      "target": "src_modules_partner"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".github/pull_request_template.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "github_pull_request_template",
+      "target": "concept_core_interface_rule"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".github/pull_request_template.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "github_pull_request_template",
+      "target": "concept_memory_mode"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".github/pull_request_template.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "github_pull_request_template",
+      "target": "docs_maintenance_readme"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".github/ISSUE_TEMPLATE/module-task.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "github_issue_template_module_task",
+      "target": "concept_core_interface_rule"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".github/ISSUE_TEMPLATE/module-task.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "github_issue_template_module_task",
+      "target": "concept_memory_mode"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/maintenance/README.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "docs_maintenance_readme",
+      "target": "docs_maintenance_template"
     }
   ],
   "hyperedges": [
@@ -3089,16 +4298,43 @@
       "id": "erp_module_flow",
       "label": "ERP Business Logic Flow",
       "nodes": [
-        "src_modules_item",
+        "src_modules_item_view",
         "src_modules_inventory",
-        "src_modules_shipment",
-        "src_modules_history"
+        "src_modules_shipment"
       ],
       "relation": "form",
       "confidence": "EXTRACTED",
-      "confidence_score": 0.9,
+      "confidence_score": 0.8,
       "source_file": "docs/maintenance/architecture.md"
+    },
+    {
+      "id": "project_development_workflow",
+      "label": "Development Workflow & Standards",
+      "nodes": [
+        "github_pull_request_template",
+        "github_issue_template_module_task",
+        "docs_maintenance_readme",
+        "concept_memory_mode",
+        "concept_core_interface_rule"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": ".github/pull_request_template.md"
+    },
+    {
+      "id": "system_architecture_layers",
+      "label": "System Architecture Layers",
+      "nodes": [
+        "src_core",
+        "src_modules",
+        "src_app"
+      ],
+      "relation": "form",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/README.md"
     }
   ],
-  "built_at_commit": "1d5154533d903db85347330cea6ab1a54711552f"
+  "built_at_commit": "a346f43aec38f92892d27f7a9da21944d56c8c11"
 }
