@@ -1,7 +1,37 @@
 {
   "directed": false,
   "multigraph": false,
-  "graph": {},
+  "graph": {
+    "hyperedges": [
+      {
+        "id": "data_abstraction_layer",
+        "label": "Data Abstraction Pattern",
+        "nodes": [
+          "src_core_iitemrepository",
+          "src_core_memory_provider",
+          "src_core_firebird_provider"
+        ],
+        "relation": "participate_in",
+        "confidence": "EXTRACTED",
+        "confidence_score": 1.0,
+        "source_file": "docs/maintenance/architecture.md"
+      },
+      {
+        "id": "erp_module_flow",
+        "label": "ERP Business Logic Flow",
+        "nodes": [
+          "src_modules_item",
+          "src_modules_inventory",
+          "src_modules_shipment",
+          "src_modules_history"
+        ],
+        "relation": "form",
+        "confidence": "EXTRACTED",
+        "confidence_score": 0.9,
+        "source_file": "docs/maintenance/architecture.md"
+      }
+    ]
+  },
   "nodes": [
     {
       "label": "App.Main.pas",
@@ -9,9 +39,10 @@
       "source_file": "src/app/App.Main.pas",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "src_app_app_main",
       "community": 4,
-      "norm_label": "app.main.pas"
+      "norm_label": "app.main.pas",
+      "id": "src_app_app_main",
+      "community_name": "ERP"
     },
     {
       "label": "App.Main",
@@ -19,9 +50,10 @@
       "source_file": "src/app/App.Main.pas",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "src_app_app_main_app_main",
       "community": 4,
-      "norm_label": "app.main"
+      "norm_label": "app.main",
+      "id": "src_app_app_main_app_main",
+      "community_name": "ERP"
     },
     {
       "label": "TMainForm",
@@ -29,9 +61,10 @@
       "source_file": "src/app/App.Main.pas",
       "source_location": "L17",
       "_origin": "ast",
+      "community": 6,
+      "norm_label": "tmainform",
       "id": "src_app_app_main_tmainform",
-      "community": 7,
-      "norm_label": "tmainform"
+      "community_name": "TMainForm"
     },
     {
       "label": "TForm",
@@ -39,9 +72,10 @@
       "source_file": "src/app/App.Main.pas",
       "source_location": "L17",
       "_origin": "ast",
+      "community": 6,
+      "norm_label": "tform",
       "id": "tform",
-      "community": 7,
-      "norm_label": "tform"
+      "community_name": "TMainForm"
     },
     {
       "label": "BuildUI()",
@@ -49,9 +83,10 @@
       "source_file": "src/app/App.Main.pas",
       "source_location": "L21",
       "_origin": "ast",
+      "community": 6,
+      "norm_label": "buildui()",
       "id": "src_app_app_main_tmainform_buildui",
-      "community": 7,
-      "norm_label": "buildui()"
+      "community_name": "TMainForm"
     },
     {
       "label": "FillSummary()",
@@ -59,9 +94,10 @@
       "source_file": "src/app/App.Main.pas",
       "source_location": "L22",
       "_origin": "ast",
+      "community": 6,
+      "norm_label": "fillsummary()",
       "id": "src_app_app_main_tmainform_fillsummary",
-      "community": 7,
-      "norm_label": "fillsummary()"
+      "community_name": "TMainForm"
     },
     {
       "label": "ModulePlaceholderClick()",
@@ -69,9 +105,10 @@
       "source_file": "src/app/App.Main.pas",
       "source_location": "L23",
       "_origin": "ast",
+      "community": 6,
+      "norm_label": "moduleplaceholderclick()",
       "id": "src_app_app_main_tmainform_moduleplaceholderclick",
-      "community": 7,
-      "norm_label": "moduleplaceholderclick()"
+      "community_name": "TMainForm"
     },
     {
       "label": "CreateWithData()",
@@ -79,9 +116,10 @@
       "source_file": "src/app/App.Main.pas",
       "source_location": "L25",
       "_origin": "ast",
+      "community": 6,
+      "norm_label": "createwithdata()",
       "id": "src_app_app_main_tmainform_createwithdata",
-      "community": 7,
-      "norm_label": "createwithdata()"
+      "community_name": "TMainForm"
     },
     {
       "label": "ERP.lpr",
@@ -89,9 +127,10 @@
       "source_file": "src/app/ERP.lpr",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "src_app_erp",
       "community": 4,
-      "norm_label": "erp.lpr"
+      "norm_label": "erp.lpr",
+      "id": "src_app_erp",
+      "community_name": "ERP"
     },
     {
       "label": "ERP",
@@ -99,9 +138,10 @@
       "source_file": "src/app/ERP.lpr",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "src_app_erp_erp",
       "community": 4,
-      "norm_label": "erp"
+      "norm_label": "erp",
+      "id": "src_app_erp_erp",
+      "community_name": "ERP"
     },
     {
       "label": "App.Core.Contracts.pas",
@@ -109,9 +149,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "src_core_app_core_contracts",
       "community": 4,
-      "norm_label": "app.core.contracts.pas"
+      "norm_label": "app.core.contracts.pas",
+      "id": "src_core_app_core_contracts",
+      "community_name": "ERP"
     },
     {
       "label": "App.Core.Contracts",
@@ -119,9 +160,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L1",
       "_origin": "ast",
+      "community": 1,
+      "norm_label": "app.core.contracts",
       "id": "src_core_app_core_contracts_app_core_contracts",
-      "community": 2,
-      "norm_label": "app.core.contracts"
+      "community_name": "App.Core.Contracts"
     },
     {
       "label": "IItemRepository",
@@ -129,9 +171,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L16",
       "_origin": "ast",
+      "community": 7,
+      "norm_label": "iitemrepository",
       "id": "src_core_app_core_contracts_iitemrepository",
-      "community": 8,
-      "norm_label": "iitemrepository"
+      "community_name": "IItemRepository"
     },
     {
       "label": "GetAll()",
@@ -139,9 +182,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L18",
       "_origin": "ast",
+      "community": 7,
+      "norm_label": "getall()",
       "id": "src_core_app_core_contracts_iitemrepository_getall",
-      "community": 8,
-      "norm_label": "getall()"
+      "community_name": "IItemRepository"
     },
     {
       "label": "GetById()",
@@ -149,9 +193,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L19",
       "_origin": "ast",
+      "community": 7,
+      "norm_label": "getbyid()",
       "id": "src_core_app_core_contracts_iitemrepository_getbyid",
-      "community": 8,
-      "norm_label": "getbyid()"
+      "community_name": "IItemRepository"
     },
     {
       "label": "Add()",
@@ -159,9 +204,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L20",
       "_origin": "ast",
+      "community": 7,
+      "norm_label": "add()",
       "id": "src_core_app_core_contracts_iitemrepository_add",
-      "community": 8,
-      "norm_label": "add()"
+      "community_name": "IItemRepository"
     },
     {
       "label": "Update()",
@@ -169,9 +215,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L21",
       "_origin": "ast",
+      "community": 7,
+      "norm_label": "update()",
       "id": "src_core_app_core_contracts_iitemrepository_update",
-      "community": 8,
-      "norm_label": "update()"
+      "community_name": "IItemRepository"
     },
     {
       "label": "Delete()",
@@ -179,9 +226,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L22",
       "_origin": "ast",
+      "community": 7,
+      "norm_label": "delete()",
       "id": "src_core_app_core_contracts_iitemrepository_delete",
-      "community": 8,
-      "norm_label": "delete()"
+      "community_name": "IItemRepository"
     },
     {
       "label": "IPartnerRepository",
@@ -189,9 +237,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L26",
       "_origin": "ast",
+      "community": 5,
+      "norm_label": "ipartnerrepository",
       "id": "src_core_app_core_contracts_ipartnerrepository",
-      "community": 6,
-      "norm_label": "ipartnerrepository"
+      "community_name": "IPartnerRepository"
     },
     {
       "label": "GetAll()",
@@ -199,9 +248,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L28",
       "_origin": "ast",
+      "community": 5,
+      "norm_label": "getall()",
       "id": "src_core_app_core_contracts_ipartnerrepository_getall",
-      "community": 6,
-      "norm_label": "getall()"
+      "community_name": "IPartnerRepository"
     },
     {
       "label": "GetByKind()",
@@ -209,9 +259,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L29",
       "_origin": "ast",
+      "community": 5,
+      "norm_label": "getbykind()",
       "id": "src_core_app_core_contracts_ipartnerrepository_getbykind",
-      "community": 6,
-      "norm_label": "getbykind()"
+      "community_name": "IPartnerRepository"
     },
     {
       "label": "GetById()",
@@ -219,9 +270,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L30",
       "_origin": "ast",
+      "community": 5,
+      "norm_label": "getbyid()",
       "id": "src_core_app_core_contracts_ipartnerrepository_getbyid",
-      "community": 6,
-      "norm_label": "getbyid()"
+      "community_name": "IPartnerRepository"
     },
     {
       "label": "Add()",
@@ -229,9 +281,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L31",
       "_origin": "ast",
+      "community": 5,
+      "norm_label": "add()",
       "id": "src_core_app_core_contracts_ipartnerrepository_add",
-      "community": 6,
-      "norm_label": "add()"
+      "community_name": "IPartnerRepository"
     },
     {
       "label": "Update()",
@@ -239,9 +292,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L32",
       "_origin": "ast",
+      "community": 5,
+      "norm_label": "update()",
       "id": "src_core_app_core_contracts_ipartnerrepository_update",
-      "community": 6,
-      "norm_label": "update()"
+      "community_name": "IPartnerRepository"
     },
     {
       "label": "Delete()",
@@ -249,9 +303,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L33",
       "_origin": "ast",
+      "community": 5,
+      "norm_label": "delete()",
       "id": "src_core_app_core_contracts_ipartnerrepository_delete",
-      "community": 6,
-      "norm_label": "delete()"
+      "community_name": "IPartnerRepository"
     },
     {
       "label": "IInventoryRepository",
@@ -259,9 +314,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L37",
       "_origin": "ast",
+      "community": 1,
+      "norm_label": "iinventoryrepository",
       "id": "src_core_app_core_contracts_iinventoryrepository",
-      "community": 2,
-      "norm_label": "iinventoryrepository"
+      "community_name": "App.Core.Contracts"
     },
     {
       "label": "GetStock()",
@@ -269,9 +325,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L39",
       "_origin": "ast",
+      "community": 1,
+      "norm_label": "getstock()",
       "id": "src_core_app_core_contracts_iinventoryrepository_getstock",
-      "community": 2,
-      "norm_label": "getstock()"
+      "community_name": "App.Core.Contracts"
     },
     {
       "label": "Move()",
@@ -279,9 +336,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L40",
       "_origin": "ast",
+      "community": 1,
+      "norm_label": "move()",
       "id": "src_core_app_core_contracts_iinventoryrepository_move",
-      "community": 2,
-      "norm_label": "move()"
+      "community_name": "App.Core.Contracts"
     },
     {
       "label": "GetMoves()",
@@ -289,9 +347,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L42",
       "_origin": "ast",
+      "community": 1,
+      "norm_label": "getmoves()",
       "id": "src_core_app_core_contracts_iinventoryrepository_getmoves",
-      "community": 2,
-      "norm_label": "getmoves()"
+      "community_name": "App.Core.Contracts"
     },
     {
       "label": "IQuoteRepository",
@@ -299,9 +358,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L46",
       "_origin": "ast",
+      "community": 8,
+      "norm_label": "iquoterepository",
       "id": "src_core_app_core_contracts_iquoterepository",
-      "community": 9,
-      "norm_label": "iquoterepository"
+      "community_name": "IQuoteRepository"
     },
     {
       "label": "GetAll()",
@@ -309,9 +369,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L48",
       "_origin": "ast",
+      "community": 8,
+      "norm_label": "getall()",
       "id": "src_core_app_core_contracts_iquoterepository_getall",
-      "community": 9,
-      "norm_label": "getall()"
+      "community_name": "IQuoteRepository"
     },
     {
       "label": "GetById()",
@@ -319,9 +380,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L49",
       "_origin": "ast",
+      "community": 8,
+      "norm_label": "getbyid()",
       "id": "src_core_app_core_contracts_iquoterepository_getbyid",
-      "community": 9,
-      "norm_label": "getbyid()"
+      "community_name": "IQuoteRepository"
     },
     {
       "label": "Add()",
@@ -329,9 +391,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L50",
       "_origin": "ast",
+      "community": 8,
+      "norm_label": "add()",
       "id": "src_core_app_core_contracts_iquoterepository_add",
-      "community": 9,
-      "norm_label": "add()"
+      "community_name": "IQuoteRepository"
     },
     {
       "label": "Update()",
@@ -339,9 +402,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L51",
       "_origin": "ast",
+      "community": 8,
+      "norm_label": "update()",
       "id": "src_core_app_core_contracts_iquoterepository_update",
-      "community": 9,
-      "norm_label": "update()"
+      "community_name": "IQuoteRepository"
     },
     {
       "label": "Delete()",
@@ -349,9 +413,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L52",
       "_origin": "ast",
+      "community": 8,
+      "norm_label": "delete()",
       "id": "src_core_app_core_contracts_iquoterepository_delete",
-      "community": 9,
-      "norm_label": "delete()"
+      "community_name": "IQuoteRepository"
     },
     {
       "label": "IShipmentRepository",
@@ -359,9 +424,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L56",
       "_origin": "ast",
+      "community": 1,
+      "norm_label": "ishipmentrepository",
       "id": "src_core_app_core_contracts_ishipmentrepository",
-      "community": 2,
-      "norm_label": "ishipmentrepository"
+      "community_name": "App.Core.Contracts"
     },
     {
       "label": "GetAll()",
@@ -369,9 +435,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L58",
       "_origin": "ast",
+      "community": 1,
+      "norm_label": "getall()",
       "id": "src_core_app_core_contracts_ishipmentrepository_getall",
-      "community": 2,
-      "norm_label": "getall()"
+      "community_name": "App.Core.Contracts"
     },
     {
       "label": "GetById()",
@@ -379,9 +446,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L59",
       "_origin": "ast",
+      "community": 1,
+      "norm_label": "getbyid()",
       "id": "src_core_app_core_contracts_ishipmentrepository_getbyid",
-      "community": 2,
-      "norm_label": "getbyid()"
+      "community_name": "App.Core.Contracts"
     },
     {
       "label": "Add()",
@@ -389,9 +457,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L60",
       "_origin": "ast",
+      "community": 1,
+      "norm_label": "add()",
       "id": "src_core_app_core_contracts_ishipmentrepository_add",
-      "community": 2,
-      "norm_label": "add()"
+      "community_name": "App.Core.Contracts"
     },
     {
       "label": "Delete()",
@@ -399,9 +468,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L61",
       "_origin": "ast",
+      "community": 1,
+      "norm_label": "delete()",
       "id": "src_core_app_core_contracts_ishipmentrepository_delete",
-      "community": 2,
-      "norm_label": "delete()"
+      "community_name": "App.Core.Contracts"
     },
     {
       "label": "IHistoryRepository",
@@ -409,9 +479,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L65",
       "_origin": "ast",
+      "community": 1,
+      "norm_label": "ihistoryrepository",
       "id": "src_core_app_core_contracts_ihistoryrepository",
-      "community": 2,
-      "norm_label": "ihistoryrepository"
+      "community_name": "App.Core.Contracts"
     },
     {
       "label": "Query()",
@@ -419,9 +490,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L67",
       "_origin": "ast",
+      "community": 1,
+      "norm_label": "query()",
       "id": "src_core_app_core_contracts_ihistoryrepository_query",
-      "community": 2,
-      "norm_label": "query()"
+      "community_name": "App.Core.Contracts"
     },
     {
       "label": "IDataContext",
@@ -429,9 +501,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L71",
       "_origin": "ast",
+      "community": 1,
+      "norm_label": "idatacontext",
       "id": "src_core_app_core_contracts_idatacontext",
-      "community": 2,
-      "norm_label": "idatacontext"
+      "community_name": "App.Core.Contracts"
     },
     {
       "label": "Items()",
@@ -439,9 +512,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L73",
       "_origin": "ast",
+      "community": 1,
+      "norm_label": "items()",
       "id": "src_core_app_core_contracts_idatacontext_items",
-      "community": 2,
-      "norm_label": "items()"
+      "community_name": "App.Core.Contracts"
     },
     {
       "label": "Partners()",
@@ -449,9 +523,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L74",
       "_origin": "ast",
+      "community": 1,
+      "norm_label": "partners()",
       "id": "src_core_app_core_contracts_idatacontext_partners",
-      "community": 2,
-      "norm_label": "partners()"
+      "community_name": "App.Core.Contracts"
     },
     {
       "label": "Inventory()",
@@ -459,9 +534,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L75",
       "_origin": "ast",
+      "community": 1,
+      "norm_label": "inventory()",
       "id": "src_core_app_core_contracts_idatacontext_inventory",
-      "community": 2,
-      "norm_label": "inventory()"
+      "community_name": "App.Core.Contracts"
     },
     {
       "label": "Quotes()",
@@ -469,9 +545,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L76",
       "_origin": "ast",
+      "community": 1,
+      "norm_label": "quotes()",
       "id": "src_core_app_core_contracts_idatacontext_quotes",
-      "community": 2,
-      "norm_label": "quotes()"
+      "community_name": "App.Core.Contracts"
     },
     {
       "label": "Shipments()",
@@ -479,9 +556,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L77",
       "_origin": "ast",
+      "community": 1,
+      "norm_label": "shipments()",
       "id": "src_core_app_core_contracts_idatacontext_shipments",
-      "community": 2,
-      "norm_label": "shipments()"
+      "community_name": "App.Core.Contracts"
     },
     {
       "label": "History()",
@@ -489,9 +567,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L78",
       "_origin": "ast",
+      "community": 1,
+      "norm_label": "history()",
       "id": "src_core_app_core_contracts_idatacontext_history",
-      "community": 2,
-      "norm_label": "history()"
+      "community_name": "App.Core.Contracts"
     },
     {
       "label": "ProviderName()",
@@ -499,9 +578,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L79",
       "_origin": "ast",
+      "community": 1,
+      "norm_label": "providername()",
       "id": "src_core_app_core_contracts_idatacontext_providername",
-      "community": 2,
-      "norm_label": "providername()"
+      "community_name": "App.Core.Contracts"
     },
     {
       "label": "App.Core.Entities.pas",
@@ -509,9 +589,10 @@
       "source_file": "src/core/App.Core.Entities.pas",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "src_core_app_core_entities",
       "community": 4,
-      "norm_label": "app.core.entities.pas"
+      "norm_label": "app.core.entities.pas",
+      "id": "src_core_app_core_entities",
+      "community_name": "ERP"
     },
     {
       "label": "App.Core.Entities",
@@ -519,9 +600,10 @@
       "source_file": "src/core/App.Core.Entities.pas",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "src_core_app_core_entities_app_core_entities",
       "community": 4,
-      "norm_label": "app.core.entities"
+      "norm_label": "app.core.entities",
+      "id": "src_core_app_core_entities_app_core_entities",
+      "community_name": "ERP"
     },
     {
       "label": "App.Core.ProviderFactory.pas",
@@ -529,9 +611,10 @@
       "source_file": "src/core/App.Core.ProviderFactory.pas",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "src_core_app_core_providerfactory",
       "community": 4,
-      "norm_label": "app.core.providerfactory.pas"
+      "norm_label": "app.core.providerfactory.pas",
+      "id": "src_core_app_core_providerfactory",
+      "community_name": "ERP"
     },
     {
       "label": "App.Core.ProviderFactory",
@@ -539,9 +622,10 @@
       "source_file": "src/core/App.Core.ProviderFactory.pas",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "src_core_app_core_providerfactory_app_core_providerfactory",
       "community": 4,
-      "norm_label": "app.core.providerfactory"
+      "norm_label": "app.core.providerfactory",
+      "id": "src_core_app_core_providerfactory_app_core_providerfactory",
+      "community_name": "ERP"
     },
     {
       "label": "LoadConfig()",
@@ -549,9 +633,10 @@
       "source_file": "src/core/App.Core.ProviderFactory.pas",
       "source_location": "L31",
       "_origin": "ast",
-      "id": "src_core_app_core_providerfactory_loadconfig",
       "community": 4,
-      "norm_label": "loadconfig()"
+      "norm_label": "loadconfig()",
+      "id": "src_core_app_core_providerfactory_loadconfig",
+      "community_name": "ERP"
     },
     {
       "label": "CreateDataContext()",
@@ -559,9 +644,10 @@
       "source_file": "src/core/App.Core.ProviderFactory.pas",
       "source_location": "L45",
       "_origin": "ast",
-      "id": "src_core_app_core_providerfactory_createdatacontext",
       "community": 4,
-      "norm_label": "createdatacontext()"
+      "norm_label": "createdatacontext()",
+      "id": "src_core_app_core_providerfactory_createdatacontext",
+      "community_name": "ERP"
     },
     {
       "label": "App.Data.Memory.pas",
@@ -569,9 +655,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L1",
       "_origin": "ast",
+      "community": 2,
+      "norm_label": "app.data.memory.pas",
       "id": "src_data_app_data_memory",
-      "community": 0,
-      "norm_label": "app.data.memory.pas"
+      "community_name": "App.Data.Memory"
     },
     {
       "label": "App.Data.Memory",
@@ -579,9 +666,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L1",
       "_origin": "ast",
+      "community": 2,
+      "norm_label": "app.data.memory",
       "id": "src_data_app_data_memory_app_data_memory",
-      "community": 0,
-      "norm_label": "app.data.memory"
+      "community_name": "App.Data.Memory"
     },
     {
       "label": "TMemoryItemRepository",
@@ -589,9 +677,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L15",
       "_origin": "ast",
+      "community": 0,
+      "norm_label": "tmemoryitemrepository",
       "id": "src_data_app_data_memory_tmemoryitemrepository",
-      "community": 1,
-      "norm_label": "tmemoryitemrepository"
+      "community_name": "IndexOf"
     },
     {
       "label": "TInterfacedObject",
@@ -599,9 +688,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L15",
       "_origin": "ast",
+      "community": 3,
+      "norm_label": "tinterfacedobject",
       "id": "tinterfacedobject",
-      "community": 0,
-      "norm_label": "tinterfacedobject"
+      "community_name": "TMemoryShipmentRepository"
     },
     {
       "label": "IItemRepository",
@@ -609,9 +699,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L15",
       "_origin": "ast",
+      "community": 0,
+      "norm_label": "iitemrepository",
       "id": "iitemrepository",
-      "community": 1,
-      "norm_label": "iitemrepository"
+      "community_name": "IndexOf"
     },
     {
       "label": "IndexOf()",
@@ -619,9 +710,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L19",
       "_origin": "ast",
+      "community": 0,
+      "norm_label": "indexof()",
       "id": "src_data_app_data_memory_tmemoryitemrepository_indexof",
-      "community": 1,
-      "norm_label": "indexof()"
+      "community_name": "IndexOf"
     },
     {
       "label": "GetAll()",
@@ -629,9 +721,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L21",
       "_origin": "ast",
+      "community": 0,
+      "norm_label": "getall()",
       "id": "src_data_app_data_memory_tmemoryitemrepository_getall",
-      "community": 1,
-      "norm_label": "getall()"
+      "community_name": "IndexOf"
     },
     {
       "label": "GetById()",
@@ -639,9 +732,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L22",
       "_origin": "ast",
+      "community": 0,
+      "norm_label": "getbyid()",
       "id": "src_data_app_data_memory_tmemoryitemrepository_getbyid",
-      "community": 1,
-      "norm_label": "getbyid()"
+      "community_name": "IndexOf"
     },
     {
       "label": "Add()",
@@ -649,9 +743,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L23",
       "_origin": "ast",
+      "community": 0,
+      "norm_label": "add()",
       "id": "src_data_app_data_memory_tmemoryitemrepository_add",
-      "community": 1,
-      "norm_label": "add()"
+      "community_name": "IndexOf"
     },
     {
       "label": "Update()",
@@ -659,9 +754,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L24",
       "_origin": "ast",
+      "community": 0,
+      "norm_label": "update()",
       "id": "src_data_app_data_memory_tmemoryitemrepository_update",
-      "community": 1,
-      "norm_label": "update()"
+      "community_name": "IndexOf"
     },
     {
       "label": "Delete()",
@@ -669,9 +765,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L25",
       "_origin": "ast",
+      "community": 0,
+      "norm_label": "delete()",
       "id": "src_data_app_data_memory_tmemoryitemrepository_delete",
-      "community": 1,
-      "norm_label": "delete()"
+      "community_name": "IndexOf"
     },
     {
       "label": "TMemoryPartnerRepository",
@@ -679,9 +776,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L28",
       "_origin": "ast",
+      "community": 0,
+      "norm_label": "tmemorypartnerrepository",
       "id": "src_data_app_data_memory_tmemorypartnerrepository",
-      "community": 1,
-      "norm_label": "tmemorypartnerrepository"
+      "community_name": "IndexOf"
     },
     {
       "label": "IPartnerRepository",
@@ -689,9 +787,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L28",
       "_origin": "ast",
+      "community": 0,
+      "norm_label": "ipartnerrepository",
       "id": "ipartnerrepository",
-      "community": 1,
-      "norm_label": "ipartnerrepository"
+      "community_name": "IndexOf"
     },
     {
       "label": "IndexOf()",
@@ -699,9 +798,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L32",
       "_origin": "ast",
+      "community": 0,
+      "norm_label": "indexof()",
       "id": "src_data_app_data_memory_tmemorypartnerrepository_indexof",
-      "community": 1,
-      "norm_label": "indexof()"
+      "community_name": "IndexOf"
     },
     {
       "label": "GetAll()",
@@ -709,9 +809,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L34",
       "_origin": "ast",
+      "community": 0,
+      "norm_label": "getall()",
       "id": "src_data_app_data_memory_tmemorypartnerrepository_getall",
-      "community": 1,
-      "norm_label": "getall()"
+      "community_name": "IndexOf"
     },
     {
       "label": "GetByKind()",
@@ -719,9 +820,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L35",
       "_origin": "ast",
+      "community": 0,
+      "norm_label": "getbykind()",
       "id": "src_data_app_data_memory_tmemorypartnerrepository_getbykind",
-      "community": 1,
-      "norm_label": "getbykind()"
+      "community_name": "IndexOf"
     },
     {
       "label": "GetById()",
@@ -729,9 +831,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L36",
       "_origin": "ast",
+      "community": 0,
+      "norm_label": "getbyid()",
       "id": "src_data_app_data_memory_tmemorypartnerrepository_getbyid",
-      "community": 1,
-      "norm_label": "getbyid()"
+      "community_name": "IndexOf"
     },
     {
       "label": "Add()",
@@ -739,9 +842,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L37",
       "_origin": "ast",
+      "community": 0,
+      "norm_label": "add()",
       "id": "src_data_app_data_memory_tmemorypartnerrepository_add",
-      "community": 1,
-      "norm_label": "add()"
+      "community_name": "IndexOf"
     },
     {
       "label": "Update()",
@@ -749,9 +853,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L38",
       "_origin": "ast",
+      "community": 0,
+      "norm_label": "update()",
       "id": "src_data_app_data_memory_tmemorypartnerrepository_update",
-      "community": 1,
-      "norm_label": "update()"
+      "community_name": "IndexOf"
     },
     {
       "label": "Delete()",
@@ -759,9 +864,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L39",
       "_origin": "ast",
+      "community": 0,
+      "norm_label": "delete()",
       "id": "src_data_app_data_memory_tmemorypartnerrepository_delete",
-      "community": 1,
-      "norm_label": "delete()"
+      "community_name": "IndexOf"
     },
     {
       "label": "TMemoryInventoryRepository",
@@ -769,9 +875,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L42",
       "_origin": "ast",
+      "community": 3,
+      "norm_label": "tmemoryinventoryrepository",
       "id": "src_data_app_data_memory_tmemoryinventoryrepository",
-      "community": 0,
-      "norm_label": "tmemoryinventoryrepository"
+      "community_name": "TMemoryShipmentRepository"
     },
     {
       "label": "IInventoryRepository",
@@ -779,9 +886,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L42",
       "_origin": "ast",
+      "community": 3,
+      "norm_label": "iinventoryrepository",
       "id": "iinventoryrepository",
-      "community": 0,
-      "norm_label": "iinventoryrepository"
+      "community_name": "TMemoryShipmentRepository"
     },
     {
       "label": "GetStock()",
@@ -789,9 +897,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L47",
       "_origin": "ast",
+      "community": 3,
+      "norm_label": "getstock()",
       "id": "src_data_app_data_memory_tmemoryinventoryrepository_getstock",
-      "community": 0,
-      "norm_label": "getstock()"
+      "community_name": "TMemoryShipmentRepository"
     },
     {
       "label": "Move()",
@@ -799,9 +908,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L48",
       "_origin": "ast",
+      "community": 2,
+      "norm_label": "move()",
       "id": "src_data_app_data_memory_tmemoryinventoryrepository_move",
-      "community": 0,
-      "norm_label": "move()"
+      "community_name": "App.Data.Memory"
     },
     {
       "label": "GetMoves()",
@@ -809,9 +919,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L50",
       "_origin": "ast",
+      "community": 3,
+      "norm_label": "getmoves()",
       "id": "src_data_app_data_memory_tmemoryinventoryrepository_getmoves",
-      "community": 0,
-      "norm_label": "getmoves()"
+      "community_name": "TMemoryShipmentRepository"
     },
     {
       "label": "TMemoryQuoteRepository",
@@ -819,9 +930,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L53",
       "_origin": "ast",
+      "community": 0,
+      "norm_label": "tmemoryquoterepository",
       "id": "src_data_app_data_memory_tmemoryquoterepository",
-      "community": 1,
-      "norm_label": "tmemoryquoterepository"
+      "community_name": "IndexOf"
     },
     {
       "label": "IQuoteRepository",
@@ -829,9 +941,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L53",
       "_origin": "ast",
+      "community": 0,
+      "norm_label": "iquoterepository",
       "id": "iquoterepository",
-      "community": 1,
-      "norm_label": "iquoterepository"
+      "community_name": "IndexOf"
     },
     {
       "label": "IndexOf()",
@@ -839,9 +952,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L57",
       "_origin": "ast",
+      "community": 0,
+      "norm_label": "indexof()",
       "id": "src_data_app_data_memory_tmemoryquoterepository_indexof",
-      "community": 1,
-      "norm_label": "indexof()"
+      "community_name": "IndexOf"
     },
     {
       "label": "GetAll()",
@@ -849,9 +963,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L59",
       "_origin": "ast",
+      "community": 0,
+      "norm_label": "getall()",
       "id": "src_data_app_data_memory_tmemoryquoterepository_getall",
-      "community": 1,
-      "norm_label": "getall()"
+      "community_name": "IndexOf"
     },
     {
       "label": "GetById()",
@@ -859,9 +974,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L60",
       "_origin": "ast",
+      "community": 0,
+      "norm_label": "getbyid()",
       "id": "src_data_app_data_memory_tmemoryquoterepository_getbyid",
-      "community": 1,
-      "norm_label": "getbyid()"
+      "community_name": "IndexOf"
     },
     {
       "label": "Add()",
@@ -869,9 +985,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L61",
       "_origin": "ast",
+      "community": 0,
+      "norm_label": "add()",
       "id": "src_data_app_data_memory_tmemoryquoterepository_add",
-      "community": 1,
-      "norm_label": "add()"
+      "community_name": "IndexOf"
     },
     {
       "label": "Update()",
@@ -879,9 +996,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L62",
       "_origin": "ast",
+      "community": 0,
+      "norm_label": "update()",
       "id": "src_data_app_data_memory_tmemoryquoterepository_update",
-      "community": 1,
-      "norm_label": "update()"
+      "community_name": "IndexOf"
     },
     {
       "label": "Delete()",
@@ -889,9 +1007,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L63",
       "_origin": "ast",
+      "community": 0,
+      "norm_label": "delete()",
       "id": "src_data_app_data_memory_tmemoryquoterepository_delete",
-      "community": 1,
-      "norm_label": "delete()"
+      "community_name": "IndexOf"
     },
     {
       "label": "TMemoryShipmentRepository",
@@ -899,9 +1018,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L66",
       "_origin": "ast",
+      "community": 3,
+      "norm_label": "tmemoryshipmentrepository",
       "id": "src_data_app_data_memory_tmemoryshipmentrepository",
-      "community": 0,
-      "norm_label": "tmemoryshipmentrepository"
+      "community_name": "TMemoryShipmentRepository"
     },
     {
       "label": "IShipmentRepository",
@@ -909,9 +1029,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L66",
       "_origin": "ast",
+      "community": 4,
+      "norm_label": "ishipmentrepository",
       "id": "ishipmentrepository",
-      "community": 0,
-      "norm_label": "ishipmentrepository"
+      "community_name": "ERP"
     },
     {
       "label": "IndexOf()",
@@ -919,9 +1040,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L71",
       "_origin": "ast",
+      "community": 0,
+      "norm_label": "indexof()",
       "id": "src_data_app_data_memory_tmemoryshipmentrepository_indexof",
-      "community": 1,
-      "norm_label": "indexof()"
+      "community_name": "IndexOf"
     },
     {
       "label": "Create()",
@@ -929,9 +1051,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L73",
       "_origin": "ast",
+      "community": 3,
+      "norm_label": "create()",
       "id": "src_data_app_data_memory_tmemoryshipmentrepository_create",
-      "community": 0,
-      "norm_label": "create()"
+      "community_name": "TMemoryShipmentRepository"
     },
     {
       "label": "GetAll()",
@@ -939,9 +1062,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L74",
       "_origin": "ast",
+      "community": 3,
+      "norm_label": "getall()",
       "id": "src_data_app_data_memory_tmemoryshipmentrepository_getall",
-      "community": 0,
-      "norm_label": "getall()"
+      "community_name": "TMemoryShipmentRepository"
     },
     {
       "label": "GetById()",
@@ -949,9 +1073,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L75",
       "_origin": "ast",
+      "community": 3,
+      "norm_label": "getbyid()",
       "id": "src_data_app_data_memory_tmemoryshipmentrepository_getbyid",
-      "community": 10,
-      "norm_label": "getbyid()"
+      "community_name": "TMemoryShipmentRepository"
     },
     {
       "label": "Add()",
@@ -959,9 +1084,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L76",
       "_origin": "ast",
+      "community": 2,
+      "norm_label": "add()",
       "id": "src_data_app_data_memory_tmemoryshipmentrepository_add",
-      "community": 0,
-      "norm_label": "add()"
+      "community_name": "App.Data.Memory"
     },
     {
       "label": "Delete()",
@@ -969,9 +1095,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L77",
       "_origin": "ast",
+      "community": 3,
+      "norm_label": "delete()",
       "id": "src_data_app_data_memory_tmemoryshipmentrepository_delete",
-      "community": 0,
-      "norm_label": "delete()"
+      "community_name": "TMemoryShipmentRepository"
     },
     {
       "label": "TMemoryHistoryRepository",
@@ -979,9 +1106,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L80",
       "_origin": "ast",
+      "community": 3,
+      "norm_label": "tmemoryhistoryrepository",
       "id": "src_data_app_data_memory_tmemoryhistoryrepository",
-      "community": 10,
-      "norm_label": "tmemoryhistoryrepository"
+      "community_name": "TMemoryShipmentRepository"
     },
     {
       "label": "IHistoryRepository",
@@ -989,9 +1117,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L80",
       "_origin": "ast",
+      "community": 3,
+      "norm_label": "ihistoryrepository",
       "id": "ihistoryrepository",
-      "community": 4,
-      "norm_label": "ihistoryrepository"
+      "community_name": "TMemoryShipmentRepository"
     },
     {
       "label": "ItemName()",
@@ -999,9 +1128,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L86",
       "_origin": "ast",
+      "community": 3,
+      "norm_label": "itemname()",
       "id": "src_data_app_data_memory_tmemoryhistoryrepository_itemname",
-      "community": 10,
-      "norm_label": "itemname()"
+      "community_name": "TMemoryShipmentRepository"
     },
     {
       "label": "PartnerName()",
@@ -1009,9 +1139,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L87",
       "_origin": "ast",
+      "community": 3,
+      "norm_label": "partnername()",
       "id": "src_data_app_data_memory_tmemoryhistoryrepository_partnername",
-      "community": 10,
-      "norm_label": "partnername()"
+      "community_name": "TMemoryShipmentRepository"
     },
     {
       "label": "Create()",
@@ -1019,9 +1150,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L89",
       "_origin": "ast",
+      "community": 3,
+      "norm_label": "create()",
       "id": "src_data_app_data_memory_tmemoryhistoryrepository_create",
-      "community": 10,
-      "norm_label": "create()"
+      "community_name": "TMemoryShipmentRepository"
     },
     {
       "label": "Query()",
@@ -1029,9 +1161,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L92",
       "_origin": "ast",
+      "community": 3,
+      "norm_label": "query()",
       "id": "src_data_app_data_memory_tmemoryhistoryrepository_query",
-      "community": 10,
-      "norm_label": "query()"
+      "community_name": "TMemoryShipmentRepository"
     },
     {
       "label": "TMemoryDataContext",
@@ -1039,9 +1172,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L96",
       "_origin": "ast",
+      "community": 2,
+      "norm_label": "tmemorydatacontext",
       "id": "src_data_app_data_memory_tmemorydatacontext",
-      "community": 0,
-      "norm_label": "tmemorydatacontext"
+      "community_name": "App.Data.Memory"
     },
     {
       "label": "IDataContext",
@@ -1049,9 +1183,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L96",
       "_origin": "ast",
+      "community": 2,
+      "norm_label": "idatacontext",
       "id": "idatacontext",
-      "community": 0,
-      "norm_label": "idatacontext"
+      "community_name": "App.Data.Memory"
     },
     {
       "label": "Seed()",
@@ -1059,9 +1194,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L104",
       "_origin": "ast",
+      "community": 2,
+      "norm_label": "seed()",
       "id": "src_data_app_data_memory_tmemorydatacontext_seed",
-      "community": 0,
-      "norm_label": "seed()"
+      "community_name": "App.Data.Memory"
     },
     {
       "label": "Create()",
@@ -1069,9 +1205,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L106",
       "_origin": "ast",
+      "community": 2,
+      "norm_label": "create()",
       "id": "src_data_app_data_memory_tmemorydatacontext_create",
-      "community": 0,
-      "norm_label": "create()"
+      "community_name": "App.Data.Memory"
     },
     {
       "label": "Items()",
@@ -1079,9 +1216,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L107",
       "_origin": "ast",
+      "community": 2,
+      "norm_label": "items()",
       "id": "src_data_app_data_memory_tmemorydatacontext_items",
-      "community": 0,
-      "norm_label": "items()"
+      "community_name": "App.Data.Memory"
     },
     {
       "label": "Partners()",
@@ -1089,9 +1227,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L108",
       "_origin": "ast",
+      "community": 2,
+      "norm_label": "partners()",
       "id": "src_data_app_data_memory_tmemorydatacontext_partners",
-      "community": 0,
-      "norm_label": "partners()"
+      "community_name": "App.Data.Memory"
     },
     {
       "label": "Inventory()",
@@ -1099,9 +1238,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L109",
       "_origin": "ast",
+      "community": 2,
+      "norm_label": "inventory()",
       "id": "src_data_app_data_memory_tmemorydatacontext_inventory",
-      "community": 0,
-      "norm_label": "inventory()"
+      "community_name": "App.Data.Memory"
     },
     {
       "label": "Quotes()",
@@ -1109,9 +1249,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L110",
       "_origin": "ast",
+      "community": 2,
+      "norm_label": "quotes()",
       "id": "src_data_app_data_memory_tmemorydatacontext_quotes",
-      "community": 0,
-      "norm_label": "quotes()"
+      "community_name": "App.Data.Memory"
     },
     {
       "label": "Shipments()",
@@ -1119,9 +1260,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L111",
       "_origin": "ast",
+      "community": 2,
+      "norm_label": "shipments()",
       "id": "src_data_app_data_memory_tmemorydatacontext_shipments",
-      "community": 0,
-      "norm_label": "shipments()"
+      "community_name": "App.Data.Memory"
     },
     {
       "label": "History()",
@@ -1129,9 +1271,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L112",
       "_origin": "ast",
+      "community": 2,
+      "norm_label": "history()",
       "id": "src_data_app_data_memory_tmemorydatacontext_history",
-      "community": 0,
-      "norm_label": "history()"
+      "community_name": "App.Data.Memory"
     },
     {
       "label": "ProviderName()",
@@ -1139,9 +1282,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L113",
       "_origin": "ast",
+      "community": 2,
+      "norm_label": "providername()",
       "id": "src_data_app_data_memory_tmemorydatacontext_providername",
-      "community": 0,
-      "norm_label": "providername()"
+      "community_name": "App.Data.Memory"
     },
     {
       "label": "MakeItem()",
@@ -1149,9 +1293,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L120",
       "_origin": "ast",
+      "community": 2,
+      "norm_label": "makeitem()",
       "id": "src_data_app_data_memory_makeitem",
-      "community": 0,
-      "norm_label": "makeitem()"
+      "community_name": "App.Data.Memory"
     },
     {
       "label": "MakePartner()",
@@ -1159,9 +1304,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L128",
       "_origin": "ast",
+      "community": 2,
+      "norm_label": "makepartner()",
       "id": "src_data_app_data_memory_makepartner",
-      "community": 0,
-      "norm_label": "makepartner()"
+      "community_name": "App.Data.Memory"
     },
     {
       "label": "DateOk()",
@@ -1169,409 +1315,145 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L408",
       "_origin": "ast",
+      "community": 2,
+      "norm_label": "dateok()",
       "id": "src_data_app_data_memory_dateok",
-      "community": 0,
-      "norm_label": "dateok()"
-    },
-    {
-      "label": "module-task.md",
-      "file_type": "document",
-      "source_file": ".github/ISSUE_TEMPLATE/module-task.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "github_issue_template_module_task",
-      "community": 11,
-      "norm_label": "module-task.md"
-    },
-    {
-      "label": "\ub300\uc0c1 \ubaa8\ub4c8",
-      "file_type": "document",
-      "source_file": ".github/ISSUE_TEMPLATE/module-task.md",
-      "source_location": "L8",
-      "_origin": "ast",
-      "id": "github_issue_template_module_task_\ub300\uc0c1_\ubaa8\ub4c8",
-      "community": 11,
-      "norm_label": "\u1103\u1162\u1109\u1161\u11bc \u1106\u1169\u1103\u1172\u11af"
-    },
-    {
-      "label": "\uc791\uc5c5 \ubc94\uc704",
-      "file_type": "document",
-      "source_file": ".github/ISSUE_TEMPLATE/module-task.md",
-      "source_location": "L11",
-      "_origin": "ast",
-      "id": "github_issue_template_module_task_\uc791\uc5c5_\ubc94\uc704",
-      "community": 11,
-      "norm_label": "\u110c\u1161\u11a8\u110b\u1165\u11b8 \u1107\u1165\u11b7\u110b\u1171"
-    },
-    {
-      "label": "\uc644\ub8cc \uae30\uc900",
-      "file_type": "document",
-      "source_file": ".github/ISSUE_TEMPLATE/module-task.md",
-      "source_location": "L14",
-      "_origin": "ast",
-      "id": "github_issue_template_module_task_\uc644\ub8cc_\uae30\uc900",
-      "community": 11,
-      "norm_label": "\u110b\u116a\u11ab\u1105\u116d \u1100\u1175\u110c\u116e\u11ab"
-    },
-    {
-      "label": "\ube0c\ub79c\uce58",
-      "file_type": "document",
-      "source_file": ".github/ISSUE_TEMPLATE/module-task.md",
-      "source_location": "L19",
-      "_origin": "ast",
-      "id": "github_issue_template_module_task_\ube0c\ub79c\uce58",
-      "community": 11,
-      "norm_label": "\u1107\u1173\u1105\u1162\u11ab\u110e\u1175"
-    },
-    {
-      "label": "pull_request_template.md",
-      "file_type": "document",
-      "source_file": ".github/pull_request_template.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "github_pull_request_template",
-      "community": 12,
-      "norm_label": "pull_request_template.md"
-    },
-    {
-      "label": "\uac1c\uc694",
-      "file_type": "document",
-      "source_file": ".github/pull_request_template.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "github_pull_request_template_\uac1c\uc694",
-      "community": 12,
-      "norm_label": "\u1100\u1162\u110b\u116d"
-    },
-    {
-      "label": "\ubcc0\uacbd \uc0ac\ud56d",
-      "file_type": "document",
-      "source_file": ".github/pull_request_template.md",
-      "source_location": "L4",
-      "_origin": "ast",
-      "id": "github_pull_request_template_\ubcc0\uacbd_\uc0ac\ud56d",
-      "community": 12,
-      "norm_label": "\u1107\u1167\u11ab\u1100\u1167\u11bc \u1109\u1161\u1112\u1161\u11bc"
-    },
-    {
-      "label": "\uccb4\ud06c\ub9ac\uc2a4\ud2b8",
-      "file_type": "document",
-      "source_file": ".github/pull_request_template.md",
-      "source_location": "L7",
-      "_origin": "ast",
-      "id": "github_pull_request_template_\uccb4\ud06c\ub9ac\uc2a4\ud2b8",
-      "community": 12,
-      "norm_label": "\u110e\u1166\u110f\u1173\u1105\u1175\u1109\u1173\u1110\u1173"
-    },
-    {
-      "label": "\ud14c\uc2a4\ud2b8 \ubc29\ubc95",
-      "file_type": "document",
-      "source_file": ".github/pull_request_template.md",
-      "source_location": "L13",
-      "_origin": "ast",
-      "id": "github_pull_request_template_\ud14c\uc2a4\ud2b8_\ubc29\ubc95",
-      "community": 12,
-      "norm_label": "\u1110\u1166\u1109\u1173\u1110\u1173 \u1107\u1161\u11bc\u1107\u1165\u11b8"
-    },
-    {
-      "label": "README.md",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "readme",
-      "community": 5,
-      "norm_label": "readme.md"
+      "community_name": "App.Data.Memory"
     },
     {
       "label": "\uac74\ucd95\uc790\uc7ac\uc0c1 ERP (\uc628\ud504\ub808\ubbf8\uc2a4)",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "readme_\uac74\ucd95\uc790\uc7ac\uc0c1_erp_\uc628\ud504\ub808\ubbf8\uc2a4",
-      "community": 5,
-      "norm_label": "\u1100\u1165\u11ab\u110e\u116e\u11a8\u110c\u1161\u110c\u1162\u1109\u1161\u11bc erp (\u110b\u1169\u11ab\u1111\u1173\u1105\u1166\u1106\u1175\u1109\u1173)"
+      "community": 13,
+      "norm_label": "\u1100\u1165\u11ab\u110e\u116e\u11a8\u110c\u1161\u110c\u1162\u1109\u1161\u11bc erp (\u110b\u1169\u11ab\u1111\u1173\u1105\u1166\u1106\u1175\u1109\u1173)",
+      "id": "readme",
+      "community_name": "\uac74\ucd95\uc790\uc7ac\uc0c1 ERP (\uc628\ud504\ub808\ubbf8\uc2a4)"
     },
     {
-      "label": "\uae30\uc220 \uc2a4\ud0dd",
+      "label": "Core Layer",
+      "file_type": "code",
+      "source_file": "src/core",
+      "community": 10,
+      "norm_label": "core layer",
+      "id": "src_core",
+      "community_name": "App Shell"
+    },
+    {
+      "label": "Modules Layer",
+      "file_type": "code",
+      "source_file": "src/modules",
+      "community": 10,
+      "norm_label": "modules layer",
+      "id": "src_modules",
+      "community_name": "App Shell"
+    },
+    {
+      "label": "App Shell",
+      "file_type": "code",
+      "source_file": "src/app",
+      "community": 10,
+      "norm_label": "app shell",
+      "id": "src_app",
+      "community_name": "App Shell"
+    },
+    {
+      "label": "Item Module",
+      "file_type": "code",
+      "source_file": "src/modules/item",
+      "community": 9,
+      "norm_label": "item module",
+      "id": "src_modules_item",
+      "community_name": "Inventory Module"
+    },
+    {
+      "label": "Partner Module",
+      "file_type": "code",
+      "source_file": "src/modules/partner",
+      "community": 9,
+      "norm_label": "partner module",
+      "id": "src_modules_partner",
+      "community_name": "Inventory Module"
+    },
+    {
+      "label": "Inventory Module",
+      "file_type": "code",
+      "source_file": "src/modules/inventory",
+      "community": 9,
+      "norm_label": "inventory module",
+      "id": "src_modules_inventory",
+      "community_name": "Inventory Module"
+    },
+    {
+      "label": "Quote Module",
+      "file_type": "code",
+      "source_file": "src/modules/quote",
+      "community": 9,
+      "norm_label": "quote module",
+      "id": "src_modules_quote",
+      "community_name": "Inventory Module"
+    },
+    {
+      "label": "Shipment Module",
+      "file_type": "code",
+      "source_file": "src/modules/shipment",
+      "community": 9,
+      "norm_label": "shipment module",
+      "id": "src_modules_shipment",
+      "community_name": "Inventory Module"
+    },
+    {
+      "label": "History Module",
+      "file_type": "code",
+      "source_file": "src/modules/history",
+      "community": 9,
+      "norm_label": "history module",
+      "id": "src_modules_history",
+      "community_name": "Inventory Module"
+    },
+    {
+      "label": "IItemRepository",
+      "file_type": "code",
+      "source_file": "src/core",
+      "community": 11,
+      "norm_label": "iitemrepository",
+      "id": "src_core_iitemrepository",
+      "community_name": "IItemRepository"
+    },
+    {
+      "label": "Memory Provider",
+      "file_type": "code",
+      "source_file": "src/core",
+      "community": 11,
+      "norm_label": "memory provider",
+      "id": "src_core_memory_provider",
+      "community_name": "IItemRepository"
+    },
+    {
+      "label": "Firebird Provider",
+      "file_type": "code",
+      "source_file": "src/core",
+      "community": 11,
+      "norm_label": "firebird provider",
+      "id": "src_core_firebird_provider",
+      "community_name": "IItemRepository"
+    },
+    {
+      "label": "App Configuration",
       "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L7",
-      "_origin": "ast",
-      "id": "readme_\uae30\uc220_\uc2a4\ud0dd",
-      "community": 5,
-      "norm_label": "\u1100\u1175\u1109\u116e\u11af \u1109\u1173\u1110\u1162\u11a8"
+      "source_file": "config/app.ini",
+      "community": 10,
+      "norm_label": "app configuration",
+      "id": "config_app_ini",
+      "community_name": "App Shell"
     },
     {
-      "label": "DB \uc5c6\uc774\ub3c4 \uad6c\ub3d9\ub429\ub2c8\ub2e4",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L17",
-      "_origin": "ast",
-      "id": "readme_db_\uc5c6\uc774\ub3c4_\uad6c\ub3d9\ub429\ub2c8\ub2e4",
-      "community": 5,
-      "norm_label": "db \u110b\u1165\u11b9\u110b\u1175\u1103\u1169 \u1100\u116e\u1103\u1169\u11bc\u1103\u116c\u11b8\u1102\u1175\u1103\u1161"
-    },
-    {
-      "label": "\ubaa8\ub4c8",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L27",
-      "_origin": "ast",
-      "id": "readme_\ubaa8\ub4c8",
-      "community": 5,
-      "norm_label": "\u1106\u1169\u1103\u1172\u11af"
-    },
-    {
-      "label": "\uc800\uc7a5\uc18c \uad6c\uc870",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L38",
-      "_origin": "ast",
-      "id": "readme_\uc800\uc7a5\uc18c_\uad6c\uc870",
-      "community": 5,
-      "norm_label": "\u110c\u1165\u110c\u1161\u11bc\u1109\u1169 \u1100\u116e\u110c\u1169"
-    },
-    {
-      "label": "\ube0c\ub79c\uce58 \uc804\ub7b5",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L50",
-      "_origin": "ast",
-      "id": "readme_\ube0c\ub79c\uce58_\uc804\ub7b5",
-      "community": 5,
-      "norm_label": "\u1107\u1173\u1105\u1162\u11ab\u110e\u1175 \u110c\u1165\u11ab\u1105\u1163\u11a8"
-    },
-    {
-      "label": "\ube4c\ub4dc",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L58",
-      "_origin": "ast",
-      "id": "readme_\ube4c\ub4dc",
-      "community": 5,
-      "norm_label": "\u1107\u1175\u11af\u1103\u1173"
-    },
-    {
-      "label": "README.md",
-      "file_type": "document",
-      "source_file": "docs/maintenance/README.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "docs_maintenance_readme",
-      "community": 3,
-      "norm_label": "readme.md"
-    },
-    {
-      "label": "\uc720\uc9c0\ubcf4\uc218 \u00b7 \ud559\uc2b5 \ubb38\uc11c",
-      "file_type": "document",
-      "source_file": "docs/maintenance/README.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "docs_maintenance_readme_\uc720\uc9c0\ubcf4\uc218_\ud559\uc2b5_\ubb38\uc11c",
-      "community": 3,
-      "norm_label": "\u110b\u1172\u110c\u1175\u1107\u1169\u1109\u116e \u00b7 \u1112\u1161\u11a8\u1109\u1173\u11b8 \u1106\u116e\u11ab\u1109\u1165"
-    },
-    {
-      "label": "\uad6c\uc131",
-      "file_type": "document",
-      "source_file": "docs/maintenance/README.md",
-      "source_location": "L15",
-      "_origin": "ast",
-      "id": "docs_maintenance_readme_\uad6c\uc131",
-      "community": 3,
-      "norm_label": "\u1100\u116e\u1109\u1165\u11bc"
-    },
-    {
-      "label": "\ubb38\uc11c \uc791\uc131 \uc6d0\uce59",
-      "file_type": "document",
-      "source_file": "docs/maintenance/README.md",
-      "source_location": "L20",
-      "_origin": "ast",
-      "id": "docs_maintenance_readme_\ubb38\uc11c_\uc791\uc131_\uc6d0\uce59",
-      "community": 3,
-      "norm_label": "\u1106\u116e\u11ab\u1109\u1165 \u110c\u1161\u11a8\u1109\u1165\u11bc \u110b\u116f\u11ab\u110e\u1175\u11a8"
-    },
-    {
-      "label": "_template.md",
-      "file_type": "document",
-      "source_file": "docs/maintenance/_template.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "docs_maintenance_template",
-      "community": 3,
-      "norm_label": "_template.md"
-    },
-    {
-      "label": "[\ubaa8\ub4c8\uba85] \uc720\uc9c0\ubcf4\uc218 \ubb38\uc11c",
-      "file_type": "document",
-      "source_file": "docs/maintenance/_template.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "docs_maintenance_template_\ubaa8\ub4c8\uba85_\uc720\uc9c0\ubcf4\uc218_\ubb38\uc11c",
-      "community": 3,
-      "norm_label": "[\u1106\u1169\u1103\u1172\u11af\u1106\u1167\u11bc] \u110b\u1172\u110c\u1175\u1107\u1169\u1109\u116e \u1106\u116e\u11ab\u1109\u1165"
-    },
-    {
-      "label": "1. \uad6c\ud604\ud55c \uae30\ub2a5",
-      "file_type": "document",
-      "source_file": "docs/maintenance/_template.md",
-      "source_location": "L5",
-      "_origin": "ast",
-      "id": "docs_maintenance_template_1_\uad6c\ud604\ud55c_\uae30\ub2a5",
-      "community": 3,
-      "norm_label": "1. \u1100\u116e\u1112\u1167\u11ab\u1112\u1161\u11ab \u1100\u1175\u1102\u1173\u11bc"
-    },
-    {
-      "label": "2. \uad00\ub828 \ud30c\uc77c \u00b7 \uc8fc\uc694 \ud074\ub798\uc2a4/\uba54\uc11c\ub4dc",
-      "file_type": "document",
-      "source_file": "docs/maintenance/_template.md",
-      "source_location": "L8",
-      "_origin": "ast",
-      "id": "docs_maintenance_template_2_\uad00\ub828_\ud30c\uc77c_\uc8fc\uc694_\ud074\ub798\uc2a4_\uba54\uc11c\ub4dc",
-      "community": 3,
-      "norm_label": "2. \u1100\u116a\u11ab\u1105\u1167\u11ab \u1111\u1161\u110b\u1175\u11af \u00b7 \u110c\u116e\u110b\u116d \u110f\u1173\u11af\u1105\u1162\u1109\u1173/\u1106\u1166\u1109\u1165\u1103\u1173"
-    },
-    {
-      "label": "3. \ucf54\ub4dc \uc2e4\ud589 \ud750\ub984",
-      "file_type": "document",
-      "source_file": "docs/maintenance/_template.md",
-      "source_location": "L13",
-      "_origin": "ast",
-      "id": "docs_maintenance_template_3_\ucf54\ub4dc_\uc2e4\ud589_\ud750\ub984",
-      "community": 3,
-      "norm_label": "3. \u110f\u1169\u1103\u1173 \u1109\u1175\u11af\u1112\u1162\u11bc \u1112\u1173\u1105\u1173\u11b7"
-    },
-    {
-      "label": "4. \ub370\uc774\ud130\uac00 \uc0dd\uc131\u00b7\ubcc0\uacbd\ub418\ub294 \uc704\uce58",
-      "file_type": "document",
-      "source_file": "docs/maintenance/_template.md",
-      "source_location": "L16",
-      "_origin": "ast",
-      "id": "docs_maintenance_template_4_\ub370\uc774\ud130\uac00_\uc0dd\uc131_\ubcc0\uacbd\ub418\ub294_\uc704\uce58",
-      "community": 3,
-      "norm_label": "4. \u1103\u1166\u110b\u1175\u1110\u1165\u1100\u1161 \u1109\u1162\u11bc\u1109\u1165\u11bc\u00b7\u1107\u1167\u11ab\u1100\u1167\u11bc\u1103\u116c\u1102\u1173\u11ab \u110b\u1171\u110e\u1175"
-    },
-    {
-      "label": "5. \uc774\ud574\uc5d0 \ud544\uc694\ud55c Delphi \ud559\uc2b5 \ud56d\ubaa9",
-      "file_type": "document",
-      "source_file": "docs/maintenance/_template.md",
-      "source_location": "L19",
-      "_origin": "ast",
-      "id": "docs_maintenance_template_5_\uc774\ud574\uc5d0_\ud544\uc694\ud55c_delphi_\ud559\uc2b5_\ud56d\ubaa9",
-      "community": 3,
-      "norm_label": "5. \u110b\u1175\u1112\u1162\u110b\u1166 \u1111\u1175\u11af\u110b\u116d\u1112\u1161\u11ab delphi \u1112\u1161\u11a8\u1109\u1173\u11b8 \u1112\u1161\u11bc\u1106\u1169\u11a8"
-    },
-    {
-      "label": "6. \uc218\uc815\u00b7\ud655\uc7a5 \uc2dc \ud655\uc778\ud560 \uc704\uce58",
-      "file_type": "document",
-      "source_file": "docs/maintenance/_template.md",
-      "source_location": "L22",
-      "_origin": "ast",
-      "id": "docs_maintenance_template_6_\uc218\uc815_\ud655\uc7a5_\uc2dc_\ud655\uc778\ud560_\uc704\uce58",
-      "community": 3,
-      "norm_label": "6. \u1109\u116e\u110c\u1165\u11bc\u00b7\u1112\u116a\u11a8\u110c\u1161\u11bc \u1109\u1175 \u1112\u116a\u11a8\u110b\u1175\u11ab\u1112\u1161\u11af \u110b\u1171\u110e\u1175"
-    },
-    {
-      "label": "architecture.md",
+      "label": "Architecture Documentation",
       "file_type": "document",
       "source_file": "docs/maintenance/architecture.md",
-      "source_location": "L1",
-      "_origin": "ast",
+      "community": 12,
+      "norm_label": "architecture documentation",
       "id": "docs_maintenance_architecture",
-      "community": 3,
-      "norm_label": "architecture.md"
-    },
-    {
-      "label": "\uc804\uccb4 \uad6c\uc870 \uac1c\uc694",
-      "file_type": "document",
-      "source_file": "docs/maintenance/architecture.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "docs_maintenance_architecture_\uc804\uccb4_\uad6c\uc870_\uac1c\uc694",
-      "community": 3,
-      "norm_label": "\u110c\u1165\u11ab\u110e\u1166 \u1100\u116e\u110c\u1169 \u1100\u1162\u110b\u116d"
-    },
-    {
-      "label": "\ub808\uc774\uc5b4",
-      "file_type": "document",
-      "source_file": "docs/maintenance/architecture.md",
-      "source_location": "L5",
-      "_origin": "ast",
-      "id": "docs_maintenance_architecture_\ub808\uc774\uc5b4",
-      "community": 3,
-      "norm_label": "\u1105\u1166\u110b\u1175\u110b\u1165"
-    },
-    {
-      "label": "\ub370\uc774\ud130 \uc811\uadfc \ubc29\uc2dd",
-      "file_type": "document",
-      "source_file": "docs/maintenance/architecture.md",
-      "source_location": "L23",
-      "_origin": "ast",
-      "id": "docs_maintenance_architecture_\ub370\uc774\ud130_\uc811\uadfc_\ubc29\uc2dd",
-      "community": 3,
-      "norm_label": "\u1103\u1166\u110b\u1175\u1110\u1165 \u110c\u1165\u11b8\u1100\u1173\u11ab \u1107\u1161\u11bc\u1109\u1175\u11a8"
-    },
-    {
-      "label": "\uc774 \uad6c\uc870\uc758 \uc774\uc720",
-      "file_type": "document",
-      "source_file": "docs/maintenance/architecture.md",
-      "source_location": "L37",
-      "_origin": "ast",
-      "id": "docs_maintenance_architecture_\uc774_\uad6c\uc870\uc758_\uc774\uc720",
-      "community": 3,
-      "norm_label": "\u110b\u1175 \u1100\u116e\u110c\u1169\u110b\u1174 \u110b\u1175\u110b\u1172"
-    },
-    {
-      "label": "\ubaa8\ub4c8 \uac04 \uc758\uc874",
-      "file_type": "document",
-      "source_file": "docs/maintenance/architecture.md",
-      "source_location": "L42",
-      "_origin": "ast",
-      "id": "docs_maintenance_architecture_\ubaa8\ub4c8_\uac04_\uc758\uc874",
-      "community": 3,
-      "norm_label": "\u1106\u1169\u1103\u1172\u11af \u1100\u1161\u11ab \u110b\u1174\u110c\u1169\u11ab"
-    },
-    {
-      "label": "\uc5b4\ub514\ub97c \uace0\uce60 \uac83\uc778\uac00 (\ube60\ub978 \uc548\ub0b4)",
-      "file_type": "document",
-      "source_file": "docs/maintenance/architecture.md",
-      "source_location": "L59",
-      "_origin": "ast",
-      "id": "docs_maintenance_architecture_\uc5b4\ub514\ub97c_\uace0\uce60_\uac83\uc778\uac00_\ube60\ub978_\uc548\ub0b4",
-      "community": 3,
-      "norm_label": "\u110b\u1165\u1103\u1175\u1105\u1173\u11af \u1100\u1169\u110e\u1175\u11af \u1100\u1165\u11ba\u110b\u1175\u11ab\u1100\u1161 (\u1108\u1161\u1105\u1173\u11ab \u110b\u1161\u11ab\u1102\u1162)"
-    },
-    {
-      "label": "README.md",
-      "file_type": "document",
-      "source_file": "src/README.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "src_readme",
-      "community": 13,
-      "norm_label": "readme.md"
-    },
-    {
-      "label": "src",
-      "file_type": "document",
-      "source_file": "src/README.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "src_readme_src",
-      "community": 13,
-      "norm_label": "src"
-    },
-    {
-      "label": "\uc2dd\ubcc4\uc790\u00b7\uc8fc\uc11d \uaddc\uce59",
-      "file_type": "document",
-      "source_file": "src/README.md",
-      "source_location": "L12",
-      "_origin": "ast",
-      "id": "src_readme_\uc2dd\ubcc4\uc790_\uc8fc\uc11d_\uaddc\uce59",
-      "community": 13,
-      "norm_label": "\u1109\u1175\u11a8\u1107\u1167\u11af\u110c\u1161\u00b7\u110c\u116e\u1109\u1165\u11a8 \u1100\u1172\u110e\u1175\u11a8"
+      "community_name": "Architecture Documentation"
     }
   ],
   "links": [
@@ -1581,9 +1463,9 @@
       "source_file": "src/app/App.Main.pas",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app_app_main",
-      "target": "src_app_app_main_app_main",
-      "confidence_score": 1.0
+      "target": "src_app_app_main_app_main"
     },
     {
       "relation": "imports",
@@ -1592,31 +1474,9 @@
       "source_location": "L8",
       "weight": 1.0,
       "context": "import",
+      "confidence_score": 1.0,
       "source": "src_app_erp_erp",
-      "target": "src_app_app_main",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/App.Main.pas",
-      "source_location": "L12",
-      "weight": 1.0,
-      "context": "import",
-      "source": "src_app_app_main_app_main",
-      "target": "src_core_app_core_contracts",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/App.Main.pas",
-      "source_location": "L12",
-      "weight": 1.0,
-      "context": "import",
-      "source": "src_app_app_main_app_main",
-      "target": "src_core_app_core_entities",
-      "confidence_score": 1.0
+      "target": "src_app_app_main"
     },
     {
       "relation": "contains",
@@ -1624,9 +1484,31 @@
       "source_file": "src/app/App.Main.pas",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app_app_main_app_main",
-      "target": "src_app_app_main_tmainform",
-      "confidence_score": 1.0
+      "target": "src_app_app_main_tmainform"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/App.Main.pas",
+      "source_location": "L12",
+      "weight": 1.0,
+      "context": "import",
+      "confidence_score": 1.0,
+      "source": "src_app_app_main_app_main",
+      "target": "src_core_app_core_contracts"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/App.Main.pas",
+      "source_location": "L12",
+      "weight": 1.0,
+      "context": "import",
+      "confidence_score": 1.0,
+      "source": "src_app_app_main_app_main",
+      "target": "src_core_app_core_entities"
     },
     {
       "relation": "method",
@@ -1634,9 +1516,9 @@
       "source_file": "src/app/App.Main.pas",
       "source_location": "L38",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app_app_main_tmainform",
-      "target": "src_app_app_main_tmainform_buildui",
-      "confidence_score": 1.0
+      "target": "src_app_app_main_tmainform_buildui"
     },
     {
       "relation": "method",
@@ -1644,9 +1526,9 @@
       "source_file": "src/app/App.Main.pas",
       "source_location": "L30",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app_app_main_tmainform",
-      "target": "src_app_app_main_tmainform_createwithdata",
-      "confidence_score": 1.0
+      "target": "src_app_app_main_tmainform_createwithdata"
     },
     {
       "relation": "method",
@@ -1654,9 +1536,9 @@
       "source_file": "src/app/App.Main.pas",
       "source_location": "L96",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app_app_main_tmainform",
-      "target": "src_app_app_main_tmainform_fillsummary",
-      "confidence_score": 1.0
+      "target": "src_app_app_main_tmainform_fillsummary"
     },
     {
       "relation": "method",
@@ -1664,9 +1546,9 @@
       "source_file": "src/app/App.Main.pas",
       "source_location": "L129",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app_app_main_tmainform",
-      "target": "src_app_app_main_tmainform_moduleplaceholderclick",
-      "confidence_score": 1.0
+      "target": "src_app_app_main_tmainform_moduleplaceholderclick"
     },
     {
       "relation": "inherits",
@@ -1674,9 +1556,9 @@
       "source_file": "src/app/App.Main.pas",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app_app_main_tmainform",
-      "target": "tform",
-      "confidence_score": 1.0
+      "target": "tform"
     },
     {
       "relation": "calls",
@@ -1685,9 +1567,9 @@
       "source_location": "L77",
       "weight": 1.0,
       "context": "call",
+      "confidence_score": 1.0,
       "source": "src_app_app_main_tmainform_buildui",
-      "target": "src_app_app_main_tmainform_moduleplaceholderclick",
-      "confidence_score": 1.0
+      "target": "src_app_app_main_tmainform_moduleplaceholderclick"
     },
     {
       "relation": "calls",
@@ -1696,9 +1578,9 @@
       "source_location": "L33",
       "weight": 1.0,
       "context": "call",
+      "confidence_score": 1.0,
       "source": "src_app_app_main_tmainform_createwithdata",
-      "target": "src_app_app_main_tmainform_buildui",
-      "confidence_score": 1.0
+      "target": "src_app_app_main_tmainform_buildui"
     },
     {
       "relation": "calls",
@@ -1707,9 +1589,9 @@
       "source_location": "L34",
       "weight": 1.0,
       "context": "call",
+      "confidence_score": 1.0,
       "source": "src_app_app_main_tmainform_createwithdata",
-      "target": "src_app_app_main_tmainform_fillsummary",
-      "confidence_score": 1.0
+      "target": "src_app_app_main_tmainform_fillsummary"
     },
     {
       "relation": "contains",
@@ -1717,9 +1599,9 @@
       "source_file": "src/app/ERP.lpr",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app_erp",
-      "target": "src_app_erp_erp",
-      "confidence_score": 1.0
+      "target": "src_app_erp_erp"
     },
     {
       "relation": "imports",
@@ -1728,9 +1610,9 @@
       "source_location": "L8",
       "weight": 1.0,
       "context": "import",
+      "confidence_score": 1.0,
       "source": "src_app_erp_erp",
-      "target": "src_core_app_core_contracts",
-      "confidence_score": 1.0
+      "target": "ishipmentrepository"
     },
     {
       "relation": "imports",
@@ -1739,9 +1621,9 @@
       "source_location": "L8",
       "weight": 1.0,
       "context": "import",
+      "confidence_score": 1.0,
       "source": "src_app_erp_erp",
-      "target": "src_core_app_core_providerfactory",
-      "confidence_score": 1.0
+      "target": "src_core_app_core_contracts"
     },
     {
       "relation": "imports",
@@ -1750,9 +1632,9 @@
       "source_location": "L8",
       "weight": 1.0,
       "context": "import",
+      "confidence_score": 1.0,
       "source": "src_app_erp_erp",
-      "target": "ihistoryrepository",
-      "confidence_score": 1.0
+      "target": "src_core_app_core_providerfactory"
     },
     {
       "relation": "contains",
@@ -1760,9 +1642,9 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_core_app_core_contracts",
-      "target": "src_core_app_core_contracts_app_core_contracts",
-      "confidence_score": 1.0
+      "target": "src_core_app_core_contracts_app_core_contracts"
     },
     {
       "relation": "imports",
@@ -1771,9 +1653,9 @@
       "source_location": "L11",
       "weight": 1.0,
       "context": "import",
+      "confidence_score": 1.0,
       "source": "src_core_app_core_providerfactory_app_core_providerfactory",
-      "target": "src_core_app_core_contracts",
-      "confidence_score": 1.0
+      "target": "src_core_app_core_contracts"
     },
     {
       "relation": "imports",
@@ -1782,9 +1664,9 @@
       "source_location": "L11",
       "weight": 1.0,
       "context": "import",
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_app_data_memory",
-      "target": "src_core_app_core_contracts",
-      "confidence_score": 1.0
+      "target": "src_core_app_core_contracts"
     },
     {
       "relation": "contains",
@@ -1792,9 +1674,9 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L71",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_core_app_core_contracts_app_core_contracts",
-      "target": "src_core_app_core_contracts_idatacontext",
-      "confidence_score": 1.0
+      "target": "src_core_app_core_contracts_idatacontext"
     },
     {
       "relation": "contains",
@@ -1802,9 +1684,9 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L65",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_core_app_core_contracts_app_core_contracts",
-      "target": "src_core_app_core_contracts_ihistoryrepository",
-      "confidence_score": 1.0
+      "target": "src_core_app_core_contracts_ihistoryrepository"
     },
     {
       "relation": "contains",
@@ -1812,9 +1694,9 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L37",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_core_app_core_contracts_app_core_contracts",
-      "target": "src_core_app_core_contracts_iinventoryrepository",
-      "confidence_score": 1.0
+      "target": "src_core_app_core_contracts_iinventoryrepository"
     },
     {
       "relation": "contains",
@@ -1822,9 +1704,9 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_core_app_core_contracts_app_core_contracts",
-      "target": "src_core_app_core_contracts_iitemrepository",
-      "confidence_score": 1.0
+      "target": "src_core_app_core_contracts_iitemrepository"
     },
     {
       "relation": "contains",
@@ -1832,9 +1714,9 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L26",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_core_app_core_contracts_app_core_contracts",
-      "target": "src_core_app_core_contracts_ipartnerrepository",
-      "confidence_score": 1.0
+      "target": "src_core_app_core_contracts_ipartnerrepository"
     },
     {
       "relation": "contains",
@@ -1842,9 +1724,9 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L46",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_core_app_core_contracts_app_core_contracts",
-      "target": "src_core_app_core_contracts_iquoterepository",
-      "confidence_score": 1.0
+      "target": "src_core_app_core_contracts_iquoterepository"
     },
     {
       "relation": "contains",
@@ -1852,9 +1734,9 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L56",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_core_app_core_contracts_app_core_contracts",
-      "target": "src_core_app_core_contracts_ishipmentrepository",
-      "confidence_score": 1.0
+      "target": "src_core_app_core_contracts_ishipmentrepository"
     },
     {
       "relation": "imports",
@@ -1863,9 +1745,9 @@
       "source_location": "L11",
       "weight": 1.0,
       "context": "import",
+      "confidence_score": 1.0,
       "source": "src_core_app_core_contracts_app_core_contracts",
-      "target": "src_core_app_core_entities",
-      "confidence_score": 1.0
+      "target": "src_core_app_core_entities"
     },
     {
       "relation": "method",
@@ -1873,9 +1755,9 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L20",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_core_app_core_contracts_iitemrepository",
-      "target": "src_core_app_core_contracts_iitemrepository_add",
-      "confidence_score": 1.0
+      "target": "src_core_app_core_contracts_iitemrepository_add"
     },
     {
       "relation": "method",
@@ -1883,9 +1765,9 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L22",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_core_app_core_contracts_iitemrepository",
-      "target": "src_core_app_core_contracts_iitemrepository_delete",
-      "confidence_score": 1.0
+      "target": "src_core_app_core_contracts_iitemrepository_delete"
     },
     {
       "relation": "method",
@@ -1893,9 +1775,9 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L18",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_core_app_core_contracts_iitemrepository",
-      "target": "src_core_app_core_contracts_iitemrepository_getall",
-      "confidence_score": 1.0
+      "target": "src_core_app_core_contracts_iitemrepository_getall"
     },
     {
       "relation": "method",
@@ -1903,9 +1785,9 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_core_app_core_contracts_iitemrepository",
-      "target": "src_core_app_core_contracts_iitemrepository_getbyid",
-      "confidence_score": 1.0
+      "target": "src_core_app_core_contracts_iitemrepository_getbyid"
     },
     {
       "relation": "method",
@@ -1913,9 +1795,9 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L21",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_core_app_core_contracts_iitemrepository",
-      "target": "src_core_app_core_contracts_iitemrepository_update",
-      "confidence_score": 1.0
+      "target": "src_core_app_core_contracts_iitemrepository_update"
     },
     {
       "relation": "method",
@@ -1923,9 +1805,9 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L31",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_core_app_core_contracts_ipartnerrepository",
-      "target": "src_core_app_core_contracts_ipartnerrepository_add",
-      "confidence_score": 1.0
+      "target": "src_core_app_core_contracts_ipartnerrepository_add"
     },
     {
       "relation": "method",
@@ -1933,9 +1815,9 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L33",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_core_app_core_contracts_ipartnerrepository",
-      "target": "src_core_app_core_contracts_ipartnerrepository_delete",
-      "confidence_score": 1.0
+      "target": "src_core_app_core_contracts_ipartnerrepository_delete"
     },
     {
       "relation": "method",
@@ -1943,9 +1825,9 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L28",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_core_app_core_contracts_ipartnerrepository",
-      "target": "src_core_app_core_contracts_ipartnerrepository_getall",
-      "confidence_score": 1.0
+      "target": "src_core_app_core_contracts_ipartnerrepository_getall"
     },
     {
       "relation": "method",
@@ -1953,9 +1835,9 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L30",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_core_app_core_contracts_ipartnerrepository",
-      "target": "src_core_app_core_contracts_ipartnerrepository_getbyid",
-      "confidence_score": 1.0
+      "target": "src_core_app_core_contracts_ipartnerrepository_getbyid"
     },
     {
       "relation": "method",
@@ -1963,9 +1845,9 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L29",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_core_app_core_contracts_ipartnerrepository",
-      "target": "src_core_app_core_contracts_ipartnerrepository_getbykind",
-      "confidence_score": 1.0
+      "target": "src_core_app_core_contracts_ipartnerrepository_getbykind"
     },
     {
       "relation": "method",
@@ -1973,9 +1855,9 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L32",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_core_app_core_contracts_ipartnerrepository",
-      "target": "src_core_app_core_contracts_ipartnerrepository_update",
-      "confidence_score": 1.0
+      "target": "src_core_app_core_contracts_ipartnerrepository_update"
     },
     {
       "relation": "method",
@@ -1983,9 +1865,9 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L42",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_core_app_core_contracts_iinventoryrepository",
-      "target": "src_core_app_core_contracts_iinventoryrepository_getmoves",
-      "confidence_score": 1.0
+      "target": "src_core_app_core_contracts_iinventoryrepository_getmoves"
     },
     {
       "relation": "method",
@@ -1993,9 +1875,9 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L39",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_core_app_core_contracts_iinventoryrepository",
-      "target": "src_core_app_core_contracts_iinventoryrepository_getstock",
-      "confidence_score": 1.0
+      "target": "src_core_app_core_contracts_iinventoryrepository_getstock"
     },
     {
       "relation": "method",
@@ -2003,9 +1885,9 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L40",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_core_app_core_contracts_iinventoryrepository",
-      "target": "src_core_app_core_contracts_iinventoryrepository_move",
-      "confidence_score": 1.0
+      "target": "src_core_app_core_contracts_iinventoryrepository_move"
     },
     {
       "relation": "method",
@@ -2013,9 +1895,9 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L50",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_core_app_core_contracts_iquoterepository",
-      "target": "src_core_app_core_contracts_iquoterepository_add",
-      "confidence_score": 1.0
+      "target": "src_core_app_core_contracts_iquoterepository_add"
     },
     {
       "relation": "method",
@@ -2023,9 +1905,9 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L52",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_core_app_core_contracts_iquoterepository",
-      "target": "src_core_app_core_contracts_iquoterepository_delete",
-      "confidence_score": 1.0
+      "target": "src_core_app_core_contracts_iquoterepository_delete"
     },
     {
       "relation": "method",
@@ -2033,9 +1915,9 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L48",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_core_app_core_contracts_iquoterepository",
-      "target": "src_core_app_core_contracts_iquoterepository_getall",
-      "confidence_score": 1.0
+      "target": "src_core_app_core_contracts_iquoterepository_getall"
     },
     {
       "relation": "method",
@@ -2043,9 +1925,9 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L49",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_core_app_core_contracts_iquoterepository",
-      "target": "src_core_app_core_contracts_iquoterepository_getbyid",
-      "confidence_score": 1.0
+      "target": "src_core_app_core_contracts_iquoterepository_getbyid"
     },
     {
       "relation": "method",
@@ -2053,9 +1935,9 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L51",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_core_app_core_contracts_iquoterepository",
-      "target": "src_core_app_core_contracts_iquoterepository_update",
-      "confidence_score": 1.0
+      "target": "src_core_app_core_contracts_iquoterepository_update"
     },
     {
       "relation": "method",
@@ -2063,9 +1945,9 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L60",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_core_app_core_contracts_ishipmentrepository",
-      "target": "src_core_app_core_contracts_ishipmentrepository_add",
-      "confidence_score": 1.0
+      "target": "src_core_app_core_contracts_ishipmentrepository_add"
     },
     {
       "relation": "method",
@@ -2073,9 +1955,9 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L61",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_core_app_core_contracts_ishipmentrepository",
-      "target": "src_core_app_core_contracts_ishipmentrepository_delete",
-      "confidence_score": 1.0
+      "target": "src_core_app_core_contracts_ishipmentrepository_delete"
     },
     {
       "relation": "method",
@@ -2083,9 +1965,9 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L58",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_core_app_core_contracts_ishipmentrepository",
-      "target": "src_core_app_core_contracts_ishipmentrepository_getall",
-      "confidence_score": 1.0
+      "target": "src_core_app_core_contracts_ishipmentrepository_getall"
     },
     {
       "relation": "method",
@@ -2093,9 +1975,9 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L59",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_core_app_core_contracts_ishipmentrepository",
-      "target": "src_core_app_core_contracts_ishipmentrepository_getbyid",
-      "confidence_score": 1.0
+      "target": "src_core_app_core_contracts_ishipmentrepository_getbyid"
     },
     {
       "relation": "method",
@@ -2103,9 +1985,9 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L67",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_core_app_core_contracts_ihistoryrepository",
-      "target": "src_core_app_core_contracts_ihistoryrepository_query",
-      "confidence_score": 1.0
+      "target": "src_core_app_core_contracts_ihistoryrepository_query"
     },
     {
       "relation": "method",
@@ -2113,9 +1995,9 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L78",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_core_app_core_contracts_idatacontext",
-      "target": "src_core_app_core_contracts_idatacontext_history",
-      "confidence_score": 1.0
+      "target": "src_core_app_core_contracts_idatacontext_history"
     },
     {
       "relation": "method",
@@ -2123,9 +2005,9 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L75",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_core_app_core_contracts_idatacontext",
-      "target": "src_core_app_core_contracts_idatacontext_inventory",
-      "confidence_score": 1.0
+      "target": "src_core_app_core_contracts_idatacontext_inventory"
     },
     {
       "relation": "method",
@@ -2133,9 +2015,9 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L73",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_core_app_core_contracts_idatacontext",
-      "target": "src_core_app_core_contracts_idatacontext_items",
-      "confidence_score": 1.0
+      "target": "src_core_app_core_contracts_idatacontext_items"
     },
     {
       "relation": "method",
@@ -2143,9 +2025,9 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L74",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_core_app_core_contracts_idatacontext",
-      "target": "src_core_app_core_contracts_idatacontext_partners",
-      "confidence_score": 1.0
+      "target": "src_core_app_core_contracts_idatacontext_partners"
     },
     {
       "relation": "method",
@@ -2153,9 +2035,9 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L79",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_core_app_core_contracts_idatacontext",
-      "target": "src_core_app_core_contracts_idatacontext_providername",
-      "confidence_score": 1.0
+      "target": "src_core_app_core_contracts_idatacontext_providername"
     },
     {
       "relation": "method",
@@ -2163,9 +2045,9 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L76",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_core_app_core_contracts_idatacontext",
-      "target": "src_core_app_core_contracts_idatacontext_quotes",
-      "confidence_score": 1.0
+      "target": "src_core_app_core_contracts_idatacontext_quotes"
     },
     {
       "relation": "method",
@@ -2173,9 +2055,9 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L77",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_core_app_core_contracts_idatacontext",
-      "target": "src_core_app_core_contracts_idatacontext_shipments",
-      "confidence_score": 1.0
+      "target": "src_core_app_core_contracts_idatacontext_shipments"
     },
     {
       "relation": "contains",
@@ -2183,9 +2065,9 @@
       "source_file": "src/core/App.Core.Entities.pas",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_core_app_core_entities",
-      "target": "src_core_app_core_entities_app_core_entities",
-      "confidence_score": 1.0
+      "target": "src_core_app_core_entities_app_core_entities"
     },
     {
       "relation": "imports",
@@ -2194,9 +2076,9 @@
       "source_location": "L11",
       "weight": 1.0,
       "context": "import",
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_app_data_memory",
-      "target": "src_core_app_core_entities",
-      "confidence_score": 1.0
+      "target": "src_core_app_core_entities"
     },
     {
       "relation": "contains",
@@ -2204,9 +2086,9 @@
       "source_file": "src/core/App.Core.ProviderFactory.pas",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_core_app_core_providerfactory",
-      "target": "src_core_app_core_providerfactory_app_core_providerfactory",
-      "confidence_score": 1.0
+      "target": "src_core_app_core_providerfactory_app_core_providerfactory"
     },
     {
       "relation": "imports",
@@ -2215,9 +2097,9 @@
       "source_location": "L27",
       "weight": 1.0,
       "context": "import",
+      "confidence_score": 1.0,
       "source": "src_core_app_core_providerfactory_app_core_providerfactory",
-      "target": "ihistoryrepository",
-      "confidence_score": 1.0
+      "target": "ishipmentrepository"
     },
     {
       "relation": "contains",
@@ -2225,9 +2107,9 @@
       "source_file": "src/core/App.Core.ProviderFactory.pas",
       "source_location": "L45",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_core_app_core_providerfactory_app_core_providerfactory",
-      "target": "src_core_app_core_providerfactory_createdatacontext",
-      "confidence_score": 1.0
+      "target": "src_core_app_core_providerfactory_createdatacontext"
     },
     {
       "relation": "contains",
@@ -2235,9 +2117,9 @@
       "source_file": "src/core/App.Core.ProviderFactory.pas",
       "source_location": "L31",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_core_app_core_providerfactory_app_core_providerfactory",
-      "target": "src_core_app_core_providerfactory_loadconfig",
-      "confidence_score": 1.0
+      "target": "src_core_app_core_providerfactory_loadconfig"
     },
     {
       "relation": "contains",
@@ -2245,9 +2127,9 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory",
-      "target": "src_data_app_data_memory_app_data_memory",
-      "confidence_score": 1.0
+      "target": "src_data_app_data_memory_app_data_memory"
     },
     {
       "relation": "contains",
@@ -2255,9 +2137,9 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L408",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_app_data_memory",
-      "target": "src_data_app_data_memory_dateok",
-      "confidence_score": 1.0
+      "target": "src_data_app_data_memory_dateok"
     },
     {
       "relation": "contains",
@@ -2265,9 +2147,9 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L120",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_app_data_memory",
-      "target": "src_data_app_data_memory_makeitem",
-      "confidence_score": 1.0
+      "target": "src_data_app_data_memory_makeitem"
     },
     {
       "relation": "contains",
@@ -2275,9 +2157,9 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L128",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_app_data_memory",
-      "target": "src_data_app_data_memory_makepartner",
-      "confidence_score": 1.0
+      "target": "src_data_app_data_memory_makepartner"
     },
     {
       "relation": "contains",
@@ -2285,9 +2167,9 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L96",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_app_data_memory",
-      "target": "src_data_app_data_memory_tmemorydatacontext",
-      "confidence_score": 1.0
+      "target": "src_data_app_data_memory_tmemorydatacontext"
     },
     {
       "relation": "contains",
@@ -2295,9 +2177,9 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L80",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_app_data_memory",
-      "target": "src_data_app_data_memory_tmemoryhistoryrepository",
-      "confidence_score": 1.0
+      "target": "src_data_app_data_memory_tmemoryhistoryrepository"
     },
     {
       "relation": "contains",
@@ -2305,9 +2187,9 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L42",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_app_data_memory",
-      "target": "src_data_app_data_memory_tmemoryinventoryrepository",
-      "confidence_score": 1.0
+      "target": "src_data_app_data_memory_tmemoryinventoryrepository"
     },
     {
       "relation": "contains",
@@ -2315,9 +2197,9 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_app_data_memory",
-      "target": "src_data_app_data_memory_tmemoryitemrepository",
-      "confidence_score": 1.0
+      "target": "src_data_app_data_memory_tmemoryitemrepository"
     },
     {
       "relation": "contains",
@@ -2325,9 +2207,9 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L28",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_app_data_memory",
-      "target": "src_data_app_data_memory_tmemorypartnerrepository",
-      "confidence_score": 1.0
+      "target": "src_data_app_data_memory_tmemorypartnerrepository"
     },
     {
       "relation": "contains",
@@ -2335,9 +2217,9 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L53",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_app_data_memory",
-      "target": "src_data_app_data_memory_tmemoryquoterepository",
-      "confidence_score": 1.0
+      "target": "src_data_app_data_memory_tmemoryquoterepository"
     },
     {
       "relation": "contains",
@@ -2345,9 +2227,9 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L66",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_app_data_memory",
-      "target": "src_data_app_data_memory_tmemoryshipmentrepository",
-      "confidence_score": 1.0
+      "target": "src_data_app_data_memory_tmemoryshipmentrepository"
     },
     {
       "relation": "inherits",
@@ -2355,9 +2237,9 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemoryitemrepository",
-      "target": "iitemrepository",
-      "confidence_score": 1.0
+      "target": "iitemrepository"
     },
     {
       "relation": "method",
@@ -2365,9 +2247,9 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L160",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemoryitemrepository",
-      "target": "src_data_app_data_memory_tmemoryitemrepository_add",
-      "confidence_score": 1.0
+      "target": "src_data_app_data_memory_tmemoryitemrepository_add"
     },
     {
       "relation": "method",
@@ -2375,9 +2257,9 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L178",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemoryitemrepository",
-      "target": "src_data_app_data_memory_tmemoryitemrepository_delete",
-      "confidence_score": 1.0
+      "target": "src_data_app_data_memory_tmemoryitemrepository_delete"
     },
     {
       "relation": "method",
@@ -2385,9 +2267,9 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L147",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemoryitemrepository",
-      "target": "src_data_app_data_memory_tmemoryitemrepository_getall",
-      "confidence_score": 1.0
+      "target": "src_data_app_data_memory_tmemoryitemrepository_getall"
     },
     {
       "relation": "method",
@@ -2395,9 +2277,9 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L152",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemoryitemrepository",
-      "target": "src_data_app_data_memory_tmemoryitemrepository_getbyid",
-      "confidence_score": 1.0
+      "target": "src_data_app_data_memory_tmemoryitemrepository_getbyid"
     },
     {
       "relation": "method",
@@ -2405,9 +2287,9 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L139",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemoryitemrepository",
-      "target": "src_data_app_data_memory_tmemoryitemrepository_indexof",
-      "confidence_score": 1.0
+      "target": "src_data_app_data_memory_tmemoryitemrepository_indexof"
     },
     {
       "relation": "method",
@@ -2415,9 +2297,9 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L171",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemoryitemrepository",
-      "target": "src_data_app_data_memory_tmemoryitemrepository_update",
-      "confidence_score": 1.0
+      "target": "src_data_app_data_memory_tmemoryitemrepository_update"
     },
     {
       "relation": "inherits",
@@ -2425,9 +2307,9 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemoryitemrepository",
-      "target": "tinterfacedobject",
-      "confidence_score": 1.0
+      "target": "tinterfacedobject"
     },
     {
       "relation": "inherits",
@@ -2435,9 +2317,9 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L96",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemorydatacontext",
-      "target": "tinterfacedobject",
-      "confidence_score": 1.0
+      "target": "tinterfacedobject"
     },
     {
       "relation": "inherits",
@@ -2445,9 +2327,9 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L80",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemoryhistoryrepository",
-      "target": "tinterfacedobject",
-      "confidence_score": 1.0
+      "target": "tinterfacedobject"
     },
     {
       "relation": "inherits",
@@ -2455,9 +2337,9 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L42",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemoryinventoryrepository",
-      "target": "tinterfacedobject",
-      "confidence_score": 1.0
+      "target": "tinterfacedobject"
     },
     {
       "relation": "inherits",
@@ -2465,9 +2347,9 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L28",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemorypartnerrepository",
-      "target": "tinterfacedobject",
-      "confidence_score": 1.0
+      "target": "tinterfacedobject"
     },
     {
       "relation": "inherits",
@@ -2475,9 +2357,9 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L53",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemoryquoterepository",
-      "target": "tinterfacedobject",
-      "confidence_score": 1.0
+      "target": "tinterfacedobject"
     },
     {
       "relation": "inherits",
@@ -2485,9 +2367,9 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L66",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemoryshipmentrepository",
-      "target": "tinterfacedobject",
-      "confidence_score": 1.0
+      "target": "tinterfacedobject"
     },
     {
       "relation": "calls",
@@ -2496,9 +2378,9 @@
       "source_location": "L153",
       "weight": 1.0,
       "context": "call",
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemoryitemrepository_getbyid",
-      "target": "src_data_app_data_memory_tmemoryshipmentrepository_indexof",
-      "confidence_score": 1.0
+      "target": "src_data_app_data_memory_tmemoryshipmentrepository_indexof"
     },
     {
       "relation": "calls",
@@ -2507,9 +2389,9 @@
       "source_location": "L172",
       "weight": 1.0,
       "context": "call",
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemoryitemrepository_update",
-      "target": "src_data_app_data_memory_tmemoryshipmentrepository_indexof",
-      "confidence_score": 1.0
+      "target": "src_data_app_data_memory_tmemoryshipmentrepository_indexof"
     },
     {
       "relation": "calls",
@@ -2518,9 +2400,9 @@
       "source_location": "L179",
       "weight": 1.0,
       "context": "call",
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemoryitemrepository_delete",
-      "target": "src_data_app_data_memory_tmemoryshipmentrepository_indexof",
-      "confidence_score": 1.0
+      "target": "src_data_app_data_memory_tmemoryshipmentrepository_indexof"
     },
     {
       "relation": "inherits",
@@ -2528,9 +2410,9 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L28",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemorypartnerrepository",
-      "target": "ipartnerrepository",
-      "confidence_score": 1.0
+      "target": "ipartnerrepository"
     },
     {
       "relation": "method",
@@ -2538,9 +2420,9 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L221",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemorypartnerrepository",
-      "target": "src_data_app_data_memory_tmemorypartnerrepository_add",
-      "confidence_score": 1.0
+      "target": "src_data_app_data_memory_tmemorypartnerrepository_add"
     },
     {
       "relation": "method",
@@ -2548,9 +2430,9 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L238",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemorypartnerrepository",
-      "target": "src_data_app_data_memory_tmemorypartnerrepository_delete",
-      "confidence_score": 1.0
+      "target": "src_data_app_data_memory_tmemorypartnerrepository_delete"
     },
     {
       "relation": "method",
@@ -2558,9 +2440,9 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L197",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemorypartnerrepository",
-      "target": "src_data_app_data_memory_tmemorypartnerrepository_getall",
-      "confidence_score": 1.0
+      "target": "src_data_app_data_memory_tmemorypartnerrepository_getall"
     },
     {
       "relation": "method",
@@ -2568,9 +2450,9 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L213",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemorypartnerrepository",
-      "target": "src_data_app_data_memory_tmemorypartnerrepository_getbyid",
-      "confidence_score": 1.0
+      "target": "src_data_app_data_memory_tmemorypartnerrepository_getbyid"
     },
     {
       "relation": "method",
@@ -2578,9 +2460,9 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L202",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemorypartnerrepository",
-      "target": "src_data_app_data_memory_tmemorypartnerrepository_getbykind",
-      "confidence_score": 1.0
+      "target": "src_data_app_data_memory_tmemorypartnerrepository_getbykind"
     },
     {
       "relation": "method",
@@ -2588,9 +2470,9 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L189",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemorypartnerrepository",
-      "target": "src_data_app_data_memory_tmemorypartnerrepository_indexof",
-      "confidence_score": 1.0
+      "target": "src_data_app_data_memory_tmemorypartnerrepository_indexof"
     },
     {
       "relation": "method",
@@ -2598,9 +2480,9 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L231",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemorypartnerrepository",
-      "target": "src_data_app_data_memory_tmemorypartnerrepository_update",
-      "confidence_score": 1.0
+      "target": "src_data_app_data_memory_tmemorypartnerrepository_update"
     },
     {
       "relation": "calls",
@@ -2609,9 +2491,9 @@
       "source_location": "L214",
       "weight": 1.0,
       "context": "call",
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemorypartnerrepository_getbyid",
-      "target": "src_data_app_data_memory_tmemoryshipmentrepository_indexof",
-      "confidence_score": 1.0
+      "target": "src_data_app_data_memory_tmemoryshipmentrepository_indexof"
     },
     {
       "relation": "calls",
@@ -2620,9 +2502,9 @@
       "source_location": "L232",
       "weight": 1.0,
       "context": "call",
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemorypartnerrepository_update",
-      "target": "src_data_app_data_memory_tmemoryshipmentrepository_indexof",
-      "confidence_score": 1.0
+      "target": "src_data_app_data_memory_tmemoryshipmentrepository_indexof"
     },
     {
       "relation": "calls",
@@ -2631,9 +2513,9 @@
       "source_location": "L239",
       "weight": 1.0,
       "context": "call",
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemorypartnerrepository_delete",
-      "target": "src_data_app_data_memory_tmemoryshipmentrepository_indexof",
-      "confidence_score": 1.0
+      "target": "src_data_app_data_memory_tmemoryshipmentrepository_indexof"
     },
     {
       "relation": "inherits",
@@ -2641,9 +2523,9 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L42",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemoryinventoryrepository",
-      "target": "iinventoryrepository",
-      "confidence_score": 1.0
+      "target": "iinventoryrepository"
     },
     {
       "relation": "method",
@@ -2651,9 +2533,9 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L275",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemoryinventoryrepository",
-      "target": "src_data_app_data_memory_tmemoryinventoryrepository_getmoves",
-      "confidence_score": 1.0
+      "target": "src_data_app_data_memory_tmemoryinventoryrepository_getmoves"
     },
     {
       "relation": "method",
@@ -2661,9 +2543,9 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L249",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemoryinventoryrepository",
-      "target": "src_data_app_data_memory_tmemoryinventoryrepository_getstock",
-      "confidence_score": 1.0
+      "target": "src_data_app_data_memory_tmemoryinventoryrepository_getstock"
     },
     {
       "relation": "method",
@@ -2671,9 +2553,9 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L263",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemoryinventoryrepository",
-      "target": "src_data_app_data_memory_tmemoryinventoryrepository_move",
-      "confidence_score": 1.0
+      "target": "src_data_app_data_memory_tmemoryinventoryrepository_move"
     },
     {
       "relation": "calls",
@@ -2682,9 +2564,9 @@
       "source_location": "L488",
       "weight": 1.0,
       "context": "call",
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemorydatacontext_seed",
-      "target": "src_data_app_data_memory_tmemoryinventoryrepository_move",
-      "confidence_score": 1.0
+      "target": "src_data_app_data_memory_tmemoryinventoryrepository_move"
     },
     {
       "relation": "calls",
@@ -2693,9 +2575,9 @@
       "source_location": "L365",
       "weight": 1.0,
       "context": "call",
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemoryshipmentrepository_add",
-      "target": "src_data_app_data_memory_tmemoryinventoryrepository_move",
-      "confidence_score": 1.0
+      "target": "src_data_app_data_memory_tmemoryinventoryrepository_move"
     },
     {
       "relation": "inherits",
@@ -2703,9 +2585,9 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L53",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemoryquoterepository",
-      "target": "iquoterepository",
-      "confidence_score": 1.0
+      "target": "iquoterepository"
     },
     {
       "relation": "method",
@@ -2713,9 +2595,9 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L302",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemoryquoterepository",
-      "target": "src_data_app_data_memory_tmemoryquoterepository_add",
-      "confidence_score": 1.0
+      "target": "src_data_app_data_memory_tmemoryquoterepository_add"
     },
     {
       "relation": "method",
@@ -2723,9 +2605,9 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L319",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemoryquoterepository",
-      "target": "src_data_app_data_memory_tmemoryquoterepository_delete",
-      "confidence_score": 1.0
+      "target": "src_data_app_data_memory_tmemoryquoterepository_delete"
     },
     {
       "relation": "method",
@@ -2733,9 +2615,9 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L290",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemoryquoterepository",
-      "target": "src_data_app_data_memory_tmemoryquoterepository_getall",
-      "confidence_score": 1.0
+      "target": "src_data_app_data_memory_tmemoryquoterepository_getall"
     },
     {
       "relation": "method",
@@ -2743,9 +2625,9 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L295",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemoryquoterepository",
-      "target": "src_data_app_data_memory_tmemoryquoterepository_getbyid",
-      "confidence_score": 1.0
+      "target": "src_data_app_data_memory_tmemoryquoterepository_getbyid"
     },
     {
       "relation": "method",
@@ -2753,9 +2635,9 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L282",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemoryquoterepository",
-      "target": "src_data_app_data_memory_tmemoryquoterepository_indexof",
-      "confidence_score": 1.0
+      "target": "src_data_app_data_memory_tmemoryquoterepository_indexof"
     },
     {
       "relation": "method",
@@ -2763,9 +2645,9 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L312",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemoryquoterepository",
-      "target": "src_data_app_data_memory_tmemoryquoterepository_update",
-      "confidence_score": 1.0
+      "target": "src_data_app_data_memory_tmemoryquoterepository_update"
     },
     {
       "relation": "calls",
@@ -2774,9 +2656,9 @@
       "source_location": "L296",
       "weight": 1.0,
       "context": "call",
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemoryquoterepository_getbyid",
-      "target": "src_data_app_data_memory_tmemoryshipmentrepository_indexof",
-      "confidence_score": 1.0
+      "target": "src_data_app_data_memory_tmemoryshipmentrepository_indexof"
     },
     {
       "relation": "calls",
@@ -2785,9 +2667,9 @@
       "source_location": "L313",
       "weight": 1.0,
       "context": "call",
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemoryquoterepository_update",
-      "target": "src_data_app_data_memory_tmemoryshipmentrepository_indexof",
-      "confidence_score": 1.0
+      "target": "src_data_app_data_memory_tmemoryshipmentrepository_indexof"
     },
     {
       "relation": "calls",
@@ -2796,9 +2678,9 @@
       "source_location": "L320",
       "weight": 1.0,
       "context": "call",
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemoryquoterepository_delete",
-      "target": "src_data_app_data_memory_tmemoryshipmentrepository_indexof",
-      "confidence_score": 1.0
+      "target": "src_data_app_data_memory_tmemoryshipmentrepository_indexof"
     },
     {
       "relation": "inherits",
@@ -2806,9 +2688,9 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L66",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemoryshipmentrepository",
-      "target": "ishipmentrepository",
-      "confidence_score": 1.0
+      "target": "ishipmentrepository"
     },
     {
       "relation": "method",
@@ -2816,9 +2698,9 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L356",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemoryshipmentrepository",
-      "target": "src_data_app_data_memory_tmemoryshipmentrepository_add",
-      "confidence_score": 1.0
+      "target": "src_data_app_data_memory_tmemoryshipmentrepository_add"
     },
     {
       "relation": "method",
@@ -2826,9 +2708,9 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L330",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemoryshipmentrepository",
-      "target": "src_data_app_data_memory_tmemoryshipmentrepository_create",
-      "confidence_score": 1.0
+      "target": "src_data_app_data_memory_tmemoryshipmentrepository_create"
     },
     {
       "relation": "method",
@@ -2836,9 +2718,9 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L371",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemoryshipmentrepository",
-      "target": "src_data_app_data_memory_tmemoryshipmentrepository_delete",
-      "confidence_score": 1.0
+      "target": "src_data_app_data_memory_tmemoryshipmentrepository_delete"
     },
     {
       "relation": "method",
@@ -2846,9 +2728,9 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L344",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemoryshipmentrepository",
-      "target": "src_data_app_data_memory_tmemoryshipmentrepository_getall",
-      "confidence_score": 1.0
+      "target": "src_data_app_data_memory_tmemoryshipmentrepository_getall"
     },
     {
       "relation": "method",
@@ -2856,9 +2738,9 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L349",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemoryshipmentrepository",
-      "target": "src_data_app_data_memory_tmemoryshipmentrepository_getbyid",
-      "confidence_score": 1.0
+      "target": "src_data_app_data_memory_tmemoryshipmentrepository_getbyid"
     },
     {
       "relation": "method",
@@ -2866,9 +2748,9 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L336",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemoryshipmentrepository",
-      "target": "src_data_app_data_memory_tmemoryshipmentrepository_indexof",
-      "confidence_score": 1.0
+      "target": "src_data_app_data_memory_tmemoryshipmentrepository_indexof"
     },
     {
       "relation": "calls",
@@ -2877,9 +2759,9 @@
       "source_location": "L372",
       "weight": 1.0,
       "context": "call",
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemoryshipmentrepository_delete",
-      "target": "src_data_app_data_memory_tmemoryshipmentrepository_indexof",
-      "confidence_score": 1.0
+      "target": "src_data_app_data_memory_tmemoryshipmentrepository_indexof"
     },
     {
       "relation": "calls",
@@ -2888,9 +2770,9 @@
       "source_location": "L350",
       "weight": 1.0,
       "context": "call",
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemoryshipmentrepository_getbyid",
-      "target": "src_data_app_data_memory_tmemoryshipmentrepository_indexof",
-      "confidence_score": 1.0
+      "target": "src_data_app_data_memory_tmemoryshipmentrepository_indexof"
     },
     {
       "relation": "calls",
@@ -2899,9 +2781,9 @@
       "source_location": "L392",
       "weight": 1.0,
       "context": "call",
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemoryhistoryrepository_itemname",
-      "target": "src_data_app_data_memory_tmemoryshipmentrepository_getbyid",
-      "confidence_score": 1.0
+      "target": "src_data_app_data_memory_tmemoryshipmentrepository_getbyid"
     },
     {
       "relation": "calls",
@@ -2910,9 +2792,9 @@
       "source_location": "L397",
       "weight": 1.0,
       "context": "call",
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemoryhistoryrepository_partnername",
-      "target": "src_data_app_data_memory_tmemoryshipmentrepository_getbyid",
-      "confidence_score": 1.0
+      "target": "src_data_app_data_memory_tmemoryshipmentrepository_getbyid"
     },
     {
       "relation": "calls",
@@ -2921,9 +2803,9 @@
       "source_location": "L476",
       "weight": 1.0,
       "context": "call",
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemorydatacontext_seed",
-      "target": "src_data_app_data_memory_tmemoryshipmentrepository_add",
-      "confidence_score": 1.0
+      "target": "src_data_app_data_memory_tmemoryshipmentrepository_add"
     },
     {
       "relation": "inherits",
@@ -2931,9 +2813,9 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L80",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemoryhistoryrepository",
-      "target": "ihistoryrepository",
-      "confidence_score": 1.0
+      "target": "ihistoryrepository"
     },
     {
       "relation": "method",
@@ -2941,9 +2823,9 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L382",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemoryhistoryrepository",
-      "target": "src_data_app_data_memory_tmemoryhistoryrepository_create",
-      "confidence_score": 1.0
+      "target": "src_data_app_data_memory_tmemoryhistoryrepository_create"
     },
     {
       "relation": "method",
@@ -2951,9 +2833,9 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L391",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemoryhistoryrepository",
-      "target": "src_data_app_data_memory_tmemoryhistoryrepository_itemname",
-      "confidence_score": 1.0
+      "target": "src_data_app_data_memory_tmemoryhistoryrepository_itemname"
     },
     {
       "relation": "method",
@@ -2961,9 +2843,9 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L396",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemoryhistoryrepository",
-      "target": "src_data_app_data_memory_tmemoryhistoryrepository_partnername",
-      "confidence_score": 1.0
+      "target": "src_data_app_data_memory_tmemoryhistoryrepository_partnername"
     },
     {
       "relation": "method",
@@ -2971,9 +2853,9 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L401",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemoryhistoryrepository",
-      "target": "src_data_app_data_memory_tmemoryhistoryrepository_query",
-      "confidence_score": 1.0
+      "target": "src_data_app_data_memory_tmemoryhistoryrepository_query"
     },
     {
       "relation": "inherits",
@@ -2981,9 +2863,9 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L96",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemorydatacontext",
-      "target": "idatacontext",
-      "confidence_score": 1.0
+      "target": "idatacontext"
     },
     {
       "relation": "method",
@@ -2991,9 +2873,9 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L462",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemorydatacontext",
-      "target": "src_data_app_data_memory_tmemorydatacontext_create",
-      "confidence_score": 1.0
+      "target": "src_data_app_data_memory_tmemorydatacontext_create"
     },
     {
       "relation": "method",
@@ -3001,9 +2883,9 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L502",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemorydatacontext",
-      "target": "src_data_app_data_memory_tmemorydatacontext_history",
-      "confidence_score": 1.0
+      "target": "src_data_app_data_memory_tmemorydatacontext_history"
     },
     {
       "relation": "method",
@@ -3011,9 +2893,9 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L499",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemorydatacontext",
-      "target": "src_data_app_data_memory_tmemorydatacontext_inventory",
-      "confidence_score": 1.0
+      "target": "src_data_app_data_memory_tmemorydatacontext_inventory"
     },
     {
       "relation": "method",
@@ -3021,9 +2903,9 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L497",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemorydatacontext",
-      "target": "src_data_app_data_memory_tmemorydatacontext_items",
-      "confidence_score": 1.0
+      "target": "src_data_app_data_memory_tmemorydatacontext_items"
     },
     {
       "relation": "method",
@@ -3031,9 +2913,9 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L498",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemorydatacontext",
-      "target": "src_data_app_data_memory_tmemorydatacontext_partners",
-      "confidence_score": 1.0
+      "target": "src_data_app_data_memory_tmemorydatacontext_partners"
     },
     {
       "relation": "method",
@@ -3041,9 +2923,9 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L503",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemorydatacontext",
-      "target": "src_data_app_data_memory_tmemorydatacontext_providername",
-      "confidence_score": 1.0
+      "target": "src_data_app_data_memory_tmemorydatacontext_providername"
     },
     {
       "relation": "method",
@@ -3051,9 +2933,9 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L500",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemorydatacontext",
-      "target": "src_data_app_data_memory_tmemorydatacontext_quotes",
-      "confidence_score": 1.0
+      "target": "src_data_app_data_memory_tmemorydatacontext_quotes"
     },
     {
       "relation": "method",
@@ -3061,9 +2943,9 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L474",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemorydatacontext",
-      "target": "src_data_app_data_memory_tmemorydatacontext_seed",
-      "confidence_score": 1.0
+      "target": "src_data_app_data_memory_tmemorydatacontext_seed"
     },
     {
       "relation": "method",
@@ -3071,9 +2953,9 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L501",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemorydatacontext",
-      "target": "src_data_app_data_memory_tmemorydatacontext_shipments",
-      "confidence_score": 1.0
+      "target": "src_data_app_data_memory_tmemorydatacontext_shipments"
     },
     {
       "relation": "calls",
@@ -3082,9 +2964,9 @@
       "source_location": "L470",
       "weight": 1.0,
       "context": "call",
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemorydatacontext_create",
-      "target": "src_data_app_data_memory_tmemorydatacontext_seed",
-      "confidence_score": 1.0
+      "target": "src_data_app_data_memory_tmemorydatacontext_seed"
     },
     {
       "relation": "calls",
@@ -3093,9 +2975,9 @@
       "source_location": "L476",
       "weight": 1.0,
       "context": "call",
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemorydatacontext_seed",
-      "target": "src_data_app_data_memory_makeitem",
-      "confidence_score": 1.0
+      "target": "src_data_app_data_memory_makeitem"
     },
     {
       "relation": "calls",
@@ -3104,361 +2986,119 @@
       "source_location": "L483",
       "weight": 1.0,
       "context": "call",
+      "confidence_score": 1.0,
       "source": "src_data_app_data_memory_tmemorydatacontext_seed",
-      "target": "src_data_app_data_memory_makepartner",
-      "confidence_score": 1.0
+      "target": "src_data_app_data_memory_makepartner"
     },
     {
-      "relation": "contains",
+      "relation": "calls",
       "confidence": "EXTRACTED",
-      "source_file": ".github/ISSUE_TEMPLATE/module-task.md",
-      "source_location": "L8",
-      "weight": 1.0,
-      "source": "github_issue_template_module_task",
-      "target": "github_issue_template_module_task_\ub300\uc0c1_\ubaa8\ub4c8",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".github/ISSUE_TEMPLATE/module-task.md",
-      "source_location": "L19",
-      "weight": 1.0,
-      "source": "github_issue_template_module_task",
-      "target": "github_issue_template_module_task_\ube0c\ub79c\uce58",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".github/ISSUE_TEMPLATE/module-task.md",
-      "source_location": "L14",
-      "weight": 1.0,
-      "source": "github_issue_template_module_task",
-      "target": "github_issue_template_module_task_\uc644\ub8cc_\uae30\uc900",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".github/ISSUE_TEMPLATE/module-task.md",
-      "source_location": "L11",
-      "weight": 1.0,
-      "source": "github_issue_template_module_task",
-      "target": "github_issue_template_module_task_\uc791\uc5c5_\ubc94\uc704",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".github/pull_request_template.md",
-      "source_location": "L1",
-      "weight": 1.0,
-      "source": "github_pull_request_template",
-      "target": "github_pull_request_template_\uac1c\uc694",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".github/pull_request_template.md",
-      "source_location": "L4",
-      "weight": 1.0,
-      "source": "github_pull_request_template",
-      "target": "github_pull_request_template_\ubcc0\uacbd_\uc0ac\ud56d",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".github/pull_request_template.md",
-      "source_location": "L7",
-      "weight": 1.0,
-      "source": "github_pull_request_template",
-      "target": "github_pull_request_template_\uccb4\ud06c\ub9ac\uc2a4\ud2b8",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".github/pull_request_template.md",
-      "source_location": "L13",
-      "weight": 1.0,
-      "source": "github_pull_request_template",
-      "target": "github_pull_request_template_\ud14c\uc2a4\ud2b8_\ubc29\ubc95",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L1",
-      "weight": 1.0,
-      "source": "readme",
-      "target": "readme_\uac74\ucd95\uc790\uc7ac\uc0c1_erp_\uc628\ud504\ub808\ubbf8\uc2a4",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L7",
-      "weight": 1.0,
-      "source": "readme_\uac74\ucd95\uc790\uc7ac\uc0c1_erp_\uc628\ud504\ub808\ubbf8\uc2a4",
-      "target": "readme_\uae30\uc220_\uc2a4\ud0dd",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L27",
-      "weight": 1.0,
-      "source": "readme_\uac74\ucd95\uc790\uc7ac\uc0c1_erp_\uc628\ud504\ub808\ubbf8\uc2a4",
-      "target": "readme_\ubaa8\ub4c8",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L50",
-      "weight": 1.0,
-      "source": "readme_\uac74\ucd95\uc790\uc7ac\uc0c1_erp_\uc628\ud504\ub808\ubbf8\uc2a4",
-      "target": "readme_\ube0c\ub79c\uce58_\uc804\ub7b5",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L58",
-      "weight": 1.0,
-      "source": "readme_\uac74\ucd95\uc790\uc7ac\uc0c1_erp_\uc628\ud504\ub808\ubbf8\uc2a4",
-      "target": "readme_\ube4c\ub4dc",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L38",
-      "weight": 1.0,
-      "source": "readme_\uac74\ucd95\uc790\uc7ac\uc0c1_erp_\uc628\ud504\ub808\ubbf8\uc2a4",
-      "target": "readme_\uc800\uc7a5\uc18c_\uad6c\uc870",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L17",
-      "weight": 1.0,
-      "source": "readme_\uae30\uc220_\uc2a4\ud0dd",
-      "target": "readme_db_\uc5c6\uc774\ub3c4_\uad6c\ub3d9\ub429\ub2c8\ub2e4",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source_file": "docs/maintenance/architecture.md",
+      "source": "src_app",
+      "target": "src_core"
     },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
-      "source_file": "docs/maintenance/README.md",
-      "source_location": "L17",
-      "weight": 1.0,
-      "source": "docs_maintenance_readme",
-      "target": "docs_maintenance_architecture",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/maintenance/README.md",
-      "source_location": "L1",
-      "weight": 1.0,
-      "source": "docs_maintenance_readme",
-      "target": "docs_maintenance_readme_\uc720\uc9c0\ubcf4\uc218_\ud559\uc2b5_\ubb38\uc11c",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source_file": "docs/maintenance/architecture.md",
+      "source": "src_modules",
+      "target": "src_core"
     },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
-      "source_file": "docs/maintenance/README.md",
-      "source_location": "L18",
-      "weight": 1.0,
-      "source": "docs_maintenance_readme",
-      "target": "docs_maintenance_template",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source": "src_app",
+      "target": "config_app_ini"
     },
     {
-      "relation": "contains",
+      "relation": "references",
       "confidence": "EXTRACTED",
-      "source_file": "docs/maintenance/README.md",
-      "source_location": "L15",
-      "weight": 1.0,
-      "source": "docs_maintenance_readme_\uc720\uc9c0\ubcf4\uc218_\ud559\uc2b5_\ubb38\uc11c",
-      "target": "docs_maintenance_readme_\uad6c\uc131",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/maintenance/README.md",
-      "source_location": "L20",
-      "weight": 1.0,
-      "source": "docs_maintenance_readme_\uc720\uc9c0\ubcf4\uc218_\ud559\uc2b5_\ubb38\uc11c",
-      "target": "docs_maintenance_readme_\ubb38\uc11c_\uc791\uc131_\uc6d0\uce59",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/maintenance/_template.md",
-      "source_location": "L1",
-      "weight": 1.0,
-      "source": "docs_maintenance_template",
-      "target": "docs_maintenance_template_\ubaa8\ub4c8\uba85_\uc720\uc9c0\ubcf4\uc218_\ubb38\uc11c",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/maintenance/_template.md",
-      "source_location": "L5",
-      "weight": 1.0,
-      "source": "docs_maintenance_template_\ubaa8\ub4c8\uba85_\uc720\uc9c0\ubcf4\uc218_\ubb38\uc11c",
-      "target": "docs_maintenance_template_1_\uad6c\ud604\ud55c_\uae30\ub2a5",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/maintenance/_template.md",
-      "source_location": "L8",
-      "weight": 1.0,
-      "source": "docs_maintenance_template_\ubaa8\ub4c8\uba85_\uc720\uc9c0\ubcf4\uc218_\ubb38\uc11c",
-      "target": "docs_maintenance_template_2_\uad00\ub828_\ud30c\uc77c_\uc8fc\uc694_\ud074\ub798\uc2a4_\uba54\uc11c\ub4dc",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/maintenance/_template.md",
-      "source_location": "L13",
-      "weight": 1.0,
-      "source": "docs_maintenance_template_\ubaa8\ub4c8\uba85_\uc720\uc9c0\ubcf4\uc218_\ubb38\uc11c",
-      "target": "docs_maintenance_template_3_\ucf54\ub4dc_\uc2e4\ud589_\ud750\ub984",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/maintenance/_template.md",
-      "source_location": "L16",
-      "weight": 1.0,
-      "source": "docs_maintenance_template_\ubaa8\ub4c8\uba85_\uc720\uc9c0\ubcf4\uc218_\ubb38\uc11c",
-      "target": "docs_maintenance_template_4_\ub370\uc774\ud130\uac00_\uc0dd\uc131_\ubcc0\uacbd\ub418\ub294_\uc704\uce58",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/maintenance/_template.md",
-      "source_location": "L19",
-      "weight": 1.0,
-      "source": "docs_maintenance_template_\ubaa8\ub4c8\uba85_\uc720\uc9c0\ubcf4\uc218_\ubb38\uc11c",
-      "target": "docs_maintenance_template_5_\uc774\ud574\uc5d0_\ud544\uc694\ud55c_delphi_\ud559\uc2b5_\ud56d\ubaa9",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/maintenance/_template.md",
-      "source_location": "L22",
-      "weight": 1.0,
-      "source": "docs_maintenance_template_\ubaa8\ub4c8\uba85_\uc720\uc9c0\ubcf4\uc218_\ubb38\uc11c",
-      "target": "docs_maintenance_template_6_\uc218\uc815_\ud655\uc7a5_\uc2dc_\ud655\uc778\ud560_\uc704\uce58",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
       "source_file": "docs/maintenance/architecture.md",
-      "source_location": "L1",
-      "weight": 1.0,
-      "source": "docs_maintenance_architecture",
-      "target": "docs_maintenance_architecture_\uc804\uccb4_\uad6c\uc870_\uac1c\uc694",
-      "confidence_score": 1.0
+      "source": "src_modules_inventory",
+      "target": "src_modules_item"
     },
     {
-      "relation": "contains",
+      "relation": "references",
       "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
       "source_file": "docs/maintenance/architecture.md",
-      "source_location": "L23",
-      "weight": 1.0,
-      "source": "docs_maintenance_architecture_\uc804\uccb4_\uad6c\uc870_\uac1c\uc694",
-      "target": "docs_maintenance_architecture_\ub370\uc774\ud130_\uc811\uadfc_\ubc29\uc2dd",
-      "confidence_score": 1.0
+      "source": "src_modules_quote",
+      "target": "src_modules_item"
     },
     {
-      "relation": "contains",
+      "relation": "references",
       "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
       "source_file": "docs/maintenance/architecture.md",
-      "source_location": "L5",
-      "weight": 1.0,
-      "source": "docs_maintenance_architecture_\uc804\uccb4_\uad6c\uc870_\uac1c\uc694",
-      "target": "docs_maintenance_architecture_\ub808\uc774\uc5b4",
-      "confidence_score": 1.0
+      "source": "src_modules_quote",
+      "target": "src_modules_partner"
     },
     {
-      "relation": "contains",
+      "relation": "calls",
       "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
       "source_file": "docs/maintenance/architecture.md",
-      "source_location": "L42",
-      "weight": 1.0,
-      "source": "docs_maintenance_architecture_\uc804\uccb4_\uad6c\uc870_\uac1c\uc694",
-      "target": "docs_maintenance_architecture_\ubaa8\ub4c8_\uac04_\uc758\uc874",
-      "confidence_score": 1.0
+      "source": "src_modules_shipment",
+      "target": "src_modules_inventory"
     },
     {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
       "source_file": "docs/maintenance/architecture.md",
-      "source_location": "L59",
-      "weight": 1.0,
-      "source": "docs_maintenance_architecture_\uc804\uccb4_\uad6c\uc870_\uac1c\uc694",
-      "target": "docs_maintenance_architecture_\uc5b4\ub514\ub97c_\uace0\uce60_\uac83\uc778\uac00_\ube60\ub978_\uc548\ub0b4",
-      "confidence_score": 1.0
+      "source": "src_modules_history",
+      "target": "src_modules_shipment"
     },
     {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
       "source_file": "docs/maintenance/architecture.md",
-      "source_location": "L37",
-      "weight": 1.0,
-      "source": "docs_maintenance_architecture_\ub370\uc774\ud130_\uc811\uadfc_\ubc29\uc2dd",
-      "target": "docs_maintenance_architecture_\uc774_\uad6c\uc870\uc758_\uc774\uc720",
-      "confidence_score": 1.0
+      "source": "src_core_firebird_provider",
+      "target": "src_core_iitemrepository"
     },
     {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/README.md",
-      "source_location": "L1",
-      "weight": 1.0,
-      "source": "src_readme",
-      "target": "src_readme_src",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/README.md",
-      "source_location": "L12",
-      "weight": 1.0,
-      "source": "src_readme_src",
-      "target": "src_readme_\uc2dd\ubcc4\uc790_\uc8fc\uc11d_\uaddc\uce59",
-      "confidence_score": 1.0
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "docs/maintenance/architecture.md",
+      "source": "src_core_memory_provider",
+      "target": "src_core_iitemrepository"
     }
   ],
-  "hyperedges": [],
-  "built_at_commit": "e2a1941a64b5b8be9c6f28dc616b10159b14d0e4"
+  "hyperedges": [
+    {
+      "id": "data_abstraction_layer",
+      "label": "Data Abstraction Pattern",
+      "nodes": [
+        "src_core_iitemrepository",
+        "src_core_memory_provider",
+        "src_core_firebird_provider"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/maintenance/architecture.md"
+    },
+    {
+      "id": "erp_module_flow",
+      "label": "ERP Business Logic Flow",
+      "nodes": [
+        "src_modules_item",
+        "src_modules_inventory",
+        "src_modules_shipment",
+        "src_modules_history"
+      ],
+      "relation": "form",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "docs/maintenance/architecture.md"
+    }
+  ],
+  "built_at_commit": "1d5154533d903db85347330cea6ab1a54711552f"
 }

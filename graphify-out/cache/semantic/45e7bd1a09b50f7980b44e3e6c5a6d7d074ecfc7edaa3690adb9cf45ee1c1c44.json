@@ -1,0 +1,1 @@
+{"nodes": [{"id": "readme", "label": "\uac74\ucd95\uc790\uc7ac\uc0c1 ERP (\uc628\ud504\ub808\ubbf8\uc2a4)", "file_type": "document", "source_file": "README.md"}], "edges": [{"source": "src_app", "target": "config_app_ini", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "README.md"}], "hyperedges": []}

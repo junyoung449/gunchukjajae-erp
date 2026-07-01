@@ -47,10 +47,15 @@ backup/
 # ── 비공개 하네스 트랙 (별도 private 저장소로 관리) ─────────────
 .harness/
 
-# ── 지식 그래프: 협업 위해 루트 graphify-out/ 을 커밋·공유(공개) ──
-#    단 캐시/날짜별 백업/중복본은 제외(볼륨·잡음 방지)
-graphify-out/cache/
+# ── 지식 그래프: 루트 graphify-out/ 커밋·공유 (graphify 공식 권장) ───
+#    graph.json·GRAPH_REPORT.md·graph.html·manifest.json·cache/ → 커밋
+#    (팀 공유 + 재빌드 속도·Gemini 비용 절감). 로컬 전용/노이즈만 제외.
+#    주의: .gitignore 는 인라인 주석 미지원 → 주석은 반드시 별도 줄.
+# 로컬 비용기록(공식: 로컬 전용)
+graphify-out/cost.json
+# 날짜별 백업 스냅샷(노이즈)
 graphify-out/20[0-9][0-9]-[0-9][0-9]-[0-9][0-9]/
+# 중복본 금지(정본은 루트뿐)
 src/graphify-out/
 .venv/
 __pycache__/

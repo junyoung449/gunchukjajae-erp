@@ -1,16 +1,1 @@
-{
-  "0": "App.Data.Memory",
-  "1": "IndexOf",
-  "2": "App.Core.Contracts",
-  "3": "[모듈명] 유지보수 문서",
-  "4": "ERP",
-  "5": "건축자재상 ERP (온프레미스)",
-  "6": "IPartnerRepository",
-  "7": "TMainForm",
-  "8": "IItemRepository",
-  "9": "IQuoteRepository",
-  "10": "TMemoryHistoryRepository",
-  "11": "module-task.md",
-  "12": "pull_request_template.md",
-  "13": "src"
-}
+{"0": "IndexOf", "1": "App.Core.Contracts", "2": "App.Data.Memory", "3": "TMemoryShipmentRepository", "4": "ERP", "5": "IPartnerRepository", "6": "TMainForm", "7": "IItemRepository", "8": "IQuoteRepository", "9": "Inventory Module", "10": "App Shell", "11": "IItemRepository", "12": "Architecture Documentation", "13": "건축자재상 ERP (온프레미스)"}
