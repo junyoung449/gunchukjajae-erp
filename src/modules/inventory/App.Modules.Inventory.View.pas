@@ -119,7 +119,7 @@ begin
   EntryPanel := TPanel.Create(Self);
   EntryPanel.Parent := Self;
   EntryPanel.Align := alTop;
-  EntryPanel.Height := 58;
+  EntryPanel.Height := 92;
   EntryPanel.BevelOuter := bvNone;
 
   Lbl := TLabel.Create(Self);
@@ -166,25 +166,25 @@ begin
 
   Lbl := TLabel.Create(Self);
   Lbl.Parent := EntryPanel;
-  Lbl.Left := 652;
-  Lbl.Top := 18;
+  Lbl.Left := 16;
+  Lbl.Top := 57;
   Lbl.Caption := '참조번호';
 
   FRefEdit := TEdit.Create(Self);
   FRefEdit.Parent := EntryPanel;
-  FRefEdit.Left := 722;
-  FRefEdit.Top := 13;
-  FRefEdit.Width := 140;
+  FRefEdit.Left := 84;
+  FRefEdit.Top := 52;
+  FRefEdit.Width := 220;
 
   BtnApply := TButton.Create(Self);
   BtnApply.Parent := EntryPanel;
-  BtnApply.Left := 878;
-  BtnApply.Top := 12;
-  BtnApply.Width := 78;
+  BtnApply.Left := 320;
+  BtnApply.Top := 52;
+  BtnApply.Width := 120;
   BtnApply.Caption := '적용';
   BtnApply.Default := True;
   BtnApply.OnClick := RegisterClick;
-  BtnApply.Anchors := [akTop, akRight];
+  BtnApply.Anchors := [akTop, akLeft];
 
   FStockGrid := TStringGrid.Create(Self);
   FStockGrid.Parent := Self;
@@ -233,16 +233,16 @@ begin
 
   BtnApply := TButton.Create(Self);
   BtnApply.Parent := BottomPanel;
-  BtnApply.Left := 782;
+  BtnApply.Left := 610;
   BtnApply.Top := 12;
-  BtnApply.Width := 86;
+  BtnApply.Width := 100;
   BtnApply.Caption := '적용';
   BtnApply.OnClick := RegisterClick;
   BtnApply.Anchors := [akTop, akRight];
 
   BtnClose := TButton.Create(Self);
   BtnClose.Parent := BottomPanel;
-  BtnClose.Left := 878;
+  BtnClose.Left := 722;
   BtnClose.Top := 12;
   BtnClose.Width := 78;
   BtnClose.Caption := '닫기';
