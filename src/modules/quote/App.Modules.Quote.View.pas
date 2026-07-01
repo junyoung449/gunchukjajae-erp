@@ -128,9 +128,9 @@ var
   I: Integer;
 begin
   if AIsNew then
-    Caption := 'New Quote'
+    Caption := '견적 신규'
   else
-    Caption := 'Edit Quote';
+    Caption := '견적 수정';
   Width := 820;
   Height := 620;
   BorderStyle := bsDialog;
@@ -142,7 +142,7 @@ begin
   PanelTop.Height := 104;
   PanelTop.BevelOuter := bvNone;
 
-  AddLabel('Partner', PanelTop, 16, 18);
+  AddLabel('거래처', PanelTop, 16, 18);
   FPartnerCombo := TComboBox.Create(Self);
   FPartnerCombo.Parent := PanelTop;
   FPartnerCombo.Left := 82;
@@ -153,7 +153,7 @@ begin
     FPartnerCombo.Items.Add(FPartners[I].Code + ' - ' + FPartners[I].Name);
   FPartnerCombo.ItemIndex := PartnerComboIndex(FQuote.PartnerId);
 
-  AddLabel('Date', PanelTop, 370, 18);
+  AddLabel('일자', PanelTop, 370, 18);
   FDateEdit := TEdit.Create(Self);
   FDateEdit.Parent := PanelTop;
   FDateEdit.Left := 418;
@@ -164,7 +164,7 @@ begin
   else
     FDateEdit.Text := FormatDateTime('yyyy-mm-dd', FQuote.QuoteDate);
 
-  AddLabel('Item', PanelTop, 16, 58);
+  AddLabel('품목', PanelTop, 16, 58);
   FItemCombo := TComboBox.Create(Self);
   FItemCombo.Parent := PanelTop;
   FItemCombo.Left := 82;
@@ -182,7 +182,7 @@ begin
   BtnAdd.Left := 438;
   BtnAdd.Top := 52;
   BtnAdd.Width := 88;
-  BtnAdd.Caption := 'Add line';
+  BtnAdd.Caption := '라인 추가';
   BtnAdd.OnClick := AddLineClick;
 
   BtnDelete := TButton.Create(Self);
@@ -190,7 +190,7 @@ begin
   BtnDelete.Left := 536;
   BtnDelete.Top := 52;
   BtnDelete.Width := 88;
-  BtnDelete.Caption := 'Delete line';
+  BtnDelete.Caption := '라인 삭제';
   BtnDelete.OnClick := DeleteLineClick;
 
   PanelBottom := TPanel.Create(Self);
@@ -217,7 +217,7 @@ begin
   FTotalLabel.Top := 68;
   FTotalLabel.Width := 220;
 
-  AddLabel('Note', PanelBottom, 16, 12);
+  AddLabel('비고', PanelBottom, 16, 12);
   FNoteMemo := TMemo.Create(Self);
   FNoteMemo.Parent := PanelBottom;
   FNoteMemo.Left := 82;
@@ -232,7 +232,7 @@ begin
   BtnSave.Left := 612;
   BtnSave.Top := 102;
   BtnSave.Width := 78;
-  BtnSave.Caption := 'Save';
+  BtnSave.Caption := '저장';
   BtnSave.OnClick := SaveClick;
 
   BtnCancel := TButton.Create(Self);
@@ -240,7 +240,7 @@ begin
   BtnCancel.Left := 700;
   BtnCancel.Top := 102;
   BtnCancel.Width := 78;
-  BtnCancel.Caption := 'Cancel';
+  BtnCancel.Caption := '취소';
   BtnCancel.ModalResult := mrCancel;
 
   FLineGrid := TStringGrid.Create(Self);
@@ -252,10 +252,10 @@ begin
   FLineGrid.Options := FLineGrid.Options + [goEditing] - [goRowSelect];
   FLineGrid.OnSetEditText := LineGridSetEditText;
   FLineGrid.OnSelectCell := LineGridSelectCell;
-  FLineGrid.Cells[0, 0] := 'Item';
-  FLineGrid.Cells[1, 0] := 'Qty';
-  FLineGrid.Cells[2, 0] := 'Unit Price';
-  FLineGrid.Cells[3, 0] := 'Amount';
+  FLineGrid.Cells[0, 0] := '품목';
+  FLineGrid.Cells[1, 0] := '수량';
+  FLineGrid.Cells[2, 0] := '단가';
+  FLineGrid.Cells[3, 0] := '금액';
   FLineGrid.ColWidths[0] := 360;
   FLineGrid.ColWidths[1] := 110;
   FLineGrid.ColWidths[2] := 130;
@@ -354,7 +354,7 @@ var
 begin
   if FItemCombo.ItemIndex < 0 then
   begin
-    ShowMessage('Select an item.');
+    ShowMessage('품목을 선택해 주세요.');
     Exit;
   end;
 
@@ -406,7 +406,7 @@ begin
   Idx := FLineGrid.Row - 1;
   if (Idx < 0) or (Idx > High(FQuote.Lines)) then
   begin
-    ShowMessage('Select a line.');
+    ShowMessage('라인을 선택해 주세요.');
     Exit;
   end;
 
@@ -466,9 +466,9 @@ begin
 
     FQuote.Vat := FQuote.SubTotal * 0.1;
     FQuote.Total := FQuote.SubTotal + FQuote.Vat;
-    FSubTotalLabel.Caption := 'SubTotal: ' + FormatMoney(FQuote.SubTotal);
-    FVatLabel.Caption := 'Vat(10%): ' + FormatMoney(FQuote.Vat);
-    FTotalLabel.Caption := 'Total: ' + FormatMoney(FQuote.Total);
+    FSubTotalLabel.Caption := '공급가액: ' + FormatMoney(FQuote.SubTotal);
+    FVatLabel.Caption := '부가세(10%): ' + FormatMoney(FQuote.Vat);
+    FTotalLabel.Caption := '합계: ' + FormatMoney(FQuote.Total);
   finally
     FUpdating := False;
   end;
@@ -481,21 +481,21 @@ begin
   Recalculate;
   if FPartnerCombo.ItemIndex < 0 then
   begin
-    ShowMessage('Select a partner.');
+    ShowMessage('거래처를 선택해 주세요.');
     FPartnerCombo.SetFocus;
     Exit;
   end;
 
   if not TryStrToDate(FDateEdit.Text, QuoteDate) then
   begin
-    ShowMessage('Enter a valid date.');
+    ShowMessage('올바른 일자를 입력해 주세요.');
     FDateEdit.SetFocus;
     Exit;
   end;
 
   if Length(FQuote.Lines) = 0 then
   begin
-    ShowMessage('Add at least one line.');
+    ShowMessage('견적 라인을 하나 이상 추가해 주세요.');
     Exit;
   end;
 
@@ -524,7 +524,7 @@ begin
   if (AData = nil) or (AData.Quotes = nil) or (AData.Items = nil)
     or (AData.Partners = nil) then
   begin
-    ShowMessage('Quote data is not available.');
+    ShowMessage('견적 데이터를 사용할 수 없습니다.');
     Exit;
   end;
 
@@ -542,7 +542,7 @@ var
   SearchLabel: TLabel;
   BtnNew, BtnEdit, BtnDelete, BtnPreview, BtnClose: TButton;
 begin
-  Caption := 'Quote';
+  Caption := '견적 관리';
   Width := 940;
   Height := 560;
   Position := poOwnerFormCenter;
@@ -557,7 +557,7 @@ begin
   SearchLabel.Parent := TopPanel;
   SearchLabel.Left := 16;
   SearchLabel.Top := 17;
-  SearchLabel.Caption := 'Search';
+  SearchLabel.Caption := '검색';
 
   FSearchEdit := TEdit.Create(Self);
   FSearchEdit.Parent := TopPanel;
@@ -577,7 +577,7 @@ begin
   BtnNew.Left := 16;
   BtnNew.Top := 12;
   BtnNew.Width := 82;
-  BtnNew.Caption := 'New';
+  BtnNew.Caption := '신규';
   BtnNew.OnClick := NewClick;
 
   BtnEdit := TButton.Create(Self);
@@ -585,7 +585,7 @@ begin
   BtnEdit.Left := 106;
   BtnEdit.Top := 12;
   BtnEdit.Width := 82;
-  BtnEdit.Caption := 'Edit';
+  BtnEdit.Caption := '수정';
   BtnEdit.OnClick := EditClick;
 
   BtnDelete := TButton.Create(Self);
@@ -593,7 +593,7 @@ begin
   BtnDelete.Left := 196;
   BtnDelete.Top := 12;
   BtnDelete.Width := 82;
-  BtnDelete.Caption := 'Delete';
+  BtnDelete.Caption := '삭제';
   BtnDelete.OnClick := DeleteClick;
 
   BtnPreview := TButton.Create(Self);
@@ -601,7 +601,7 @@ begin
   BtnPreview.Left := 286;
   BtnPreview.Top := 12;
   BtnPreview.Width := 82;
-  BtnPreview.Caption := 'Preview';
+  BtnPreview.Caption := '미리보기';
   BtnPreview.OnClick := PreviewClick;
 
   BtnClose := TButton.Create(Self);
@@ -609,7 +609,7 @@ begin
   BtnClose.Left := 826;
   BtnClose.Top := 12;
   BtnClose.Width := 82;
-  BtnClose.Caption := 'Close';
+  BtnClose.Caption := '닫기';
   BtnClose.ModalResult := mrClose;
   BtnClose.Anchors := [akTop, akRight];
 
@@ -621,12 +621,12 @@ begin
   FGrid.RowCount := 2;
   FGrid.Options := FGrid.Options + [goRowSelect] - [goEditing];
   FGrid.OnDblClick := GridDblClick;
-  FGrid.Cells[0, 0] := 'Quote No';
-  FGrid.Cells[1, 0] := 'Partner';
-  FGrid.Cells[2, 0] := 'Date';
-  FGrid.Cells[3, 0] := 'SubTotal';
-  FGrid.Cells[4, 0] := 'Vat';
-  FGrid.Cells[5, 0] := 'Total';
+  FGrid.Cells[0, 0] := '견적번호';
+  FGrid.Cells[1, 0] := '거래처';
+  FGrid.Cells[2, 0] := '일자';
+  FGrid.Cells[3, 0] := '공급가액';
+  FGrid.Cells[4, 0] := '부가세';
+  FGrid.Cells[5, 0] := '합계';
   FGrid.ColWidths[0] := 130;
   FGrid.ColWidths[1] := 220;
   FGrid.ColWidths[2] := 100;
@@ -701,7 +701,7 @@ begin
   Idx := FGrid.Row - 1;
   if (Idx < 0) or (Idx > High(FRows)) then
   begin
-    ShowMessage('Select a quote.');
+    ShowMessage('견적을 선택해 주세요.');
     Exit;
   end;
 
@@ -749,7 +749,7 @@ var
   Quote: TQuote;
 begin
   if not SelectedQuote(Quote) then Exit;
-  if MessageDlg('Delete quote', 'Delete selected quote?',
+  if MessageDlg('견적 삭제', '선택한 견적을 삭제하시겠습니까?',
     mtConfirmation, [mbYes, mbNo], 0) <> mrYes then Exit;
   FData.Quotes.Delete(Quote.Id);
   RefreshGrid;
@@ -765,24 +765,24 @@ begin
 
   Lines := TStringList.Create;
   try
-    Lines.Add('Quote No: ' + Quote.QuoteNo);
-    Lines.Add('Partner: ' + PartnerName(Quote.PartnerId));
-    Lines.Add('Date: ' + FormatDateTime('yyyy-mm-dd', Quote.QuoteDate));
+    Lines.Add('견적번호: ' + Quote.QuoteNo);
+    Lines.Add('거래처: ' + PartnerName(Quote.PartnerId));
+    Lines.Add('일자: ' + FormatDateTime('yyyy-mm-dd', Quote.QuoteDate));
     Lines.Add('');
     for I := 0 to High(Quote.Lines) do
-      Lines.Add(Format('%s  Qty %s  Price %s  Amount %s',
+      Lines.Add(Format('%s  수량 %s  단가 %s  금액 %s',
         [FData.Items.GetById(Quote.Lines[I].ItemId).Name,
          FormatQty(Quote.Lines[I].Qty),
          FormatMoney(Quote.Lines[I].UnitPrice),
          FormatMoney(Quote.Lines[I].Amount)]));
     Lines.Add('');
-    Lines.Add('SubTotal: ' + FormatMoney(Quote.SubTotal));
-    Lines.Add('Vat(10%): ' + FormatMoney(Quote.Vat));
-    Lines.Add('Total: ' + FormatMoney(Quote.Total));
+    Lines.Add('공급가액: ' + FormatMoney(Quote.SubTotal));
+    Lines.Add('부가세(10%): ' + FormatMoney(Quote.Vat));
+    Lines.Add('합계: ' + FormatMoney(Quote.Total));
     if Trim(Quote.Note) <> '' then
     begin
       Lines.Add('');
-      Lines.Add('Note: ' + Quote.Note);
+      Lines.Add('비고: ' + Quote.Note);
     end;
     ShowMessage(Lines.Text);
   finally
