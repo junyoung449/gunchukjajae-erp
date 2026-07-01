@@ -40,8 +40,8 @@
     "semantic_hash": "3b3f365bad30f24b7b61bb3d17f3dd10"
   },
   "src/modules/shipment/App.Modules.Shipment.View.pas": {
-    "mtime": 1782909771.1209664,
-    "ast_hash": "21a10ed7cbdf17542b03b781d9877bcf",
+    "mtime": 1782907793.7344043,
+    "ast_hash": "f70ee1b91c2fb32a04bc05ddbd6ee689",
     "semantic_hash": ""
   },
   ".github/ISSUE_TEMPLATE/module-task.md": {
