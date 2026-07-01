@@ -1,8 +1,8 @@
 {
   "src/app/App.Main.pas": {
-    "mtime": 1782903944.0914364,
-    "ast_hash": "1726f3856904b8a75e39136ab6b1da70",
-    "semantic_hash": "1726f3856904b8a75e39136ab6b1da70"
+    "mtime": 1782906020.5622008,
+    "ast_hash": "e04e75d77b2a66419742f95859aac706",
+    "semantic_hash": "e04e75d77b2a66419742f95859aac706"
   },
   "src/app/ERP.lpr": {
     "mtime": 1782902863.788289,
@@ -29,49 +29,14 @@
     "ast_hash": "b4afaf91e6c21615247548f9fc2a7d90",
     "semantic_hash": "b4afaf91e6c21615247548f9fc2a7d90"
   },
-  ".github/ISSUE_TEMPLATE/module-task.md": {
-    "mtime": 1782900872.3007467,
-    "ast_hash": "ba2a2e13fc46e9b934b210ea86a395c2",
-    "semantic_hash": ""
-  },
-  ".github/pull_request_template.md": {
-    "mtime": 1782900864.4672687,
-    "ast_hash": "5c7ecb1ed1783b5ba59b3c823a47d460",
-    "semantic_hash": ""
-  },
-  "README.md": {
-    "mtime": 1782901899.0847971,
-    "ast_hash": "c3130d46c88357e9a6cbca9eb05bf056",
-    "semantic_hash": "c3130d46c88357e9a6cbca9eb05bf056"
-  },
-  "docs/maintenance/README.md": {
-    "mtime": 1782900825.5616093,
-    "ast_hash": "a65010ec840a22584450808e3d52eaec",
-    "semantic_hash": ""
-  },
-  "docs/maintenance/_template.md": {
-    "mtime": 1782900857.4024627,
-    "ast_hash": "ac62c8fdb1f13b56891f36e230b21ea3",
-    "semantic_hash": ""
-  },
-  "docs/maintenance/architecture.md": {
-    "mtime": 1782900846.0171087,
-    "ast_hash": "cea4cc1afb024b97ee0d5a3fd89dd4e9",
-    "semantic_hash": "cea4cc1afb024b97ee0d5a3fd89dd4e9"
-  },
-  "src/README.md": {
-    "mtime": 1782900801.311067,
-    "ast_hash": "85a50c6ef8667b42226aef5e811a4b7e",
-    "semantic_hash": ""
-  },
   "src/modules/item/App.Modules.Item.View.pas": {
-    "mtime": 1782903954.0786927,
-    "ast_hash": "1c07718dfff0e627fb634b68f6d56a93",
-    "semantic_hash": "1c07718dfff0e627fb634b68f6d56a93"
+    "mtime": 1782905965.072508,
+    "ast_hash": "d55111519c333f62a364572b821a99ae",
+    "semantic_hash": "d55111519c333f62a364572b821a99ae"
   },
-  "docs/maintenance/item.md": {
-    "mtime": 1782903944.0924332,
-    "ast_hash": "02175a25aab9c08319c21b27f2c7b018",
-    "semantic_hash": "02175a25aab9c08319c21b27f2c7b018"
+  "src/modules/partner/App.Modules.Partner.View.pas": {
+    "mtime": 1782905979.0306804,
+    "ast_hash": "3b3f365bad30f24b7b61bb3d17f3dd10",
+    "semantic_hash": "3b3f365bad30f24b7b61bb3d17f3dd10"
   }
 }
