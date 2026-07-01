@@ -1,96 +1,96 @@
 {
   "src/app/App.Main.pas": {
-    "mtime": 1782907640.7229362,
-    "ast_hash": "4aef7a713012c9bc7ba6e2ccaebcee2b",
+    "mtime": 1782907609.293648,
+    "ast_hash": "aa55ee910451a9b42e0351c726309b62",
     "semantic_hash": ""
   },
   "src/app/ERP.lpr": {
-    "mtime": 1782906794.3378253,
+    "mtime": 1782906794.4178255,
     "ast_hash": "4388178d110c80a79e0d1a843648c259",
     "semantic_hash": "4388178d110c80a79e0d1a843648c259"
   },
   "src/core/App.Core.Contracts.pas": {
-    "mtime": 1782906794.3388226,
+    "mtime": 1782906794.4188251,
     "ast_hash": "9908078185b4623b430e73a5c187c75a",
     "semantic_hash": "9908078185b4623b430e73a5c187c75a"
   },
   "src/core/App.Core.Entities.pas": {
-    "mtime": 1782906794.3398225,
+    "mtime": 1782906794.4188251,
     "ast_hash": "878691fc389654b3392042e998fa98d9",
     "semantic_hash": "878691fc389654b3392042e998fa98d9"
   },
   "src/core/App.Core.ProviderFactory.pas": {
-    "mtime": 1782906794.3398225,
+    "mtime": 1782906794.419824,
     "ast_hash": "e771269500de719bda6dfbc80ac20e5f",
     "semantic_hash": "e771269500de719bda6dfbc80ac20e5f"
   },
   "src/data/App.Data.Memory.pas": {
-    "mtime": 1782906794.3408253,
+    "mtime": 1782906794.419824,
     "ast_hash": "b4afaf91e6c21615247548f9fc2a7d90",
     "semantic_hash": "b4afaf91e6c21615247548f9fc2a7d90"
   },
   "src/modules/item/App.Modules.Item.View.pas": {
-    "mtime": 1782906794.341823,
+    "mtime": 1782906794.420823,
     "ast_hash": "d55111519c333f62a364572b821a99ae",
     "semantic_hash": "d55111519c333f62a364572b821a99ae"
   },
   "src/modules/partner/App.Modules.Partner.View.pas": {
-    "mtime": 1782906794.3428233,
+    "mtime": 1782906794.4218216,
     "ast_hash": "3b3f365bad30f24b7b61bb3d17f3dd10",
     "semantic_hash": "3b3f365bad30f24b7b61bb3d17f3dd10"
   },
-  "src/modules/quote/App.Modules.Quote.View.pas": {
-    "mtime": 1782907768.533168,
-    "ast_hash": "65024c75bc5f4ce2fab8a3d8c71f8dfc",
+  "src/modules/shipment/App.Modules.Shipment.View.pas": {
+    "mtime": 1782907793.7344043,
+    "ast_hash": "f70ee1b91c2fb32a04bc05ddbd6ee689",
     "semantic_hash": ""
   },
   ".github/ISSUE_TEMPLATE/module-task.md": {
-    "mtime": 1782906794.3218212,
+    "mtime": 1782906794.4018247,
     "ast_hash": "947eb5f5e260da50ae1425b94a155978",
     "semantic_hash": ""
   },
   ".github/pull_request_template.md": {
-    "mtime": 1782906794.3218212,
+    "mtime": 1782906794.402823,
     "ast_hash": "d581f0e7a140ff6b6f47d1bf28a7a79b",
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1782906794.3228204,
+    "mtime": 1782906794.402823,
     "ast_hash": "34bdf5c3cee885b2f99ff2c9a0a790e6",
     "semantic_hash": ""
   },
   "docs/maintenance/README.md": {
-    "mtime": 1782906794.324822,
+    "mtime": 1782906794.4048216,
     "ast_hash": "54a1157f112d08f2a1848906962fb2fb",
     "semantic_hash": ""
   },
   "docs/maintenance/_template.md": {
-    "mtime": 1782906794.324822,
+    "mtime": 1782906794.4048216,
     "ast_hash": "7b1a4d1c0e4c33f0cdeec0bde1b25165",
     "semantic_hash": ""
   },
   "docs/maintenance/architecture.md": {
-    "mtime": 1782906794.3258204,
+    "mtime": 1782906794.4058251,
     "ast_hash": "6fc7eff7aa7d7c6cbb6fd857ec8ca5fc",
     "semantic_hash": ""
   },
   "docs/maintenance/item.md": {
-    "mtime": 1782906794.3258204,
+    "mtime": 1782906794.4058251,
     "ast_hash": "4794d4668c4c631d159136ef378d1071",
     "semantic_hash": ""
   },
   "docs/maintenance/partner.md": {
-    "mtime": 1782906794.3258204,
+    "mtime": 1782906794.4058251,
     "ast_hash": "bb4988938eff0f702f0ba015241e6828",
     "semantic_hash": ""
   },
-  "docs/maintenance/quote.md": {
-    "mtime": 1782907664.9723997,
-    "ast_hash": "95338704176074e9896c3334df85b354",
+  "docs/maintenance/shipment.md": {
+    "mtime": 1782907632.41145,
+    "ast_hash": "4cdb3c5f04f2c747157e662281046a63",
     "semantic_hash": ""
   },
   "src/README.md": {
-    "mtime": 1782906794.336824,
+    "mtime": 1782906794.4158251,
     "ast_hash": "721f724d8c08a397e3c15adc35bc6270",
     "semantic_hash": ""
   }

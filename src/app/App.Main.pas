@@ -13,7 +13,8 @@ uses
   Classes, SysUtils, Forms, Controls, StdCtrls, ExtCtrls, Graphics, Dialogs,
   App.Core.Contracts, App.Core.Entities,
   App.Modules.Item.View, App.Modules.Partner.View,
-  App.Modules.Inventory.View, App.Modules.Quote.View;
+  App.Modules.Inventory.View, App.Modules.Quote.View,
+  App.Modules.Shipment.View;
 
 type
   TMainForm = class(TForm)
@@ -26,6 +27,7 @@ type
     procedure PartnerClick(Sender: TObject);
     procedure InventoryClick(Sender: TObject);
     procedure QuoteClick(Sender: TObject);
+    procedure ShipmentClick(Sender: TObject);
     procedure ModulePlaceholderClick(Sender: TObject);
   public
     constructor CreateWithData(AOwner: TComponent; const AData: IDataContext); reintroduce;
@@ -95,6 +97,8 @@ begin
       Btn.OnClick := InventoryClick
     else if I = 3 then
       Btn.OnClick := QuoteClick
+    else if I = 4 then
+      Btn.OnClick := ShipmentClick
     else
       Btn.OnClick := ModulePlaceholderClick;
   end;
@@ -161,6 +165,12 @@ end;
 procedure TMainForm.QuoteClick(Sender: TObject);
 begin
   TQuoteView.Execute(Self, FData);
+  FillSummary;
+end;
+
+procedure TMainForm.ShipmentClick(Sender: TObject);
+begin
+  TShipmentView.Execute(Self, FData);
   FillSummary;
 end;
 
