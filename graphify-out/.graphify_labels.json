@@ -1,1 +1,26 @@
-{"0": "App.Data.Memory", "1": "App.Core.Contracts", "2": "IndexOf", "3": "App.Modules.Item.View", "4": "TItemView", "5": "TPartnerView", "6": "App.Modules.Partner.View", "7": "TMainForm", "8": "IDataContext", "9": "Core Layer", "10": "Architecture Guide", "11": "ERP Project Overview", "12": "App Shell"}
+{
+  "0": "App.Data.Memory",
+  "1": "App.Core.Contracts",
+  "2": "IndexOf",
+  "3": "App.Modules.Item.View",
+  "4": "TItemView",
+  "5": "TPartnerView",
+  "6": "App.Modules.Partner.View",
+  "7": "TMainForm",
+  "8": "IDataContext",
+  "9": "Core Layer",
+  "10": "Architecture Guide",
+  "11": "ERP Project Overview",
+  "12": "App Shell",
+  "13": "거래처 관리 유지보수 문서",
+  "14": "Shipment Maintenance",
+  "15": "IDataContext",
+  "16": "module-task.md",
+  "17": "pull_request_template.md",
+  "18": "src",
+  "19": "Firebird Provider",
+  "20": "Memory Provider",
+  "21": "IItemRepository",
+  "22": "IPartnerRepository",
+  "23": "Modules Layer"
+}
