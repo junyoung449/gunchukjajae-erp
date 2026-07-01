@@ -11,7 +11,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, StdCtrls, ExtCtrls, Graphics, Dialogs,
-  App.Core.Contracts, App.Core.Entities;
+  App.Core.Contracts, App.Core.Entities, App.Modules.Item.View;
 
 type
   TMainForm = class(TForm)
@@ -20,6 +20,7 @@ type
     FMemo: TMemo;
     procedure BuildUI;
     procedure FillSummary;
+    procedure ItemClick(Sender: TObject);
     procedure ModulePlaceholderClick(Sender: TObject);
   public
     constructor CreateWithData(AOwner: TComponent; const AData: IDataContext); reintroduce;
@@ -81,8 +82,10 @@ begin
     Btn.Left := 12 + I * 120;
     Btn.Top := 8; Btn.Width := 110; Btn.Height := 28;
     Btn.Caption := Names[I];
-    Btn.OnClick := ModulePlaceholderClick;
-    // 모듈 화면은 하위 에이전트가 구현 예정 → 지금은 안내만
+    if I = 0 then
+      Btn.OnClick := ItemClick
+    else
+      Btn.OnClick := ModulePlaceholderClick;
   end;
 
   FMemo := TMemo.Create(Self);
@@ -124,6 +127,12 @@ begin
   finally
     FMemo.Lines.EndUpdate;
   end;
+end;
+
+procedure TMainForm.ItemClick(Sender: TObject);
+begin
+  TItemView.Execute(Self, FData.Items);
+  FillSummary;
 end;
 
 procedure TMainForm.ModulePlaceholderClick(Sender: TObject);

@@ -1,7 +1,7 @@
 {
   "src/app/App.Main.pas": {
-    "mtime": 1782902863.7872868,
-    "ast_hash": "b7ebd88eab7cd527fc65345fce8411c5",
+    "mtime": 1782903944.0914364,
+    "ast_hash": "1726f3856904b8a75e39136ab6b1da70",
     "semantic_hash": ""
   },
   "src/app/ERP.lpr": {
@@ -62,6 +62,16 @@
   "src/README.md": {
     "mtime": 1782900801.311067,
     "ast_hash": "85a50c6ef8667b42226aef5e811a4b7e",
+    "semantic_hash": ""
+  },
+  "src/modules/item/App.Modules.Item.View.pas": {
+    "mtime": 1782903954.0786927,
+    "ast_hash": "1c07718dfff0e627fb634b68f6d56a93",
+    "semantic_hash": ""
+  },
+  "docs/maintenance/item.md": {
+    "mtime": 1782903944.0924332,
+    "ast_hash": "02175a25aab9c08319c21b27f2c7b018",
     "semantic_hash": ""
   }
 }
