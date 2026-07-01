@@ -1,0 +1,15 @@
+; 애플리케이션 실행 설정 샘플
+; 실제 사용 시 app.ini 로 복사해서 사용합니다.
+
+[Data]
+; 데이터 프로바이더 선택: Memory | Firebird
+; Memory   = DB 없이 인메모리 샘플 데이터로 구동 (기본값)
+; Firebird = FireDAC로 아래 접속정보를 사용해 Firebird에 연결
+Provider=Memory
+
+[Firebird]
+; Provider=Firebird 일 때만 사용
+Database=localhost:C:\ERPData\GUNCHUK.FDB
+User=SYSDBA
+Password=masterkey
+CharacterSet=UTF8

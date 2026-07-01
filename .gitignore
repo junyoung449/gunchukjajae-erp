@@ -1,0 +1,47 @@
+# ── RAD Studio / Delphi 빌드 산출물 ────────────────────────────
+__history/
+__recovery/
+*.dcu
+*.~*
+*.local
+*.identcache
+*.projdata
+*.tvsconfig
+*.dsk
+*.stat
+*.rsm
+*.map
+*.drc
+*.o
+*.a
+*.ppu
+*.res
+
+# ── 빌드 출력 디렉터리 ──────────────────────────────────────────
+Win32/
+Win64/
+Debug/
+Release/
+*.exe
+*.dll
+*.bpl
+*.bpi
+*.obj
+
+# ── 생성 설정 파일 ─────────────────────────────────────────────
+*.cfg
+ModelSupport_*/
+
+# ── 로컬 런타임 설정 / 로컬 DB 파일 ────────────────────────────
+*.ini.local
+*.FDB
+*.fbk
+
+# ── 비공개 하네스 트랙 (별도 private 저장소로 관리) ─────────────
+.harness/
+
+# ── 비밀정보 ───────────────────────────────────────────────────
+.env
+*.env
+*.key
+secrets/
