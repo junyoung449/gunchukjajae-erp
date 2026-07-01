@@ -2,32 +2,32 @@
   "src/app/App.Main.pas": {
     "mtime": 1782903944.0914364,
     "ast_hash": "1726f3856904b8a75e39136ab6b1da70",
-    "semantic_hash": ""
+    "semantic_hash": "1726f3856904b8a75e39136ab6b1da70"
   },
   "src/app/ERP.lpr": {
     "mtime": 1782902863.788289,
     "ast_hash": "4388178d110c80a79e0d1a843648c259",
-    "semantic_hash": ""
+    "semantic_hash": "4388178d110c80a79e0d1a843648c259"
   },
   "src/core/App.Core.Contracts.pas": {
     "mtime": 1782902863.789287,
     "ast_hash": "9908078185b4623b430e73a5c187c75a",
-    "semantic_hash": ""
+    "semantic_hash": "9908078185b4623b430e73a5c187c75a"
   },
   "src/core/App.Core.Entities.pas": {
     "mtime": 1782902863.789287,
     "ast_hash": "878691fc389654b3392042e998fa98d9",
-    "semantic_hash": ""
+    "semantic_hash": "878691fc389654b3392042e998fa98d9"
   },
   "src/core/App.Core.ProviderFactory.pas": {
     "mtime": 1782902863.790288,
     "ast_hash": "e771269500de719bda6dfbc80ac20e5f",
-    "semantic_hash": ""
+    "semantic_hash": "e771269500de719bda6dfbc80ac20e5f"
   },
   "src/data/App.Data.Memory.pas": {
     "mtime": 1782902863.790288,
     "ast_hash": "b4afaf91e6c21615247548f9fc2a7d90",
-    "semantic_hash": ""
+    "semantic_hash": "b4afaf91e6c21615247548f9fc2a7d90"
   },
   ".github/ISSUE_TEMPLATE/module-task.md": {
     "mtime": 1782900872.3007467,
@@ -67,7 +67,7 @@
   "src/modules/item/App.Modules.Item.View.pas": {
     "mtime": 1782903954.0786927,
     "ast_hash": "1c07718dfff0e627fb634b68f6d56a93",
-    "semantic_hash": ""
+    "semantic_hash": "1c07718dfff0e627fb634b68f6d56a93"
   },
   "docs/maintenance/item.md": {
     "mtime": 1782903944.0924332,
