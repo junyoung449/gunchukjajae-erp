@@ -12,7 +12,8 @@ interface
 uses
   Classes, SysUtils, Forms, Controls, StdCtrls, ExtCtrls, Graphics, Dialogs,
   App.Core.Contracts, App.Core.Entities,
-  App.Modules.Item.View, App.Modules.Partner.View;
+  App.Modules.Item.View, App.Modules.Partner.View,
+  App.Modules.Inventory.View;
 
 type
   TMainForm = class(TForm)
@@ -23,6 +24,7 @@ type
     procedure FillSummary;
     procedure ItemClick(Sender: TObject);
     procedure PartnerClick(Sender: TObject);
+    procedure InventoryClick(Sender: TObject);
     procedure ModulePlaceholderClick(Sender: TObject);
   public
     constructor CreateWithData(AOwner: TComponent; const AData: IDataContext); reintroduce;
@@ -88,6 +90,8 @@ begin
       Btn.OnClick := ItemClick
     else if I = 1 then
       Btn.OnClick := PartnerClick
+    else if I = 2 then
+      Btn.OnClick := InventoryClick
     else
       Btn.OnClick := ModulePlaceholderClick;
   end;
@@ -142,6 +146,12 @@ end;
 procedure TMainForm.PartnerClick(Sender: TObject);
 begin
   TPartnerView.Execute(Self, FData.Partners);
+  FillSummary;
+end;
+
+procedure TMainForm.InventoryClick(Sender: TObject);
+begin
+  TInventoryView.Execute(Self, FData);
   FillSummary;
 end;
 

@@ -1,1 +1,0 @@
-{"nodes": [{"id": "readme", "label": "ERP Project Overview", "file_type": "document", "source_file": "README.md"}], "edges": [], "hyperedges": [{"id": "data_provider_strategy", "label": "Dual Data Provider Strategy", "nodes": ["memory_provider", "firebird_provider", "src_core"], "relation": "form", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "README.md"}]}
