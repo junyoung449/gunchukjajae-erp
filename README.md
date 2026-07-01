@@ -1,67 +1,57 @@
-# 건축자재상 ERP (온프레미스)
+# Shipment Maintenance
 
-건축자재 유통업체를 위한 **온프레미스 Windows 데스크톱 ERP**입니다.
-단일 매장~소수 지점 규모의 자재상이 품목·거래처·재고·견적·출고를 한 곳에서
-관리하도록 만드는 것을 목표로 합니다.
+## 1. Implemented Features
+- Shows shipment list with shipment number, partner, date, line count, total, and note.
+- Registers a shipment by selecting a partner, adding item lines, and entering quantity.
+- Uses the selected item's current unit price automatically for each shipment line.
+- Warns when the requested shipment quantity is greater than current stock, but allows the user to continue after confirmation.
+- Deletes shipment records through `IShipmentRepository.Delete`.
 
-## 기술 스택
-
-| 항목 | 내용 |
+## 2. Created Or Modified Files
+| File | Role |
 |------|------|
-| 언어 | Object Pascal (Delphi 문법 호환) |
-| 빌드 툴체인 | **Free Pascal + Lazarus** (무료·오픈소스) |
-| UI | 데스크톱 GUI (Lazarus LCL / Delphi VCL 호환) |
-| 데이터 접근 | FireDAC(Delphi) / SQLDB(Lazarus) 계열 |
-| 데이터베이스 | Firebird (임베디드/서버) — **미설치 시 인메모리 모드로 구동** |
+| `src/modules/shipment/App.Modules.Shipment.View.pas` | Shipment list and entry UI |
+| `src/app/App.Main.pas` | Wires the shipment button to `TShipmentView.Execute(Self, FData)` |
+| `src/app/ERP.lpi` | Registers the shipment unit and module search path |
+| `docs/maintenance/shipment.md` | Maintenance notes |
 
-### DB 없이도 구동됩니다
-데이터 접근은 인터페이스로 추상화되어 있습니다.
+## 3. Main Classes And Methods
+- `TShipmentView.Execute`: Entry point from the main form. Receives `IDataContext`.
+- `TShipmentView.RefreshGrid`: Reads `FData.Shipments.GetAll` and redraws the list.
+- `TShipmentEditForm.AddLineClick`: Adds an item line with automatic unit price and calculated amount.
+- `TShipmentEditForm.StockWarningAccepted`: Checks `FData.Inventory.GetStock` and asks whether to continue when stock is short.
+- `TShipmentEditForm.SaveClick`: Builds `TShipment` with lines, total, partner, date, and note.
 
-- **Memory 모드(기본값)**: Firebird가 없어도 샘플 데이터로 즉시 실행됩니다.
-  평가·데모·초기 개발 시 별도 설치가 필요 없습니다.
-- **Firebird 모드**: 설정 파일에서 전환하면 FireDAC로 Firebird에 연결합니다.
-  연결 실패 시 자동으로 Memory 모드로 폴백합니다.
+## 4. Runtime Flow
+1. Main form button index `I = 4` calls `TShipmentView.Execute(Self, FData)`.
+2. The shipment view loads existing shipments through `FData.Shipments.GetAll`.
+3. The New button opens `TShipmentEditForm`.
+4. The user selects a partner, selects items, enters quantities, and adds lines.
+5. Save validates partner and lines, checks stock, and returns the completed `TShipment`.
+6. `TShipmentView.NewClick` calls only `FData.Shipments.Add(Form.Shipment)`.
+7. The Memory provider handles inventory deduction inside `Shipments.Add` by calling `Inventory.Move(..., smkOut, ShipNo)` for each line.
 
-전환은 `config/app.ini` 의 `[Data] Provider=Memory|Firebird` 값으로 제어합니다.
+## 5. Where Data Is Created Or Changed
+- Shipment records are created only through `IShipmentRepository.Add`.
+- Shipment records are deleted through `IShipmentRepository.Delete`.
+- The shipment view does not call `Inventory.Move`.
+- Inventory changes happen in `TMemoryShipmentRepository.Add` in `src/data/App.Data.Memory.pas`.
+- Stock shortage checking in the view is read-only and uses `IInventoryRepository.GetStock`.
 
-## 모듈
+## 6. Delphi And Object Pascal Concepts Used
+- LCL forms created with `CreateNew` without `.lfm` resources.
+- Interface-based repository access through `IDataContext`.
+- Dynamic arrays for `TShipmentLineArray`.
+- `TStringGrid` for list and line display.
+- Modal dialog flow with `ShowModal` and `ModalResult`.
 
-개발 우선순위 순서입니다.
+## 7. Learning Topics
+- How a view uses injected repository interfaces instead of provider implementations.
+- How calculated line totals are kept in record arrays.
+- How confirmation dialogs can allow exceptional business actions while still warning users.
 
-1. **품목 관리(Item)** — 자재 품목 마스터(규격/단위/단가)
-2. **거래처 관리(Partner)** — 고객·매입처 마스터
-3. **재고 관리(Inventory)** — 입출고·재고수량·창고 이동
-4. **견적 관리(Quote)** — 견적서 작성·품목 라인·금액 계산
-5. **출고 처리(Shipment)** — 출고 등록, 재고 차감
-6. **이력 조회(History)** — 거래·재고 변동 이력 조회
-
-## 저장소 구조
-
-```
-├─ src/
-│  ├─ core/      공통 계약(데이터 접근 인터페이스·엔티티)
-│  ├─ modules/   모듈별 유닛
-│  └─ app/       메인 셸(폼·엔트리)
-├─ docs/
-│  └─ maintenance/  유지보수·학습 문서 (구현된 코드와 연결된 자료)
-└─ config/       실행 설정
-```
-
-## 브랜치 전략
-
-- `main` — 통합·릴리스
-- `develop` — 개발 통합
-- `feature/01-item` … `feature/06-history` — 모듈별 작업 브랜치
-
-각 모듈은 브랜치에서 구현 후 Pull Request로 리뷰를 거쳐 병합합니다.
-
-## 빌드
-
-무료 툴체인으로 빌드합니다.
-
-- **Lazarus/FPC(무료)**: `src/app` 의 프로젝트(`.lpi`)를 Lazarus에서 열거나
-  `lazbuild src/app/ERP.lpi` 로 빌드합니다.
-- **Delphi(선택)**: RAD Studio 보유 시 `.dproj` 로도 빌드할 수 있게 유지합니다.
-
-가상환경 없이 로컬에서 바로 빌드하며, 초기 실행은 별도 설정 없이 Memory 모드로
-동작합니다.
+## 8. Change Extension Points
+- Add shipment editing in `TShipmentView` and reuse the line grid logic.
+- Add quote-to-shipment conversion before `TShipmentEditForm.SaveClick`.
+- Change stock shortage policy in `StockWarningAccepted`.
+- Change inventory posting behavior only in repository/provider code, not in the view.
