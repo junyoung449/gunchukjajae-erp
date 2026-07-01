@@ -19,7 +19,7 @@
         <PackageName Value="LCL"/>
       </Item1>
     </RequiredPackages>
-    <Units Count="6">
+    <Units Count="7">
       <Unit0>
         <Filename Value="ERP.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -49,6 +49,11 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="App.Data.Memory"/>
       </Unit5>
+      <Unit6>
+        <Filename Value="../modules/partner/App.Modules.Partner.View.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="App.Modules.Partner.View"/>
+      </Unit6>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
@@ -57,7 +62,7 @@
       <Filename Value="ERP"/>
     </Target>
     <SearchPaths>
-      <OtherUnitFiles Value="../core;../data"/>
+      <OtherUnitFiles Value="../core;../data;../modules/partner"/>
       <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
     <Parsing>
