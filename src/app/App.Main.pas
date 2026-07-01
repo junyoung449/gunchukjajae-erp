@@ -14,7 +14,7 @@ uses
   App.Core.Contracts, App.Core.Entities,
   App.Modules.Item.View, App.Modules.Partner.View,
   App.Modules.Inventory.View, App.Modules.Quote.View,
-  App.Modules.Shipment.View;
+  App.Modules.Shipment.View, App.Modules.History.View;
 
 type
   TMainForm = class(TForm)
@@ -28,6 +28,7 @@ type
     procedure InventoryClick(Sender: TObject);
     procedure QuoteClick(Sender: TObject);
     procedure ShipmentClick(Sender: TObject);
+    procedure HistoryClick(Sender: TObject);
     procedure ModulePlaceholderClick(Sender: TObject);
   public
     constructor CreateWithData(AOwner: TComponent; const AData: IDataContext); reintroduce;
@@ -99,6 +100,8 @@ begin
       Btn.OnClick := QuoteClick
     else if I = 4 then
       Btn.OnClick := ShipmentClick
+    else if I = 5 then
+      Btn.OnClick := HistoryClick
     else
       Btn.OnClick := ModulePlaceholderClick;
   end;
@@ -171,6 +174,12 @@ end;
 procedure TMainForm.ShipmentClick(Sender: TObject);
 begin
   TShipmentView.Execute(Self, FData);
+  FillSummary;
+end;
+
+procedure TMainForm.HistoryClick(Sender: TObject);
+begin
+  THistoryView.Execute(Self, FData);
   FillSummary;
 end;
 

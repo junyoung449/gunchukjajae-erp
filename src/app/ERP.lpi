@@ -19,7 +19,7 @@
         <PackageName Value="LCL"/>
       </Item1>
     </RequiredPackages>
-    <Units Count="11">
+    <Units Count="12">
       <Unit0>
         <Filename Value="ERP.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -69,6 +69,11 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="App.Modules.Shipment.View"/>
       </Unit10>
+      <Unit11>
+        <Filename Value="../modules/history/App.Modules.History.View.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="App.Modules.History.View"/>
+      </Unit11>
       <Unit8>
         <Filename Value="../modules/inventory/App.Modules.Inventory.View.pas"/>
         <IsPartOfProject Value="True"/>
@@ -82,7 +87,7 @@
       <Filename Value="ERP"/>
     </Target>
     <SearchPaths>
-      <OtherUnitFiles Value="../core;../data;../modules/item;../modules/partner;../modules/inventory;../modules/quote;../modules/shipment"/>
+      <OtherUnitFiles Value="../core;../data;../modules/item;../modules/partner;../modules/inventory;../modules/quote;../modules/shipment;../modules/history"/>
       <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
     <Parsing>
