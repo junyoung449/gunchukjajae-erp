@@ -4,154 +4,44 @@
   "graph": {
     "hyperedges": [
       {
-        "id": "dependency_injection_pattern",
-        "label": "Repository Pattern & DI",
+        "id": "data_abstraction_pattern",
+        "label": "Data Access Abstraction",
         "nodes": [
-          "src_app",
-          "src_core",
-          "src_modules"
+          "src_core_idatacontext",
+          "src_core_memory_provider",
+          "src_core_firebird_provider"
         ],
         "relation": "participate_in",
         "confidence": "EXTRACTED",
-        "confidence_score": 0.95,
+        "confidence_score": 1.0,
         "source_file": "docs/maintenance/architecture.md"
       },
       {
-        "id": "data_provider_strategy",
-        "label": "Dual Data Provider Strategy",
+        "id": "inventory_module_flow",
+        "label": "Inventory Management Flow",
         "nodes": [
-          "memory_provider",
-          "firebird_provider",
-          "src_core"
+          "src_app_main",
+          "src_modules_inventory_view",
+          "src_core_iinventoryrepository"
         ],
         "relation": "form",
         "confidence": "EXTRACTED",
         "confidence_score": 1.0,
-        "source_file": "README.md"
+        "source_file": "docs/maintenance/inventory.md"
       }
     ]
   },
   "nodes": [
-    {
-      "label": "App.Main.pas",
-      "file_type": "code",
-      "source_file": "src/app/App.Main.pas",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 3,
-      "norm_label": "app.main.pas",
-      "id": "src_app_app_main",
-      "community_name": "App.Modules.Item.View"
-    },
-    {
-      "label": "App.Main",
-      "file_type": "code",
-      "source_file": "src/app/App.Main.pas",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 3,
-      "norm_label": "app.main",
-      "id": "src_app_app_main_app_main",
-      "community_name": "App.Modules.Item.View"
-    },
-    {
-      "label": "TMainForm",
-      "file_type": "code",
-      "source_file": "src/app/App.Main.pas",
-      "source_location": "L18",
-      "_origin": "ast",
-      "community": 7,
-      "norm_label": "tmainform",
-      "id": "src_app_app_main_tmainform",
-      "community_name": "TMainForm"
-    },
-    {
-      "label": "TForm",
-      "file_type": "code",
-      "source_file": "src/app/App.Main.pas",
-      "source_location": "L18",
-      "_origin": "ast",
-      "community": 7,
-      "norm_label": "tform",
-      "id": "src_app_app_main_pas_tform",
-      "community_name": "TMainForm"
-    },
-    {
-      "label": "BuildUI()",
-      "file_type": "code",
-      "source_file": "src/app/App.Main.pas",
-      "source_location": "L22",
-      "_origin": "ast",
-      "community": 7,
-      "norm_label": "buildui()",
-      "id": "src_app_app_main_tmainform_buildui",
-      "community_name": "TMainForm"
-    },
-    {
-      "label": "FillSummary()",
-      "file_type": "code",
-      "source_file": "src/app/App.Main.pas",
-      "source_location": "L23",
-      "_origin": "ast",
-      "community": 7,
-      "norm_label": "fillsummary()",
-      "id": "src_app_app_main_tmainform_fillsummary",
-      "community_name": "TMainForm"
-    },
-    {
-      "label": "ItemClick()",
-      "file_type": "code",
-      "source_file": "src/app/App.Main.pas",
-      "source_location": "L24",
-      "_origin": "ast",
-      "community": 7,
-      "norm_label": "itemclick()",
-      "id": "src_app_app_main_tmainform_itemclick",
-      "community_name": "TMainForm"
-    },
-    {
-      "label": "PartnerClick()",
-      "file_type": "code",
-      "source_file": "src/app/App.Main.pas",
-      "source_location": "L25",
-      "_origin": "ast",
-      "community": 7,
-      "norm_label": "partnerclick()",
-      "id": "src_app_app_main_tmainform_partnerclick",
-      "community_name": "TMainForm"
-    },
-    {
-      "label": "ModulePlaceholderClick()",
-      "file_type": "code",
-      "source_file": "src/app/App.Main.pas",
-      "source_location": "L26",
-      "_origin": "ast",
-      "community": 7,
-      "norm_label": "moduleplaceholderclick()",
-      "id": "src_app_app_main_tmainform_moduleplaceholderclick",
-      "community_name": "TMainForm"
-    },
-    {
-      "label": "CreateWithData()",
-      "file_type": "code",
-      "source_file": "src/app/App.Main.pas",
-      "source_location": "L28",
-      "_origin": "ast",
-      "community": 7,
-      "norm_label": "createwithdata()",
-      "id": "src_app_app_main_tmainform_createwithdata",
-      "community_name": "TMainForm"
-    },
     {
       "label": "ERP.lpr",
       "file_type": "code",
       "source_file": "src/app/ERP.lpr",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 3,
+      "community": 6,
       "norm_label": "erp.lpr",
-      "id": "src_app_erp",
-      "community_name": "App.Modules.Item.View"
+      "community_name": "App.Modules.Partner.View",
+      "id": "src_app_erp"
     },
     {
       "label": "ERP",
@@ -159,10 +49,10 @@
       "source_file": "src/app/ERP.lpr",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 3,
+      "community": 6,
       "norm_label": "erp",
-      "id": "src_app_erp_erp",
-      "community_name": "App.Modules.Item.View"
+      "community_name": "App.Modules.Partner.View",
+      "id": "src_app_erp_erp"
     },
     {
       "label": "App.Core.Contracts.pas",
@@ -170,10 +60,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 3,
+      "community": 6,
       "norm_label": "app.core.contracts.pas",
-      "id": "src_core_app_core_contracts",
-      "community_name": "App.Modules.Item.View"
+      "community_name": "App.Modules.Partner.View",
+      "id": "src_core_app_core_contracts"
     },
     {
       "label": "App.Core.Contracts",
@@ -183,8 +73,8 @@
       "_origin": "ast",
       "community": 1,
       "norm_label": "app.core.contracts",
-      "id": "src_core_app_core_contracts_app_core_contracts",
-      "community_name": "App.Core.Contracts"
+      "community_name": "App.Core.Contracts",
+      "id": "src_core_app_core_contracts_app_core_contracts"
     },
     {
       "label": "IItemRepository",
@@ -194,8 +84,8 @@
       "_origin": "ast",
       "community": 1,
       "norm_label": "iitemrepository",
-      "id": "src_core_app_core_contracts_iitemrepository",
-      "community_name": "App.Core.Contracts"
+      "community_name": "App.Core.Contracts",
+      "id": "src_core_app_core_contracts_iitemrepository"
     },
     {
       "label": "GetAll()",
@@ -205,8 +95,8 @@
       "_origin": "ast",
       "community": 1,
       "norm_label": "getall()",
-      "id": "src_core_app_core_contracts_iitemrepository_getall",
-      "community_name": "App.Core.Contracts"
+      "community_name": "App.Core.Contracts",
+      "id": "src_core_app_core_contracts_iitemrepository_getall"
     },
     {
       "label": "GetById()",
@@ -216,8 +106,8 @@
       "_origin": "ast",
       "community": 1,
       "norm_label": "getbyid()",
-      "id": "src_core_app_core_contracts_iitemrepository_getbyid",
-      "community_name": "App.Core.Contracts"
+      "community_name": "App.Core.Contracts",
+      "id": "src_core_app_core_contracts_iitemrepository_getbyid"
     },
     {
       "label": "Add()",
@@ -227,8 +117,8 @@
       "_origin": "ast",
       "community": 1,
       "norm_label": "add()",
-      "id": "src_core_app_core_contracts_iitemrepository_add",
-      "community_name": "App.Core.Contracts"
+      "community_name": "App.Core.Contracts",
+      "id": "src_core_app_core_contracts_iitemrepository_add"
     },
     {
       "label": "Update()",
@@ -238,8 +128,8 @@
       "_origin": "ast",
       "community": 1,
       "norm_label": "update()",
-      "id": "src_core_app_core_contracts_iitemrepository_update",
-      "community_name": "App.Core.Contracts"
+      "community_name": "App.Core.Contracts",
+      "id": "src_core_app_core_contracts_iitemrepository_update"
     },
     {
       "label": "Delete()",
@@ -249,8 +139,8 @@
       "_origin": "ast",
       "community": 1,
       "norm_label": "delete()",
-      "id": "src_core_app_core_contracts_iitemrepository_delete",
-      "community_name": "App.Core.Contracts"
+      "community_name": "App.Core.Contracts",
+      "id": "src_core_app_core_contracts_iitemrepository_delete"
     },
     {
       "label": "IPartnerRepository",
@@ -260,8 +150,8 @@
       "_origin": "ast",
       "community": 1,
       "norm_label": "ipartnerrepository",
-      "id": "src_core_app_core_contracts_ipartnerrepository",
-      "community_name": "App.Core.Contracts"
+      "community_name": "App.Core.Contracts",
+      "id": "src_core_app_core_contracts_ipartnerrepository"
     },
     {
       "label": "GetAll()",
@@ -271,8 +161,8 @@
       "_origin": "ast",
       "community": 1,
       "norm_label": "getall()",
-      "id": "src_core_app_core_contracts_ipartnerrepository_getall",
-      "community_name": "App.Core.Contracts"
+      "community_name": "App.Core.Contracts",
+      "id": "src_core_app_core_contracts_ipartnerrepository_getall"
     },
     {
       "label": "GetByKind()",
@@ -282,8 +172,8 @@
       "_origin": "ast",
       "community": 1,
       "norm_label": "getbykind()",
-      "id": "src_core_app_core_contracts_ipartnerrepository_getbykind",
-      "community_name": "App.Core.Contracts"
+      "community_name": "App.Core.Contracts",
+      "id": "src_core_app_core_contracts_ipartnerrepository_getbykind"
     },
     {
       "label": "GetById()",
@@ -293,8 +183,8 @@
       "_origin": "ast",
       "community": 1,
       "norm_label": "getbyid()",
-      "id": "src_core_app_core_contracts_ipartnerrepository_getbyid",
-      "community_name": "App.Core.Contracts"
+      "community_name": "App.Core.Contracts",
+      "id": "src_core_app_core_contracts_ipartnerrepository_getbyid"
     },
     {
       "label": "Add()",
@@ -304,8 +194,8 @@
       "_origin": "ast",
       "community": 1,
       "norm_label": "add()",
-      "id": "src_core_app_core_contracts_ipartnerrepository_add",
-      "community_name": "App.Core.Contracts"
+      "community_name": "App.Core.Contracts",
+      "id": "src_core_app_core_contracts_ipartnerrepository_add"
     },
     {
       "label": "Update()",
@@ -315,8 +205,8 @@
       "_origin": "ast",
       "community": 1,
       "norm_label": "update()",
-      "id": "src_core_app_core_contracts_ipartnerrepository_update",
-      "community_name": "App.Core.Contracts"
+      "community_name": "App.Core.Contracts",
+      "id": "src_core_app_core_contracts_ipartnerrepository_update"
     },
     {
       "label": "Delete()",
@@ -326,8 +216,8 @@
       "_origin": "ast",
       "community": 1,
       "norm_label": "delete()",
-      "id": "src_core_app_core_contracts_ipartnerrepository_delete",
-      "community_name": "App.Core.Contracts"
+      "community_name": "App.Core.Contracts",
+      "id": "src_core_app_core_contracts_ipartnerrepository_delete"
     },
     {
       "label": "IInventoryRepository",
@@ -337,8 +227,8 @@
       "_origin": "ast",
       "community": 1,
       "norm_label": "iinventoryrepository",
-      "id": "src_core_app_core_contracts_iinventoryrepository",
-      "community_name": "App.Core.Contracts"
+      "community_name": "App.Core.Contracts",
+      "id": "src_core_app_core_contracts_iinventoryrepository"
     },
     {
       "label": "GetStock()",
@@ -348,8 +238,8 @@
       "_origin": "ast",
       "community": 1,
       "norm_label": "getstock()",
-      "id": "src_core_app_core_contracts_iinventoryrepository_getstock",
-      "community_name": "App.Core.Contracts"
+      "community_name": "App.Core.Contracts",
+      "id": "src_core_app_core_contracts_iinventoryrepository_getstock"
     },
     {
       "label": "Move()",
@@ -359,8 +249,8 @@
       "_origin": "ast",
       "community": 1,
       "norm_label": "move()",
-      "id": "src_core_app_core_contracts_iinventoryrepository_move",
-      "community_name": "App.Core.Contracts"
+      "community_name": "App.Core.Contracts",
+      "id": "src_core_app_core_contracts_iinventoryrepository_move"
     },
     {
       "label": "GetMoves()",
@@ -370,8 +260,8 @@
       "_origin": "ast",
       "community": 1,
       "norm_label": "getmoves()",
-      "id": "src_core_app_core_contracts_iinventoryrepository_getmoves",
-      "community_name": "App.Core.Contracts"
+      "community_name": "App.Core.Contracts",
+      "id": "src_core_app_core_contracts_iinventoryrepository_getmoves"
     },
     {
       "label": "IQuoteRepository",
@@ -379,10 +269,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L46",
       "_origin": "ast",
-      "community": 1,
+      "community": 9,
       "norm_label": "iquoterepository",
-      "id": "src_core_app_core_contracts_iquoterepository",
-      "community_name": "App.Core.Contracts"
+      "community_name": "Core Layer",
+      "id": "src_core_app_core_contracts_iquoterepository"
     },
     {
       "label": "GetAll()",
@@ -390,10 +280,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L48",
       "_origin": "ast",
-      "community": 1,
+      "community": 9,
       "norm_label": "getall()",
-      "id": "src_core_app_core_contracts_iquoterepository_getall",
-      "community_name": "App.Core.Contracts"
+      "community_name": "Core Layer",
+      "id": "src_core_app_core_contracts_iquoterepository_getall"
     },
     {
       "label": "GetById()",
@@ -401,10 +291,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L49",
       "_origin": "ast",
-      "community": 1,
+      "community": 9,
       "norm_label": "getbyid()",
-      "id": "src_core_app_core_contracts_iquoterepository_getbyid",
-      "community_name": "App.Core.Contracts"
+      "community_name": "Core Layer",
+      "id": "src_core_app_core_contracts_iquoterepository_getbyid"
     },
     {
       "label": "Add()",
@@ -412,10 +302,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L50",
       "_origin": "ast",
-      "community": 1,
+      "community": 9,
       "norm_label": "add()",
-      "id": "src_core_app_core_contracts_iquoterepository_add",
-      "community_name": "App.Core.Contracts"
+      "community_name": "Core Layer",
+      "id": "src_core_app_core_contracts_iquoterepository_add"
     },
     {
       "label": "Update()",
@@ -423,10 +313,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L51",
       "_origin": "ast",
-      "community": 1,
+      "community": 9,
       "norm_label": "update()",
-      "id": "src_core_app_core_contracts_iquoterepository_update",
-      "community_name": "App.Core.Contracts"
+      "community_name": "Core Layer",
+      "id": "src_core_app_core_contracts_iquoterepository_update"
     },
     {
       "label": "Delete()",
@@ -434,10 +324,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L52",
       "_origin": "ast",
-      "community": 1,
+      "community": 9,
       "norm_label": "delete()",
-      "id": "src_core_app_core_contracts_iquoterepository_delete",
-      "community_name": "App.Core.Contracts"
+      "community_name": "Core Layer",
+      "id": "src_core_app_core_contracts_iquoterepository_delete"
     },
     {
       "label": "IShipmentRepository",
@@ -447,8 +337,8 @@
       "_origin": "ast",
       "community": 1,
       "norm_label": "ishipmentrepository",
-      "id": "src_core_app_core_contracts_ishipmentrepository",
-      "community_name": "App.Core.Contracts"
+      "community_name": "App.Core.Contracts",
+      "id": "src_core_app_core_contracts_ishipmentrepository"
     },
     {
       "label": "GetAll()",
@@ -458,8 +348,8 @@
       "_origin": "ast",
       "community": 1,
       "norm_label": "getall()",
-      "id": "src_core_app_core_contracts_ishipmentrepository_getall",
-      "community_name": "App.Core.Contracts"
+      "community_name": "App.Core.Contracts",
+      "id": "src_core_app_core_contracts_ishipmentrepository_getall"
     },
     {
       "label": "GetById()",
@@ -469,8 +359,8 @@
       "_origin": "ast",
       "community": 1,
       "norm_label": "getbyid()",
-      "id": "src_core_app_core_contracts_ishipmentrepository_getbyid",
-      "community_name": "App.Core.Contracts"
+      "community_name": "App.Core.Contracts",
+      "id": "src_core_app_core_contracts_ishipmentrepository_getbyid"
     },
     {
       "label": "Add()",
@@ -480,8 +370,8 @@
       "_origin": "ast",
       "community": 1,
       "norm_label": "add()",
-      "id": "src_core_app_core_contracts_ishipmentrepository_add",
-      "community_name": "App.Core.Contracts"
+      "community_name": "App.Core.Contracts",
+      "id": "src_core_app_core_contracts_ishipmentrepository_add"
     },
     {
       "label": "Delete()",
@@ -491,8 +381,8 @@
       "_origin": "ast",
       "community": 1,
       "norm_label": "delete()",
-      "id": "src_core_app_core_contracts_ishipmentrepository_delete",
-      "community_name": "App.Core.Contracts"
+      "community_name": "App.Core.Contracts",
+      "id": "src_core_app_core_contracts_ishipmentrepository_delete"
     },
     {
       "label": "IHistoryRepository",
@@ -502,8 +392,8 @@
       "_origin": "ast",
       "community": 1,
       "norm_label": "ihistoryrepository",
-      "id": "src_core_app_core_contracts_ihistoryrepository",
-      "community_name": "App.Core.Contracts"
+      "community_name": "App.Core.Contracts",
+      "id": "src_core_app_core_contracts_ihistoryrepository"
     },
     {
       "label": "Query()",
@@ -513,8 +403,8 @@
       "_origin": "ast",
       "community": 1,
       "norm_label": "query()",
-      "id": "src_core_app_core_contracts_ihistoryrepository_query",
-      "community_name": "App.Core.Contracts"
+      "community_name": "App.Core.Contracts",
+      "id": "src_core_app_core_contracts_ihistoryrepository_query"
     },
     {
       "label": "IDataContext",
@@ -522,10 +412,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L71",
       "_origin": "ast",
-      "community": 8,
+      "community": 1,
       "norm_label": "idatacontext",
-      "id": "src_core_app_core_contracts_idatacontext",
-      "community_name": "IDataContext"
+      "community_name": "App.Core.Contracts",
+      "id": "src_core_app_core_contracts_idatacontext"
     },
     {
       "label": "Items()",
@@ -533,10 +423,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L73",
       "_origin": "ast",
-      "community": 8,
+      "community": 1,
       "norm_label": "items()",
-      "id": "src_core_app_core_contracts_idatacontext_items",
-      "community_name": "IDataContext"
+      "community_name": "App.Core.Contracts",
+      "id": "src_core_app_core_contracts_idatacontext_items"
     },
     {
       "label": "Partners()",
@@ -544,10 +434,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L74",
       "_origin": "ast",
-      "community": 8,
+      "community": 1,
       "norm_label": "partners()",
-      "id": "src_core_app_core_contracts_idatacontext_partners",
-      "community_name": "IDataContext"
+      "community_name": "App.Core.Contracts",
+      "id": "src_core_app_core_contracts_idatacontext_partners"
     },
     {
       "label": "Inventory()",
@@ -555,10 +445,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L75",
       "_origin": "ast",
-      "community": 8,
+      "community": 1,
       "norm_label": "inventory()",
-      "id": "src_core_app_core_contracts_idatacontext_inventory",
-      "community_name": "IDataContext"
+      "community_name": "App.Core.Contracts",
+      "id": "src_core_app_core_contracts_idatacontext_inventory"
     },
     {
       "label": "Quotes()",
@@ -566,10 +456,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L76",
       "_origin": "ast",
-      "community": 8,
+      "community": 1,
       "norm_label": "quotes()",
-      "id": "src_core_app_core_contracts_idatacontext_quotes",
-      "community_name": "IDataContext"
+      "community_name": "App.Core.Contracts",
+      "id": "src_core_app_core_contracts_idatacontext_quotes"
     },
     {
       "label": "Shipments()",
@@ -577,10 +467,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L77",
       "_origin": "ast",
-      "community": 8,
+      "community": 1,
       "norm_label": "shipments()",
-      "id": "src_core_app_core_contracts_idatacontext_shipments",
-      "community_name": "IDataContext"
+      "community_name": "App.Core.Contracts",
+      "id": "src_core_app_core_contracts_idatacontext_shipments"
     },
     {
       "label": "History()",
@@ -588,10 +478,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L78",
       "_origin": "ast",
-      "community": 8,
+      "community": 1,
       "norm_label": "history()",
-      "id": "src_core_app_core_contracts_idatacontext_history",
-      "community_name": "IDataContext"
+      "community_name": "App.Core.Contracts",
+      "id": "src_core_app_core_contracts_idatacontext_history"
     },
     {
       "label": "ProviderName()",
@@ -599,10 +489,10 @@
       "source_file": "src/core/App.Core.Contracts.pas",
       "source_location": "L79",
       "_origin": "ast",
-      "community": 8,
+      "community": 1,
       "norm_label": "providername()",
-      "id": "src_core_app_core_contracts_idatacontext_providername",
-      "community_name": "IDataContext"
+      "community_name": "App.Core.Contracts",
+      "id": "src_core_app_core_contracts_idatacontext_providername"
     },
     {
       "label": "App.Core.Entities.pas",
@@ -610,10 +500,10 @@
       "source_file": "src/core/App.Core.Entities.pas",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 3,
+      "community": 6,
       "norm_label": "app.core.entities.pas",
-      "id": "src_core_app_core_entities",
-      "community_name": "App.Modules.Item.View"
+      "community_name": "App.Modules.Partner.View",
+      "id": "src_core_app_core_entities"
     },
     {
       "label": "App.Core.Entities",
@@ -621,10 +511,10 @@
       "source_file": "src/core/App.Core.Entities.pas",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 3,
+      "community": 6,
       "norm_label": "app.core.entities",
-      "id": "src_core_app_core_entities_app_core_entities",
-      "community_name": "App.Modules.Item.View"
+      "community_name": "App.Modules.Partner.View",
+      "id": "src_core_app_core_entities_app_core_entities"
     },
     {
       "label": "App.Core.ProviderFactory.pas",
@@ -632,10 +522,10 @@
       "source_file": "src/core/App.Core.ProviderFactory.pas",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 3,
+      "community": 6,
       "norm_label": "app.core.providerfactory.pas",
-      "id": "src_core_app_core_providerfactory",
-      "community_name": "App.Modules.Item.View"
+      "community_name": "App.Modules.Partner.View",
+      "id": "src_core_app_core_providerfactory"
     },
     {
       "label": "App.Core.ProviderFactory",
@@ -643,10 +533,10 @@
       "source_file": "src/core/App.Core.ProviderFactory.pas",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 3,
+      "community": 6,
       "norm_label": "app.core.providerfactory",
-      "id": "src_core_app_core_providerfactory_app_core_providerfactory",
-      "community_name": "App.Modules.Item.View"
+      "community_name": "App.Modules.Partner.View",
+      "id": "src_core_app_core_providerfactory_app_core_providerfactory"
     },
     {
       "label": "LoadConfig()",
@@ -654,10 +544,10 @@
       "source_file": "src/core/App.Core.ProviderFactory.pas",
       "source_location": "L31",
       "_origin": "ast",
-      "community": 3,
+      "community": 6,
       "norm_label": "loadconfig()",
-      "id": "src_core_app_core_providerfactory_loadconfig",
-      "community_name": "App.Modules.Item.View"
+      "community_name": "App.Modules.Partner.View",
+      "id": "src_core_app_core_providerfactory_loadconfig"
     },
     {
       "label": "CreateDataContext()",
@@ -665,10 +555,10 @@
       "source_file": "src/core/App.Core.ProviderFactory.pas",
       "source_location": "L45",
       "_origin": "ast",
-      "community": 3,
+      "community": 6,
       "norm_label": "createdatacontext()",
-      "id": "src_core_app_core_providerfactory_createdatacontext",
-      "community_name": "App.Modules.Item.View"
+      "community_name": "App.Modules.Partner.View",
+      "id": "src_core_app_core_providerfactory_createdatacontext"
     },
     {
       "label": "App.Data.Memory.pas",
@@ -676,10 +566,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 3,
+      "community": 6,
       "norm_label": "app.data.memory.pas",
-      "id": "src_data_app_data_memory",
-      "community_name": "App.Modules.Item.View"
+      "community_name": "App.Modules.Partner.View",
+      "id": "src_data_app_data_memory"
     },
     {
       "label": "App.Data.Memory",
@@ -689,8 +579,8 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "app.data.memory",
-      "id": "src_data_app_data_memory_app_data_memory",
-      "community_name": "App.Data.Memory"
+      "community_name": "App.Data.Memory",
+      "id": "src_data_app_data_memory_app_data_memory"
     },
     {
       "label": "TMemoryItemRepository",
@@ -698,10 +588,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L15",
       "_origin": "ast",
-      "community": 2,
+      "community": 0,
       "norm_label": "tmemoryitemrepository",
-      "id": "src_data_app_data_memory_tmemoryitemrepository",
-      "community_name": "IndexOf"
+      "community_name": "App.Data.Memory",
+      "id": "src_data_app_data_memory_tmemoryitemrepository"
     },
     {
       "label": "TInterfacedObject",
@@ -711,8 +601,8 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "tinterfacedobject",
-      "id": "tinterfacedobject",
-      "community_name": "App.Data.Memory"
+      "community_name": "App.Data.Memory",
+      "id": "tinterfacedobject"
     },
     {
       "label": "IItemRepository",
@@ -720,10 +610,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L15",
       "_origin": "ast",
-      "community": 2,
+      "community": 0,
       "norm_label": "iitemrepository",
-      "id": "iitemrepository",
-      "community_name": "IndexOf"
+      "community_name": "App.Data.Memory",
+      "id": "iitemrepository"
     },
     {
       "label": "IndexOf()",
@@ -731,10 +621,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L19",
       "_origin": "ast",
-      "community": 2,
+      "community": 0,
       "norm_label": "indexof()",
-      "id": "src_data_app_data_memory_tmemoryitemrepository_indexof",
-      "community_name": "IndexOf"
+      "community_name": "App.Data.Memory",
+      "id": "src_data_app_data_memory_tmemoryitemrepository_indexof"
     },
     {
       "label": "GetAll()",
@@ -742,10 +632,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L21",
       "_origin": "ast",
-      "community": 2,
+      "community": 0,
       "norm_label": "getall()",
-      "id": "src_data_app_data_memory_tmemoryitemrepository_getall",
-      "community_name": "IndexOf"
+      "community_name": "App.Data.Memory",
+      "id": "src_data_app_data_memory_tmemoryitemrepository_getall"
     },
     {
       "label": "GetById()",
@@ -753,10 +643,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L22",
       "_origin": "ast",
-      "community": 2,
+      "community": 0,
       "norm_label": "getbyid()",
-      "id": "src_data_app_data_memory_tmemoryitemrepository_getbyid",
-      "community_name": "IndexOf"
+      "community_name": "App.Data.Memory",
+      "id": "src_data_app_data_memory_tmemoryitemrepository_getbyid"
     },
     {
       "label": "Add()",
@@ -764,10 +654,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L23",
       "_origin": "ast",
-      "community": 2,
+      "community": 0,
       "norm_label": "add()",
-      "id": "src_data_app_data_memory_tmemoryitemrepository_add",
-      "community_name": "IndexOf"
+      "community_name": "App.Data.Memory",
+      "id": "src_data_app_data_memory_tmemoryitemrepository_add"
     },
     {
       "label": "Update()",
@@ -775,10 +665,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L24",
       "_origin": "ast",
-      "community": 2,
+      "community": 0,
       "norm_label": "update()",
-      "id": "src_data_app_data_memory_tmemoryitemrepository_update",
-      "community_name": "IndexOf"
+      "community_name": "App.Data.Memory",
+      "id": "src_data_app_data_memory_tmemoryitemrepository_update"
     },
     {
       "label": "Delete()",
@@ -786,10 +676,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L25",
       "_origin": "ast",
-      "community": 2,
+      "community": 0,
       "norm_label": "delete()",
-      "id": "src_data_app_data_memory_tmemoryitemrepository_delete",
-      "community_name": "IndexOf"
+      "community_name": "App.Data.Memory",
+      "id": "src_data_app_data_memory_tmemoryitemrepository_delete"
     },
     {
       "label": "TMemoryPartnerRepository",
@@ -797,10 +687,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L28",
       "_origin": "ast",
-      "community": 2,
+      "community": 0,
       "norm_label": "tmemorypartnerrepository",
-      "id": "src_data_app_data_memory_tmemorypartnerrepository",
-      "community_name": "IndexOf"
+      "community_name": "App.Data.Memory",
+      "id": "src_data_app_data_memory_tmemorypartnerrepository"
     },
     {
       "label": "IPartnerRepository",
@@ -808,10 +698,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L28",
       "_origin": "ast",
-      "community": 2,
+      "community": 0,
       "norm_label": "ipartnerrepository",
-      "id": "ipartnerrepository",
-      "community_name": "IndexOf"
+      "community_name": "App.Data.Memory",
+      "id": "ipartnerrepository"
     },
     {
       "label": "IndexOf()",
@@ -819,10 +709,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L32",
       "_origin": "ast",
-      "community": 2,
+      "community": 0,
       "norm_label": "indexof()",
-      "id": "src_data_app_data_memory_tmemorypartnerrepository_indexof",
-      "community_name": "IndexOf"
+      "community_name": "App.Data.Memory",
+      "id": "src_data_app_data_memory_tmemorypartnerrepository_indexof"
     },
     {
       "label": "GetAll()",
@@ -830,10 +720,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L34",
       "_origin": "ast",
-      "community": 2,
+      "community": 0,
       "norm_label": "getall()",
-      "id": "src_data_app_data_memory_tmemorypartnerrepository_getall",
-      "community_name": "IndexOf"
+      "community_name": "App.Data.Memory",
+      "id": "src_data_app_data_memory_tmemorypartnerrepository_getall"
     },
     {
       "label": "GetByKind()",
@@ -841,10 +731,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L35",
       "_origin": "ast",
-      "community": 2,
+      "community": 0,
       "norm_label": "getbykind()",
-      "id": "src_data_app_data_memory_tmemorypartnerrepository_getbykind",
-      "community_name": "IndexOf"
+      "community_name": "App.Data.Memory",
+      "id": "src_data_app_data_memory_tmemorypartnerrepository_getbykind"
     },
     {
       "label": "GetById()",
@@ -852,10 +742,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L36",
       "_origin": "ast",
-      "community": 2,
+      "community": 0,
       "norm_label": "getbyid()",
-      "id": "src_data_app_data_memory_tmemorypartnerrepository_getbyid",
-      "community_name": "IndexOf"
+      "community_name": "App.Data.Memory",
+      "id": "src_data_app_data_memory_tmemorypartnerrepository_getbyid"
     },
     {
       "label": "Add()",
@@ -863,10 +753,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L37",
       "_origin": "ast",
-      "community": 2,
+      "community": 0,
       "norm_label": "add()",
-      "id": "src_data_app_data_memory_tmemorypartnerrepository_add",
-      "community_name": "IndexOf"
+      "community_name": "App.Data.Memory",
+      "id": "src_data_app_data_memory_tmemorypartnerrepository_add"
     },
     {
       "label": "Update()",
@@ -874,10 +764,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L38",
       "_origin": "ast",
-      "community": 2,
+      "community": 0,
       "norm_label": "update()",
-      "id": "src_data_app_data_memory_tmemorypartnerrepository_update",
-      "community_name": "IndexOf"
+      "community_name": "App.Data.Memory",
+      "id": "src_data_app_data_memory_tmemorypartnerrepository_update"
     },
     {
       "label": "Delete()",
@@ -885,10 +775,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L39",
       "_origin": "ast",
-      "community": 2,
+      "community": 0,
       "norm_label": "delete()",
-      "id": "src_data_app_data_memory_tmemorypartnerrepository_delete",
-      "community_name": "IndexOf"
+      "community_name": "App.Data.Memory",
+      "id": "src_data_app_data_memory_tmemorypartnerrepository_delete"
     },
     {
       "label": "TMemoryInventoryRepository",
@@ -898,8 +788,8 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "tmemoryinventoryrepository",
-      "id": "src_data_app_data_memory_tmemoryinventoryrepository",
-      "community_name": "App.Data.Memory"
+      "community_name": "App.Data.Memory",
+      "id": "src_data_app_data_memory_tmemoryinventoryrepository"
     },
     {
       "label": "IInventoryRepository",
@@ -909,8 +799,8 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "iinventoryrepository",
-      "id": "iinventoryrepository",
-      "community_name": "App.Data.Memory"
+      "community_name": "App.Data.Memory",
+      "id": "iinventoryrepository"
     },
     {
       "label": "GetStock()",
@@ -920,8 +810,8 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "getstock()",
-      "id": "src_data_app_data_memory_tmemoryinventoryrepository_getstock",
-      "community_name": "App.Data.Memory"
+      "community_name": "App.Data.Memory",
+      "id": "src_data_app_data_memory_tmemoryinventoryrepository_getstock"
     },
     {
       "label": "Move()",
@@ -929,10 +819,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L48",
       "_origin": "ast",
-      "community": 0,
+      "community": 5,
       "norm_label": "move()",
-      "id": "src_data_app_data_memory_tmemoryinventoryrepository_move",
-      "community_name": "App.Data.Memory"
+      "community_name": "TPartnerView",
+      "id": "src_data_app_data_memory_tmemoryinventoryrepository_move"
     },
     {
       "label": "GetMoves()",
@@ -942,8 +832,8 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "getmoves()",
-      "id": "src_data_app_data_memory_tmemoryinventoryrepository_getmoves",
-      "community_name": "App.Data.Memory"
+      "community_name": "App.Data.Memory",
+      "id": "src_data_app_data_memory_tmemoryinventoryrepository_getmoves"
     },
     {
       "label": "TMemoryQuoteRepository",
@@ -951,10 +841,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L53",
       "_origin": "ast",
-      "community": 2,
+      "community": 0,
       "norm_label": "tmemoryquoterepository",
-      "id": "src_data_app_data_memory_tmemoryquoterepository",
-      "community_name": "IndexOf"
+      "community_name": "App.Data.Memory",
+      "id": "src_data_app_data_memory_tmemoryquoterepository"
     },
     {
       "label": "IQuoteRepository",
@@ -962,10 +852,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L53",
       "_origin": "ast",
-      "community": 2,
+      "community": 0,
       "norm_label": "iquoterepository",
-      "id": "iquoterepository",
-      "community_name": "IndexOf"
+      "community_name": "App.Data.Memory",
+      "id": "iquoterepository"
     },
     {
       "label": "IndexOf()",
@@ -973,10 +863,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L57",
       "_origin": "ast",
-      "community": 2,
+      "community": 0,
       "norm_label": "indexof()",
-      "id": "src_data_app_data_memory_tmemoryquoterepository_indexof",
-      "community_name": "IndexOf"
+      "community_name": "App.Data.Memory",
+      "id": "src_data_app_data_memory_tmemoryquoterepository_indexof"
     },
     {
       "label": "GetAll()",
@@ -984,10 +874,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L59",
       "_origin": "ast",
-      "community": 2,
+      "community": 0,
       "norm_label": "getall()",
-      "id": "src_data_app_data_memory_tmemoryquoterepository_getall",
-      "community_name": "IndexOf"
+      "community_name": "App.Data.Memory",
+      "id": "src_data_app_data_memory_tmemoryquoterepository_getall"
     },
     {
       "label": "GetById()",
@@ -995,10 +885,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L60",
       "_origin": "ast",
-      "community": 2,
+      "community": 0,
       "norm_label": "getbyid()",
-      "id": "src_data_app_data_memory_tmemoryquoterepository_getbyid",
-      "community_name": "IndexOf"
+      "community_name": "App.Data.Memory",
+      "id": "src_data_app_data_memory_tmemoryquoterepository_getbyid"
     },
     {
       "label": "Add()",
@@ -1006,10 +896,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L61",
       "_origin": "ast",
-      "community": 2,
+      "community": 0,
       "norm_label": "add()",
-      "id": "src_data_app_data_memory_tmemoryquoterepository_add",
-      "community_name": "IndexOf"
+      "community_name": "App.Data.Memory",
+      "id": "src_data_app_data_memory_tmemoryquoterepository_add"
     },
     {
       "label": "Update()",
@@ -1017,10 +907,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L62",
       "_origin": "ast",
-      "community": 2,
+      "community": 0,
       "norm_label": "update()",
-      "id": "src_data_app_data_memory_tmemoryquoterepository_update",
-      "community_name": "IndexOf"
+      "community_name": "App.Data.Memory",
+      "id": "src_data_app_data_memory_tmemoryquoterepository_update"
     },
     {
       "label": "Delete()",
@@ -1028,10 +918,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L63",
       "_origin": "ast",
-      "community": 2,
+      "community": 0,
       "norm_label": "delete()",
-      "id": "src_data_app_data_memory_tmemoryquoterepository_delete",
-      "community_name": "IndexOf"
+      "community_name": "App.Data.Memory",
+      "id": "src_data_app_data_memory_tmemoryquoterepository_delete"
     },
     {
       "label": "TMemoryShipmentRepository",
@@ -1041,8 +931,8 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "tmemoryshipmentrepository",
-      "id": "src_data_app_data_memory_tmemoryshipmentrepository",
-      "community_name": "App.Data.Memory"
+      "community_name": "App.Data.Memory",
+      "id": "src_data_app_data_memory_tmemoryshipmentrepository"
     },
     {
       "label": "IShipmentRepository",
@@ -1052,8 +942,8 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "ishipmentrepository",
-      "id": "ishipmentrepository",
-      "community_name": "App.Data.Memory"
+      "community_name": "App.Data.Memory",
+      "id": "ishipmentrepository"
     },
     {
       "label": "IndexOf()",
@@ -1061,10 +951,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L71",
       "_origin": "ast",
-      "community": 2,
+      "community": 0,
       "norm_label": "indexof()",
-      "id": "src_data_app_data_memory_tmemoryshipmentrepository_indexof",
-      "community_name": "IndexOf"
+      "community_name": "App.Data.Memory",
+      "id": "src_data_app_data_memory_tmemoryshipmentrepository_indexof"
     },
     {
       "label": "Create()",
@@ -1074,8 +964,8 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "create()",
-      "id": "src_data_app_data_memory_tmemoryshipmentrepository_create",
-      "community_name": "App.Data.Memory"
+      "community_name": "App.Data.Memory",
+      "id": "src_data_app_data_memory_tmemoryshipmentrepository_create"
     },
     {
       "label": "GetAll()",
@@ -1085,8 +975,8 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "getall()",
-      "id": "src_data_app_data_memory_tmemoryshipmentrepository_getall",
-      "community_name": "App.Data.Memory"
+      "community_name": "App.Data.Memory",
+      "id": "src_data_app_data_memory_tmemoryshipmentrepository_getall"
     },
     {
       "label": "GetById()",
@@ -1096,8 +986,8 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "getbyid()",
-      "id": "src_data_app_data_memory_tmemoryshipmentrepository_getbyid",
-      "community_name": "App.Data.Memory"
+      "community_name": "App.Data.Memory",
+      "id": "src_data_app_data_memory_tmemoryshipmentrepository_getbyid"
     },
     {
       "label": "Add()",
@@ -1105,10 +995,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L76",
       "_origin": "ast",
-      "community": 0,
+      "community": 5,
       "norm_label": "add()",
-      "id": "src_data_app_data_memory_tmemoryshipmentrepository_add",
-      "community_name": "App.Data.Memory"
+      "community_name": "TPartnerView",
+      "id": "src_data_app_data_memory_tmemoryshipmentrepository_add"
     },
     {
       "label": "Delete()",
@@ -1118,8 +1008,8 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "delete()",
-      "id": "src_data_app_data_memory_tmemoryshipmentrepository_delete",
-      "community_name": "App.Data.Memory"
+      "community_name": "App.Data.Memory",
+      "id": "src_data_app_data_memory_tmemoryshipmentrepository_delete"
     },
     {
       "label": "TMemoryHistoryRepository",
@@ -1129,8 +1019,8 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "tmemoryhistoryrepository",
-      "id": "src_data_app_data_memory_tmemoryhistoryrepository",
-      "community_name": "App.Data.Memory"
+      "community_name": "App.Data.Memory",
+      "id": "src_data_app_data_memory_tmemoryhistoryrepository"
     },
     {
       "label": "IHistoryRepository",
@@ -1140,8 +1030,8 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "ihistoryrepository",
-      "id": "ihistoryrepository",
-      "community_name": "App.Data.Memory"
+      "community_name": "App.Data.Memory",
+      "id": "ihistoryrepository"
     },
     {
       "label": "ItemName()",
@@ -1151,8 +1041,8 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "itemname()",
-      "id": "src_data_app_data_memory_tmemoryhistoryrepository_itemname",
-      "community_name": "App.Data.Memory"
+      "community_name": "App.Data.Memory",
+      "id": "src_data_app_data_memory_tmemoryhistoryrepository_itemname"
     },
     {
       "label": "PartnerName()",
@@ -1162,8 +1052,8 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "partnername()",
-      "id": "src_data_app_data_memory_tmemoryhistoryrepository_partnername",
-      "community_name": "App.Data.Memory"
+      "community_name": "App.Data.Memory",
+      "id": "src_data_app_data_memory_tmemoryhistoryrepository_partnername"
     },
     {
       "label": "Create()",
@@ -1173,8 +1063,8 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "create()",
-      "id": "src_data_app_data_memory_tmemoryhistoryrepository_create",
-      "community_name": "App.Data.Memory"
+      "community_name": "App.Data.Memory",
+      "id": "src_data_app_data_memory_tmemoryhistoryrepository_create"
     },
     {
       "label": "Query()",
@@ -1184,8 +1074,8 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "query()",
-      "id": "src_data_app_data_memory_tmemoryhistoryrepository_query",
-      "community_name": "App.Data.Memory"
+      "community_name": "App.Data.Memory",
+      "id": "src_data_app_data_memory_tmemoryhistoryrepository_query"
     },
     {
       "label": "TMemoryDataContext",
@@ -1193,10 +1083,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L96",
       "_origin": "ast",
-      "community": 0,
+      "community": 5,
       "norm_label": "tmemorydatacontext",
-      "id": "src_data_app_data_memory_tmemorydatacontext",
-      "community_name": "App.Data.Memory"
+      "community_name": "TPartnerView",
+      "id": "src_data_app_data_memory_tmemorydatacontext"
     },
     {
       "label": "IDataContext",
@@ -1204,10 +1094,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L96",
       "_origin": "ast",
-      "community": 0,
+      "community": 5,
       "norm_label": "idatacontext",
-      "id": "idatacontext",
-      "community_name": "App.Data.Memory"
+      "community_name": "TPartnerView",
+      "id": "idatacontext"
     },
     {
       "label": "Seed()",
@@ -1215,10 +1105,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L104",
       "_origin": "ast",
-      "community": 0,
+      "community": 5,
       "norm_label": "seed()",
-      "id": "src_data_app_data_memory_tmemorydatacontext_seed",
-      "community_name": "App.Data.Memory"
+      "community_name": "TPartnerView",
+      "id": "src_data_app_data_memory_tmemorydatacontext_seed"
     },
     {
       "label": "Create()",
@@ -1226,10 +1116,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L106",
       "_origin": "ast",
-      "community": 0,
+      "community": 5,
       "norm_label": "create()",
-      "id": "src_data_app_data_memory_tmemorydatacontext_create",
-      "community_name": "App.Data.Memory"
+      "community_name": "TPartnerView",
+      "id": "src_data_app_data_memory_tmemorydatacontext_create"
     },
     {
       "label": "Items()",
@@ -1237,10 +1127,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L107",
       "_origin": "ast",
-      "community": 0,
+      "community": 5,
       "norm_label": "items()",
-      "id": "src_data_app_data_memory_tmemorydatacontext_items",
-      "community_name": "App.Data.Memory"
+      "community_name": "TPartnerView",
+      "id": "src_data_app_data_memory_tmemorydatacontext_items"
     },
     {
       "label": "Partners()",
@@ -1248,10 +1138,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L108",
       "_origin": "ast",
-      "community": 0,
+      "community": 5,
       "norm_label": "partners()",
-      "id": "src_data_app_data_memory_tmemorydatacontext_partners",
-      "community_name": "App.Data.Memory"
+      "community_name": "TPartnerView",
+      "id": "src_data_app_data_memory_tmemorydatacontext_partners"
     },
     {
       "label": "Inventory()",
@@ -1259,10 +1149,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L109",
       "_origin": "ast",
-      "community": 0,
+      "community": 5,
       "norm_label": "inventory()",
-      "id": "src_data_app_data_memory_tmemorydatacontext_inventory",
-      "community_name": "App.Data.Memory"
+      "community_name": "TPartnerView",
+      "id": "src_data_app_data_memory_tmemorydatacontext_inventory"
     },
     {
       "label": "Quotes()",
@@ -1270,10 +1160,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L110",
       "_origin": "ast",
-      "community": 0,
+      "community": 5,
       "norm_label": "quotes()",
-      "id": "src_data_app_data_memory_tmemorydatacontext_quotes",
-      "community_name": "App.Data.Memory"
+      "community_name": "TPartnerView",
+      "id": "src_data_app_data_memory_tmemorydatacontext_quotes"
     },
     {
       "label": "Shipments()",
@@ -1281,10 +1171,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L111",
       "_origin": "ast",
-      "community": 0,
+      "community": 5,
       "norm_label": "shipments()",
-      "id": "src_data_app_data_memory_tmemorydatacontext_shipments",
-      "community_name": "App.Data.Memory"
+      "community_name": "TPartnerView",
+      "id": "src_data_app_data_memory_tmemorydatacontext_shipments"
     },
     {
       "label": "History()",
@@ -1292,10 +1182,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L112",
       "_origin": "ast",
-      "community": 0,
+      "community": 5,
       "norm_label": "history()",
-      "id": "src_data_app_data_memory_tmemorydatacontext_history",
-      "community_name": "App.Data.Memory"
+      "community_name": "TPartnerView",
+      "id": "src_data_app_data_memory_tmemorydatacontext_history"
     },
     {
       "label": "ProviderName()",
@@ -1303,10 +1193,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L113",
       "_origin": "ast",
-      "community": 0,
+      "community": 5,
       "norm_label": "providername()",
-      "id": "src_data_app_data_memory_tmemorydatacontext_providername",
-      "community_name": "App.Data.Memory"
+      "community_name": "TPartnerView",
+      "id": "src_data_app_data_memory_tmemorydatacontext_providername"
     },
     {
       "label": "MakeItem()",
@@ -1316,8 +1206,8 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "makeitem()",
-      "id": "src_data_app_data_memory_makeitem",
-      "community_name": "App.Data.Memory"
+      "community_name": "App.Data.Memory",
+      "id": "src_data_app_data_memory_makeitem"
     },
     {
       "label": "MakePartner()",
@@ -1325,10 +1215,10 @@
       "source_file": "src/data/App.Data.Memory.pas",
       "source_location": "L128",
       "_origin": "ast",
-      "community": 0,
+      "community": 5,
       "norm_label": "makepartner()",
-      "id": "src_data_app_data_memory_makepartner",
-      "community_name": "App.Data.Memory"
+      "community_name": "TPartnerView",
+      "id": "src_data_app_data_memory_makepartner"
     },
     {
       "label": "DateOk()",
@@ -1338,8 +1228,8 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "dateok()",
-      "id": "src_data_app_data_memory_dateok",
-      "community_name": "App.Data.Memory"
+      "community_name": "App.Data.Memory",
+      "id": "src_data_app_data_memory_dateok"
     },
     {
       "label": "App.Modules.Item.View.pas",
@@ -1347,10 +1237,10 @@
       "source_file": "src/modules/item/App.Modules.Item.View.pas",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 3,
+      "community": 6,
       "norm_label": "app.modules.item.view.pas",
-      "id": "src_modules_item_app_modules_item_view",
-      "community_name": "App.Modules.Item.View"
+      "community_name": "App.Modules.Partner.View",
+      "id": "src_modules_item_app_modules_item_view"
     },
     {
       "label": "App.Modules.Item.View",
@@ -1360,8 +1250,8 @@
       "_origin": "ast",
       "community": 3,
       "norm_label": "app.modules.item.view",
-      "id": "src_modules_item_app_modules_item_view_app_modules_item_view",
-      "community_name": "App.Modules.Item.View"
+      "community_name": "App.Modules.Item.View",
+      "id": "src_modules_item_app_modules_item_view_app_modules_item_view"
     },
     {
       "label": "TItemView",
@@ -1369,10 +1259,10 @@
       "source_file": "src/modules/item/App.Modules.Item.View.pas",
       "source_location": "L14",
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "norm_label": "titemview",
-      "id": "src_modules_item_app_modules_item_view_titemview",
-      "community_name": "TItemView"
+      "community_name": "App.Modules.Item.View",
+      "id": "src_modules_item_app_modules_item_view_titemview"
     },
     {
       "label": "TForm",
@@ -1380,10 +1270,10 @@
       "source_file": "src/modules/item/App.Modules.Item.View.pas",
       "source_location": "L14",
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "norm_label": "tform",
-      "id": "src_modules_item_app_modules_item_view_pas_tform",
-      "community_name": "TItemView"
+      "community_name": "App.Modules.Item.View",
+      "id": "src_modules_item_app_modules_item_view_pas_tform"
     },
     {
       "label": "BuildUI()",
@@ -1391,10 +1281,10 @@
       "source_file": "src/modules/item/App.Modules.Item.View.pas",
       "source_location": "L20",
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "norm_label": "buildui()",
-      "id": "src_modules_item_app_modules_item_view_titemview_buildui",
-      "community_name": "TItemView"
+      "community_name": "App.Modules.Item.View",
+      "id": "src_modules_item_app_modules_item_view_titemview_buildui"
     },
     {
       "label": "RefreshGrid()",
@@ -1402,10 +1292,10 @@
       "source_file": "src/modules/item/App.Modules.Item.View.pas",
       "source_location": "L21",
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "norm_label": "refreshgrid()",
-      "id": "src_modules_item_app_modules_item_view_titemview_refreshgrid",
-      "community_name": "TItemView"
+      "community_name": "App.Modules.Item.View",
+      "id": "src_modules_item_app_modules_item_view_titemview_refreshgrid"
     },
     {
       "label": "SearchChanged()",
@@ -1413,10 +1303,10 @@
       "source_file": "src/modules/item/App.Modules.Item.View.pas",
       "source_location": "L22",
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "norm_label": "searchchanged()",
-      "id": "src_modules_item_app_modules_item_view_titemview_searchchanged",
-      "community_name": "TItemView"
+      "community_name": "App.Modules.Item.View",
+      "id": "src_modules_item_app_modules_item_view_titemview_searchchanged"
     },
     {
       "label": "NewClick()",
@@ -1424,10 +1314,10 @@
       "source_file": "src/modules/item/App.Modules.Item.View.pas",
       "source_location": "L23",
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "norm_label": "newclick()",
-      "id": "src_modules_item_app_modules_item_view_titemview_newclick",
-      "community_name": "TItemView"
+      "community_name": "App.Modules.Item.View",
+      "id": "src_modules_item_app_modules_item_view_titemview_newclick"
     },
     {
       "label": "EditClick()",
@@ -1435,10 +1325,10 @@
       "source_file": "src/modules/item/App.Modules.Item.View.pas",
       "source_location": "L24",
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "norm_label": "editclick()",
-      "id": "src_modules_item_app_modules_item_view_titemview_editclick",
-      "community_name": "TItemView"
+      "community_name": "App.Modules.Item.View",
+      "id": "src_modules_item_app_modules_item_view_titemview_editclick"
     },
     {
       "label": "DeleteClick()",
@@ -1446,10 +1336,10 @@
       "source_file": "src/modules/item/App.Modules.Item.View.pas",
       "source_location": "L25",
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "norm_label": "deleteclick()",
-      "id": "src_modules_item_app_modules_item_view_titemview_deleteclick",
-      "community_name": "TItemView"
+      "community_name": "App.Modules.Item.View",
+      "id": "src_modules_item_app_modules_item_view_titemview_deleteclick"
     },
     {
       "label": "GridDblClick()",
@@ -1457,10 +1347,10 @@
       "source_file": "src/modules/item/App.Modules.Item.View.pas",
       "source_location": "L26",
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "norm_label": "griddblclick()",
-      "id": "src_modules_item_app_modules_item_view_titemview_griddblclick",
-      "community_name": "TItemView"
+      "community_name": "App.Modules.Item.View",
+      "id": "src_modules_item_app_modules_item_view_titemview_griddblclick"
     },
     {
       "label": "SelectedItem()",
@@ -1468,10 +1358,10 @@
       "source_file": "src/modules/item/App.Modules.Item.View.pas",
       "source_location": "L27",
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "norm_label": "selecteditem()",
-      "id": "src_modules_item_app_modules_item_view_titemview_selecteditem",
-      "community_name": "TItemView"
+      "community_name": "App.Modules.Item.View",
+      "id": "src_modules_item_app_modules_item_view_titemview_selecteditem"
     },
     {
       "label": "CodeExists()",
@@ -1479,10 +1369,10 @@
       "source_file": "src/modules/item/App.Modules.Item.View.pas",
       "source_location": "L28",
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "norm_label": "codeexists()",
-      "id": "src_modules_item_app_modules_item_view_titemview_codeexists",
-      "community_name": "TItemView"
+      "community_name": "App.Modules.Item.View",
+      "id": "src_modules_item_app_modules_item_view_titemview_codeexists"
     },
     {
       "label": "EditItem()",
@@ -1490,10 +1380,10 @@
       "source_file": "src/modules/item/App.Modules.Item.View.pas",
       "source_location": "L29",
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "norm_label": "edititem()",
-      "id": "src_modules_item_app_modules_item_view_titemview_edititem",
-      "community_name": "TItemView"
+      "community_name": "App.Modules.Item.View",
+      "id": "src_modules_item_app_modules_item_view_titemview_edititem"
     },
     {
       "label": "CreateWithItems()",
@@ -1501,10 +1391,10 @@
       "source_file": "src/modules/item/App.Modules.Item.View.pas",
       "source_location": "L31",
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "norm_label": "createwithitems()",
-      "id": "src_modules_item_app_modules_item_view_titemview_createwithitems",
-      "community_name": "TItemView"
+      "community_name": "App.Modules.Item.View",
+      "id": "src_modules_item_app_modules_item_view_titemview_createwithitems"
     },
     {
       "label": "Execute()",
@@ -1512,10 +1402,10 @@
       "source_file": "src/modules/item/App.Modules.Item.View.pas",
       "source_location": "L32",
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "norm_label": "execute()",
-      "id": "src_modules_item_app_modules_item_view_titemview_execute",
-      "community_name": "TItemView"
+      "community_name": "App.Modules.Item.View",
+      "id": "src_modules_item_app_modules_item_view_titemview_execute"
     },
     {
       "label": "BuildUI()",
@@ -1525,8 +1415,8 @@
       "_origin": "ast",
       "community": 3,
       "norm_label": "buildui()",
-      "id": "src_modules_item_app_modules_item_view_buildui",
-      "community_name": "App.Modules.Item.View"
+      "community_name": "App.Modules.Item.View",
+      "id": "src_modules_item_app_modules_item_view_buildui"
     },
     {
       "label": "SaveClick()",
@@ -1536,8 +1426,8 @@
       "_origin": "ast",
       "community": 3,
       "norm_label": "saveclick()",
-      "id": "src_modules_item_app_modules_item_view_saveclick",
-      "community_name": "App.Modules.Item.View"
+      "community_name": "App.Modules.Item.View",
+      "id": "src_modules_item_app_modules_item_view_saveclick"
     },
     {
       "label": "AddLabel()",
@@ -1547,8 +1437,8 @@
       "_origin": "ast",
       "community": 3,
       "norm_label": "addlabel()",
-      "id": "src_modules_item_app_modules_item_view_addlabel",
-      "community_name": "App.Modules.Item.View"
+      "community_name": "App.Modules.Item.View",
+      "id": "src_modules_item_app_modules_item_view_addlabel"
     },
     {
       "label": "CreateWithItem()",
@@ -1558,8 +1448,8 @@
       "_origin": "ast",
       "community": 3,
       "norm_label": "createwithitem()",
-      "id": "src_modules_item_app_modules_item_view_createwithitem",
-      "community_name": "App.Modules.Item.View"
+      "community_name": "App.Modules.Item.View",
+      "id": "src_modules_item_app_modules_item_view_createwithitem"
     },
     {
       "label": "FormatPrice()",
@@ -1569,8 +1459,8 @@
       "_origin": "ast",
       "community": 3,
       "norm_label": "formatprice()",
-      "id": "src_modules_item_app_modules_item_view_formatprice",
-      "community_name": "App.Modules.Item.View"
+      "community_name": "App.Modules.Item.View",
+      "id": "src_modules_item_app_modules_item_view_formatprice"
     },
     {
       "label": "CreateWithItem()",
@@ -1580,8 +1470,8 @@
       "_origin": "ast",
       "community": 3,
       "norm_label": "createwithitem()",
-      "id": "src_modules_item_app_modules_item_view_titemeditform_createwithitem",
-      "community_name": "App.Modules.Item.View"
+      "community_name": "App.Modules.Item.View",
+      "id": "src_modules_item_app_modules_item_view_titemeditform_createwithitem"
     },
     {
       "label": "AddLabel()",
@@ -1591,8 +1481,8 @@
       "_origin": "ast",
       "community": 3,
       "norm_label": "addlabel()",
-      "id": "src_modules_item_app_modules_item_view_titemeditform_addlabel",
-      "community_name": "App.Modules.Item.View"
+      "community_name": "App.Modules.Item.View",
+      "id": "src_modules_item_app_modules_item_view_titemeditform_addlabel"
     },
     {
       "label": "BuildUI()",
@@ -1602,8 +1492,8 @@
       "_origin": "ast",
       "community": 3,
       "norm_label": "buildui()",
-      "id": "src_modules_item_app_modules_item_view_titemeditform_buildui",
-      "community_name": "App.Modules.Item.View"
+      "community_name": "App.Modules.Item.View",
+      "id": "src_modules_item_app_modules_item_view_titemeditform_buildui"
     },
     {
       "label": "SaveClick()",
@@ -1613,8 +1503,8 @@
       "_origin": "ast",
       "community": 3,
       "norm_label": "saveclick()",
-      "id": "src_modules_item_app_modules_item_view_titemeditform_saveclick",
-      "community_name": "App.Modules.Item.View"
+      "community_name": "App.Modules.Item.View",
+      "id": "src_modules_item_app_modules_item_view_titemeditform_saveclick"
     },
     {
       "label": "App.Modules.Partner.View.pas",
@@ -1622,10 +1512,10 @@
       "source_file": "src/modules/partner/App.Modules.Partner.View.pas",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 3,
+      "community": 6,
       "norm_label": "app.modules.partner.view.pas",
-      "id": "src_modules_partner_app_modules_partner_view",
-      "community_name": "App.Modules.Item.View"
+      "community_name": "App.Modules.Partner.View",
+      "id": "src_modules_partner_app_modules_partner_view"
     },
     {
       "label": "App.Modules.Partner.View",
@@ -1633,10 +1523,10 @@
       "source_file": "src/modules/partner/App.Modules.Partner.View.pas",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 6,
+      "community": 7,
       "norm_label": "app.modules.partner.view",
-      "id": "src_modules_partner_app_modules_partner_view_app_modules_partner_view",
-      "community_name": "App.Modules.Partner.View"
+      "community_name": "TMainForm",
+      "id": "src_modules_partner_app_modules_partner_view_app_modules_partner_view"
     },
     {
       "label": "TPartnerView",
@@ -1644,10 +1534,10 @@
       "source_file": "src/modules/partner/App.Modules.Partner.View.pas",
       "source_location": "L14",
       "_origin": "ast",
-      "community": 5,
+      "community": 4,
       "norm_label": "tpartnerview",
-      "id": "src_modules_partner_app_modules_partner_view_tpartnerview",
-      "community_name": "TPartnerView"
+      "community_name": "TItemView",
+      "id": "src_modules_partner_app_modules_partner_view_tpartnerview"
     },
     {
       "label": "TForm",
@@ -1655,10 +1545,10 @@
       "source_file": "src/modules/partner/App.Modules.Partner.View.pas",
       "source_location": "L14",
       "_origin": "ast",
-      "community": 5,
+      "community": 4,
       "norm_label": "tform",
-      "id": "src_modules_partner_app_modules_partner_view_pas_tform",
-      "community_name": "TPartnerView"
+      "community_name": "TItemView",
+      "id": "src_modules_partner_app_modules_partner_view_pas_tform"
     },
     {
       "label": "BuildUI()",
@@ -1666,10 +1556,10 @@
       "source_file": "src/modules/partner/App.Modules.Partner.View.pas",
       "source_location": "L21",
       "_origin": "ast",
-      "community": 5,
+      "community": 4,
       "norm_label": "buildui()",
-      "id": "src_modules_partner_app_modules_partner_view_tpartnerview_buildui",
-      "community_name": "TPartnerView"
+      "community_name": "TItemView",
+      "id": "src_modules_partner_app_modules_partner_view_tpartnerview_buildui"
     },
     {
       "label": "RefreshGrid()",
@@ -1677,10 +1567,10 @@
       "source_file": "src/modules/partner/App.Modules.Partner.View.pas",
       "source_location": "L22",
       "_origin": "ast",
-      "community": 5,
+      "community": 4,
       "norm_label": "refreshgrid()",
-      "id": "src_modules_partner_app_modules_partner_view_tpartnerview_refreshgrid",
-      "community_name": "TPartnerView"
+      "community_name": "TItemView",
+      "id": "src_modules_partner_app_modules_partner_view_tpartnerview_refreshgrid"
     },
     {
       "label": "FilterChanged()",
@@ -1688,10 +1578,10 @@
       "source_file": "src/modules/partner/App.Modules.Partner.View.pas",
       "source_location": "L23",
       "_origin": "ast",
-      "community": 5,
+      "community": 4,
       "norm_label": "filterchanged()",
-      "id": "src_modules_partner_app_modules_partner_view_tpartnerview_filterchanged",
-      "community_name": "TPartnerView"
+      "community_name": "TItemView",
+      "id": "src_modules_partner_app_modules_partner_view_tpartnerview_filterchanged"
     },
     {
       "label": "NewClick()",
@@ -1699,10 +1589,10 @@
       "source_file": "src/modules/partner/App.Modules.Partner.View.pas",
       "source_location": "L24",
       "_origin": "ast",
-      "community": 5,
+      "community": 4,
       "norm_label": "newclick()",
-      "id": "src_modules_partner_app_modules_partner_view_tpartnerview_newclick",
-      "community_name": "TPartnerView"
+      "community_name": "TItemView",
+      "id": "src_modules_partner_app_modules_partner_view_tpartnerview_newclick"
     },
     {
       "label": "EditClick()",
@@ -1710,10 +1600,10 @@
       "source_file": "src/modules/partner/App.Modules.Partner.View.pas",
       "source_location": "L25",
       "_origin": "ast",
-      "community": 5,
+      "community": 4,
       "norm_label": "editclick()",
-      "id": "src_modules_partner_app_modules_partner_view_tpartnerview_editclick",
-      "community_name": "TPartnerView"
+      "community_name": "TItemView",
+      "id": "src_modules_partner_app_modules_partner_view_tpartnerview_editclick"
     },
     {
       "label": "DeleteClick()",
@@ -1721,10 +1611,10 @@
       "source_file": "src/modules/partner/App.Modules.Partner.View.pas",
       "source_location": "L26",
       "_origin": "ast",
-      "community": 5,
+      "community": 4,
       "norm_label": "deleteclick()",
-      "id": "src_modules_partner_app_modules_partner_view_tpartnerview_deleteclick",
-      "community_name": "TPartnerView"
+      "community_name": "TItemView",
+      "id": "src_modules_partner_app_modules_partner_view_tpartnerview_deleteclick"
     },
     {
       "label": "GridDblClick()",
@@ -1732,10 +1622,10 @@
       "source_file": "src/modules/partner/App.Modules.Partner.View.pas",
       "source_location": "L27",
       "_origin": "ast",
-      "community": 5,
+      "community": 4,
       "norm_label": "griddblclick()",
-      "id": "src_modules_partner_app_modules_partner_view_tpartnerview_griddblclick",
-      "community_name": "TPartnerView"
+      "community_name": "TItemView",
+      "id": "src_modules_partner_app_modules_partner_view_tpartnerview_griddblclick"
     },
     {
       "label": "SelectedPartner()",
@@ -1743,10 +1633,10 @@
       "source_file": "src/modules/partner/App.Modules.Partner.View.pas",
       "source_location": "L28",
       "_origin": "ast",
-      "community": 5,
+      "community": 4,
       "norm_label": "selectedpartner()",
-      "id": "src_modules_partner_app_modules_partner_view_tpartnerview_selectedpartner",
-      "community_name": "TPartnerView"
+      "community_name": "TItemView",
+      "id": "src_modules_partner_app_modules_partner_view_tpartnerview_selectedpartner"
     },
     {
       "label": "CodeExists()",
@@ -1754,10 +1644,10 @@
       "source_file": "src/modules/partner/App.Modules.Partner.View.pas",
       "source_location": "L29",
       "_origin": "ast",
-      "community": 5,
+      "community": 4,
       "norm_label": "codeexists()",
-      "id": "src_modules_partner_app_modules_partner_view_tpartnerview_codeexists",
-      "community_name": "TPartnerView"
+      "community_name": "TItemView",
+      "id": "src_modules_partner_app_modules_partner_view_tpartnerview_codeexists"
     },
     {
       "label": "EditPartner()",
@@ -1765,10 +1655,10 @@
       "source_file": "src/modules/partner/App.Modules.Partner.View.pas",
       "source_location": "L30",
       "_origin": "ast",
-      "community": 5,
+      "community": 4,
       "norm_label": "editpartner()",
-      "id": "src_modules_partner_app_modules_partner_view_tpartnerview_editpartner",
-      "community_name": "TPartnerView"
+      "community_name": "TItemView",
+      "id": "src_modules_partner_app_modules_partner_view_tpartnerview_editpartner"
     },
     {
       "label": "CreateWithPartners()",
@@ -1776,10 +1666,10 @@
       "source_file": "src/modules/partner/App.Modules.Partner.View.pas",
       "source_location": "L32",
       "_origin": "ast",
-      "community": 5,
+      "community": 4,
       "norm_label": "createwithpartners()",
-      "id": "src_modules_partner_app_modules_partner_view_tpartnerview_createwithpartners",
-      "community_name": "TPartnerView"
+      "community_name": "TItemView",
+      "id": "src_modules_partner_app_modules_partner_view_tpartnerview_createwithpartners"
     },
     {
       "label": "Execute()",
@@ -1787,10 +1677,10 @@
       "source_file": "src/modules/partner/App.Modules.Partner.View.pas",
       "source_location": "L34",
       "_origin": "ast",
-      "community": 5,
+      "community": 4,
       "norm_label": "execute()",
-      "id": "src_modules_partner_app_modules_partner_view_tpartnerview_execute",
-      "community_name": "TPartnerView"
+      "community_name": "TItemView",
+      "id": "src_modules_partner_app_modules_partner_view_tpartnerview_execute"
     },
     {
       "label": "BuildUI()",
@@ -1798,10 +1688,10 @@
       "source_file": "src/modules/partner/App.Modules.Partner.View.pas",
       "source_location": "L52",
       "_origin": "ast",
-      "community": 6,
+      "community": 7,
       "norm_label": "buildui()",
-      "id": "src_modules_partner_app_modules_partner_view_buildui",
-      "community_name": "App.Modules.Partner.View"
+      "community_name": "TMainForm",
+      "id": "src_modules_partner_app_modules_partner_view_buildui"
     },
     {
       "label": "SaveClick()",
@@ -1809,10 +1699,10 @@
       "source_file": "src/modules/partner/App.Modules.Partner.View.pas",
       "source_location": "L53",
       "_origin": "ast",
-      "community": 6,
+      "community": 7,
       "norm_label": "saveclick()",
-      "id": "src_modules_partner_app_modules_partner_view_saveclick",
-      "community_name": "App.Modules.Partner.View"
+      "community_name": "TMainForm",
+      "id": "src_modules_partner_app_modules_partner_view_saveclick"
     },
     {
       "label": "AddLabel()",
@@ -1820,10 +1710,10 @@
       "source_file": "src/modules/partner/App.Modules.Partner.View.pas",
       "source_location": "L54",
       "_origin": "ast",
-      "community": 6,
+      "community": 7,
       "norm_label": "addlabel()",
-      "id": "src_modules_partner_app_modules_partner_view_addlabel",
-      "community_name": "App.Modules.Partner.View"
+      "community_name": "TMainForm",
+      "id": "src_modules_partner_app_modules_partner_view_addlabel"
     },
     {
       "label": "CreateWithPartner()",
@@ -1831,10 +1721,10 @@
       "source_file": "src/modules/partner/App.Modules.Partner.View.pas",
       "source_location": "L56",
       "_origin": "ast",
-      "community": 6,
+      "community": 7,
       "norm_label": "createwithpartner()",
-      "id": "src_modules_partner_app_modules_partner_view_createwithpartner",
-      "community_name": "App.Modules.Partner.View"
+      "community_name": "TMainForm",
+      "id": "src_modules_partner_app_modules_partner_view_createwithpartner"
     },
     {
       "label": "PartnerKindText()",
@@ -1842,10 +1732,10 @@
       "source_file": "src/modules/partner/App.Modules.Partner.View.pas",
       "source_location": "L61",
       "_origin": "ast",
-      "community": 6,
+      "community": 4,
       "norm_label": "partnerkindtext()",
-      "id": "src_modules_partner_app_modules_partner_view_partnerkindtext",
-      "community_name": "App.Modules.Partner.View"
+      "community_name": "TItemView",
+      "id": "src_modules_partner_app_modules_partner_view_partnerkindtext"
     },
     {
       "label": "PartnerKindIndex()",
@@ -1853,10 +1743,10 @@
       "source_file": "src/modules/partner/App.Modules.Partner.View.pas",
       "source_location": "L71",
       "_origin": "ast",
-      "community": 6,
+      "community": 7,
       "norm_label": "partnerkindindex()",
-      "id": "src_modules_partner_app_modules_partner_view_partnerkindindex",
-      "community_name": "App.Modules.Partner.View"
+      "community_name": "TMainForm",
+      "id": "src_modules_partner_app_modules_partner_view_partnerkindindex"
     },
     {
       "label": "PartnerKindFromIndex()",
@@ -1864,10 +1754,10 @@
       "source_file": "src/modules/partner/App.Modules.Partner.View.pas",
       "source_location": "L81",
       "_origin": "ast",
-      "community": 6,
+      "community": 7,
       "norm_label": "partnerkindfromindex()",
-      "id": "src_modules_partner_app_modules_partner_view_partnerkindfromindex",
-      "community_name": "App.Modules.Partner.View"
+      "community_name": "TMainForm",
+      "id": "src_modules_partner_app_modules_partner_view_partnerkindfromindex"
     },
     {
       "label": "DigitsOnly()",
@@ -1875,10 +1765,10 @@
       "source_file": "src/modules/partner/App.Modules.Partner.View.pas",
       "source_location": "L91",
       "_origin": "ast",
-      "community": 6,
+      "community": 7,
       "norm_label": "digitsonly()",
-      "id": "src_modules_partner_app_modules_partner_view_digitsonly",
-      "community_name": "App.Modules.Partner.View"
+      "community_name": "TMainForm",
+      "id": "src_modules_partner_app_modules_partner_view_digitsonly"
     },
     {
       "label": "FormatBizNo()",
@@ -1886,10 +1776,10 @@
       "source_file": "src/modules/partner/App.Modules.Partner.View.pas",
       "source_location": "L101",
       "_origin": "ast",
-      "community": 6,
+      "community": 7,
       "norm_label": "formatbizno()",
-      "id": "src_modules_partner_app_modules_partner_view_formatbizno",
-      "community_name": "App.Modules.Partner.View"
+      "community_name": "TMainForm",
+      "id": "src_modules_partner_app_modules_partner_view_formatbizno"
     },
     {
       "label": "IsValidBizNo()",
@@ -1897,10 +1787,10 @@
       "source_file": "src/modules/partner/App.Modules.Partner.View.pas",
       "source_location": "L113",
       "_origin": "ast",
-      "community": 6,
+      "community": 7,
       "norm_label": "isvalidbizno()",
-      "id": "src_modules_partner_app_modules_partner_view_isvalidbizno",
-      "community_name": "App.Modules.Partner.View"
+      "community_name": "TMainForm",
+      "id": "src_modules_partner_app_modules_partner_view_isvalidbizno"
     },
     {
       "label": "CreateWithPartner()",
@@ -1908,10 +1798,10 @@
       "source_file": "src/modules/partner/App.Modules.Partner.View.pas",
       "source_location": "L120",
       "_origin": "ast",
-      "community": 6,
+      "community": 7,
       "norm_label": "createwithpartner()",
-      "id": "src_modules_partner_app_modules_partner_view_tpartnereditform_createwithpartner",
-      "community_name": "App.Modules.Partner.View"
+      "community_name": "TMainForm",
+      "id": "src_modules_partner_app_modules_partner_view_tpartnereditform_createwithpartner"
     },
     {
       "label": "AddLabel()",
@@ -1919,10 +1809,10 @@
       "source_file": "src/modules/partner/App.Modules.Partner.View.pas",
       "source_location": "L128",
       "_origin": "ast",
-      "community": 6,
+      "community": 7,
       "norm_label": "addlabel()",
-      "id": "src_modules_partner_app_modules_partner_view_tpartnereditform_addlabel",
-      "community_name": "App.Modules.Partner.View"
+      "community_name": "TMainForm",
+      "id": "src_modules_partner_app_modules_partner_view_tpartnereditform_addlabel"
     },
     {
       "label": "BuildUI()",
@@ -1930,10 +1820,10 @@
       "source_file": "src/modules/partner/App.Modules.Partner.View.pas",
       "source_location": "L140",
       "_origin": "ast",
-      "community": 6,
+      "community": 7,
       "norm_label": "buildui()",
-      "id": "src_modules_partner_app_modules_partner_view_tpartnereditform_buildui",
-      "community_name": "App.Modules.Partner.View"
+      "community_name": "TMainForm",
+      "id": "src_modules_partner_app_modules_partner_view_tpartnereditform_buildui"
     },
     {
       "label": "SaveClick()",
@@ -1941,121 +1831,480 @@
       "source_file": "src/modules/partner/App.Modules.Partner.View.pas",
       "source_location": "L237",
       "_origin": "ast",
-      "community": 6,
+      "community": 7,
       "norm_label": "saveclick()",
-      "id": "src_modules_partner_app_modules_partner_view_tpartnereditform_saveclick",
+      "community_name": "TMainForm",
+      "id": "src_modules_partner_app_modules_partner_view_tpartnereditform_saveclick"
+    },
+    {
+      "label": "App.Main.pas",
+      "file_type": "code",
+      "source_file": "src/app/App.Main.pas",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 6,
+      "norm_label": "app.main.pas",
+      "id": "src_app_app_main",
       "community_name": "App.Modules.Partner.View"
     },
     {
-      "label": "ERP Project Overview",
-      "file_type": "document",
-      "source_file": "README.md",
-      "community": 11,
-      "norm_label": "erp project overview",
-      "id": "readme",
-      "community_name": "ERP Project Overview"
-    },
-    {
-      "label": "Core Layer",
+      "label": "App.Main",
       "file_type": "code",
-      "source_file": "src/core",
-      "community": 9,
-      "norm_label": "core layer",
-      "id": "src_core",
-      "community_name": "Core Layer"
+      "source_file": "src/app/App.Main.pas",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 6,
+      "norm_label": "app.main",
+      "id": "src_app_app_main_app_main",
+      "community_name": "App.Modules.Partner.View"
     },
     {
-      "label": "Modules Layer",
+      "label": "TMainForm",
       "file_type": "code",
-      "source_file": "src/modules",
-      "community": 9,
-      "norm_label": "modules layer",
-      "id": "src_modules",
-      "community_name": "Core Layer"
+      "source_file": "src/app/App.Main.pas",
+      "source_location": "L19",
+      "_origin": "ast",
+      "community": 8,
+      "norm_label": "tmainform",
+      "id": "src_app_app_main_tmainform",
+      "community_name": "IDataContext"
     },
     {
-      "label": "App Shell",
+      "label": "TForm",
       "file_type": "code",
-      "source_file": "src/app",
-      "community": 12,
-      "norm_label": "app shell",
-      "id": "src_app",
-      "community_name": "App Shell"
+      "source_file": "src/app/App.Main.pas",
+      "source_location": "L19",
+      "_origin": "ast",
+      "community": 8,
+      "norm_label": "tform",
+      "id": "src_app_app_main_pas_tform",
+      "community_name": "IDataContext"
     },
     {
-      "label": "IItemRepository",
+      "label": "BuildUI()",
       "file_type": "code",
-      "source_file": "src/core",
-      "community": 4,
-      "norm_label": "iitemrepository",
-      "id": "src_core_iitemrepository",
-      "community_name": "TItemView"
+      "source_file": "src/app/App.Main.pas",
+      "source_location": "L23",
+      "_origin": "ast",
+      "community": 8,
+      "norm_label": "buildui()",
+      "id": "src_app_app_main_tmainform_buildui",
+      "community_name": "IDataContext"
     },
     {
-      "label": "IPartnerRepository",
+      "label": "FillSummary()",
       "file_type": "code",
-      "source_file": "src/core",
-      "community": 5,
-      "norm_label": "ipartnerrepository",
-      "id": "src_core_ipartnerrepository",
-      "community_name": "TPartnerView"
+      "source_file": "src/app/App.Main.pas",
+      "source_location": "L24",
+      "_origin": "ast",
+      "community": 8,
+      "norm_label": "fillsummary()",
+      "id": "src_app_app_main_tmainform_fillsummary",
+      "community_name": "IDataContext"
     },
     {
-      "label": "Architecture Guide",
-      "file_type": "document",
-      "source_file": "docs/maintenance/architecture.md",
-      "community": 10,
-      "norm_label": "architecture guide",
-      "id": "docs_maintenance_architecture",
-      "community_name": "Architecture Guide"
+      "label": "ItemClick()",
+      "file_type": "code",
+      "source_file": "src/app/App.Main.pas",
+      "source_location": "L25",
+      "_origin": "ast",
+      "community": 8,
+      "norm_label": "itemclick()",
+      "id": "src_app_app_main_tmainform_itemclick",
+      "community_name": "IDataContext"
+    },
+    {
+      "label": "PartnerClick()",
+      "file_type": "code",
+      "source_file": "src/app/App.Main.pas",
+      "source_location": "L26",
+      "_origin": "ast",
+      "community": 8,
+      "norm_label": "partnerclick()",
+      "id": "src_app_app_main_tmainform_partnerclick",
+      "community_name": "IDataContext"
+    },
+    {
+      "label": "InventoryClick()",
+      "file_type": "code",
+      "source_file": "src/app/App.Main.pas",
+      "source_location": "L27",
+      "_origin": "ast",
+      "community": 8,
+      "norm_label": "inventoryclick()",
+      "id": "src_app_app_main_tmainform_inventoryclick",
+      "community_name": "IDataContext"
+    },
+    {
+      "label": "ModulePlaceholderClick()",
+      "file_type": "code",
+      "source_file": "src/app/App.Main.pas",
+      "source_location": "L28",
+      "_origin": "ast",
+      "community": 8,
+      "norm_label": "moduleplaceholderclick()",
+      "id": "src_app_app_main_tmainform_moduleplaceholderclick",
+      "community_name": "IDataContext"
+    },
+    {
+      "label": "CreateWithData()",
+      "file_type": "code",
+      "source_file": "src/app/App.Main.pas",
+      "source_location": "L30",
+      "_origin": "ast",
+      "community": 8,
+      "norm_label": "createwithdata()",
+      "id": "src_app_app_main_tmainform_createwithdata",
+      "community_name": "IDataContext"
+    },
+    {
+      "label": "App.Modules.Inventory.View.pas",
+      "file_type": "code",
+      "source_file": "src/modules/inventory/App.Modules.Inventory.View.pas",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "app.modules.inventory.view.pas",
+      "id": "src_modules_inventory_app_modules_inventory_view",
+      "community_name": "IndexOf"
+    },
+    {
+      "label": "App.Modules.Inventory.View",
+      "file_type": "code",
+      "source_file": "src/modules/inventory/App.Modules.Inventory.View.pas",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "app.modules.inventory.view",
+      "id": "src_modules_inventory_app_modules_inventory_view_app_modules_inventory_view",
+      "community_name": "IndexOf"
+    },
+    {
+      "label": "TInventoryView",
+      "file_type": "code",
+      "source_file": "src/modules/inventory/App.Modules.Inventory.View.pas",
+      "source_location": "L14",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "tinventoryview",
+      "id": "src_modules_inventory_app_modules_inventory_view_tinventoryview",
+      "community_name": "IndexOf"
+    },
+    {
+      "label": "TForm",
+      "file_type": "code",
+      "source_file": "src/modules/inventory/App.Modules.Inventory.View.pas",
+      "source_location": "L14",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "tform",
+      "id": "src_modules_inventory_app_modules_inventory_view_pas_tform",
+      "community_name": "IndexOf"
+    },
+    {
+      "label": "BuildUI()",
+      "file_type": "code",
+      "source_file": "src/modules/inventory/App.Modules.Inventory.View.pas",
+      "source_location": "L25",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "buildui()",
+      "id": "src_modules_inventory_app_modules_inventory_view_tinventoryview_buildui",
+      "community_name": "IndexOf"
+    },
+    {
+      "label": "RefreshAll()",
+      "file_type": "code",
+      "source_file": "src/modules/inventory/App.Modules.Inventory.View.pas",
+      "source_location": "L26",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "refreshall()",
+      "id": "src_modules_inventory_app_modules_inventory_view_tinventoryview_refreshall",
+      "community_name": "IndexOf"
+    },
+    {
+      "label": "RefreshItemCombo()",
+      "file_type": "code",
+      "source_file": "src/modules/inventory/App.Modules.Inventory.View.pas",
+      "source_location": "L27",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "refreshitemcombo()",
+      "id": "src_modules_inventory_app_modules_inventory_view_tinventoryview_refreshitemcombo",
+      "community_name": "IndexOf"
+    },
+    {
+      "label": "RefreshStockGrid()",
+      "file_type": "code",
+      "source_file": "src/modules/inventory/App.Modules.Inventory.View.pas",
+      "source_location": "L28",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "refreshstockgrid()",
+      "id": "src_modules_inventory_app_modules_inventory_view_tinventoryview_refreshstockgrid",
+      "community_name": "IndexOf"
+    },
+    {
+      "label": "RefreshMoveGrid()",
+      "file_type": "code",
+      "source_file": "src/modules/inventory/App.Modules.Inventory.View.pas",
+      "source_location": "L29",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "refreshmovegrid()",
+      "id": "src_modules_inventory_app_modules_inventory_view_tinventoryview_refreshmovegrid",
+      "community_name": "IndexOf"
+    },
+    {
+      "label": "RegisterClick()",
+      "file_type": "code",
+      "source_file": "src/modules/inventory/App.Modules.Inventory.View.pas",
+      "source_location": "L30",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "registerclick()",
+      "id": "src_modules_inventory_app_modules_inventory_view_tinventoryview_registerclick",
+      "community_name": "IndexOf"
+    },
+    {
+      "label": "SelectedItemId()",
+      "file_type": "code",
+      "source_file": "src/modules/inventory/App.Modules.Inventory.View.pas",
+      "source_location": "L31",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "selecteditemid()",
+      "id": "src_modules_inventory_app_modules_inventory_view_tinventoryview_selecteditemid",
+      "community_name": "IndexOf"
+    },
+    {
+      "label": "ItemComboText()",
+      "file_type": "code",
+      "source_file": "src/modules/inventory/App.Modules.Inventory.View.pas",
+      "source_location": "L32",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "itemcombotext()",
+      "id": "src_modules_inventory_app_modules_inventory_view_tinventoryview_itemcombotext",
+      "community_name": "IndexOf"
+    },
+    {
+      "label": "ItemName()",
+      "file_type": "code",
+      "source_file": "src/modules/inventory/App.Modules.Inventory.View.pas",
+      "source_location": "L33",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "itemname()",
+      "id": "src_modules_inventory_app_modules_inventory_view_tinventoryview_itemname",
+      "community_name": "IndexOf"
+    },
+    {
+      "label": "MoveKind()",
+      "file_type": "code",
+      "source_file": "src/modules/inventory/App.Modules.Inventory.View.pas",
+      "source_location": "L34",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "movekind()",
+      "id": "src_modules_inventory_app_modules_inventory_view_tinventoryview_movekind",
+      "community_name": "IndexOf"
+    },
+    {
+      "label": "ParseQty()",
+      "file_type": "code",
+      "source_file": "src/modules/inventory/App.Modules.Inventory.View.pas",
+      "source_location": "L35",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "parseqty()",
+      "id": "src_modules_inventory_app_modules_inventory_view_tinventoryview_parseqty",
+      "community_name": "IndexOf"
+    },
+    {
+      "label": "StockDelta()",
+      "file_type": "code",
+      "source_file": "src/modules/inventory/App.Modules.Inventory.View.pas",
+      "source_location": "L36",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "stockdelta()",
+      "id": "src_modules_inventory_app_modules_inventory_view_tinventoryview_stockdelta",
+      "community_name": "IndexOf"
+    },
+    {
+      "label": "CreateWithData()",
+      "file_type": "code",
+      "source_file": "src/modules/inventory/App.Modules.Inventory.View.pas",
+      "source_location": "L38",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "createwithdata()",
+      "id": "src_modules_inventory_app_modules_inventory_view_tinventoryview_createwithdata",
+      "community_name": "IndexOf"
+    },
+    {
+      "label": "Execute()",
+      "file_type": "code",
+      "source_file": "src/modules/inventory/App.Modules.Inventory.View.pas",
+      "source_location": "L39",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "execute()",
+      "id": "src_modules_inventory_app_modules_inventory_view_tinventoryview_execute",
+      "community_name": "IndexOf"
+    },
+    {
+      "label": "FormatQty()",
+      "file_type": "code",
+      "source_file": "src/modules/inventory/App.Modules.Inventory.View.pas",
+      "source_location": "L44",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "formatqty()",
+      "id": "src_modules_inventory_app_modules_inventory_view_formatqty",
+      "community_name": "IndexOf"
+    },
+    {
+      "label": "StockMoveKindText()",
+      "file_type": "code",
+      "source_file": "src/modules/inventory/App.Modules.Inventory.View.pas",
+      "source_location": "L49",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "stockmovekindtext()",
+      "id": "src_modules_inventory_app_modules_inventory_view_stockmovekindtext",
+      "community_name": "IndexOf"
     },
     {
       "label": "Item Module Maintenance",
       "file_type": "document",
       "source_file": "docs/maintenance/item.md",
-      "community": 4,
+      "community": 12,
       "norm_label": "item module maintenance",
       "id": "docs_maintenance_item",
-      "community_name": "TItemView"
+      "community_name": "App Shell"
     },
     {
       "label": "Partner Module Maintenance",
       "file_type": "document",
       "source_file": "docs/maintenance/partner.md",
-      "community": 5,
+      "community": 13,
       "norm_label": "partner module maintenance",
       "id": "docs_maintenance_partner",
-      "community_name": "TPartnerView"
+      "community_name": "Community 13"
     },
     {
-      "label": "Firebird Provider",
-      "file_type": "concept",
-      "source_file": "docs/maintenance/architecture.md",
-      "community": 4,
-      "norm_label": "firebird provider",
-      "id": "firebird_provider",
-      "community_name": "TItemView"
+      "label": "ERP Project Overview",
+      "file_type": "document",
+      "source_file": "README.md",
+      "community": 14,
+      "norm_label": "erp project overview",
+      "id": "readme",
+      "community_name": "Community 14"
+    },
+    {
+      "label": "Core Layer",
+      "file_type": "code",
+      "source_file": "src/core",
+      "community": 10,
+      "norm_label": "core layer",
+      "id": "src_core",
+      "community_name": "Architecture Guide"
+    },
+    {
+      "label": "Modules Layer",
+      "file_type": "code",
+      "source_file": "src/modules",
+      "community": 10,
+      "norm_label": "modules layer",
+      "id": "src_modules",
+      "community_name": "Architecture Guide"
+    },
+    {
+      "label": "App Shell",
+      "file_type": "code",
+      "source_file": "src/app",
+      "community": 10,
+      "norm_label": "app shell",
+      "id": "src_app",
+      "community_name": "Architecture Guide"
+    },
+    {
+      "label": "IItemRepository",
+      "file_type": "code",
+      "source_file": "src/core/App.Core.Interfaces.pas",
+      "community": 2,
+      "norm_label": "iitemrepository",
+      "id": "src_core_iitemrepository",
+      "community_name": "IndexOf"
+    },
+    {
+      "label": "IInventoryRepository",
+      "file_type": "code",
+      "source_file": "src/core/App.Core.Interfaces.pas",
+      "community": 2,
+      "norm_label": "iinventoryrepository",
+      "id": "src_core_iinventoryrepository",
+      "community_name": "IndexOf"
+    },
+    {
+      "label": "IDataContext",
+      "file_type": "code",
+      "source_file": "src/core/App.Core.Interfaces.pas",
+      "community": 2,
+      "norm_label": "idatacontext",
+      "id": "src_core_idatacontext",
+      "community_name": "IndexOf"
     },
     {
       "label": "Memory Provider",
-      "file_type": "concept",
-      "source_file": "docs/maintenance/architecture.md",
-      "community": 4,
+      "file_type": "code",
+      "source_file": "src/core/App.Data.Memory.pas",
+      "community": 2,
       "norm_label": "memory provider",
-      "id": "memory_provider",
-      "community_name": "TItemView"
+      "id": "src_core_memory_provider",
+      "community_name": "IndexOf"
+    },
+    {
+      "label": "Firebird Provider",
+      "file_type": "code",
+      "source_file": "src/core/App.Data.Firebird.pas",
+      "community": 2,
+      "norm_label": "firebird provider",
+      "id": "src_core_firebird_provider",
+      "community_name": "IndexOf"
+    },
+    {
+      "label": "Architecture Documentation",
+      "file_type": "document",
+      "source_file": "docs/maintenance/architecture.md",
+      "community": 11,
+      "norm_label": "architecture documentation",
+      "id": "docs_maintenance_architecture",
+      "community_name": "ERP Project Overview"
+    },
+    {
+      "label": "Inventory Maintenance Guide",
+      "file_type": "document",
+      "source_file": "docs/maintenance/inventory.md",
+      "community": 2,
+      "norm_label": "inventory maintenance guide",
+      "id": "docs_maintenance_inventory",
+      "community_name": "IndexOf"
     }
   ],
   "links": [
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "src/app/App.Main.pas",
+      "source_file": "src/app/ERP.lpr",
       "source_location": "L1",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "src_app_app_main",
-      "target": "src_app_app_main_app_main"
+      "source": "src_app_erp",
+      "target": "src_app_erp_erp"
     },
     {
       "relation": "imports",
@@ -2067,211 +2316,6 @@
       "confidence_score": 1.0,
       "source": "src_app_erp_erp",
       "target": "src_app_app_main"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/App.Main.pas",
-      "source_location": "L18",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_app_main_app_main",
-      "target": "src_app_app_main_tmainform"
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/App.Main.pas",
-      "source_location": "L12",
-      "weight": 1.0,
-      "context": "import",
-      "confidence_score": 1.0,
-      "source": "src_app_app_main_app_main",
-      "target": "src_core_app_core_contracts"
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/App.Main.pas",
-      "source_location": "L12",
-      "weight": 1.0,
-      "context": "import",
-      "confidence_score": 1.0,
-      "source": "src_app_app_main_app_main",
-      "target": "src_core_app_core_entities"
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/App.Main.pas",
-      "source_location": "L12",
-      "weight": 1.0,
-      "context": "import",
-      "confidence_score": 1.0,
-      "source": "src_app_app_main_app_main",
-      "target": "src_modules_item_app_modules_item_view"
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/App.Main.pas",
-      "source_location": "L12",
-      "weight": 1.0,
-      "context": "import",
-      "confidence_score": 1.0,
-      "source": "src_app_app_main_app_main",
-      "target": "src_modules_partner_app_modules_partner_view"
-    },
-    {
-      "relation": "inherits",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/App.Main.pas",
-      "source_location": "L18",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_app_main_tmainform",
-      "target": "src_app_app_main_pas_tform"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/App.Main.pas",
-      "source_location": "L41",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_app_main_tmainform",
-      "target": "src_app_app_main_tmainform_buildui"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/App.Main.pas",
-      "source_location": "L33",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_app_main_tmainform",
-      "target": "src_app_app_main_tmainform_createwithdata"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/App.Main.pas",
-      "source_location": "L103",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_app_main_tmainform",
-      "target": "src_app_app_main_tmainform_fillsummary"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/App.Main.pas",
-      "source_location": "L136",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_app_main_tmainform",
-      "target": "src_app_app_main_tmainform_itemclick"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/App.Main.pas",
-      "source_location": "L148",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_app_main_tmainform",
-      "target": "src_app_app_main_tmainform_moduleplaceholderclick"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/App.Main.pas",
-      "source_location": "L142",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_app_main_tmainform",
-      "target": "src_app_app_main_tmainform_partnerclick"
-    },
-    {
-      "relation": "calls",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/maintenance/item.md",
-      "source": "src_app_app_main_tmainform",
-      "target": "src_modules_item_app_modules_item_view_titemview"
-    },
-    {
-      "relation": "calls",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/maintenance/partner.md",
-      "source": "src_app_app_main_tmainform",
-      "target": "src_modules_partner_app_modules_partner_view_tpartnerview"
-    },
-    {
-      "relation": "calls",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/App.Main.pas",
-      "source_location": "L85",
-      "weight": 1.0,
-      "context": "call",
-      "confidence_score": 1.0,
-      "source": "src_app_app_main_tmainform_buildui",
-      "target": "src_app_app_main_tmainform_moduleplaceholderclick"
-    },
-    {
-      "relation": "calls",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/App.Main.pas",
-      "source_location": "L36",
-      "weight": 1.0,
-      "context": "call",
-      "confidence_score": 1.0,
-      "source": "src_app_app_main_tmainform_createwithdata",
-      "target": "src_app_app_main_tmainform_buildui"
-    },
-    {
-      "relation": "calls",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/App.Main.pas",
-      "source_location": "L37",
-      "weight": 1.0,
-      "context": "call",
-      "confidence_score": 1.0,
-      "source": "src_app_app_main_tmainform_createwithdata",
-      "target": "src_app_app_main_tmainform_fillsummary"
-    },
-    {
-      "relation": "calls",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/App.Main.pas",
-      "source_location": "L138",
-      "weight": 1.0,
-      "context": "call",
-      "confidence_score": 1.0,
-      "source": "src_app_app_main_tmainform_itemclick",
-      "target": "src_app_app_main_tmainform_fillsummary"
-    },
-    {
-      "relation": "calls",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/App.Main.pas",
-      "source_location": "L144",
-      "weight": 1.0,
-      "context": "call",
-      "confidence_score": 1.0,
-      "source": "src_app_app_main_tmainform_partnerclick",
-      "target": "src_app_app_main_tmainform_fillsummary"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/ERP.lpr",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_erp",
-      "target": "src_app_erp_erp"
     },
     {
       "relation": "imports",
@@ -2307,6 +2351,17 @@
       "target": "src_data_app_data_memory"
     },
     {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/App.Main.pas",
+      "source_location": "L12",
+      "weight": 1.0,
+      "context": "import",
+      "confidence_score": 1.0,
+      "source": "src_app_app_main_app_main",
+      "target": "src_core_app_core_contracts"
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/core/App.Core.Contracts.pas",
@@ -2336,6 +2391,17 @@
       "context": "import",
       "confidence_score": 1.0,
       "source": "src_data_app_data_memory_app_data_memory",
+      "target": "src_core_app_core_contracts"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/inventory/App.Modules.Inventory.View.pas",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import",
+      "confidence_score": 1.0,
+      "source": "src_modules_inventory_app_modules_inventory_view_app_modules_inventory_view",
       "target": "src_core_app_core_contracts"
     },
     {
@@ -2752,6 +2818,17 @@
       "target": "src_core_app_core_contracts_idatacontext_shipments"
     },
     {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/App.Main.pas",
+      "source_location": "L12",
+      "weight": 1.0,
+      "context": "import",
+      "confidence_score": 1.0,
+      "source": "src_app_app_main_app_main",
+      "target": "src_core_app_core_entities"
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/core/App.Core.Entities.pas",
@@ -2770,6 +2847,17 @@
       "context": "import",
       "confidence_score": 1.0,
       "source": "src_data_app_data_memory_app_data_memory",
+      "target": "src_core_app_core_entities"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/inventory/App.Modules.Inventory.View.pas",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import",
+      "confidence_score": 1.0,
+      "source": "src_modules_inventory_app_modules_inventory_view_app_modules_inventory_view",
       "target": "src_core_app_core_entities"
     },
     {
@@ -3705,6 +3793,17 @@
       "target": "src_data_app_data_memory_makepartner"
     },
     {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/App.Main.pas",
+      "source_location": "L12",
+      "weight": 1.0,
+      "context": "import",
+      "confidence_score": 1.0,
+      "source": "src_app_app_main_app_main",
+      "target": "src_modules_item_app_modules_item_view"
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/modules/item/App.Modules.Item.View.pas",
@@ -3813,22 +3912,6 @@
       "confidence_score": 1.0,
       "source": "src_modules_item_app_modules_item_view_app_modules_item_view",
       "target": "src_modules_item_app_modules_item_view_titemview"
-    },
-    {
-      "relation": "cites",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/maintenance/item.md",
-      "source": "docs_maintenance_item",
-      "target": "src_modules_item_app_modules_item_view_titemview"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/maintenance/item.md",
-      "source": "src_modules_item_app_modules_item_view_titemview",
-      "target": "src_core_iitemrepository"
     },
     {
       "relation": "inherits",
@@ -4214,6 +4297,17 @@
       "target": "src_modules_item_app_modules_item_view_titemeditform_saveclick"
     },
     {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/App.Main.pas",
+      "source_location": "L12",
+      "weight": 1.0,
+      "context": "import",
+      "confidence_score": 1.0,
+      "source": "src_app_app_main_app_main",
+      "target": "src_modules_partner_app_modules_partner_view"
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/modules/partner/App.Modules.Partner.View.pas",
@@ -4372,22 +4466,6 @@
       "confidence_score": 1.0,
       "source": "src_modules_partner_app_modules_partner_view_app_modules_partner_view",
       "target": "src_modules_partner_app_modules_partner_view_tpartnerview"
-    },
-    {
-      "relation": "cites",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/maintenance/partner.md",
-      "source": "docs_maintenance_partner",
-      "target": "src_modules_partner_app_modules_partner_view_tpartnerview"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/maintenance/partner.md",
-      "source": "src_modules_partner_app_modules_partner_view_tpartnerview",
-      "target": "src_core_ipartnerrepository"
     },
     {
       "relation": "inherits",
@@ -4839,6 +4917,630 @@
       "target": "src_modules_partner_app_modules_partner_view_tpartnereditform_saveclick"
     },
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/App.Main.pas",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_main",
+      "target": "src_app_app_main_app_main"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/App.Main.pas",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_main_app_main",
+      "target": "src_app_app_main_tmainform"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/App.Main.pas",
+      "source_location": "L12",
+      "weight": 1.0,
+      "context": "import",
+      "confidence_score": 1.0,
+      "source": "src_app_app_main_app_main",
+      "target": "src_modules_inventory_app_modules_inventory_view"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/App.Main.pas",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_main_tmainform",
+      "target": "src_app_app_main_pas_tform"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/App.Main.pas",
+      "source_location": "L43",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_main_tmainform",
+      "target": "src_app_app_main_tmainform_buildui"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/App.Main.pas",
+      "source_location": "L35",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_main_tmainform",
+      "target": "src_app_app_main_tmainform_createwithdata"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/App.Main.pas",
+      "source_location": "L107",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_main_tmainform",
+      "target": "src_app_app_main_tmainform_fillsummary"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/App.Main.pas",
+      "source_location": "L152",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_main_tmainform",
+      "target": "src_app_app_main_tmainform_inventoryclick"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/App.Main.pas",
+      "source_location": "L140",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_main_tmainform",
+      "target": "src_app_app_main_tmainform_itemclick"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/App.Main.pas",
+      "source_location": "L158",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_main_tmainform",
+      "target": "src_app_app_main_tmainform_moduleplaceholderclick"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/App.Main.pas",
+      "source_location": "L146",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_main_tmainform",
+      "target": "src_app_app_main_tmainform_partnerclick"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/maintenance/inventory.md",
+      "source": "src_app_app_main_tmainform",
+      "target": "src_modules_inventory_app_modules_inventory_view_tinventoryview"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/App.Main.pas",
+      "source_location": "L89",
+      "weight": 1.0,
+      "context": "call",
+      "confidence_score": 1.0,
+      "source": "src_app_app_main_tmainform_buildui",
+      "target": "src_app_app_main_tmainform_moduleplaceholderclick"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/App.Main.pas",
+      "source_location": "L38",
+      "weight": 1.0,
+      "context": "call",
+      "confidence_score": 1.0,
+      "source": "src_app_app_main_tmainform_createwithdata",
+      "target": "src_app_app_main_tmainform_buildui"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/App.Main.pas",
+      "source_location": "L39",
+      "weight": 1.0,
+      "context": "call",
+      "confidence_score": 1.0,
+      "source": "src_app_app_main_tmainform_createwithdata",
+      "target": "src_app_app_main_tmainform_fillsummary"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/App.Main.pas",
+      "source_location": "L154",
+      "weight": 1.0,
+      "context": "call",
+      "confidence_score": 1.0,
+      "source": "src_app_app_main_tmainform_inventoryclick",
+      "target": "src_app_app_main_tmainform_fillsummary"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/App.Main.pas",
+      "source_location": "L142",
+      "weight": 1.0,
+      "context": "call",
+      "confidence_score": 1.0,
+      "source": "src_app_app_main_tmainform_itemclick",
+      "target": "src_app_app_main_tmainform_fillsummary"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/App.Main.pas",
+      "source_location": "L148",
+      "weight": 1.0,
+      "context": "call",
+      "confidence_score": 1.0,
+      "source": "src_app_app_main_tmainform_partnerclick",
+      "target": "src_app_app_main_tmainform_fillsummary"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/inventory/App.Modules.Inventory.View.pas",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_modules_inventory_app_modules_inventory_view",
+      "target": "src_modules_inventory_app_modules_inventory_view_app_modules_inventory_view"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/inventory/App.Modules.Inventory.View.pas",
+      "source_location": "L44",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_modules_inventory_app_modules_inventory_view_app_modules_inventory_view",
+      "target": "src_modules_inventory_app_modules_inventory_view_formatqty"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/inventory/App.Modules.Inventory.View.pas",
+      "source_location": "L49",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_modules_inventory_app_modules_inventory_view_app_modules_inventory_view",
+      "target": "src_modules_inventory_app_modules_inventory_view_stockmovekindtext"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/inventory/App.Modules.Inventory.View.pas",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_modules_inventory_app_modules_inventory_view_app_modules_inventory_view",
+      "target": "src_modules_inventory_app_modules_inventory_view_tinventoryview"
+    },
+    {
+      "relation": "cites",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/maintenance/inventory.md",
+      "source": "docs_maintenance_inventory",
+      "target": "src_modules_inventory_app_modules_inventory_view_tinventoryview"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/maintenance/inventory.md",
+      "source": "src_modules_inventory_app_modules_inventory_view_tinventoryview",
+      "target": "src_core_idatacontext"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/maintenance/inventory.md",
+      "source": "src_modules_inventory_app_modules_inventory_view_tinventoryview",
+      "target": "src_core_iinventoryrepository"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/maintenance/inventory.md",
+      "source": "src_modules_inventory_app_modules_inventory_view_tinventoryview",
+      "target": "src_core_iitemrepository"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/inventory/App.Modules.Inventory.View.pas",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_modules_inventory_app_modules_inventory_view_tinventoryview",
+      "target": "src_modules_inventory_app_modules_inventory_view_pas_tform"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/inventory/App.Modules.Inventory.View.pas",
+      "source_location": "L95",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_modules_inventory_app_modules_inventory_view_tinventoryview",
+      "target": "src_modules_inventory_app_modules_inventory_view_tinventoryview_buildui"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/inventory/App.Modules.Inventory.View.pas",
+      "source_location": "L61",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_modules_inventory_app_modules_inventory_view_tinventoryview",
+      "target": "src_modules_inventory_app_modules_inventory_view_tinventoryview_createwithdata"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/inventory/App.Modules.Inventory.View.pas",
+      "source_location": "L70",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_modules_inventory_app_modules_inventory_view_tinventoryview",
+      "target": "src_modules_inventory_app_modules_inventory_view_tinventoryview_execute"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/inventory/App.Modules.Inventory.View.pas",
+      "source_location": "L402",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_modules_inventory_app_modules_inventory_view_tinventoryview",
+      "target": "src_modules_inventory_app_modules_inventory_view_tinventoryview_itemcombotext"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/inventory/App.Modules.Inventory.View.pas",
+      "source_location": "L407",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_modules_inventory_app_modules_inventory_view_tinventoryview",
+      "target": "src_modules_inventory_app_modules_inventory_view_tinventoryview_itemname"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/inventory/App.Modules.Inventory.View.pas",
+      "source_location": "L417",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_modules_inventory_app_modules_inventory_view_tinventoryview",
+      "target": "src_modules_inventory_app_modules_inventory_view_tinventoryview_movekind"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/inventory/App.Modules.Inventory.View.pas",
+      "source_location": "L427",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_modules_inventory_app_modules_inventory_view_tinventoryview",
+      "target": "src_modules_inventory_app_modules_inventory_view_tinventoryview_parseqty"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/inventory/App.Modules.Inventory.View.pas",
+      "source_location": "L243",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_modules_inventory_app_modules_inventory_view_tinventoryview",
+      "target": "src_modules_inventory_app_modules_inventory_view_tinventoryview_refreshall"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/inventory/App.Modules.Inventory.View.pas",
+      "source_location": "L251",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_modules_inventory_app_modules_inventory_view_tinventoryview",
+      "target": "src_modules_inventory_app_modules_inventory_view_tinventoryview_refreshitemcombo"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/inventory/App.Modules.Inventory.View.pas",
+      "source_location": "L311",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_modules_inventory_app_modules_inventory_view_tinventoryview",
+      "target": "src_modules_inventory_app_modules_inventory_view_tinventoryview_refreshmovegrid"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/inventory/App.Modules.Inventory.View.pas",
+      "source_location": "L276",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_modules_inventory_app_modules_inventory_view_tinventoryview",
+      "target": "src_modules_inventory_app_modules_inventory_view_tinventoryview_refreshstockgrid"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/inventory/App.Modules.Inventory.View.pas",
+      "source_location": "L335",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_modules_inventory_app_modules_inventory_view_tinventoryview",
+      "target": "src_modules_inventory_app_modules_inventory_view_tinventoryview_registerclick"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/inventory/App.Modules.Inventory.View.pas",
+      "source_location": "L384",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_modules_inventory_app_modules_inventory_view_tinventoryview",
+      "target": "src_modules_inventory_app_modules_inventory_view_tinventoryview_selecteditemid"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/inventory/App.Modules.Inventory.View.pas",
+      "source_location": "L437",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_modules_inventory_app_modules_inventory_view_tinventoryview",
+      "target": "src_modules_inventory_app_modules_inventory_view_tinventoryview_stockdelta"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/inventory/App.Modules.Inventory.View.pas",
+      "source_location": "L180",
+      "weight": 1.0,
+      "context": "call",
+      "confidence_score": 1.0,
+      "source": "src_modules_inventory_app_modules_inventory_view_tinventoryview_buildui",
+      "target": "src_modules_inventory_app_modules_inventory_view_tinventoryview_registerclick"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/inventory/App.Modules.Inventory.View.pas",
+      "source_location": "L64",
+      "weight": 1.0,
+      "context": "call",
+      "confidence_score": 1.0,
+      "source": "src_modules_inventory_app_modules_inventory_view_tinventoryview_createwithdata",
+      "target": "src_modules_inventory_app_modules_inventory_view_tinventoryview_buildui"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/inventory/App.Modules.Inventory.View.pas",
+      "source_location": "L65",
+      "weight": 1.0,
+      "context": "call",
+      "confidence_score": 1.0,
+      "source": "src_modules_inventory_app_modules_inventory_view_tinventoryview_createwithdata",
+      "target": "src_modules_inventory_app_modules_inventory_view_tinventoryview_refreshall"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/inventory/App.Modules.Inventory.View.pas",
+      "source_location": "L245",
+      "weight": 1.0,
+      "context": "call",
+      "confidence_score": 1.0,
+      "source": "src_modules_inventory_app_modules_inventory_view_tinventoryview_refreshall",
+      "target": "src_modules_inventory_app_modules_inventory_view_tinventoryview_refreshitemcombo"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/inventory/App.Modules.Inventory.View.pas",
+      "source_location": "L247",
+      "weight": 1.0,
+      "context": "call",
+      "confidence_score": 1.0,
+      "source": "src_modules_inventory_app_modules_inventory_view_tinventoryview_refreshall",
+      "target": "src_modules_inventory_app_modules_inventory_view_tinventoryview_refreshmovegrid"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/inventory/App.Modules.Inventory.View.pas",
+      "source_location": "L246",
+      "weight": 1.0,
+      "context": "call",
+      "confidence_score": 1.0,
+      "source": "src_modules_inventory_app_modules_inventory_view_tinventoryview_refreshall",
+      "target": "src_modules_inventory_app_modules_inventory_view_tinventoryview_refreshstockgrid"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/inventory/App.Modules.Inventory.View.pas",
+      "source_location": "L376",
+      "weight": 1.0,
+      "context": "call",
+      "confidence_score": 1.0,
+      "source": "src_modules_inventory_app_modules_inventory_view_tinventoryview_registerclick",
+      "target": "src_modules_inventory_app_modules_inventory_view_tinventoryview_refreshall"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/inventory/App.Modules.Inventory.View.pas",
+      "source_location": "L258",
+      "weight": 1.0,
+      "context": "call",
+      "confidence_score": 1.0,
+      "source": "src_modules_inventory_app_modules_inventory_view_tinventoryview_refreshitemcombo",
+      "target": "src_modules_inventory_app_modules_inventory_view_tinventoryview_itemcombotext"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/inventory/App.Modules.Inventory.View.pas",
+      "source_location": "L252",
+      "weight": 1.0,
+      "context": "call",
+      "confidence_score": 1.0,
+      "source": "src_modules_inventory_app_modules_inventory_view_tinventoryview_refreshitemcombo",
+      "target": "src_modules_inventory_app_modules_inventory_view_tinventoryview_selecteditemid"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/inventory/App.Modules.Inventory.View.pas",
+      "source_location": "L291",
+      "weight": 1.0,
+      "context": "call",
+      "confidence_score": 1.0,
+      "source": "src_modules_inventory_app_modules_inventory_view_tinventoryview_refreshstockgrid",
+      "target": "src_modules_inventory_app_modules_inventory_view_formatqty"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/inventory/App.Modules.Inventory.View.pas",
+      "source_location": "L326",
+      "weight": 1.0,
+      "context": "call",
+      "confidence_score": 1.0,
+      "source": "src_modules_inventory_app_modules_inventory_view_tinventoryview_refreshmovegrid",
+      "target": "src_modules_inventory_app_modules_inventory_view_formatqty"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/inventory/App.Modules.Inventory.View.pas",
+      "source_location": "L324",
+      "weight": 1.0,
+      "context": "call",
+      "confidence_score": 1.0,
+      "source": "src_modules_inventory_app_modules_inventory_view_tinventoryview_refreshmovegrid",
+      "target": "src_modules_inventory_app_modules_inventory_view_stockmovekindtext"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/inventory/App.Modules.Inventory.View.pas",
+      "source_location": "L325",
+      "weight": 1.0,
+      "context": "call",
+      "confidence_score": 1.0,
+      "source": "src_modules_inventory_app_modules_inventory_view_tinventoryview_refreshmovegrid",
+      "target": "src_modules_inventory_app_modules_inventory_view_tinventoryview_itemname"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/inventory/App.Modules.Inventory.View.pas",
+      "source_location": "L370",
+      "weight": 1.0,
+      "context": "call",
+      "confidence_score": 1.0,
+      "source": "src_modules_inventory_app_modules_inventory_view_tinventoryview_registerclick",
+      "target": "src_modules_inventory_app_modules_inventory_view_formatqty"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/inventory/App.Modules.Inventory.View.pas",
+      "source_location": "L350",
+      "weight": 1.0,
+      "context": "call",
+      "confidence_score": 1.0,
+      "source": "src_modules_inventory_app_modules_inventory_view_tinventoryview_registerclick",
+      "target": "src_modules_inventory_app_modules_inventory_view_tinventoryview_movekind"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/inventory/App.Modules.Inventory.View.pas",
+      "source_location": "L344",
+      "weight": 1.0,
+      "context": "call",
+      "confidence_score": 1.0,
+      "source": "src_modules_inventory_app_modules_inventory_view_tinventoryview_registerclick",
+      "target": "src_modules_inventory_app_modules_inventory_view_tinventoryview_parseqty"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/inventory/App.Modules.Inventory.View.pas",
+      "source_location": "L336",
+      "weight": 1.0,
+      "context": "call",
+      "confidence_score": 1.0,
+      "source": "src_modules_inventory_app_modules_inventory_view_tinventoryview_registerclick",
+      "target": "src_modules_inventory_app_modules_inventory_view_tinventoryview_selecteditemid"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/inventory/App.Modules.Inventory.View.pas",
+      "source_location": "L366",
+      "weight": 1.0,
+      "context": "call",
+      "confidence_score": 1.0,
+      "source": "src_modules_inventory_app_modules_inventory_view_tinventoryview_registerclick",
+      "target": "src_modules_inventory_app_modules_inventory_view_tinventoryview_stockdelta"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/modules/inventory/App.Modules.Inventory.View.pas",
+      "source_location": "L83",
+      "weight": 1.0,
+      "context": "call",
+      "confidence_score": 1.0,
+      "source": "src_modules_inventory_app_modules_inventory_view_tinventoryview_execute",
+      "target": "src_modules_inventory_app_modules_inventory_view_tinventoryview_createwithdata"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/maintenance/architecture.md",
+      "source": "src_app",
+      "target": "src_core"
+    },
+    {
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
@@ -4851,45 +5553,45 @@
       "confidence": "INFERRED",
       "confidence_score": 0.9,
       "source_file": "docs/maintenance/architecture.md",
-      "source": "firebird_provider",
-      "target": "src_core_iitemrepository"
+      "source": "src_core_firebird_provider",
+      "target": "src_core_iinventoryrepository"
     },
     {
       "relation": "implements",
       "confidence": "INFERRED",
       "confidence_score": 0.9,
       "source_file": "docs/maintenance/architecture.md",
-      "source": "memory_provider",
-      "target": "src_core_iitemrepository"
+      "source": "src_core_memory_provider",
+      "target": "src_core_iinventoryrepository"
     }
   ],
   "hyperedges": [
     {
-      "id": "dependency_injection_pattern",
-      "label": "Repository Pattern & DI",
+      "id": "data_abstraction_pattern",
+      "label": "Data Access Abstraction",
       "nodes": [
-        "src_app",
-        "src_core",
-        "src_modules"
+        "src_core_idatacontext",
+        "src_core_memory_provider",
+        "src_core_firebird_provider"
       ],
       "relation": "participate_in",
       "confidence": "EXTRACTED",
-      "confidence_score": 0.95,
+      "confidence_score": 1.0,
       "source_file": "docs/maintenance/architecture.md"
     },
     {
-      "id": "data_provider_strategy",
-      "label": "Dual Data Provider Strategy",
+      "id": "inventory_module_flow",
+      "label": "Inventory Management Flow",
       "nodes": [
-        "memory_provider",
-        "firebird_provider",
-        "src_core"
+        "src_app_main",
+        "src_modules_inventory_view",
+        "src_core_iinventoryrepository"
       ],
       "relation": "form",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "README.md"
+      "source_file": "docs/maintenance/inventory.md"
     }
   ],
-  "built_at_commit": "830e7f75ea552e6b1515c1fa17aa693ef731b6ff"
+  "built_at_commit": "f657a32ea35ecad66338bdbea5504ff79e095536"
 }
