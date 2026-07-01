@@ -106,13 +106,13 @@ var
   BtnAdd, BtnDelete, BtnSave, BtnCancel: TButton;
   I: Integer;
 begin
-  Caption := 'Shipment Entry';
+  Caption := '출고 등록';
   Width := 720;
   Height := 470;
   BorderStyle := bsDialog;
   Position := poOwnerFormCenter;
 
-  AddLabel('Partner', 18, 20);
+  AddLabel('거래처', 18, 20);
   FPartnerCombo := TComboBox.Create(Self);
   FPartnerCombo.Parent := Self;
   FPartnerCombo.Left := 92;
@@ -125,7 +125,7 @@ begin
   if FPartnerCombo.Items.Count > 0 then
     FPartnerCombo.ItemIndex := 0;
 
-  AddLabel('Item', 18, 62);
+  AddLabel('품목', 18, 62);
   FItemCombo := TComboBox.Create(Self);
   FItemCombo.Parent := Self;
   FItemCombo.Left := 92;
@@ -139,7 +139,7 @@ begin
   if FItemCombo.Items.Count > 0 then
     FItemCombo.ItemIndex := 0;
 
-  AddLabel('Qty', 470, 62);
+  AddLabel('수량', 470, 62);
   FQtyEdit := TEdit.Create(Self);
   FQtyEdit.Parent := Self;
   FQtyEdit.Left := 510;
@@ -151,7 +151,7 @@ begin
   BtnAdd.Left := 604;
   BtnAdd.Top := 58;
   BtnAdd.Width := 80;
-  BtnAdd.Caption := 'Add Line';
+  BtnAdd.Caption := '라인 추가';
   BtnAdd.OnClick := AddLineClick;
 
   FLineGrid := TStringGrid.Create(Self);
@@ -164,12 +164,12 @@ begin
   FLineGrid.ColCount := 6;
   FLineGrid.RowCount := 2;
   FLineGrid.Options := FLineGrid.Options + [goRowSelect] - [goEditing];
-  FLineGrid.Cells[0, 0] := 'Item';
-  FLineGrid.Cells[1, 0] := 'Name';
-  FLineGrid.Cells[2, 0] := 'Qty';
-  FLineGrid.Cells[3, 0] := 'Unit';
-  FLineGrid.Cells[4, 0] := 'Price';
-  FLineGrid.Cells[5, 0] := 'Amount';
+  FLineGrid.Cells[0, 0] := '품목코드';
+  FLineGrid.Cells[1, 0] := '품명';
+  FLineGrid.Cells[2, 0] := '수량';
+  FLineGrid.Cells[3, 0] := '단위';
+  FLineGrid.Cells[4, 0] := '단가';
+  FLineGrid.Cells[5, 0] := '금액';
   FLineGrid.ColWidths[0] := 90;
   FLineGrid.ColWidths[1] := 210;
   FLineGrid.ColWidths[2] := 70;
@@ -182,7 +182,7 @@ begin
   BtnDelete.Left := 18;
   BtnDelete.Top := 332;
   BtnDelete.Width := 100;
-  BtnDelete.Caption := 'Delete Line';
+  BtnDelete.Caption := '라인 삭제';
   BtnDelete.OnClick := DeleteLineClick;
 
   FTotalLabel := TLabel.Create(Self);
@@ -192,7 +192,7 @@ begin
   FTotalLabel.Width := 200;
   FTotalLabel.Alignment := taRightJustify;
 
-  AddLabel('Note', 18, 368);
+  AddLabel('비고', 18, 368);
   FNoteEdit := TEdit.Create(Self);
   FNoteEdit.Parent := Self;
   FNoteEdit.Left := 92;
@@ -204,7 +204,7 @@ begin
   BtnSave.Left := 516;
   BtnSave.Top := 398;
   BtnSave.Width := 78;
-  BtnSave.Caption := 'Save';
+  BtnSave.Caption := '저장';
   BtnSave.OnClick := SaveClick;
 
   BtnCancel := TButton.Create(Self);
@@ -212,7 +212,7 @@ begin
   BtnCancel.Left := 606;
   BtnCancel.Top := 398;
   BtnCancel.Width := 78;
-  BtnCancel.Caption := 'Cancel';
+  BtnCancel.Caption := '취소';
   BtnCancel.ModalResult := mrCancel;
 end;
 
@@ -264,13 +264,13 @@ var
 begin
   if FItemCombo.ItemIndex < 0 then
   begin
-    ShowMessage('Select an item.');
+    ShowMessage('품목을 선택하세요.');
     Exit;
   end;
 
   if (not ParseQty(FQtyEdit.Text, Qty)) or (Qty <= 0) then
   begin
-    ShowMessage('Enter a quantity greater than zero.');
+    ShowMessage('0보다 큰 수량을 입력하세요.');
     FQtyEdit.SetFocus;
     Exit;
   end;
@@ -294,7 +294,7 @@ begin
   Idx := FLineGrid.Row - 1;
   if (Idx < 0) or (Idx > High(FShipment.Lines)) then
   begin
-    ShowMessage('Select a line.');
+    ShowMessage('라인을 선택하세요.');
     Exit;
   end;
 
@@ -335,7 +335,7 @@ begin
   FShipment.Total := 0;
   for I := 0 to High(FShipment.Lines) do
     FShipment.Total := FShipment.Total + FShipment.Lines[I].Amount;
-  FTotalLabel.Caption := 'Total: ' + FormatMoney(FShipment.Total);
+  FTotalLabel.Caption := '합계: ' + FormatMoney(FShipment.Total);
 end;
 
 function TShipmentEditForm.StockWarningAccepted: Boolean;
@@ -374,9 +374,9 @@ begin
   end;
 
   if Msg <> '' then
-    Result := MessageDlg('Stock warning',
-      'Some items do not have enough stock.' + LineEnding + LineEnding + Msg +
-      LineEnding + 'Continue anyway?',
+    Result := MessageDlg('재고 부족 경고',
+      '일부 품목의 현재 재고가 출고 수량보다 부족합니다.' +
+      LineEnding + LineEnding + Msg + LineEnding + '그래도 저장할까요?',
       mtWarning, [mbYes, mbNo], 0) = mrYes
   else
     Result := True;
@@ -388,13 +388,13 @@ var
 begin
   if FPartnerCombo.ItemIndex < 0 then
   begin
-    ShowMessage('Select a partner.');
+    ShowMessage('거래처를 선택하세요.');
     Exit;
   end;
 
   if Length(FShipment.Lines) = 0 then
   begin
-    ShowMessage('Add at least one shipment line.');
+    ShowMessage('출고 라인을 하나 이상 추가하세요.');
     Exit;
   end;
 
@@ -428,7 +428,7 @@ var
 begin
   if (AData = nil) or (AData.Shipments = nil) then
   begin
-    ShowMessage('Shipment repository is not available.');
+    ShowMessage('출고 저장소를 사용할 수 없습니다.');
     Exit;
   end;
 
@@ -445,7 +445,7 @@ var
   ButtonPanel: TPanel;
   BtnNew, BtnDelete, BtnClose: TButton;
 begin
-  Caption := 'Shipment';
+  Caption := '출고';
   Width := 860;
   Height := 540;
   Position := poOwnerFormCenter;
@@ -461,7 +461,7 @@ begin
   BtnNew.Left := 16;
   BtnNew.Top := 12;
   BtnNew.Width := 82;
-  BtnNew.Caption := 'New';
+  BtnNew.Caption := '신규';
   BtnNew.OnClick := NewClick;
 
   BtnDelete := TButton.Create(Self);
@@ -469,7 +469,7 @@ begin
   BtnDelete.Left := 106;
   BtnDelete.Top := 12;
   BtnDelete.Width := 82;
-  BtnDelete.Caption := 'Delete';
+  BtnDelete.Caption := '삭제';
   BtnDelete.OnClick := DeleteClick;
 
   BtnClose := TButton.Create(Self);
@@ -477,7 +477,7 @@ begin
   BtnClose.Left := 746;
   BtnClose.Top := 12;
   BtnClose.Width := 82;
-  BtnClose.Caption := 'Close';
+  BtnClose.Caption := '닫기';
   BtnClose.ModalResult := mrClose;
   BtnClose.Anchors := [akTop, akRight];
 
@@ -488,12 +488,12 @@ begin
   FGrid.ColCount := 6;
   FGrid.RowCount := 2;
   FGrid.Options := FGrid.Options + [goRowSelect] - [goEditing];
-  FGrid.Cells[0, 0] := 'Ship No';
-  FGrid.Cells[1, 0] := 'Partner';
-  FGrid.Cells[2, 0] := 'Date';
-  FGrid.Cells[3, 0] := 'Lines';
-  FGrid.Cells[4, 0] := 'Total';
-  FGrid.Cells[5, 0] := 'Note';
+  FGrid.Cells[0, 0] := '출고번호';
+  FGrid.Cells[1, 0] := '거래처';
+  FGrid.Cells[2, 0] := '일자';
+  FGrid.Cells[3, 0] := '라인수';
+  FGrid.Cells[4, 0] := '합계';
+  FGrid.Cells[5, 0] := '비고';
   FGrid.ColWidths[0] := 130;
   FGrid.ColWidths[1] := 220;
   FGrid.ColWidths[2] := 130;
@@ -541,7 +541,7 @@ begin
   Idx := FGrid.Row - 1;
   if (Idx < 0) or (Idx > High(FRows)) then
   begin
-    ShowMessage('Select a shipment.');
+    ShowMessage('출고 건을 선택하세요.');
     Exit;
   end;
 
@@ -572,8 +572,8 @@ begin
   if not SelectedShipment(Shipment) then
     Exit;
 
-  if MessageDlg('Delete shipment',
-    'Delete selected shipment? Inventory moves are not reversed.',
+  if MessageDlg('출고 삭제',
+    '선택한 출고 건을 삭제할까요? 재고 이동 내역은 되돌리지 않습니다.',
     mtConfirmation, [mbYes, mbNo], 0) <> mrYes then
     Exit;
 
