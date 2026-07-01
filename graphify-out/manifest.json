@@ -42,7 +42,7 @@
   "README.md": {
     "mtime": 1782901899.0847971,
     "ast_hash": "c3130d46c88357e9a6cbca9eb05bf056",
-    "semantic_hash": ""
+    "semantic_hash": "c3130d46c88357e9a6cbca9eb05bf056"
   },
   "docs/maintenance/README.md": {
     "mtime": 1782900825.5616093,
@@ -57,7 +57,7 @@
   "docs/maintenance/architecture.md": {
     "mtime": 1782900846.0171087,
     "ast_hash": "cea4cc1afb024b97ee0d5a3fd89dd4e9",
-    "semantic_hash": ""
+    "semantic_hash": "cea4cc1afb024b97ee0d5a3fd89dd4e9"
   },
   "src/README.md": {
     "mtime": 1782900801.311067,
@@ -72,6 +72,6 @@
   "docs/maintenance/item.md": {
     "mtime": 1782903944.0924332,
     "ast_hash": "02175a25aab9c08319c21b27f2c7b018",
-    "semantic_hash": ""
+    "semantic_hash": "02175a25aab9c08319c21b27f2c7b018"
   }
 }
