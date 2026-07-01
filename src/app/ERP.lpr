@@ -24,6 +24,7 @@ begin
   Application.Scaled := True;
   Application.Initialize;
   Application.Title := '건축자재상 ERP';
+  Application.MainFormOnTaskBar := True;
 
   Config := LoadConfig(ExtractFilePath(ParamStr(0)) + 'app.ini');
   Data := CreateDataContext(Config);

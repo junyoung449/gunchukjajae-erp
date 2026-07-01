@@ -55,6 +55,7 @@ begin
   Caption := '건축자재상 ERP';
   Width := 760; Height := 520;
   Position := poScreenCenter;
+  ShowInTaskBar := stAlways;
 
   TopPanel := TPanel.Create(Self);
   TopPanel.Parent := Self;
