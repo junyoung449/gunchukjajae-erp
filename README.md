@@ -1,67 +1,65 @@
-# 건축자재상 ERP (온프레미스)
+# 출고 관리 유지보수 문서
 
-건축자재 유통업체를 위한 **온프레미스 Windows 데스크톱 ERP**입니다.
-단일 매장~소수 지점 규모의 자재상이 품목·거래처·재고·견적·출고를 한 곳에서
-관리하도록 만드는 것을 목표로 합니다.
+## 1. 구현된 기능
+- 출고번호, 거래처, 일자, 라인 수, 합계, 비고를 표시하는 출고 목록 화면을 제공한다.
+- 출고 등록 화면에서 거래처를 선택하고, 품목 라인과 수량을 입력해 출고를 저장한다.
+- 품목 라인을 추가할 때 선택한 품목의 현재 기준 단가를 자동으로 적용하고 금액을 계산한다.
+- 저장 전 출고 수량이 현재 재고보다 큰 품목이 있으면 재고 부족 경고를 표시한다.
+- 재고 부족 경고는 기본적으로 저장을 막지 않고, 사용자가 확인하면 출고를 계속 진행할 수 있다.
+- 선택한 출고 건은 `IShipmentRepository.Delete`를 통해 삭제할 수 있다.
 
-## 기술 스택
-
-| 항목 | 내용 |
+## 2. 생성 및 수정된 파일
+| 파일 | 역할 |
 |------|------|
-| 언어 | Object Pascal (Delphi 문법 호환) |
-| 빌드 툴체인 | **Free Pascal + Lazarus** (무료·오픈소스) |
-| UI | 데스크톱 GUI (Lazarus LCL / Delphi VCL 호환) |
-| 데이터 접근 | FireDAC(Delphi) / SQLDB(Lazarus) 계열 |
-| 데이터베이스 | Firebird (임베디드/서버) — **미설치 시 인메모리 모드로 구동** |
+| `src/modules/shipment/App.Modules.Shipment.View.pas` | 출고 목록 및 등록 화면 |
+| `src/app/App.Main.pas` | 메인 화면의 출고 버튼을 출고 화면에 연결 |
+| `src/app/ERP.lpi` | 출고 유닛과 검색 경로 등록 |
+| `docs/maintenance/shipment.md` | 출고 모듈 유지보수 문서 |
+| `README.md` | 출고 모듈 유지보수 문서와 동일한 공개 설명 |
 
-### DB 없이도 구동됩니다
-데이터 접근은 인터페이스로 추상화되어 있습니다.
+## 3. 주요 클래스와 메서드
+- `TShipmentView.Execute`: 메인 화면에서 호출하는 출고 화면 진입점이다. `IDataContext`를 받아 화면을 연다.
+- `TShipmentView.RefreshGrid`: `FData.Shipments.GetAll`로 출고 목록을 읽어 그리드에 다시 표시한다.
+- `TShipmentView.NewClick`: 출고 등록 창을 열고 저장 결과를 `FData.Shipments.Add`로 전달한다.
+- `TShipmentEditForm.AddLineClick`: 선택한 품목과 수량으로 출고 라인을 추가한다. 단가는 품목 기준 단가를 자동 사용한다.
+- `TShipmentEditForm.StockWarningAccepted`: `FData.Inventory.GetStock`으로 현재 재고를 조회하고 부족 시 계속 진행 여부를 확인한다.
+- `TShipmentEditForm.SaveClick`: 거래처, 라인, 합계, 일자, 비고를 담은 `TShipment` 값을 완성한다.
 
-- **Memory 모드(기본값)**: Firebird가 없어도 샘플 데이터로 즉시 실행됩니다.
-  평가·데모·초기 개발 시 별도 설치가 필요 없습니다.
-- **Firebird 모드**: 설정 파일에서 전환하면 FireDAC로 Firebird에 연결합니다.
-  연결 실패 시 자동으로 Memory 모드로 폴백합니다.
+## 4. 코드 실행 흐름
+1. 메인 화면의 버튼 인덱스 `I = 4`가 `TShipmentView.Execute(Self, FData)`를 호출한다.
+2. `TShipmentView`는 `IDataContext`를 보관하고 `RefreshGrid`로 기존 출고 목록을 표시한다.
+3. 사용자가 `신규` 버튼을 누르면 `TShipmentEditForm`이 열린다.
+4. 등록 창에서 거래처를 선택하고 품목과 수량을 입력한 뒤 `라인 추가`를 누른다.
+5. 각 라인은 `TShipmentLine`으로 저장되며 `UnitPrice`와 `Amount`가 자동 계산된다.
+6. 저장 시 재고 부족 여부를 확인하고, 부족하면 경고 후 사용자가 계속할지 선택한다.
+7. 저장이 확정되면 화면은 `FData.Shipments.Add(Form.Shipment)`만 호출한다.
+8. Memory 프로바이더의 `TMemoryShipmentRepository.Add`가 각 라인에 대해 `Inventory.Move(..., smkOut, ShipNo)`를 호출해 재고를 차감한다.
 
-전환은 `config/app.ini` 의 `[Data] Provider=Memory|Firebird` 값으로 제어합니다.
+## 5. 데이터가 생성 및 변경되는 위치
+- 출고 데이터 생성은 `IShipmentRepository.Add`를 통해서만 이루어진다.
+- 출고 데이터 삭제는 `IShipmentRepository.Delete`를 통해 이루어진다.
+- 출고 화면은 `Inventory.Move`를 직접 호출하지 않는다.
+- 실제 재고 차감은 `src/data/App.Data.Memory.pas`의 `TMemoryShipmentRepository.Add`에서 처리한다.
+- 재고 부족 확인은 읽기 전용 조회이며 `IInventoryRepository.GetStock`만 사용한다.
+- 품목과 거래처는 각각 `IItemRepository`, `IPartnerRepository`를 통해 조회한다.
 
-## 모듈
+## 6. 사용된 Delphi/Object Pascal 기술
+- `.lfm` 없이 `CreateNew`와 LCL 컨트롤 생성 코드로 화면을 구성한다.
+- `IDataContext`를 통해 저장소 인터페이스를 주입받는다.
+- `TShipmentLineArray` 동적 배열로 출고 라인을 관리한다.
+- `TStringGrid`로 출고 목록과 등록 라인을 표시한다.
+- `ShowModal`과 `ModalResult`로 등록 창 저장 흐름을 처리한다.
 
-개발 우선순위 순서입니다.
+## 7. 코드를 이해하기 위한 학습 항목
+- 인터페이스 기반 저장소 접근 방식
+- record와 동적 배열을 이용한 화면 입력값 구성
+- `TStringGrid` 행 선택과 라인 추가/삭제 처리
+- `Currency`와 `Double` 값을 이용한 금액 및 수량 계산
+- 사용자 확인 대화상자로 예외 상황을 허용하는 흐름
 
-1. **품목 관리(Item)** — 자재 품목 마스터(규격/단위/단가)
-2. **거래처 관리(Partner)** — 고객·매입처 마스터
-3. **재고 관리(Inventory)** — 입출고·재고수량·창고 이동
-4. **견적 관리(Quote)** — 견적서 작성·품목 라인·금액 계산
-5. **출고 처리(Shipment)** — 출고 등록, 재고 차감
-6. **이력 조회(History)** — 거래·재고 변동 이력 조회
-
-## 저장소 구조
-
-```
-├─ src/
-│  ├─ core/      공통 계약(데이터 접근 인터페이스·엔티티)
-│  ├─ modules/   모듈별 유닛
-│  └─ app/       메인 셸(폼·엔트리)
-├─ docs/
-│  └─ maintenance/  유지보수·학습 문서 (구현된 코드와 연결된 자료)
-└─ config/       실행 설정
-```
-
-## 브랜치 전략
-
-- `main` — 통합·릴리스
-- `develop` — 개발 통합
-- `feature/01-item` … `feature/06-history` — 모듈별 작업 브랜치
-
-각 모듈은 브랜치에서 구현 후 Pull Request로 리뷰를 거쳐 병합합니다.
-
-## 빌드
-
-무료 툴체인으로 빌드합니다.
-
-- **Lazarus/FPC(무료)**: `src/app` 의 프로젝트(`.lpi`)를 Lazarus에서 열거나
-  `lazbuild src/app/ERP.lpi` 로 빌드합니다.
-- **Delphi(선택)**: RAD Studio 보유 시 `.dproj` 로도 빌드할 수 있게 유지합니다.
-
-가상환경 없이 로컬에서 바로 빌드하며, 초기 실행은 별도 설정 없이 Memory 모드로
-동작합니다.
+## 8. 수정 또는 확장 시 확인할 위치
+- 출고 목록 컬럼을 바꾸려면 `TShipmentView.BuildUI`와 `TShipmentView.RefreshGrid`를 확인한다.
+- 출고 등록 입력 항목을 바꾸려면 `TShipmentEditForm.BuildUI`와 `TShipmentEditForm.SaveClick`을 확인한다.
+- 재고 부족 정책을 바꾸려면 `TShipmentEditForm.StockWarningAccepted`를 확인한다.
+- 재고 차감 방식은 화면이 아니라 저장소 구현인 `TMemoryShipmentRepository.Add`에서 확인한다.
+- 견적에서 출고로 전환하는 기능을 추가할 때는 `TShipmentEditForm`에 라인 초기화 흐름을 추가하면 된다.
